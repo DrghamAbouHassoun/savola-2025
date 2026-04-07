@@ -1,0 +1,41 @@
+const common = {
+  nav: {
+    language: "English",
+    sections: {
+      "table-of-content": "جدول المحتويات",
+      overview: "نظرة عامة",
+      "strategic-review": "المراجعة الاستراتيجية",
+      leadership: "القيادة",
+      "business-review": "مراجعة الأعمال",
+      "esg-review": "مراجعة الحوكمة البيئية",
+    },
+    pages: {
+      "theme-of-the-year": "موضوع العام",
+      "2025-at-a-glance": "2025 في لمحة",
+      "year-in-review": "مراجعة العام",
+      "geographical-footprint": "الانتشار الجغرافي",
+      "investment-case": "قضية الاستثمار",
+      "stakeholder-engagement": "إشراك أصحاب المصلحة",
+      "strategy-and-business-model": "الاستراتيجية ونموذج الأعمال",
+      "strategy-groups-transformation-journey": "رحلة تحول مجموعة الاستراتيجية",
+      "saudi-vision-2030": "رؤية السعودية 2030",
+      "technology-and-innovation": "التكنولوجيا والابتكار",
+      "chairmans-statement": "كلمة رئيس مجلس الإدارة",
+      "group-ceos-message": "رسالة الرئيس التنفيذي للمجموعة",
+      "chief-financial-officers-review": "مراجعة المدير المالي",
+      "savola-food": "سافولا للأغذية",
+      "panda-retail-company": "شركة بنده للتجزئة",
+      "al-kabeer-group": "مجموعة الكبير",
+      "herfy-food-service": "هرفي للخدمات الغذائية",
+      "our-esg-approach": "نهجنا في الحوكمة البيئية",
+      "our-esg-strategy": "استراتيجيتنا في الحوكمة البيئية",
+      "materiality-assessment": "تقييم الأهمية",
+      "driving-environmental-stewardship": "قيادة الإدارة البيئية والابتكار",
+      "driving-environmental-stewardship-appear": "قيادة الإدارة البيئية <br /> والابتكار",
+      "fostering-community-wellness": "تعزيز صحة المجتمع ورفاهية الموظفين",
+      "fostering-community-wellness-appear": "تعزيز صحة المجتمع <br /> ورفاهية الموظفين",
+    },
+  },
+};
+
+export default common;

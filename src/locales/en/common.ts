@@ -1,0 +1,41 @@
+const common = {
+  nav: {
+    language: "العربية",
+    sections: {
+      "table-of-content": "Table Of Content",
+      overview: "Overview",
+      "strategic-review": "Strategic Review",
+      leadership: "Leadership",
+      "business-review": "Business Review",
+      "esg-review": "ESG Review",
+    },
+    pages: {
+      "theme-of-the-year": "Theme of the Year",
+      "2025-at-a-glance": "2025 at a Glance",
+      "year-in-review": "Year in Review",
+      "geographical-footprint": "Geographical Footprint",
+      "investment-case": "Investment Case",
+      "stakeholder-engagement": "Stakeholder Engagement",
+      "strategy-and-business-model": "Strategy and Business Model",
+      "strategy-groups-transformation-journey": "Strategy Group's Transformation Journey",
+      "saudi-vision-2030": "Saudi Vision 2030",
+      "technology-and-innovation": "Technology and Innovation",
+      "chairmans-statement": "Chairman's Statement",
+      "group-ceos-message": "Group CEO's Message",
+      "chief-financial-officers-review": "Chief Financial Officer's Review",
+      "savola-food": "Savola Food",
+      "panda-retail-company": "Panda Retail Company",
+      "al-kabeer-group": "Al Kabeer Group",
+      "herfy-food-service": "Herfy Food Service",
+      "our-esg-approach": "Our ESG Approach",
+      "our-esg-strategy": "Our ESG Strategy",
+      "materiality-assessment": "Materiality Assessment",
+      "driving-environmental-stewardship": "Driving Environmental Stewardship and Innovation",
+      "driving-environmental-stewardship-appear": "Driving Environmental Stewardship <br /> and Innovation",
+      "fostering-community-wellness": "Fostering Community Wellness and Employee Welfare",
+      "fostering-community-wellness-appear": "Fostering Community Wellness <br /> and Employee Welfare",
+    },
+  },
+};
+
+export default common;

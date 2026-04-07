@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/Avenir/Avenir_Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/Avenir/Avenir_Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/Avenir/Avenir_Heavy.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./assets/fonts/Avenir/Avenir_Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Riyal";
+  src: url("./assets/fonts/Riyal/Riyal.ttf") format("truetype");
+}
+
+@theme {
+  --font-avenir: "Avenir", sans-serif;
+  --font-riyal: "Riyal", sans-serif;
+  --breakpoint-2xl: 1410px;
+  /* Primary Colors */
+  --color-savola-green: #A4CE4E;
+  --color-savola-green-50: #D1E6A6;
+  --color-savola-green-20: #EDF5DC;
+  --color-savola-orange: #FAA831;
+  --color-savola-orange-20: #FEEED6;
+  --color-savola-lime: #EDE823;
+
+  /* Secondary Colors */
+  --color-savola-cool-grey: #4E5F6D;
+  --color-savola-cool-grey-10: #EEEFF1;
+  --color-savola-cool-grey-7: #F2F4F5;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-avenir);
+  }
+}
+
+@keyframes awards-ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.riyal-icon {
+  font-family: var(--font-riyal);
+}
+
+.riyal-icon::before {
+  content: "$";
+}
