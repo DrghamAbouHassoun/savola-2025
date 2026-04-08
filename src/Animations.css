@@ -1,0 +1,240 @@
+@keyframes FadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.animate-fade-out {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: FadeOut;
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-fade-in.active {
+  animation-name: FadeIn;
+}
+
+@keyframes FadeDown50 {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down-50 {
+  opacity: 0;
+  transform: translateY(-50%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-fade-down-50.active {
+  animation-name: FadeDown50;
+}
+
+@keyframes FadeDown100 {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-down-100 {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-fade-down-100.active {
+  animation-name: FadeDown100;
+}
+
+
+@keyframes FadeRight100 {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-right-100 {
+  opacity: 0;
+  transform: translateX(100%);
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-fade-right-100.active {
+  animation-name: FadeRight100;
+}
+
+@keyframes FadeRight50 {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-right-50 {
+  opacity: 0;
+  transform: translateX(50%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-fade-right-50.active {
+  animation-name: FadeRight50;
+}
+
+@keyframes FadeLeft100 {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-left-100 {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-fade-left-100.active {
+  animation-name: FadeLeft100;
+}
+
+@keyframes FadeLeft50 {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-left-50 {
+  opacity: 0;
+  transform: translateX(-50%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-fade-left-50.active {
+  animation-name: FadeLeft50;
+}
+
+@keyframes TranslateDown50 {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-translate-down-50 {
+  transform: translateY(-50%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-translate-down-50.active {
+  animation-name: TranslateDown50;
+}
+
+@keyframes TranslateDown100 {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-translate-down-100 {
+  transform: translateY(-100%);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-translate-down-100.active {
+  animation-name: TranslateDown100;
+}
+
+@keyframes OpenDown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 85vh; /* Adjust as needed */
+  }
+}
+
+.animate-open-down {
+  max-height: 0;
+  overflow: hidden;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.animate-open-down.active {
+  animation-name: OpenDown;
+}
+
+@keyframes SlideUpLoop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-slide-up-loop {
+  animation-name: SlideUpLoop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

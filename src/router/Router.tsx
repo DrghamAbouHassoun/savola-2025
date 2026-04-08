@@ -52,18 +52,20 @@ export interface StandalonePage {
 }
 
 export const pages: Section[] = [
-  {
-    id: "table-of-content",
-    name: "Table Of Content",
-    pages: [
-      { id: "theme-of-the-year", path: "theme-of-the-year", name: "Theme of the Year" },
-      { id: "2025-at-a-glance", path: "2025-at-a-glance", name: "2025 at a Glance" },
-    ],
-  },
+  // {
+  //   id: "table-of-content",
+  //   name: "Table Of Content",
+  //   pages: [
+  //     { id: "theme-of-the-year", path: "theme-of-the-year", name: "Theme of the Year" },
+  //     { id: "2025-at-a-glance", path: "2025-at-a-glance", name: "2025 at a Glance" },
+  //   ],
+  // },
   {
     id: "overview",
     name: "Overview",
     pages: [
+      { id: "theme-of-the-year", path: "theme-of-the-year", name: "Theme of the Year" },
+      { id: "2025-at-a-glance", path: "2025-at-a-glance", name: "2025 at a Glance" },
       { id: "year-in-review", path: "year-in-review", name: "Year in Review" },
       { id: "geographical-footprint", path: "geographical-footprint", name: "Geographical Footprint" },
       { id: "investment-case", path: "investment-case", name: "Investment Case" },
