@@ -19,15 +19,15 @@ const InvestmentCasePage = () => {
             value for shareholders and reinforce its strategic position in its
             core markets.
           </p>
-          <div className="flex  items-center justify-around gap-16 my-16 leading-none">
-            <div className="rounded-full w-60 h-50 text-center bg-savola-green flex justify-center items-center flex-col gap-2">
+          <div className="flex flex-wrap items-center justify-around gap-16 my-16 leading-none">
+            <div className="rounded-full w-50 h-50 text-center bg-savola-green flex justify-center items-center flex-col gap-2 hover:scale-105 transition-all duration-500">
               <span className="text-lg font-extrabold text-white">
                 Dominance in <br />
                 Food and Retail
               </span>
               <span className="text-lg font-extrabold text-white">1</span>
             </div>
-            <div className="rounded-full w-60 h-50 text-center bg-savola-cool-grey flex justify-center items-center flex-col gap-2">
+            <div className="rounded-full w-50 h-50 text-center bg-savola-cool-grey flex justify-center items-center flex-col gap-2 hover:scale-105 transition-all duration-500">
               <span className="text-lg font-extrabold text-white">
                 Strategic <br />
                 Presence and
@@ -36,7 +36,7 @@ const InvestmentCasePage = () => {
               </span>
               <span className="text-lg font-extrabold text-white">2</span>
             </div>
-            <div className="rounded-full w-60 h-50 text-center bg-white flex justify-center items-center flex-col gap-2">
+            <div className="rounded-full w-50 h-50 text-center bg-white flex justify-center items-center flex-col gap-2 hover:scale-105 transition-all duration-500">
               <span className="text-lg font-extrabold text-savola-cool-grey">
                 Dynamic
                 <br />
@@ -52,7 +52,7 @@ const InvestmentCasePage = () => {
                 3
               </span>
             </div>
-            <div className="rounded-full w-60 h-50 text-center bg-savola-orange flex justify-center items-center flex-col gap-2">
+            <div className="rounded-full w-50 h-50 text-center bg-savola-orange flex justify-center items-center flex-col gap-2 hover:scale-105 transition-all duration-500">
               <span className="text-lg font-extrabold text-white">
                 Commitment to<br /> 
                 ESG Principles

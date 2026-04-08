@@ -1,4 +1,3 @@
-import Container from "../../common/components/container/Container";
 import forbes from "../../../assets/images/awards/Frame 1977.png";
 import meira from "../../../assets/images/awards/meira.png";
 import human from "../../../assets/images/awards/human.png";
@@ -8,6 +7,7 @@ import shrmMena from "../../../assets/images/awards/sharm-mena.png";
 import effie from "../../../assets/images/awards/effie.png";
 import cgc from "../../../assets/images/awards/cgc.png";
 import top from "../../../assets/images/awards/top.png";
+import SmallContainer from "../../common/components/container/SmallContainer";
 
 interface Award {
   key: string;
@@ -92,11 +92,11 @@ const AWARDS: Award[] = [
 
 const AwardsHighlights = () => (
   <section className="bg-white py-8 md:py-10">
-    <Container className="max-w-5xl mb-8 md:mb-10">
-      <h2 className="text-sm font-black tracking-[0.02em] text-savola-cool-grey">
+    <SmallContainer className="max-w-5xl mb-8 md:mb-10">
+      <h2 className="text-xl font-black tracking-[0.02em] text-savola-cool-grey">
         Awards and Recognitions
       </h2>
-    </Container>
+    </SmallContainer>
 
     {/* Infinite horizontal ticker — non-interactive */}
     <div className="overflow-hidden select-none pointer-events-none">
@@ -111,7 +111,7 @@ const AwardsHighlights = () => (
         {[...AWARDS, ...AWARDS].map((award, i) => (
           <article
             key={`${award.key}-${i}`}
-            className="shrink-0 w-54 flex flex-col gap-3"
+            className="shrink-0 w-74 flex flex-col gap-3"
           >
             {/* Logo */}
             <div className="h-24 flex items-center justify-center px-3">
@@ -123,13 +123,13 @@ const AwardsHighlights = () => (
             </div>
 
             {/* Title */}
-            <h3 className="text-center text-[0.75rem] font-black leading-tight text-savola-cool-grey min-h-10 px-1">
+            <h3 className="text-center text-sm font-semibold leading-tight text-savola-cool-grey min-h-10 px-1">
               {award.title}
             </h3>
 
             {/* Body */}
-            <div className="flex-1 rounded-[1.25rem] bg-[#fbf1df] px-4 py-3 shadow-[0_12px_28px_rgba(78,95,109,0.06)]">
-              <p className="text-[0.68rem] leading-relaxed text-savola-cool-grey/75">
+            <div className="flex-1 rounded-b-[1.25rem] bg-linear-180 from-savola-orange-20/0 to-savola-orange-20 px-4 py-3 shadow-[0_12px_28px_rgba(78,95,109,0.06)] border-t-2 border-t-savola-green">
+              <p className=" leading-relaxed text-savola-cool-grey/75 text-sm">
                 {award.body}
               </p>
             </div>

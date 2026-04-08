@@ -1,0 +1,1 @@
+export const SITE_URL="https://savola-2025.vercel.app/"

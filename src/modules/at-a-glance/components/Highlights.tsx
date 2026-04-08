@@ -1,4 +1,4 @@
-import Container from "../../common/components/container/Container";
+import SmallContainer from "../../common/components/container/SmallContainer";
 
 const OPERATIONAL = [
   "Savola Foods' production volumes reached a yearly record 3.74 million metric tons.",
@@ -27,7 +27,7 @@ const SUSTAINABILITY = [
 type BulletItem = string | string[];
 
 const Bullet = ({ text }: { text: string }) => (
-  <li className="flex gap-2 text-[0.78rem] leading-relaxed text-savola-cool-grey md:text-[0.82rem]">
+  <li className="flex gap-2 leading-relaxed text-sm">
     <span className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-savola-green" />
     <span>{text}</span>
   </li>
@@ -53,23 +53,23 @@ const BulletList = ({ items }: { items: BulletItem[] }) => (
 
 const Highlights = () => (
   <section className="bg-white py-8 md:py-10">
-    <Container className="max-w-5xl">
+    <SmallContainer>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
         <div>
-          <h2 className="mb-4 text-sm font-black tracking-[0.02em] text-savola-cool-grey md:mb-5">
+          <h2 className="mb-4 text-xl font-black tracking-[0.02em] text-savola-cool-grey md:mb-5">
             Operational Highlights
           </h2>
           <BulletList items={OPERATIONAL} />
         </div>
 
         <div>
-          <h2 className="mb-4 text-sm font-black tracking-[0.02em] text-savola-cool-grey md:mb-5">
+          <h2 className="mb-4 text-xl font-black tracking-[0.02em] text-savola-cool-grey md:mb-5">
             Sustainability Highlights
           </h2>
           <BulletList items={SUSTAINABILITY} />
         </div>
       </div>
-    </Container>
+    </SmallContainer>
   </section>
 );
 
