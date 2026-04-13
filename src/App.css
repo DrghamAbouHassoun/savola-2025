@@ -18,3 +18,29 @@ button {
 .hidden-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.trapezium {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  background: #3498db;
+
+  /* Trapezium shape */
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+  overflow: hidden;
+}
+
+/* Create the rounded top-left corner */
+.trapezium::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: #000;
+
+  border-bottom-right-radius: 40px;
+}

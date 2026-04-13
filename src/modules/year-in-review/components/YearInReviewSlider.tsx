@@ -12,12 +12,14 @@ interface MonthEvent {
 }
 
 interface MonthData {
+  flex?: number;
   month: string;
   events: MonthEvent[];
 }
 
 const MONTHS: MonthData[] = [
   {
+    flex: 1,
     month: "March",
     events: [
       {
@@ -27,6 +29,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 1,
     month: "April",
     events: [
       {
@@ -40,6 +43,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 1,
     month: "May",
     events: [
       {
@@ -54,6 +58,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 1,
     month: "June",
     events: [
       {
@@ -67,6 +72,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 1,
     month: "July",
     events: [
       {
@@ -76,6 +82,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 1,
     month: "September",
     events: [
       {
@@ -86,6 +93,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 2,
     month: "October",
     events: [
       {
@@ -101,6 +109,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 1,
     month: "November",
     events: [
       {
@@ -114,6 +123,7 @@ const MONTHS: MonthData[] = [
     ],
   },
   {
+    flex: 2,
     month: "December",
     events: [
       {
@@ -196,12 +206,12 @@ const YearInReviewSlider = () => {
               {MONTHS.map((monthData) => (
                 <div
                   key={monthData.month}
-                  className="shrink-0 w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[50vw] "
+                  className={`shrink-0 ${monthData.flex === 1 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[60vw] " : "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-screen "}`}
                 >
                   {/* Month label */}
                   <div className="mb-4 pt-8 border-t-4 border-savola-green relative">
                     <span className="w-8 h-8 bg-savola-green absolute -top-4.5 left-0 rounded-full" />
-                    <span className="text-4xl font-extrabold text-savola-cool-grey tracking-wide">
+                    <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-savola-cool-grey tracking-wide">
                       {monthData.month}
                     </span>
                   </div>
@@ -215,10 +225,10 @@ const YearInReviewSlider = () => {
                       >
                         
                         <div className="pr-4">
-                          <h3 className="font-bold text-savola-orange text-4xl leading-snug mb-2">
+                          <h3 className="font-bold text-savola-orange text-xl sm:text-2xl lg:text-3xl leading-snug mb-2">
                             {event.title}
                           </h3>
-                          <p className="text-savola-cool-grey/70 text-xl leading-relaxed">
+                          <p className="text-savola-cool-grey/70 text-sm sm:text-base lg:text-lg leading-relaxed">
                             {event.body}
                           </p>
                         </div>
@@ -227,7 +237,7 @@ const YearInReviewSlider = () => {
                             <img
                               src={event.image}
                               alt={event.title}
-                              className="max-h-full max-w-full object-contain"
+                              className="max-h-40 max-w-40 object-contain"
                             />
                           </div>
                         )}

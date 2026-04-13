@@ -1,6 +1,7 @@
 import "./App.css";
 import "./Animations.css";
 import "./AnimationDelay.css";
+import "./AnimationDuration.css";
 import Layout from "./modules/common/components/layout/Layout";
 import { RouterProvider } from "./modules/common/contexts/RouterProvider";
 import LangProvider from "./modules/common/contexts/LangProvider";

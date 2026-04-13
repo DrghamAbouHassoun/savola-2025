@@ -124,7 +124,7 @@ const Hero = () => {
         <img src={Logo} alt="Savola Logo" className="w-70 h-auto" />
       </div>
       <div className="w-full h-screen relative overflow-hidden">
-        <div className="fixed right-0 bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-4_6s z-30">
+        <div className="fixed right-0 bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s z-30">
           <img
             src={Trapezium}
             alt="Trapezium"
@@ -132,7 +132,7 @@ const Hero = () => {
           />
         </div>
         <div className="flex flex-col w-full h-full">
-          <div className="flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey animate-fade-left-100 active animate-delay-4_6s">
+          <div className="flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey animate-fade-left-100 active animate-delay-5_6s">
             <Container>
               <h1 className="text-5xl font-bold mb-4">
                 A new era of
@@ -145,7 +145,7 @@ const Hero = () => {
           </div>
 
           {/* Carousel — no overflow-hidden so slides remain fully visible */}
-          <div ref={containerRef} className="flex-[1.1] relative animate-fade-right-100 active animate-delay-4s">
+          <div ref={containerRef} className="flex-[1.1] relative animate-fade-right-100 animation-duration-2s active animate-delay-4s">
             {containerW > 0 &&
               items.map(({ key, ri, h, x, op, z }) => (
                 <div

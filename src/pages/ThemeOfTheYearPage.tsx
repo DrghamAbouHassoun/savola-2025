@@ -1,11 +1,16 @@
 import MainHeader from "../modules/common/components/headers/MainHeader";
 import ThemeOfTheYearHeader from "../assets/images/headers/theme-of-the-year.png";
+import ThemeOfTheYearMobileHeader from "../assets/images/headers/theme-of-the-year-mobile.png";
 import Container from "../modules/common/components/container/Container";
 
 const ThemeOfTheYearPage = () => {
   return (
     <div>
-      <MainHeader imageUrl={ThemeOfTheYearHeader} title="Theme of the Year" />
+      <MainHeader
+        imageUrl={ThemeOfTheYearHeader}
+        mobileImageUrl={ThemeOfTheYearMobileHeader}
+        title="Theme of the Year"
+      />
       <div className="bg-linear-180 from-savola-green-20 to-savola-green-20/0 py-32">
         <Container className="max-w-250">
           <h2 className="text-4xl text-savola-green font-bold mb-8">

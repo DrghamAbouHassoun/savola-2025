@@ -69,7 +69,7 @@
 .animate-fade-down-100 {
   opacity: 0;
   transform: translateY(-100%);
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
 
