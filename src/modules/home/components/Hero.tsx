@@ -120,11 +120,11 @@ const Hero = () => {
 
   return (
     <>
-      <div className="fixed w-full h-screen top-0 left-0 z-9999 flex justify-center items-center bg-white animate-fade-out animate-delay-2s">
+      <div className="fixed w-full h-screen top-0 left-0 z-30 flex justify-center items-center bg-white animate-fade-out animate-delay-2s">
         <img src={Logo} alt="Savola Logo" className="w-70 h-auto" />
       </div>
       <div className="w-full h-screen relative overflow-hidden">
-        <div className="fixed right-0 bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-4_6s z-40">
+        <div className="fixed right-0 bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-4_6s z-30">
           <img
             src={Trapezium}
             alt="Trapezium"

@@ -59,7 +59,7 @@ const NavDropdown = ({ section }: { section: Section }) => {
       {open && (
         <div
           ref={dropdownRef}
-          className={`absolute top-full mt-2 flex flex-col bg-savola-green shadow-lg rounded-md z-50 w-56 ${dropdownAlign === "end" ? "inset-e-0" : "inset-s-0"}`}
+          className={`absolute top-full mt-2 flex flex-col bg-savola-green shadow-lg rounded-md z-9999 w-56 ${dropdownAlign === "end" ? "inset-e-0" : "inset-s-0"}`}
         >
           {section.pages.map((page) => {
             const appearKey = `nav.pages.${page.id}-appear`;
@@ -97,7 +97,7 @@ const Navbar = () => {
   const { navigate } = useContext(RouterContext);
 
   return (
-    <div className="w-full absolute top-0 left-0 z-40 animate-fade-down-100 active animate-delay-4_8s">
+    <div className="w-full absolute top-0 left-0 z-50 isolate animate-fade-down-100 active animate-delay-4_8s">
       <div className={`w-full max-w-7xl mx-auto py-4 ${lang === "ar" ? "px-4 lg:pr-16 xl:pr-4" : " px-4 lg:pl-16 xl:pl-4"} flex justify-between items-center gap-4`}>
         <button type="button" className="w-35" onClick={() => navigate("/")}>
           <img src={MainLogo} alt="Savola Logo" className="w-full h-auto" />
