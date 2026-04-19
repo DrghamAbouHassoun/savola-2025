@@ -10,6 +10,15 @@ button {
   cursor: pointer;
 }
 
+@keyframes pan-lr {
+  0%   { transform: translateX(-10%); }
+  100% { transform: translateX(10%); }
+}
+
+.animate-pan-lr {
+  animation: pan-lr 6s ease-in-out infinite alternate;
+}
+
 .hidden-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -43,4 +52,24 @@ button {
   background: #000;
 
   border-bottom-right-radius: 40px;
+}
+
+
+.masked-image {
+  width: 400px;
+  height: 400px;
+  background-image: url('your-photo.jpg');
+  background-size: cover;
+  
+  /* The Magic */
+  mask-image: url('shape.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  
+  /* Vendor prefix for Chrome/Safari support */
+  -webkit-mask-image: url('shape.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }

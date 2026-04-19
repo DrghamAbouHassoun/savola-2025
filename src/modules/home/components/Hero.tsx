@@ -93,11 +93,24 @@ const Hero = () => {
 
   // Derived layout values
   const { w: containerW, h: viewH } = containerSize;
-  // slideW sized so all 3 slides fit side-by-side:
-  //   containerW/2 - slideW/2 - GAP = 0  →  slideW = (containerW/2 - GAP) / 1.5
-  const slideW = containerW > 0 ? (containerW / 2 - GAP) / 1.5 : 0;
-  // BASE_H: right slide peaks at 80vh; center=60vh, left=40vh via scaleForOffset
   const BASE_H = viewH * 0.8;
+
+  const isMobile = containerW > 0 && containerW < 768;
+  const isTablet = containerW >= 768 && containerW < 1024;
+
+  // slideW and offsetX per breakpoint:
+  // mobile  → 1 image centered
+  // tablet  → 2 images (off=0 left, off=+1 right), slideW=(containerW-GAP)/2, offsetX=-(containerW+GAP)/4
+  // desktop → 3 images, slideW=(containerW/2-GAP)/1.5, offsetX=0
+  const slideW = isMobile
+    ? containerW - 2 * GAP
+    : isTablet
+    ? (containerW - GAP) / 2
+    : containerW > 0
+    ? (containerW / 2 - GAP) / 1.5
+    : 0;
+
+  const offsetX = isTablet ? -(containerW + GAP) / 4 : 0;
 
   // Build visible slide items
   const curPos = posRef.current;
@@ -116,9 +129,14 @@ const Hero = () => {
     const off = i - curPos;
     const sc = scaleForOffset(off);
     const h = BASE_H * sc;
-    const x = off * (slideW + GAP);
-    const op = clamp(1 - Math.max(0, Math.abs(off) - 2.2), 0, 1);
-    const z = 200 - Math.round(Math.abs(off) * 10);
+    const x = off * (slideW + GAP) + offsetX;
+    // mobile: only center visible; tablet: hide left side; desktop: full range
+    const op = isMobile
+      ? clamp(1.5 - Math.abs(off), 0, 1)
+      : isTablet
+      ? clamp(1 - Math.max(0, -off - 0.5), 0, 1)
+      : clamp(1 - Math.max(0, Math.abs(off) - 2.2), 0, 1);
+    const z = 10 - Math.round(Math.abs(off));
     items.push({ key: i, ri, h, x, op, z });
   }
 
@@ -136,7 +154,7 @@ const Hero = () => {
           />
         </div>
         <div className="flex flex-col w-full h-full">
-          <div className="flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey animate-fade-left-100 active animate-delay-5_6s relative z-300">
+          <div className="flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey animate-fade-left-100 active animate-delay-5_6s relative z-20">
             <Container>
               <h1 className="text-5xl font-bold mb-4 whitespace-pre-line">
                 {t("hero.heading")}
@@ -174,7 +192,7 @@ const Hero = () => {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      objectPosition: "top",
+                      objectPosition: "top left",
                       display: "block",
                     }}
                   />

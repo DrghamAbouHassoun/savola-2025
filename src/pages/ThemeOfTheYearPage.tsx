@@ -1,18 +1,24 @@
-import MainHeader from "../modules/common/components/headers/MainHeader";
-import ThemeOfTheYearHeader from "../assets/images/headers/theme-of-the-year.png";
-import ThemeOfTheYearMobileHeader from "../assets/images/headers/theme-of-the-year-mobile.png";
+// import MainHeader from "../modules/common/components/headers/MainHeader";
+// import ThemeOfTheYearHeader from "../assets/images/headers/theme-of-the-year.png";
+// import ThemeOfTheYearMobileHeader from "../assets/images/headers/theme-of-the-year-mobile.png";
+import NewThemeOfTheYearHeader from "../assets/images/new-headers/theme-of-the-year.jpg"
 import Container from "../modules/common/components/container/Container";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
+import NewHeader from "../modules/common/components/headers/NewHeader";
 
 const ThemeOfTheYearPage = () => {
   const { t } = useTranslation("overview");
 
   return (
     <div>
-      <MainHeader
+      {/* <MainHeader
         imageUrl={ThemeOfTheYearHeader}
         mobileImageUrl={ThemeOfTheYearMobileHeader}
+        title={t("themeOfTheYear.pageTitle")}
+      /> */}
+      <NewHeader 
+        imageUrl={NewThemeOfTheYearHeader}
         title={t("themeOfTheYear.pageTitle")}
       />
       <div className="bg-linear-180 from-savola-green-20 to-savola-green-20/0 py-32">
