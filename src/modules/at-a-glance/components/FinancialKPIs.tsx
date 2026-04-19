@@ -1,4 +1,9 @@
+import { useEffect, useRef } from "react";
+import { useCountUp } from "react-countup";
 import SmallContainer from "../../common/components/container/SmallContainer";
+import useInView from "../../common/hooks/useInView";
+import { useTranslation } from "../../common/hooks/useTranslation";
+import AnimationSlideTop from "../../common/components/Animations/AnimationSlideTop";
 
 interface KpiItem {
   year: string;
@@ -7,139 +12,200 @@ interface KpiItem {
 }
 
 interface KpiGroup {
-  label: string;
+  id: string;
+  labelKey: string;
   unit: string;
   items: KpiItem[];
   maxValue: number;
 }
 
-const KPI_GROUPS: KpiGroup[] = [
-  {
-    label: "Net Profit",
-    unit: '<i class="riyal-icon"></i> million',
-    maxValue: 9974,
-    items: [
-      { year: "2023", value: 899 },
-      { year: "2024", value: 9974 },
-      { year: "2025", value: 874, highlight: true },
-    ],
-  },
-  {
-    label: "Total Assets",
-    unit: '<i class="riyal-icon"></i> million',
-    maxValue: 29937,
-    items: [
-      { year: "2023", value: 29937 },
-      { year: "2024", value: 21394 },
-      { year: "2025", value: 20480, highlight: true },
-    ],
-  },
-  {
-    label: "Revenue",
-    unit: '<i class="riyal-icon"></i> million',
-    maxValue: 26081,
-    items: [
-      { year: "2023", value: 24150 },
-      { year: "2024", value: 23046 },
-      { year: "2025", value: 26081, highlight: true },
-    ],
-  },
-  {
-    label: "Shareholders' Equity",
-    unit: '<i class="riyal-icon"></i> million',
-    maxValue: 8397,
-    items: [
-      { year: "2023", value: 8397 },
-      { year: "2024", value: 4620 },
-      { year: "2025", value: 5516, highlight: true },
-    ],
-  },
-  {
-    label: "Gross Profit",
-    unit: '<i class="riyal-icon"></i> million',
-    maxValue: 5089,
-    items: [
-      { year: "2023", value: 5046 },
-      { year: "2024", value: 4833 },
-      { year: "2025", value: 5089, highlight: true },
-    ],
-  },
-  {
-    label: "Capital Expenditure",
-    unit: '<i class="riyal-icon"></i> million',
-    maxValue: 915,
-    items: [
-      { year: "2023", value: 915 },
-      { year: "2024", value: 744 },
-      { year: "2025", value: 859, highlight: true },
-    ],
-  },
-];
+interface KpiBarProps {
+  item: KpiItem;
+  maxValue: number;
+  index: number;
+  inView: boolean;
+}
 
-const formatValue = (v: number) =>
-  v >= 1000 ? v.toLocaleString() : v.toString();
+const KpiBar = ({ item, maxValue, index, inView }: KpiBarProps) => {
+  const spanRef = useRef<HTMLSpanElement>(null);
+  const { start, reset } = useCountUp({
+    ref: spanRef as React.RefObject<HTMLElement>,
+    end: item.value,
+    startOnMount: false,
+    duration: 1.5,
+    separator: ",",
+    delay: (index * 120 + 400) / 1000,
+  });
 
-const KpiCard = ({ group }: { group: KpiGroup }) => (
-  <article className="flex flex-col gap-2.5">
-    <div className="mb-1 flex items-baseline gap-1.5">
-      <span className="leading-tight text-savola-cool-grey text-lg font-semibold">
-        {group.label}
-      </span>
-      (
-      <span
-        className="text-xs  text-savola-cool-grey/55"
-        dangerouslySetInnerHTML={{ __html: group.unit }}
-      ></span>
-      )
+  useEffect(() => {
+    if (inView) {
+      start();
+    } else {
+      reset();
+    }
+  }, [inView]);
+
+  const pct = Math.max(16, (item.value / maxValue) * 100);
+
+  return (
+    <div className="grid items-center gap-3">
+      <div className="relative h-5 overflow-hidden bg-savola-green-20">
+        <span className="absolute left-2 font-bold text-savola-cool-grey/80">
+          {item.year}
+        </span>
+        <div
+          className={`h-full rounded-tr-full transition-[width] ease-out ${
+            item.highlight ? "bg-savola-green" : "bg-savola-green/75"
+          }`}
+          style={{
+            width: inView ? `${pct}%` : "0%",
+            minWidth: inView ? "45%" : "0%",
+            transitionDuration: "700ms",
+            transitionDelay: inView ? `${index * 120}ms` : "0ms",
+          }}
+        />
+        <span
+          ref={spanRef}
+          className={`absolute top-1/2 -translate-y-1/2 font-black mt-0.5 transition-opacity duration-300 ${
+            item.highlight ? "text-white" : "text-savola-cool-grey"
+          }`}
+          style={{
+            left: pct > 45 ? `${pct - 20}%` : "30%",
+            opacity: inView ? 1 : 0,
+            transitionDelay: inView ? `${index * 120 + 300}ms` : "0ms",
+          }}
+        />
+      </div>
     </div>
-    {group.items.map((item) => {
-      const pct = Math.max(16, (item.value / group.maxValue) * 100);
-      return (
-        <div key={item.year} className="grid  items-center gap-3">
-          <div className="relative h-5 overflow-hidden bg-savola-green-20">
-            <span className="absolute left-2 font-bold text-savola-cool-grey/80">
-              {item.year}
-            </span>
-            <div
-              className={`h-full rounded-tr-full transition-all duration-700 ${
-                item.highlight ? "bg-savola-green" : "bg-savola-green/75"
-              }`}
-              style={{ width: `${pct}%`, minWidth: "45%" }}
-            />
-            <span
-              className={`absolute top-1/2 -translate-y-1/2 font-black ${
-                item.highlight ? "text-white" : "text-savola-cool-grey"
-              }`}
-              style={{ left: pct > 45 ? `${pct - 20}%` : "45%" }}
-            >
-              {formatValue(item.value)}
-            </span>
+  );
+};
+
+const KpiCard = ({ group }: { group: KpiGroup }) => {
+  const { ref, inView } = useInView<HTMLParagraphElement>();
+
+  return (
+    <article ref={ref} className="flex flex-col gap-2.5">
+      <div className="mb-1 flex items-baseline gap-1.5">
+        <AnimationSlideTop>
+          <span className="leading-tight text-savola-cool-grey text-lg font-semibold">
+            {group.labelKey}
+          </span>
+        </AnimationSlideTop>
+        (
+        <span
+          className="text-xs text-savola-cool-grey/55"
+          dangerouslySetInnerHTML={{ __html: group.unit }}
+        />
+        )
+      </div>
+      {group.items.map((item, i) => (
+        <KpiBar
+          key={item.year}
+          item={item}
+          maxValue={group.maxValue}
+          index={i}
+          inView={inView}
+        />
+      ))}
+    </article>
+  );
+};
+
+const FinancialKPIs = () => {
+  const { t } = useTranslation("at-a-glance");
+
+  const unit = `<i class="riyal-icon"></i> ${t("financialKPIs.million")}`;
+
+  const KPI_GROUPS: KpiGroup[] = [
+    {
+      id: "netProfit",
+      labelKey: t("financialKPIs.netProfit"),
+      unit,
+      maxValue: 9974,
+      items: [
+        { year: "2023", value: 899 },
+        { year: "2024", value: 9974 },
+        { year: "2025", value: 874, highlight: true },
+      ],
+    },
+    {
+      id: "totalAssets",
+      labelKey: t("financialKPIs.totalAssets"),
+      unit,
+      maxValue: 29937,
+      items: [
+        { year: "2023", value: 29937 },
+        { year: "2024", value: 21394 },
+        { year: "2025", value: 20480, highlight: true },
+      ],
+    },
+    {
+      id: "revenue",
+      labelKey: t("financialKPIs.revenue"),
+      unit,
+      maxValue: 26081,
+      items: [
+        { year: "2023", value: 24150 },
+        { year: "2024", value: 23046 },
+        { year: "2025", value: 26081, highlight: true },
+      ],
+    },
+    {
+      id: "shareholdersEquity",
+      labelKey: t("financialKPIs.shareholdersEquity"),
+      unit,
+      maxValue: 8397,
+      items: [
+        { year: "2023", value: 8397 },
+        { year: "2024", value: 4620 },
+        { year: "2025", value: 5516, highlight: true },
+      ],
+    },
+    {
+      id: "grossProfit",
+      labelKey: t("financialKPIs.grossProfit"),
+      unit,
+      maxValue: 5089,
+      items: [
+        { year: "2023", value: 5046 },
+        { year: "2024", value: 4833 },
+        { year: "2025", value: 5089, highlight: true },
+      ],
+    },
+    {
+      id: "capex",
+      labelKey: t("financialKPIs.capex"),
+      unit,
+      maxValue: 915,
+      items: [
+        { year: "2023", value: 915 },
+        { year: "2024", value: 744 },
+        { year: "2025", value: 859, highlight: true },
+      ],
+    },
+  ];
+
+  return (
+    <section className="bg-linear-180 from-savola-green-20 via-white to-white py-14 md:py-18">
+      <SmallContainer className="max-w-5xl">
+        <div className="space-y-10 md:space-y-12">
+          <div className="max-w-4xl">
+            <AnimationSlideTop>
+              <h2 className="text-2xl font-black leading-tight text-savola-green md:text-4xl md:leading-[1.05]">
+                {t("financialKPIs.heading")}
+              </h2>
+            </AnimationSlideTop>
+          </div>
+
+          <div className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
+            {KPI_GROUPS.map((group) => (
+              <KpiCard key={group.id} group={group} />
+            ))}
           </div>
         </div>
-      );
-    })}
-  </article>
-);
-
-const FinancialKPIs = () => (
-  <section className="bg-linear-180 from-savola-green-20 via-white to-white py-14 md:py-18">
-    <SmallContainer className="max-w-5xl">
-      <div className="space-y-10 md:space-y-12">
-        <div className="max-w-4xl">
-          <h2 className="text-2xl font-black leading-tight text-savola-green md:text-4xl md:leading-[1.05]">
-            Unlocked New Opportunities, Paving the Way for a Future of Endless
-            Potential
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
-          {KPI_GROUPS.map((group) => (
-            <KpiCard key={group.label} group={group} />
-          ))}
-        </div>
-      </div>
-    </SmallContainer>
-  </section>
-);
+      </SmallContainer>
+    </section>
+  );
+};
 
 export default FinancialKPIs;

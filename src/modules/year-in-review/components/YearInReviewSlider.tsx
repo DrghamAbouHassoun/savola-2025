@@ -1,6 +1,7 @@
 import { useEffect, useRef, useContext } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { LangContext } from "../../common/contexts/LangProvider";
+import { useTranslation } from "../../common/hooks/useTranslation";
 
 import Ellipse1 from "../../../assets/images/year-in-review/ellipse-1.png";
 import Ellipse2 from "../../../assets/images/year-in-review/ellipse-2.png";
@@ -17,137 +18,137 @@ interface MonthData {
   events: MonthEvent[];
 }
 
-const MONTHS: MonthData[] = [
-  {
-    flex: 1,
-    month: "March",
-    events: [
-      {
-        title: "MoU with Ehsan platform",
-        body: "Panda Retail Company signed a memorandum of understanding with Ehsan, a platform under the Saudi Data and AI Authority, to strengthen community initiatives and support programs that empower vulnerable groups.",
-      },
-    ],
-  },
-  {
-    flex: 1,
-    month: "April",
-    events: [
-      {
-        title: 'Launch of "Negaderha Sawa" podcast',
-        body: 'Panda Retail Company launched the "Negaderha Sawa" podcast with Wellbeing Foundation as a community initiative featuring diverse program topics, strengthening local partnerships and supporting programs that empower vulnerable groups.',
-      },
-      {
-        title: "Top 10 most influential brands in the Kingdom",
-        body: "Panda was ranked among the top 10 most influential brands in Saudi Arabia and secured first place overall, reflecting strong consumer trust and brand relevance in the retail sector.",
-      },
-    ],
-  },
-  {
-    flex: 1,
-    month: "May",
-    events: [
-      {
-        title: "Saudi Food Show in Riyadh – Platinum sponsorship",
-        body: "Savola Food Company participated as a Platinum Sponsor at the Saudi Food Show in Riyadh, showcasing a rich selection featuring a live tasting station powered by Saudi chef partner Albarakah and freshly baked products using Savola's iconic flour, the Alawal brand.",
-      },
-      {
-        title: "Top 100 listed companies by Forbes Middle East",
-        body: "Savola Group was ranked among the Top 100 listed Companies in the Middle East by Forbes Middle East, underscoring its operational excellence and strong market position.",
-        // image: TopImg,
-      },
-    ],
-  },
-  {
-    flex: 1,
-    month: "June",
-    events: [
-      {
-        title: '"Haj Without Waste" initiative',
-        body: 'Savola Food Company partnered with Fann.ai and the Saudi Food Bank during the 2025 Haj season on the "Haj Without Waste" initiative, resulting in 7,259,062 donated meals and 2,019 saved sacrifices with a total value of SAR 11,737,644.',
-      },
-      {
-        title: "Support for Purple Saturday initiative",
-        body: "Savola Group operating companies participated in the Purple Saturday initiative in collaboration with the Federation of People with Disability, supporting inclusion and accessibility across communities.",
-      },
-    ],
-  },
-  {
-    flex: 1,
-    month: "July",
-    events: [
-      {
-        title: "Appointment of Group Chief Executive Officer",
-        body: "Savola Group announced the appointment of Mr. Sameh Hasan as Group Chief Executive Officer, building on his role as CEO of Savola Foods Company since December 2018 and reinforcing leadership continuity and strategic alignment.",
-      },
-    ],
-  },
-  {
-    flex: 1,
-    month: "September",
-    events: [
-      {
-        title: "Best Sustainability and ESG Report recognition",
-        body: "Savola Group achieved several awards for the Best Sustainability and ESG Report in the MENA region, as recognized by the Middle East Investor Relations Association, reflecting the strength and transparency of its 2024 disclosures.",
-        // image: MeiraImg,
-      },
-    ],
-  },
-  {
-    flex: 2,
-    month: "October",
-    events: [
-      {
-        title: "Forbes Middle East CEO Leadership recognition",
-        body: "Savola Group Chief Executive Officer Mr. Sameh Hasan was ranked among the Forbes Middle East CEO Sustainability Leaders in the MENA region, recognized by Forbes Middle East for leadership impact and commitment to sustainability.",
-        image: Ellipse1,
-      },
-      {
-        title: "Corporate Social Responsibility Award – Gold category",
-        body: "The Ministry of Human Resources and Social Development awarded Savola Group the Gold Category CSR Award, recognizing the Group's commitment to community development and positive societal impact.",
-        image: Ellipse2,
-      },
-    ],
-  },
-  {
-    flex: 1,
-    month: "November",
-    events: [
-      {
-        title: "Participation in Gulf Food Manufacturing",
-        body: "Savola participated in Gulf Food Manufacturing Dubai 2025, showcasing the full Savola portfolio with live tasting stations featuring seasoning expertise and bakery applications using Savola Pro and Safio margarines.",
-      },
-      {
-        title: "Corporate governance excellence",
-        body: "Savola participated in Gulf Food Manufacturing and was recognized for its excellence in corporate governance, reflecting commitment to transparency and responsible business conduct.",
-      },
-    ],
-  },
-  {
-    flex: 2,
-    month: "December",
-    events: [
-      {
-        title: "Corporate governance excellence",
-        body: "For the 4th consecutive year, Savola Group ranked in the Top 5 at the Saudi Exchange Corporate Governance Award, recognized for its performance in transparency, accountability, and investor relations.",
-      },
-      {
-        title: "Strategic charter of Savola Turkey",
-        body: "Savola entered a strategic partnership with Tripoli Anadolu, part of the leading Tripoli Agri Group in Turkey, restructuring operations into a renewed entity and acquiring a 20.5% stake through a rights offering.",
-      },
-      {
-        title: "Best CX in Retail Award recognition",
-        body: "Panda Retail received the Silver Award for Best Customer Experience in the Retail Category at the Customer Experience Awards during the CX World Forum in London, recognizing the Group's commitment to customer experience through technology and partnership.",
-      },
-    ],
-  },
-];
-
 // Each month column transition requires ~80vh; section = (months - 1) * 80 + 100 (viewport)
-const SECTION_HEIGHT_VH = (MONTHS.length - 1) * 80 + 100;
+const MONTH_COUNT = 9;
+const SECTION_HEIGHT_VH = (MONTH_COUNT - 1) * 80 + 100;
 
 const YearInReviewSlider = () => {
   const { lang } = useContext(LangContext);
   const isRtl = lang === "ar";
+  const { t } = useTranslation("overview");
+
+  const MONTHS: MonthData[] = [
+    {
+      flex: 1,
+      month: t("yearInReview.months.march.name"),
+      events: [
+        {
+          title: t("yearInReview.months.march.e1title"),
+          body: t("yearInReview.months.march.e1body"),
+        },
+      ],
+    },
+    {
+      flex: 1,
+      month: t("yearInReview.months.april.name"),
+      events: [
+        {
+          title: t("yearInReview.months.april.e1title"),
+          body: t("yearInReview.months.april.e1body"),
+        },
+        {
+          title: t("yearInReview.months.april.e2title"),
+          body: t("yearInReview.months.april.e2body"),
+        },
+      ],
+    },
+    {
+      flex: 1,
+      month: t("yearInReview.months.may.name"),
+      events: [
+        {
+          title: t("yearInReview.months.may.e1title"),
+          body: t("yearInReview.months.may.e1body"),
+        },
+        {
+          title: t("yearInReview.months.may.e2title"),
+          body: t("yearInReview.months.may.e2body"),
+        },
+      ],
+    },
+    {
+      flex: 1,
+      month: t("yearInReview.months.june.name"),
+      events: [
+        {
+          title: t("yearInReview.months.june.e1title"),
+          body: t("yearInReview.months.june.e1body"),
+        },
+        {
+          title: t("yearInReview.months.june.e2title"),
+          body: t("yearInReview.months.june.e2body"),
+        },
+      ],
+    },
+    {
+      flex: 1,
+      month: t("yearInReview.months.july.name"),
+      events: [
+        {
+          title: t("yearInReview.months.july.e1title"),
+          body: t("yearInReview.months.july.e1body"),
+        },
+      ],
+    },
+    {
+      flex: 1,
+      month: t("yearInReview.months.september.name"),
+      events: [
+        {
+          title: t("yearInReview.months.september.e1title"),
+          body: t("yearInReview.months.september.e1body"),
+        },
+      ],
+    },
+    {
+      flex: 2,
+      month: t("yearInReview.months.october.name"),
+      events: [
+        {
+          title: t("yearInReview.months.october.e1title"),
+          body: t("yearInReview.months.october.e1body"),
+          image: Ellipse1,
+        },
+        {
+          title: t("yearInReview.months.october.e2title"),
+          body: t("yearInReview.months.october.e2body"),
+          image: Ellipse2,
+        },
+      ],
+    },
+    {
+      flex: 1,
+      month: t("yearInReview.months.november.name"),
+      events: [
+        {
+          title: t("yearInReview.months.november.e1title"),
+          body: t("yearInReview.months.november.e1body"),
+        },
+        {
+          title: t("yearInReview.months.november.e2title"),
+          body: t("yearInReview.months.november.e2body"),
+        },
+      ],
+    },
+    {
+      flex: 2,
+      month: t("yearInReview.months.december.name"),
+      events: [
+        {
+          title: t("yearInReview.months.december.e1title"),
+          body: t("yearInReview.months.december.e1body"),
+        },
+        {
+          title: t("yearInReview.months.december.e2title"),
+          body: t("yearInReview.months.december.e2body"),
+        },
+        {
+          title: t("yearInReview.months.december.e3title"),
+          body: t("yearInReview.months.december.e3body"),
+        },
+      ],
+    },
+  ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -195,18 +196,14 @@ const YearInReviewSlider = () => {
       className="relative"
     >
       <div className="sticky top-0 h-screen overflow-hidden bg-white">
-        {/* Top accent bar */}
-        {/* <div className="absolute top-0 left-0 right-0 h-1 bg-savola-green" /> */}
-
         <div className="h-full flex flex-col justify-center">
-
           {/* Embla carousel — overflow visible so columns bleed off-edge */}
           <div ref={emblaRef} className="overflow-visible">
             <div className="flex ps-4 md:ps-[calc((100vw-65rem)/2+1rem)]">
               {MONTHS.map((monthData) => (
                 <div
                   key={monthData.month}
-                  className={`shrink-0 ${monthData.flex === 1 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[60vw] " : "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-screen "}`}
+                  className={`shrink-0 ${monthData.events.length === 1 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[35vw] " : monthData.events.length === 2 ? "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[80vw] " : "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[80vw] "}`}
                 >
                   {/* Month label */}
                   <div className="mb-4 pt-8 border-t-4 border-savola-green relative">
@@ -217,13 +214,9 @@ const YearInReviewSlider = () => {
                   </div>
 
                   {/* Events stacked vertically */}
-                  <div className="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-220px)]">
+                  <div className="flex gap-3 overflow-y-auto max-h-[calc(100vh-220px)]">
                     {monthData.events.map((event, i) => (
-                      <div
-                        key={i}
-                        className=" flex"
-                      >
-                        
+                      <div key={i} className="flex">
                         <div className="pr-4">
                           <h3 className="font-bold text-savola-orange text-xl sm:text-2xl lg:text-3xl leading-snug mb-2">
                             {event.title}

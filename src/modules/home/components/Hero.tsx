@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Container from "../../common/components/container/Container";
-import SliderImage1 from "../../../assets/images/home/slider/1.jpg";
-import SliderImage2 from "../../../assets/images/home/slider/2.jpg";
-import SliderImage3 from "../../../assets/images/home/slider/3.jpg";
+import SliderImage1 from "../../../assets/images/home/slider/1.png";
+import SliderImage2 from "../../../assets/images/home/slider/2.png";
+import SliderImage3 from "../../../assets/images/home/slider/3.png";
 import Trapezium from "../../../assets/vectors/trapezium.png";
 import Logo from "../../../assets/logo/logo.svg";
+import { useTranslation } from "../../common/hooks/useTranslation";
+import { useLocale } from "../../common/hooks/useLocale";
 
 const slides = [SliderImage1, SliderImage2, SliderImage3];
 const N = slides.length;
@@ -14,10 +16,12 @@ const mod = (x: number, n: number) => ((x % n) + n) % n;
 const clamp = (v: number, lo: number, hi: number) =>
   Math.min(hi, Math.max(lo, v));
 
-// scale: prev=-1 → 0.5, active=0 → 1, next=+1 → 1.5  (linear steps of 0.5)
-const scaleForOffset = (off: number) => clamp(1 + 0.5 * off, 0.1, 2.5);
+// right(+1)=1.0→80vh, center(0)=0.75→60vh, left(-1)=0.5→40vh
+const scaleForOffset = (off: number) => clamp(0.75 + 0.25 * off, 0.1, 1.0);
 
 const Hero = () => {
+  const { lang } = useLocale();
+  const { t } = useTranslation("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerSize, setContainerSize] = useState({ w: 0, h: 0 });
 
@@ -37,7 +41,7 @@ const Hero = () => {
       if (containerRef.current) {
         setContainerSize({
           w: containerRef.current.offsetWidth,
-          h: containerRef.current.offsetHeight,
+          h: window.innerHeight,
         });
       }
     };
@@ -88,12 +92,12 @@ const Hero = () => {
   }, []);
 
   // Derived layout values
-  const { w: containerW, h: containerH } = containerSize;
-  // slideW sized so ~20% of the adjacent slide peeks in on each side:
-  //   containerW/2 - slideW/2 - GAP = 0.2 * slideW  →  slideW = (containerW/2 - GAP) / 0.7
-  const slideW = containerW > 0 ? (containerW / 2 - GAP) / 0.7 : 0;
-  // BASE_H: active slide fills the container; next (×1.5) extends above (clipped by outer overflow-hidden)
-  const BASE_H = containerH;
+  const { w: containerW, h: viewH } = containerSize;
+  // slideW sized so all 3 slides fit side-by-side:
+  //   containerW/2 - slideW/2 - GAP = 0  →  slideW = (containerW/2 - GAP) / 1.5
+  const slideW = containerW > 0 ? (containerW / 2 - GAP) / 1.5 : 0;
+  // BASE_H: right slide peaks at 80vh; center=60vh, left=40vh via scaleForOffset
+  const BASE_H = viewH * 0.8;
 
   // Build visible slide items
   const curPos = posRef.current;
@@ -121,10 +125,10 @@ const Hero = () => {
   return (
     <>
       <div className="fixed w-full h-screen top-0 left-0 z-30 flex justify-center items-center bg-white animate-fade-out animate-delay-2s">
-        <img src={Logo} alt="Savola Logo" className="w-70 h-auto" />
+        <img src={Logo} alt="Savola Logo" className="w-70 h-auto object-top-left" />
       </div>
       <div className="w-full h-screen relative overflow-hidden">
-        <div className="fixed right-0 bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s z-30">
+        <div className={`fixed ${lang === "ar" ? "left-0 rotate-y-180" : "right-0"} bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s z-30`}>
           <img
             src={Trapezium}
             alt="Trapezium"
@@ -132,14 +136,13 @@ const Hero = () => {
           />
         </div>
         <div className="flex flex-col w-full h-full">
-          <div className="flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey animate-fade-left-100 active animate-delay-5_6s">
+          <div className="flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey animate-fade-left-100 active animate-delay-5_6s relative z-300">
             <Container>
-              <h1 className="text-5xl font-bold mb-4">
-                A new era of
-                <br /> focused growth
+              <h1 className="text-5xl font-bold mb-4 whitespace-pre-line">
+                {t("hero.heading")}
               </h1>
               <h2 className="text-3xl font-bold">
-                Annual Report <span className="text-savola-green">2025</span>
+                {t("hero.annualReport")} <span className="text-savola-green">2025</span>
               </h2>
             </Container>
           </div>

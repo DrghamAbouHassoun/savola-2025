@@ -238,3 +238,25 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
+@keyframes SlideTop20px {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up-20px {
+  transform: translateY(20px);
+  opacity: 0;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+}
+
+.animate-slide-up-20px.active {
+  animation-name: SlideTop20px;
+}

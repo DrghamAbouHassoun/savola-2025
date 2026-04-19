@@ -10,7 +10,7 @@ const common = {
       "esg-review": "مراجعة الحوكمة البيئية",
     },
     pages: {
-      "theme-of-the-year": "موضوع العام",
+      "theme-of-the-year": "محور العام",
       "2025-at-a-glance": "2025 في لمحة",
       "year-in-review": "مراجعة العام",
       "geographical-footprint": "الانتشار الجغرافي",

@@ -1,5 +1,6 @@
 import Menu from "./Menu";
 import Navbar from "./Navbar";
+import NavigationArrows from "./NavigationArrows";
 import SocialLinks from "./SocialLinks";
 
 interface LayoutProps {
@@ -12,6 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <Menu />
       <SocialLinks />
+      <NavigationArrows />
       <main>{children}</main>
     </div>
   );

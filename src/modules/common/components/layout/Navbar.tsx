@@ -59,7 +59,7 @@ const NavDropdown = ({ section }: { section: Section }) => {
       {open && (
         <div
           ref={dropdownRef}
-          className={`absolute top-full mt-2 flex flex-col bg-savola-green shadow-lg rounded-md z-9999 w-56 ${dropdownAlign === "end" ? "inset-e-0" : "inset-s-0"}`}
+          className={`absolute top-full mt-2 flex flex-col bg-savola-green shadow-lg rounded-md z-9999 w-56 ${dropdownAlign === "end" ? "inset-e-0" : "inset-s-0"} ${lang === "ar" ? "right-0" : "left-0"}`}
         >
           {section.pages.map((page) => {
             const appearKey = `nav.pages.${page.id}-appear`;
