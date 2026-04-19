@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useCountUp } from "react-countup";
 import SmallContainer from "../../common/components/container/SmallContainer";
 import useInView from "../../common/hooks/useInView";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import AnimationSlideTop from "../../common/components/Animations/AnimationSlideTop";
+import { LangContext } from "../../common/contexts/LangProvider";
 
 interface KpiItem {
   year: string;
@@ -24,9 +25,11 @@ interface KpiBarProps {
   maxValue: number;
   index: number;
   inView: boolean;
+  isRtl: boolean;
+  yearSuffix: string;
 }
 
-const KpiBar = ({ item, maxValue, index, inView }: KpiBarProps) => {
+const KpiBar = ({ item, maxValue, index, inView, isRtl, yearSuffix }: KpiBarProps) => {
   const spanRef = useRef<HTMLSpanElement>(null);
   const { start, reset } = useCountUp({
     ref: spanRef as React.RefObject<HTMLElement>,
@@ -46,22 +49,28 @@ const KpiBar = ({ item, maxValue, index, inView }: KpiBarProps) => {
   }, [inView]);
 
   const pct = Math.max(16, (item.value / maxValue) * 100);
+  const valuePct = pct > 45 ? `${pct - 20}%` : "30%";
 
   return (
     <div className="grid items-center gap-3">
       <div className="relative h-5 overflow-hidden bg-savola-green-20">
-        <span className="absolute left-2 font-bold text-savola-cool-grey/80">
-          {item.year}
+        <span
+          className={`absolute font-bold text-savola-cool-grey/80 ${
+            isRtl ? "right-2" : "left-2"
+          }`}
+        >
+          {item.year}{yearSuffix}
         </span>
         <div
-          className={`h-full rounded-tr-full transition-[width] ease-out ${
-            item.highlight ? "bg-savola-green" : "bg-savola-green/75"
-          }`}
+          className={`h-full transition-[width] ease-out ${
+            isRtl ? "rounded-tl-full" : "rounded-tr-full"
+          } ${item.highlight ? "bg-savola-green" : "bg-savola-green/75"}`}
           style={{
             width: inView ? `${pct}%` : "0%",
             minWidth: inView ? "45%" : "0%",
             transitionDuration: "700ms",
             transitionDelay: inView ? `${index * 120}ms` : "0ms",
+            ...(isRtl ? { marginLeft: "auto" } : {}),
           }}
         />
         <span
@@ -70,7 +79,7 @@ const KpiBar = ({ item, maxValue, index, inView }: KpiBarProps) => {
             item.highlight ? "text-white" : "text-savola-cool-grey"
           }`}
           style={{
-            left: pct > 45 ? `${pct - 20}%` : "30%",
+            [isRtl ? "right" : "left"]: valuePct,
             opacity: inView ? 1 : 0,
             transitionDelay: inView ? `${index * 120 + 300}ms` : "0ms",
           }}
@@ -80,8 +89,10 @@ const KpiBar = ({ item, maxValue, index, inView }: KpiBarProps) => {
   );
 };
 
-const KpiCard = ({ group }: { group: KpiGroup }) => {
+const KpiCard = ({ group, yearSuffix }: { group: KpiGroup; yearSuffix: string }) => {
   const { ref, inView } = useInView<HTMLParagraphElement>();
+  const { lang } = useContext(LangContext);
+  const isRtl = lang === "ar";
 
   return (
     <article ref={ref} className="flex flex-col gap-2.5">
@@ -105,6 +116,8 @@ const KpiCard = ({ group }: { group: KpiGroup }) => {
           maxValue={group.maxValue}
           index={i}
           inView={inView}
+          isRtl={isRtl}
+          yearSuffix={yearSuffix}
         />
       ))}
     </article>
@@ -115,6 +128,7 @@ const FinancialKPIs = () => {
   const { t } = useTranslation("at-a-glance");
 
   const unit = `<i class="riyal-icon"></i> ${t("financialKPIs.million")}`;
+  const yearSuffix = t("financialKPIs.yearSuffix");
 
   const KPI_GROUPS: KpiGroup[] = [
     {
@@ -199,7 +213,7 @@ const FinancialKPIs = () => {
 
           <div className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
             {KPI_GROUPS.map((group) => (
-              <KpiCard key={group.id} group={group} />
+              <KpiCard key={group.id} group={group} yearSuffix={yearSuffix} />
             ))}
           </div>
         </div>

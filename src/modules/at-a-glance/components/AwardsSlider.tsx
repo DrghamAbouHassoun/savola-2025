@@ -68,7 +68,7 @@ const AwardsSlider = () => {
       const viewport = container.parentElement as HTMLElement;
       const maxTranslate = container.scrollWidth - viewport.clientWidth;
       const translateX = isRtl
-        ? progress * maxTranslate
+        ? (progress - 1) * maxTranslate
         : -progress * maxTranslate;
       container.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
     };

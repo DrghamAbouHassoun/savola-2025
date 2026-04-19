@@ -160,12 +160,6 @@ const YearInReviewSlider = () => {
   });
 
   useEffect(() => {
-    if (emblaApi) {
-      emblaApi.reInit({ direction: isRtl ? "rtl" : "ltr" });
-    }
-  }, [lang, emblaApi]);
-
-  useEffect(() => {
     const section = sectionRef.current;
     if (!section || !emblaApi) return;
 
@@ -184,6 +178,7 @@ const YearInReviewSlider = () => {
       container.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
     };
 
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [emblaApi, isRtl]);
@@ -198,7 +193,7 @@ const YearInReviewSlider = () => {
       <div className="sticky top-0 h-screen overflow-hidden bg-white">
         <div className="h-full flex flex-col justify-center">
           {/* Embla carousel — overflow visible so columns bleed off-edge */}
-          <div ref={emblaRef} className="overflow-visible">
+          <div key={lang} ref={emblaRef} className="overflow-visible">
             <div className="flex ps-4 md:ps-[calc((100vw-65rem)/2+1rem)]">
               {MONTHS.map((monthData) => (
                 <div
@@ -207,7 +202,7 @@ const YearInReviewSlider = () => {
                 >
                   {/* Month label */}
                   <div className="mb-4 pt-8 border-t-4 border-savola-green relative">
-                    <span className="w-8 h-8 bg-savola-green absolute -top-4.5 left-0 rounded-full" />
+                    <span className="w-8 h-8 bg-savola-green absolute -top-4.5 inset-s-0 rounded-full" />
                     <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-savola-cool-grey tracking-wide">
                       {monthData.month}
                     </span>
@@ -217,7 +212,7 @@ const YearInReviewSlider = () => {
                   <div className="flex gap-3 overflow-y-auto max-h-[calc(100vh-220px)]">
                     {monthData.events.map((event, i) => (
                       <div key={i} className="flex">
-                        <div className="pr-4">
+                        <div className="pe-4">
                           <h3 className="font-bold text-savola-orange text-xl sm:text-2xl lg:text-3xl leading-snug mb-2">
                             {event.title}
                           </h3>

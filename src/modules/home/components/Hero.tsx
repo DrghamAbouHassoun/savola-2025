@@ -31,6 +31,8 @@ const Hero = () => {
   const velRef = useRef(0);
   const rafRef = useRef<number | null>(null);
   const lastTRef = useRef<number | null>(null);
+  const langRef = useRef(lang);
+  useEffect(() => { langRef.current = lang; }, [lang]);
 
   // Force re-render on each RAF tick so the DOM reflects current posRef
   const [, setTick] = useState(0);
@@ -82,7 +84,7 @@ const Hero = () => {
     };
   }, [tick]);
 
-  // Auto-advance every 5 seconds
+  // Auto-advance every 5 seconds (reverse direction for RTL)
   useEffect(() => {
     const id = setInterval(() => {
       targetRef.current += 1;
@@ -110,7 +112,10 @@ const Hero = () => {
     ? (containerW / 2 - GAP) / 1.5
     : 0;
 
-  const offsetX = isTablet ? -(containerW + GAP) / 4 : 0;
+  const isRTL = lang === "ar";
+  const dir = isRTL ? -1 : 1;
+  // tablet: shift carousel so both visible slides fit flush; flip direction for RTL
+  const offsetX = isTablet ? -(containerW + GAP) / 4 * dir : 0;
 
   // Build visible slide items
   const curPos = posRef.current;
@@ -127,14 +132,15 @@ const Hero = () => {
   for (let i = center - 3; i <= center + 3; i++) {
     const ri = mod(i, N);
     const off = i - curPos;
-    const sc = scaleForOffset(off);
+    // flip scale for RTL so the left slide is the largest
+    const sc = scaleForOffset(off * dir);
     const h = BASE_H * sc;
     const x = off * (slideW + GAP) + offsetX;
-    // mobile: only center visible; tablet: hide left side; desktop: full range
+    // mobile: only center visible; tablet: hide the non-leading side; desktop: full range
     const op = isMobile
       ? clamp(1.5 - Math.abs(off), 0, 1)
       : isTablet
-      ? clamp(1 - Math.max(0, -off - 0.5), 0, 1)
+      ? clamp(1 - Math.max(0, -off * dir - 0.5), 0, 1)
       : clamp(1 - Math.max(0, Math.abs(off) - 2.2), 0, 1);
     const z = 10 - Math.round(Math.abs(off));
     items.push({ key: i, ri, h, x, op, z });
@@ -194,6 +200,7 @@ const Hero = () => {
                       objectFit: "cover",
                       objectPosition: "top left",
                       display: "block",
+                      transform: isRTL ? "scaleX(-1)" : undefined,
                     }}
                   />
                 </div>

@@ -11,6 +11,7 @@ const atAGlance = {
     grossProfit: "Gross Profit",
     capex: "Capital Expenditure",
     million: "million",
+    yearSuffix: "",
   },
 
   highlights: {
@@ -102,10 +103,13 @@ const atAGlance = {
 
   keyStats: {
     stat1Label: "Panda loyalty platform membership exceeded",
+    stat1Value: "14MN",
     stat1Sub: "customers",
     stat2Label: "Production volumes reached a yearly record",
+    stat2Value: "3.74 MN",
     stat2Sub: "metric tons",
     stat3Label: "Energy-related cost savings",
+    stat3Value: '<i class="riyal-icon"></i> 104 MN',
   },
 };
 

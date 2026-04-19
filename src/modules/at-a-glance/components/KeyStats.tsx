@@ -1,3 +1,4 @@
+import AnimationPopUp from "../../common/components/Animations/AnimationPopUp";
 import SmallContainer from "../../common/components/container/SmallContainer";
 import { useTranslation } from "../../common/hooks/useTranslation";
 
@@ -9,7 +10,7 @@ const KeyStats = () => {
       id: "panda-loyalty",
       bg: "bg-savola-orange",
       label: t("keyStats.stat1Label"),
-      value: "14MN",
+      value: t("keyStats.stat1Value"),
       sub: t("keyStats.stat1Sub"),
       textColor: "text-white",
     },
@@ -17,7 +18,7 @@ const KeyStats = () => {
       id: "production",
       bg: "bg-savola-green",
       label: t("keyStats.stat2Label"),
-      value: "3.74 MN",
+      value: t("keyStats.stat2Value"),
       sub: t("keyStats.stat2Sub"),
       textColor: "text-white",
     },
@@ -25,7 +26,7 @@ const KeyStats = () => {
       id: "energy",
       bg: "bg-savola-cool-grey/20",
       label: t("keyStats.stat3Label"),
-      value: '<i class="riyal-icon"></i> 104 MN',
+      value: t("keyStats.stat3Value"),
       sub: "",
       textColor: "text-savola-cool-grey",
     },
@@ -36,7 +37,7 @@ const KeyStats = () => {
       <SmallContainer>
         <div className="flex flex-wrap justify-between gap-6 md:gap-10">
           {STATS.map((stat) => (
-            <div
+            <AnimationPopUp
               key={stat.id}
               className={`${stat.bg} ${stat.textColor} flex h-40 w-40 flex-col items-center justify-center rounded-full p-6 text-center shadow-[0_18px_35px_rgba(78,95,109,0.08)] sm:h-48 sm:w-48 md:h-52 md:w-52`}
             >
@@ -52,7 +53,7 @@ const KeyStats = () => {
                   {stat.sub}
                 </p>
               )}
-            </div>
+            </AnimationPopUp>
           ))}
         </div>
       </SmallContainer>

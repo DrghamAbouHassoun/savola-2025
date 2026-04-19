@@ -1,4 +1,7 @@
 import MaskImage from "../../../../assets/images/common/savola-mask-angel-colorful.png";
+import useInView from "../../hooks/useInView";
+import AnimationPopUp from "../Animations/AnimationPopUp";
+import { useLocale } from "../../hooks/useLocale";
 
 interface NewHeaderProps {
   imageUrl: string;
@@ -6,11 +9,22 @@ interface NewHeaderProps {
 }
 
 const NewHeader = ({ imageUrl, title }: NewHeaderProps) => {
+  const { ref, inView } = useInView();
+  const { lang } = useLocale();
+  const isAr = lang === "ar";
   return (
-    <div className="w-full h-screen relative flex items-center justify-center">
-      {/* Image — absolute so it doesn't affect title alignment */}
+    <div className="w-full min-h-screen flex flex-col lg:flex-row lg:items-center lg:relative overflow-hidden">
+      {/* Title */}
+      <div className="w-full max-w-7xl mx-auto px-4 py-16 lg:pl-16 xl:pl-4 pt-32 lg:pt-0 lg:relative">
+        <AnimationPopUp>
+          <h1 className="text-4xl font-bold">{title}</h1>
+        </AnimationPopUp>
+      </div>
+
+      {/* Image — stacked below on mobile/tablet, absolute on desktop */}
       <div
-        className="absolute right-0 top-[50%] -translate-y-1/2 bottom-0 w-auto h-[70vh] flex items-center overflow-hidden"
+        ref={ref}
+        className={`animate-header-angle-top ${inView ? "active" : ""} w-full h-[50vh] lg:h-[70vh] lg:absolute ${isAr ? "lg:left-0" : "lg:right-0"} lg:top-[15vh] lg:w-3/5 flex items-center overflow-hidden`}
         style={{
           WebkitMaskImage: `url(${MaskImage})`,
           WebkitMaskSize: "contain",
@@ -25,18 +39,8 @@ const NewHeader = ({ imageUrl, title }: NewHeaderProps) => {
         <img
           src={imageUrl}
           className="animate-pan-lr"
-          style={{
-            width: "120%",
-            height: "100%",
-            maxHeight: "70vh",
-            objectFit: "contain",
-            flexShrink: 0,
-          }}
+          style={{ width: "120%", height: "100%", objectFit: "cover", flexShrink: 0 }}
         />
-      </div>
-      {/* Title — same max-w and padding as navbar */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 lg:pl-16 xl:pl-4">
-        <h1 className="text-4xl font-bold">{title}</h1>
       </div>
     </div>
   );
