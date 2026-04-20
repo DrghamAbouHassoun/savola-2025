@@ -184,23 +184,23 @@ const AwardsSlider = () => {
           </p>
         </Container>
 
-        <div ref={emblaRef} className="overflow-visible">
-          <div className="flex ps-4">
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="flex ps-4 pe-4">
             {AWARDS_DATA.map((award) => (
               <div
                 key={award.key}
                 className="shrink-0 w-[85vw] sm:w-[65vw] me-4 last:me-0"
               >
-                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-savola-cool-grey-10 flex flex-col">
-                  <div className="h-44 flex items-center justify-center px-6 py-4 bg-savola-cool-grey-10">
+                <div className="bg-white rounded-2xl overflow-hidden h-full flex flex-col shadow-sm border border-savola-cool-grey-10">
+                  <div className="h-40 bg-savola-green-20 flex items-center justify-center border-b border-savola-cool-grey-10">
                     <img
                       src={award.logo}
                       alt={award.logoAlt}
-                      className="max-h-32 max-w-full object-contain"
+                      className="max-h-28 max-w-full object-contain px-4"
                     />
                   </div>
-                  <div className="h-0.5 bg-savola-green" />
-                  <div className="p-5 flex flex-col gap-2 flex-1">
+                  <div className="h-0.5 bg-savola-green/30" />
+                  <div className="p-6 flex flex-col gap-3 flex-1">
                     <h3 className="font-bold text-savola-cool-grey text-sm leading-snug">
                       {t(award.titleKey)}
                     </h3>

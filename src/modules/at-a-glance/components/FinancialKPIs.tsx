@@ -126,8 +126,10 @@ const KpiCard = ({ group, yearSuffix }: { group: KpiGroup; yearSuffix: string })
 
 const FinancialKPIs = () => {
   const { t } = useTranslation("at-a-glance");
+  const { lang } = useContext(LangContext);
+  const isRtl = lang === "ar";
 
-  const unit = `<i class="riyal-icon"></i> ${t("financialKPIs.million")}`;
+  const unit = isRtl ? `${t("financialKPIs.million")} <i class="riyal-icon"></i>` : `<i class="riyal-icon"></i> ${t("financialKPIs.million")}`;
   const yearSuffix = t("financialKPIs.yearSuffix");
 
   const KPI_GROUPS: KpiGroup[] = [

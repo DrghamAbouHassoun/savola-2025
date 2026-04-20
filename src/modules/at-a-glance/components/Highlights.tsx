@@ -2,6 +2,7 @@ import SmallContainer from "../../common/components/container/SmallContainer";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import AnimationSlideTop from "../../common/components/Animations/AnimationSlideTop";
 import CountUp from "../../common/components/Animations/CountUp";
+import { useLocale } from "../../common/hooks/useLocale";
 
 const navy = "text-[#1D3461]";
 const bigNum = `font-black text-4xl ${navy}`;
@@ -13,7 +14,13 @@ const SCard = ({
 }: {
   children: React.ReactNode;
   className?: string;
-}) => <div className={`bg-linear-180 from-savola-orange-20 to-savola-orange-20/0 p-5 ${className}`}>{children}</div>;
+}) => (
+  <div
+    className={`bg-linear-180 from-savola-orange-20 to-savola-orange-20/0 p-5 ${className}`}
+  >
+    {children}
+  </div>
+);
 
 const OCard = ({
   children,
@@ -35,6 +42,7 @@ const Riyal = ({ className = "" }: { className?: string }) => (
 
 const Highlights = () => {
   const { t } = useTranslation("at-a-glance");
+  const { lang } = useLocale();
 
   return (
     <section className="bg-white py-8 md:py-10">
@@ -76,10 +84,13 @@ const Highlights = () => {
             {/* Row 2 */}
             <AnimationSlideTop style={{ animationDelay: "200ms" }}>
               <OCard>
-                <p className={`${lbl} mb-3`}>
-                  {t("highlights.bayaraLabel")}
-                </p>
-                <CountUp end={35} suffix="%" className={bigNum} />
+                <p className={`${lbl} mb-3`}>{t("highlights.bayaraLabel")}</p>
+                <CountUp
+                  end={35}
+                  suffix={lang === "ar" ? "" : "%"}
+                  prefix={lang === "ar" ? "٪" : ""}
+                  className={bigNum}
+                />
               </OCard>
             </AnimationSlideTop>
 
@@ -93,51 +104,78 @@ const Highlights = () => {
                   />
                 </p>
                 <p className={lbl}>
-                  <span className="font-bold">{t("highlights.pandaLoyaltyMidBold")}</span>{" "}
+                  <span className="font-bold">
+                    {t("highlights.pandaLoyaltyMidBold")}
+                  </span>{" "}
                   {t("highlights.pandaLoyaltyMid")}{" "}
                   <CountUp
                     end={9}
                     className={`text-5xl font-black ${navy} leading-none align-bottom`}
                   />{" "}
-                  <span className="font-bold">{t("highlights.pandaLoyaltyAfterBold")}</span>
+                  <span className="font-bold">
+                    {t("highlights.pandaLoyaltyAfterBold")}
+                  </span>
                 </p>
               </OCard>
             </AnimationSlideTop>
 
             {/* Row 3 — full width */}
-            <AnimationSlideTop className="md:col-span-2" style={{ animationDelay: "400ms" }}>
+            <AnimationSlideTop
+              className="md:col-span-2"
+              style={{ animationDelay: "400ms" }}
+            >
               <OCard className="md:col-span-2">
-                <p className={`${lbl} mb-5`}>
-                  {t("highlights.marketLabel")}
-                </p>
+                <p className={`${lbl} mb-5`}>{t("highlights.marketLabel")}</p>
                 <div className="grid grid-cols-2 gap-x-10 gap-y-5">
                   <div>
                     <p className={`${lbl} mb-1`}>
                       {t("highlights.afiaSaudiOils")}
                     </p>
-                    <CountUp end={55} suffix="%+" className={bigNum} />
+                    <CountUp
+                      end={55}
+                      suffix={lang === "ar" ? "" : "%+"}
+                      prefix={lang === "ar" ? "+٪" : ""}
+                      className={bigNum}
+                    />
                   </div>
                   <div>
                     <p className={`${lbl} mb-1`}>
                       {t("highlights.rawabyEgyptGhee")}
                     </p>
-                    <CountUp end={40} prefix="~" suffix="%" className={bigNum} />
+                    <CountUp
+                      end={40}
+                      prefix={lang === "ar" ? "~٪" : "~"}
+                      suffix={lang === "ar" ? "" : "%"}
+                      className={bigNum}
+                    />
                   </div>
                   <div>
-                    <p className={`${lbl} mb-1`}>{t("highlights.osraSaudiSugar")}</p>
-                    <CountUp end={60} suffix="%+" className={bigNum} />
+                    <p className={`${lbl} mb-1`}>
+                      {t("highlights.osraSaudiSugar")}
+                    </p>
+                    <CountUp
+                      end={60}
+                      suffix={lang === "ar" ? "" : "%+"}
+                      prefix={lang === "ar" ? "+٪" : ""}
+                      className={bigNum}
+                    />
                   </div>
                   <div>
-                    <p className={`${lbl} mb-1`}>{t("highlights.algeriaLabel")}</p>
-                    <CountUp end={40} suffix="%" className={bigNum} />
+                    <p className={`${lbl} mb-1`}>
+                      {t("highlights.algeriaLabel")}
+                    </p>
+                    <CountUp
+                      end={40}
+                      suffix={lang === "ar" ? "" : "%"}
+                      prefix={lang === "ar" ? "٪" : ""}
+                      className={bigNum}
+                    />
                     <span className={`text-sm font-bold ${navy} ml-1`}>
                       {t("highlights.algeriaSuffix")}
                     </span>
                   </div>
                 </div>
-                <p className={`${lbl} mt-5`}>
-                  {t("highlights.afiaTuna")}
-                </p>
+                <p className={`${lbl} mt-5`}>{t("highlights.afiaTuna")}</p>
               </OCard>
             </AnimationSlideTop>
           </div>
@@ -152,19 +190,21 @@ const Highlights = () => {
             {/* Row 1 */}
             <AnimationSlideTop style={{ animationDelay: "0ms" }}>
               <SCard>
-                <p className={lbl}>
-                  {t("highlights.meiraText")}
-                </p>
+                <p className={lbl}>{t("highlights.meiraText")}</p>
               </SCard>
             </AnimationSlideTop>
 
             <AnimationSlideTop style={{ animationDelay: "100ms" }}>
               <SCard>
-                <p className={`${lbl} mb-3`}>
-                  {t("highlights.ghgLabel")}
-                </p>
+                <p className={`${lbl} mb-3`}>{t("highlights.ghgLabel")}</p>
                 <div className="flex items-baseline gap-2">
-                  <CountUp end={16.3} decimals={1} suffix="%" className={bigNum} />
+                  <CountUp
+                    end={16.3}
+                    decimals={1}
+                    suffix={lang === "ar" ? "" : "%"}
+                    prefix={lang === "ar" ? "٪" : ""}
+                    className={bigNum}
+                  />
                   <span className={`text-sm font-bold ${navy}`}>
                     {t("highlights.ghgUnit")}
                   </span>
@@ -175,13 +215,25 @@ const Highlights = () => {
             {/* Row 2 */}
             <AnimationSlideTop style={{ animationDelay: "200ms" }}>
               <SCard>
-                <p className={`${lbl} mb-3`}>
-                  {t("highlights.energyLabel")}
-                </p>
+                <p className={`${lbl} mb-3`}>{t("highlights.energyLabel")}</p>
                 <div className="flex flex-wrap items-baseline gap-x-1.5">
-                  <Riyal className={`text-3xl font-black ${navy}`} />
-                  <CountUp end={104} className={bigNum} />
-                  <span className={`text-sm font-bold ${navy}`}>{t("financialKPIs.million")}</span>
+                  {lang === "ar" ? (
+                    <>
+                      <CountUp end={104} className={bigNum} />
+                      <span className={`text-sm font-bold ${navy}`}>
+                        {t("financialKPIs.million")}
+                      </span>
+                      <Riyal className={`text-xl font-black ${navy}`} />
+                    </>
+                  ) : (
+                    <>
+                      <Riyal className={`text-xl font-black ${navy}`} />
+                      <CountUp end={104} className={bigNum} />
+                      <span className={`text-sm font-bold ${navy}`}>
+                        {t("financialKPIs.million")}
+                      </span>
+                    </>
+                  )}
                   <span className={lbl}>{t("highlights.energyUnit")}</span>
                 </div>
               </SCard>
@@ -189,12 +241,12 @@ const Highlights = () => {
 
             <AnimationSlideTop style={{ animationDelay: "300ms" }}>
               <SCard>
-                <p className={`${lbl} mb-3`}>
-                  {t("highlights.smesLabel")}
-                </p>
+                <p className={`${lbl} mb-3`}>{t("highlights.smesLabel")}</p>
                 <div className="flex items-baseline gap-2">
                   <CountUp end={14} className={bigNum} />
-                  <span className={`text-sm font-bold ${navy}`}>{t("highlights.smesUnit")}</span>
+                  <span className={`text-sm font-bold ${navy}`}>
+                    {t("highlights.smesUnit")}
+                  </span>
                 </div>
               </SCard>
             </AnimationSlideTop>
@@ -203,24 +255,29 @@ const Highlights = () => {
             <AnimationSlideTop style={{ animationDelay: "400ms" }}>
               <SCard>
                 <CountUp end={1091} className={bigNum} />
-                <p className={`${lbl} mb-3 mt-1`}>{t("highlights.trainingA")}</p>
-                <CountUp end={1724} className={bigNum} />
-                <p className={`${lbl} mb-3 mt-1`}>{t("highlights.trainingB")}</p>
-                <CountUp end={2867} className={bigNum} />
-                <p className={`${lbl} mt-1`}>
-                  {t("highlights.trainingC")}
+                <p className={`${lbl} mb-3 mt-1`}>
+                  {t("highlights.trainingA")}
                 </p>
+                <CountUp end={1724} className={bigNum} />
+                <p className={`${lbl} mb-3 mt-1`}>
+                  {t("highlights.trainingB")}
+                </p>
+                <CountUp end={2867} className={bigNum} />
+                <p className={`${lbl} mt-1`}>{t("highlights.trainingC")}</p>
               </SCard>
             </AnimationSlideTop>
 
             <AnimationSlideTop style={{ animationDelay: "500ms" }}>
               <SCard>
-                <p className={`${lbl} mb-3`}>
-                  {t("highlights.hajjLabel")}
-                </p>
+                <p className={`${lbl} mb-3`}>{t("highlights.hajjLabel")}</p>
                 <div className="flex items-baseline gap-2 mb-1">
-                  <CountUp end={1259992} className={`font-black text-3xl ${navy}`} />
-                  <span className={`text-xs font-bold ${navy}`}>{t("highlights.hajjFoodUnit")}</span>
+                  <CountUp
+                    end={1259992}
+                    className={`font-black text-3xl ${navy}`}
+                  />
+                  <span className={`text-xs font-bold ${navy}`}>
+                    {t("highlights.hajjFoodUnit")}
+                  </span>
                 </div>
                 <div className="flex items-baseline gap-2 mb-4">
                   <CountUp end={2014} className={bigNum} />
@@ -228,11 +285,27 @@ const Highlights = () => {
                     {t("highlights.hajjSacrificeUnit")}
                   </span>
                 </div>
-                <p className={`${lbl} mb-2`}>{t("highlights.hajjValueLabel")}</p>
+                <p className={`${lbl} mb-2`}>
+                  {t("highlights.hajjValueLabel")}
+                </p>
                 <div className="flex items-baseline gap-1.5">
-                  <Riyal className={`text-3xl font-black ${navy}`} />
-                  <CountUp end={17.3} decimals={1} className={bigNum} />
-                  <span className={`text-sm font-bold ${navy}`}>{t("highlights.hajjValueUnit")}</span>
+                  {lang === "ar" ? (
+                    <>
+                      <CountUp end={17.3} decimals={1} className={bigNum} />
+                      <span className={`text-sm font-bold ${navy}`}>
+                        {t("highlights.hajjValueUnit")}
+                      </span>
+                      <Riyal className={`text-xl font-black ${navy}`} />
+                    </>
+                  ) : (
+                    <>
+                      <Riyal className={`text-xl font-black ${navy}`} />
+                      <CountUp end={17.3} decimals={1} className={bigNum} />
+                      <span className={`text-sm font-bold ${navy}`}>
+                        {t("highlights.hajjValueUnit")}
+                      </span>
+                    </>
+                  )}
                 </div>
               </SCard>
             </AnimationSlideTop>

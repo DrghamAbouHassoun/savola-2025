@@ -11,7 +11,7 @@ const common = {
     },
     pages: {
       "theme-of-the-year": "محور العام",
-      "2025-at-a-glance": "2025 في لمحة",
+      "2025-at-a-glance": "لمحة عن العام 2025م",
       "year-in-review": "مراجعة العام",
       "geographical-footprint": "الانتشار الجغرافي",
       "investment-case": "قضية الاستثمار",

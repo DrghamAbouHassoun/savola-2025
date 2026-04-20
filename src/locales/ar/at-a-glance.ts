@@ -1,5 +1,5 @@
 const atAGlance = {
-  pageTitle: "لمحة عن عام 2025",
+  pageTitle: "لمحة عن العام 2025م",
 
   financialKPIs: {
     heading:
@@ -112,7 +112,7 @@ const atAGlance = {
     stat2Value: "3.74 مليون",
     stat2Sub: "طن متري",
     stat3Label: "وفورات في تكاليف الطاقة",
-    stat3Value: '<i class="riyal-icon"></i> 104 مليون',
+    stat3Value: ' 104  مليون <i class="riyal-icon"></i> ',
   },
 };
 
