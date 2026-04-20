@@ -1,10 +1,11 @@
-import MainHeader from "../modules/common/components/headers/MainHeader";
-import CeoHeader from "../assets/images/headers/ceo.png";
-import CeoMobileHeader from "../assets/images/headers/ceo-mobile.png";
+import NewHeader from "../modules/common/components/headers/NewHeader";
+import CeoHeader from "../assets/images/new-headers/ceo.jpg";
 import LeadershipHeader from "../modules/leadership/components/LeadershipHeader";
 import CeoPersonImage from "../assets/images/leadership/ceo.png";
 import CeoSignImage from "../assets/images/leadership/ceo-sign.png";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
+import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
+import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 
 const sectionKeys = [
@@ -26,10 +27,9 @@ const GroupCEOMessagePage = () => {
 
   return (
     <div>
-      <MainHeader
+      <NewHeader
         title={t("ceo.pageTitle")}
         imageUrl={CeoHeader}
-        mobileImageUrl={CeoMobileHeader}
       />
       <div className="py-16">
         <LeadershipHeader
@@ -45,37 +45,39 @@ const GroupCEOMessagePage = () => {
       <div className="py-12 text-sm">
         <SmallContainer>
           {/* Page title */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-savola-green mb-6">
-            {t("ceo.mainTitle")}
-          </h2>
+          <AnimationSlideTop>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-savola-green mb-6">
+              {t("ceo.mainTitle")}
+            </h2>
+          </AnimationSlideTop>
 
           {/* Intro paragraph */}
-          <div className="mb-12">
+          <AnimationFadeIn className="mb-12">
             <p className="text-savola-cool-grey leading-relaxed">
               {t("ceo.introParagraph")}
             </p>
-          </div>
+          </AnimationFadeIn>
 
           {/* Content sections */}
           <div className="space-y-10">
-            {sections.map((section) => (
-              <div key={section.title}>
+            {sections.map((section, i) => (
+              <AnimationSlideTop key={section.title} style={{ animationDelay: `${i * 0.1}s` }}>
                 <h3 className="text-savola-cool-grey mb-1 font-extrabold">
                   {section.title}
                 </h3>
                 <div className="space-y-4">
-                  {section.paragraphs.map((para, i) => (
-                    <p key={i} className="text-savola-cool-grey leading-relaxed">
+                  {section.paragraphs.map((para, j) => (
+                    <p key={j} className="text-savola-cool-grey leading-relaxed">
                       {para}
                     </p>
                   ))}
                 </div>
-              </div>
+              </AnimationSlideTop>
             ))}
           </div>
 
           {/* Outlook highlighted box */}
-          <div className="mt-6">
+          <AnimationFadeIn className="mt-6">
             <h3 className=" font-extrabold text-savola-cool-grey mb-4 flex items-center gap-2">
               {t("ceo.outlookTitle")}
             </h3>
@@ -86,10 +88,10 @@ const GroupCEOMessagePage = () => {
                 </p>
               ))}
             </div>
-          </div>
+          </AnimationFadeIn>
 
           {/* Closing section */}
-          <div className="mt-12">
+          <AnimationFadeIn className="mt-12">
             <h4 className="text-savola-cool-grey font-extrabold">
               {t("ceo.closingTitle")}
             </h4>
@@ -101,12 +103,12 @@ const GroupCEOMessagePage = () => {
             </p>
 
             {/* Closing quote */}
-            <div className="mb-16">
+            <AnimationSlideTop className="mb-16">
               <p className="text-savola-cool-grey text-xl md:text-2xl font-extrabold">
                 {t("ceo.closingQuote")}
               </p>
-            </div>
-          </div>
+            </AnimationSlideTop>
+          </AnimationFadeIn>
         </SmallContainer>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import InvestmentHeader from "../assets/images/headers/investment.png";
+import InvestmentHeader from "../assets/images/new-headers/investment-case.jpg";
 import ConsumersIcon from "../assets/vectors/consumers.svg";
 import AnnualTransactionsIcon from "../assets/vectors/annual-transactions.svg";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
-import MainHeader from "../modules/common/components/headers/MainHeader";
+import NewHeader from "../modules/common/components/headers/NewHeader";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import { useLocale } from "../modules/common/hooks/useLocale";
 
@@ -208,7 +208,7 @@ const InvestmentCasePage = () => {
 
   return (
     <div>
-      <MainHeader
+      <NewHeader
         imageUrl={InvestmentHeader}
         title={t("investmentCase.pageTitle")}
       />

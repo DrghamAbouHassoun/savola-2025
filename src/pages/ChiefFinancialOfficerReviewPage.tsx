@@ -6,6 +6,8 @@ import CfoPersonImage from "../assets/images/leadership/cfo.png";
 import CfoSignImage from "../assets/images/leadership/cfo-sign.png";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import StarIcon from "../assets/icons/star.png";
+import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
+import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 
 const sectionKeys = [
@@ -40,43 +42,45 @@ const ChiefFinancialOfficerReviewPage = () => {
       <div className="py-12 text-sm">
         <SmallContainer>
           {/* Page title */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-savola-green mb-6">
-            {t("cfo.mainTitle")}
-          </h2>
+          <AnimationSlideTop>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-savola-green mb-6">
+              {t("cfo.mainTitle")}
+            </h2>
+          </AnimationSlideTop>
 
           {/* Intro paragraphs */}
-          <div className="mb-12 space-y-4">
+          <AnimationFadeIn className="mb-12 space-y-4">
             <p className="text-savola-cool-grey leading-relaxed">
               {t("cfo.introParagraph")}
             </p>
             <p className="text-savola-cool-grey leading-relaxed">
               {t("cfo.introFinancials")}
             </p>
-          </div>
+          </AnimationFadeIn>
 
           {/* Content sections */}
           <div className="space-y-10">
-            {sectionKeys.map((key) => {
+            {sectionKeys.map((key, i) => {
               const paragraphs = tArray(`cfo.sections.${key}.paragraphs`);
               const bullets = tArray(`cfo.sections.${key}.bullets`);
               const closingParagraph = t(`cfo.sections.${key}.closingParagraph`);
               const hasClosing = closingParagraph !== `cfo.sections.${key}.closingParagraph`;
 
               return (
-                <div key={key}>
+                <AnimationSlideTop key={key} style={{ animationDelay: `${i * 0.1}s` }}>
                   <h3 className="text-savola-cool-grey mb-1 font-extrabold">
                     {t(`cfo.sections.${key}.title`)}
                   </h3>
                   <div className="space-y-4">
-                    {paragraphs.map((para, i) => (
-                      <p key={i} className="text-savola-cool-grey leading-relaxed">
+                    {paragraphs.map((para, j) => (
+                      <p key={j} className="text-savola-cool-grey leading-relaxed">
                         {para}
                       </p>
                     ))}
                     {bullets.length > 0 && (
                       <ul className="list-disc list-inside space-y-1 text-savola-cool-grey ps-2">
-                        {bullets.map((bullet, i) => (
-                          <li key={i}>{bullet}</li>
+                        {bullets.map((bullet, j) => (
+                          <li key={j}>{bullet}</li>
                         ))}
                       </ul>
                     )}
@@ -86,13 +90,13 @@ const ChiefFinancialOfficerReviewPage = () => {
                       </p>
                     )}
                   </div>
-                </div>
+                </AnimationSlideTop>
               );
             })}
           </div>
 
           {/* Looking Ahead highlighted box */}
-          <div className="mt-12 bg-savola-green-20 p-8">
+          <AnimationFadeIn className="mt-12 bg-savola-green-20 p-8">
             <h3 className="text-2xl font-bold text-savola-cool-grey mb-4 flex items-center gap-2">
               <img src={StarIcon} alt="Star" className="inline-block w-8 h-8" />
               {t("cfo.outlookTitle")}
@@ -110,14 +114,14 @@ const ChiefFinancialOfficerReviewPage = () => {
             <p className="text-savola-cool-grey leading-relaxed">
               {t("cfo.outlookClosing")}
             </p>
-          </div>
+          </AnimationFadeIn>
 
           {/* Closing quote */}
-          <div className="mt-12 mb-16">
+          <AnimationSlideTop className="mt-12 mb-16">
             <p className="text-savola-cool-grey text-xl md:text-2xl font-extrabold">
               {t("cfo.outlookClosing")}
             </p>
-          </div>
+          </AnimationSlideTop>
         </SmallContainer>
       </div>
     </div>

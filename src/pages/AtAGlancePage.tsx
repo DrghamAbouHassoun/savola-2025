@@ -1,5 +1,5 @@
-import MainHeader from "../modules/common/components/headers/MainHeader";
-import AtAGlanceHeader from "../assets/images/headers/at-a-glance.png";
+import NewHeader from "../modules/common/components/headers/NewHeader";
+import AtAGlanceHeader from "../assets/images/new-headers/at-a-glance.jpg";
 import FinancialKPIs from "../modules/at-a-glance/components/FinancialKPIs";
 import Highlights from "../modules/at-a-glance/components/Highlights";
 // import AwardsHighlights from "../modules/at-a-glance/components/AwardsHighlights";
@@ -12,7 +12,7 @@ const AtAGlancePage = () => {
 
   return (
     <div>
-      <MainHeader
+      <NewHeader
         imageUrl={AtAGlanceHeader}
         title={t("pageTitle")}
       />
