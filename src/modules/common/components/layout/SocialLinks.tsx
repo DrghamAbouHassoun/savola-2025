@@ -51,9 +51,17 @@ const SocialLinks = () => {
   const { currentRoute, homeKey } = useContext(RouterContext);
   const isHome = currentRoute === "Home" || currentRoute === "";
   const { lang } = useLocale();
+  const socialAnimationKey = `${homeKey}-${currentRoute}-${lang}`;
+
   return (
-    <div key={homeKey} className={`fixed z-40 top-1/2 ${lang === "ar" ? "right-4 animate-fade-right-50 active animate-delay-6_8s" : "left-4 animate-fade-left-50 active animate-delay-6_8s"} -translate-y-1/2`}>
-      <div key={isHome ? homeKey : currentRoute} className={`hidden lg:flex flex-col bg-savola-green rounded-full py-2 animate-fade-left ${isHome ? "animate-delay-6s" : ""}`}>
+    <div
+      key={socialAnimationKey}
+      className={`fixed z-40 top-1/2 ${lang === "ar" ? "right-4 animate-fade-right-50 active animate-delay-6_8s" : "left-4 animate-fade-left-50 active animate-delay-6_8s"} -translate-y-1/2`}
+    >
+      <div
+        key={`${socialAnimationKey}-pill`}
+        className={`hidden lg:flex flex-col bg-savola-green rounded-full py-2 ${lang === "ar" ? "animate-fade-right-50" : "animate-fade-left-50"} active ${isHome ? "animate-delay-6s" : ""}`}
+      >
         {socialLinksData.map((link) => (
           <a
             href={link.href}

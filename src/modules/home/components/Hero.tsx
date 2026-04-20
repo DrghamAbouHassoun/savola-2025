@@ -84,10 +84,10 @@ const Hero = () => {
     };
   }, [tick]);
 
-  // Auto-advance every 5 seconds (reverse direction for RTL)
+  // Auto-advance every 5 seconds, reversing direction for RTL
   useEffect(() => {
     const id = setInterval(() => {
-      targetRef.current += 1;
+      targetRef.current += langRef.current === "ar" ? -1 : 1;
       velRef.current = 0;
     }, 5000);
     return () => clearInterval(id);
@@ -113,6 +113,7 @@ const Hero = () => {
     : 0;
 
   const isRTL = lang === "ar";
+  const heroAnimationKey = `hero-${lang}`;
   const dir = isRTL ? -1 : 1;
   // tablet: shift carousel so both visible slides fit flush; flip direction for RTL
   const offsetX = isTablet ? -(containerW + GAP) / 4 * dir : 0;
@@ -148,11 +149,17 @@ const Hero = () => {
 
   return (
     <>
-      <div className="fixed w-full h-screen top-0 left-0 z-30 flex justify-center items-center bg-white animate-fade-out animate-delay-2s">
+      <div
+        key={`${heroAnimationKey}-logo-splash`}
+        className="fixed w-full h-screen top-0 left-0 z-30 flex justify-center items-center bg-white animate-fade-out animate-delay-2s"
+      >
         <img src={Logo} alt="Savola Logo" className="w-70 h-auto object-top-left" />
       </div>
       <div className="w-full h-screen relative overflow-hidden">
-        <div className={`fixed ${lang === "ar" ? "left-0 rotate-y-180" : "right-0"} bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s z-30`}>
+        <div
+          key={`${heroAnimationKey}-trapezium`}
+          className={`fixed ${lang === "ar" ? "left-0 rotate-y-180" : "right-0"} bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s z-30`}
+        >
           <img
             src={Trapezium}
             alt="Trapezium"
@@ -160,7 +167,11 @@ const Hero = () => {
           />
         </div>
         <div className="flex flex-col w-full h-full">
-          <div className="flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey animate-fade-left-100 active animate-delay-5_6s relative z-20">
+          <div
+            className={`flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey ${
+              isRTL ? "animate-fade-right-100" : "animate-fade-left-100"
+            } active animate-delay-5_6s relative z-20`}
+          >
             <Container>
               <h1 className="text-5xl font-bold mb-4 whitespace-pre-line">
                 {t("hero.heading")}
@@ -172,7 +183,12 @@ const Hero = () => {
           </div>
 
           {/* Carousel — no overflow-hidden so slides remain fully visible */}
-          <div ref={containerRef} className="flex-[1.1] relative animate-fade-right-100 animation-duration-2s active animate-delay-4s">
+          <div
+            ref={containerRef}
+            className={`flex-[1.1] relative ${
+              isRTL ? "animate-fade-left-100" : "animate-fade-right-100"
+            } animation-duration-2s active animate-delay-4s`}
+          >
             {containerW > 0 &&
               items.map(({ key, ri, h, x, op, z }) => (
                 <div
