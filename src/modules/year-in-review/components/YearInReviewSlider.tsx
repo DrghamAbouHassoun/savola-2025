@@ -216,9 +216,10 @@ const YearInReviewSlider = () => {
                           <h3 className="font-bold text-savola-orange text-xl sm:text-2xl lg:text-3xl leading-snug mb-2">
                             {event.title}
                           </h3>
-                          <p className="text-savola-cool-grey/70 text-sm sm:text-base lg:text-lg leading-relaxed">
-                            {event.body}
-                          </p>
+                          <p
+                            className="text-savola-cool-grey/70 text-sm sm:text-base lg:text-lg leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: event.body }}
+                          ></p>
                         </div>
                         {event.image && (
                           <div className="h-auto w-90 bg-white flex items-end justify-center pr-4">

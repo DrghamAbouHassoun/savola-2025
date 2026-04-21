@@ -19,8 +19,8 @@ const AtAGlancePage = () => {
       <FinancialKPIs />
       <Highlights />
       {/* <AwardsHighlights /> */}
-      <AwardsSlider />
       <KeyStats />
+      <AwardsSlider />
     </div>
   );
 };

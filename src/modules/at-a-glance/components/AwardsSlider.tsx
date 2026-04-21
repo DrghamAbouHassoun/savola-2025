@@ -105,8 +105,7 @@ const AwardsSlider = () => {
         dir={isRtl ? "rtl" : "ltr"}
         className="relative hidden md:block"
       >
-        <div className="sticky top-0 h-screen overflow-hidden bg-savola-cool-grey-10">
-          <div className="absolute top-0 inset-x-0 h-1 bg-savola-green" />
+        <div className="sticky top-0 h-screen overflow-hidden">
 
           <Container className="h-full flex items-center">
             <div className="grid grid-cols-2 gap-12 lg:gap-20 w-full items-center">

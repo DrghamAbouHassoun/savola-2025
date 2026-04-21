@@ -85,16 +85,16 @@ const overview = {
         name: "April",
         e1title: 'Launch of "Negaderha Sawa" podcast',
         e1body:
-          'Panda Retail Company launched the "Negaderha Sawa" podcast with Wellbeing Foundation as a community initiative featuring diverse program topics, strengthening local partnerships and supporting programs that empower vulnerable groups.',
+          'Savola World launched the “Negaderha Sawa” podcast, achieving a reach of 2.3 million, 277,000 views and 303 social engagements across all publishing platforms.',
         e2title: "Top 10 most influential brands in the Kingdom",
         e2body:
-          "Panda was ranked among the top 10 most influential brands in Saudi Arabia and secured first place overall, reflecting strong consumer trust and brand relevance in the retail sector.",
+          "Panda Retail Company was ranked among the top 10 most influential brands in Saudi Arabia and secured third place overall, reflecting strong consumer trust and brand relevance in the <br />retail sector.",
       },
       may: {
         name: "May",
         e1title: "Saudi Food Show in Riyadh – Platinum sponsorship",
         e1body:
-          "Savola Food Company participated as a Platinum Sponsor at the Saudi Food Show in Riyadh, showcasing a rich selection featuring a live tasting station powered by Saudi chef partner Albarakah and freshly baked products using Savola's iconic flour, the Alawal brand.",
+          "Savola Foods Company participated as a Platinum Sponsor at the Saudi Food Show in Riyadh, activating a B2B-led stand featuring a live baking kitchen powered by Saudi chef Ammar Albarakati and showcasing freshly baked products using Savola’s butter, margarine, sugar and oil products.",
         e2title: "Top 100 listed companies by Forbes Middle East",
         e2body:
           "Savola Group was ranked among the Top 100 listed Companies in the Middle East by Forbes Middle East, underscoring its operational excellence and strong market position.",
@@ -103,52 +103,56 @@ const overview = {
         name: "June",
         e1title: '"Haj Without Waste" initiative',
         e1body:
-          'Savola Food Company partnered with Fann.ai and the Saudi Food Bank during the 2025 Haj season on the "Haj Without Waste" initiative, resulting in 7,259,062 donated meals and 2,019 saved sacrifices with a total value of SAR 11,737,644.',
+          'Savola World Foundation partnered with Eta’am, the Saudi Food Bank, during the 2025 Hajj season on the “Hajj Without Waste” initiative, resulting in 1,259,992 saved food units and 2,014 saved sacrifices with a total value of <i class="riyal-icon"></i> 17,310,864.',
         e2title: "Support for Purple Saturday initiative",
         e2body:
-          "Savola Group operating companies participated in the Purple Saturday initiative in collaboration with the Federation of People with Disability, supporting inclusion and accessibility across communities.",
+          "Savola Group was ranked among the Top 100 listed Companies in the Middle East by Forbes Middle East, underscoring its operational excellence and strong market position.",
       },
       july: {
         name: "July",
         e1title: "Appointment of Group Chief Executive Officer",
         e1body:
-          "Savola Group announced the appointment of Mr. Sameh Hasan as Group Chief Executive Officer, building on his role as CEO of Savola Foods Company since December 2018 and reinforcing leadership continuity and strategic alignment.",
+          "Savola Group announced the appointment of Mr. Sameh Hassan as Group Chief Executive Officer, building on his role as CEO of Savola Foods Company since December 2018 and reinforcing leadership continuity and strategic alignment.",
+        e2title: "Support for Purple Saturday initiative",
+        e2body: "Savola Group operating companies participated in the Purple Saturday initiative in collaboration with the Association of People with Disability, supporting inclusion and accessibility across communities.",
       },
       september: {
         name: "September",
         e1title: "Best Sustainability and ESG Report recognition",
         e1body:
-          "Savola Group achieved several awards for the Best Sustainability and ESG Report in the MENA region, as recognized by the Middle East Investor Relations Association, reflecting the strength and transparency of its 2024 disclosures.",
+          "Savola Group achieved second rank for Best Sustainability and ESG Report in the MENA region, as recognized by the Middle East Investor Relations Association, reflecting the strength and transparency of its 2024 disclosures.",
+        e2title: "MoU with General Food Security Authority",
+        e2body: "Panda Retail Company signed a Memorandum of Understanding with the General Food Security Authority (GFSA) to strengthen cooperation on reducing food waste and advancing sustainable food security in Saudi Arabia."
       },
       october: {
         name: "October",
         e1title: "Forbes Middle East CEO Leadership recognition",
         e1body:
-          "Savola Group Chief Executive Officer Mr. Sameh Hasan was ranked among the Forbes Middle East CEO Sustainability Leaders in the MENA region, recognized by Forbes Middle East for leadership impact and commitment to sustainability.",
+          "Savola Group Chief Executive Officer Mr. Sameh Hassan was ranked among Sustainability Leaders by Forbes Middle East in recognition of leadership impact and commitment to sustainability.",
         e2title: "Corporate Social Responsibility Award – Gold category",
         e2body:
-          "The Ministry of Human Resources and Social Development awarded Savola Group the Gold Category CSR Award, recognizing the Group's commitment to community development and positive societal impact.",
+          "The Ministry of Human Resources and Social Development awarded Savola Group the Gold Category CSR Award, recognizing its contribution to community development and sustainable social impact. <br /><br />Savola Group was awarded the Gold Category CSR Award by the Ministry of Human Resources and Social Development, recognizing its contribution to community development and sustainable social impact.",
       },
       november: {
         name: "November",
         e1title: "Participation in Gulf Food Manufacturing",
         e1body:
-          "Savola participated in Gulf Food Manufacturing Dubai 2025, showcasing the full Savola portfolio with live tasting stations featuring seasoning expertise and bakery applications using Savola Pro and Safio margarines.",
-        e2title: "Corporate governance excellence",
-        e2body:
-          "Savola participated in Gulf Food Manufacturing and was recognized for its excellence in corporate governance, reflecting commitment to transparency and responsible business conduct.",
+          "Savola participated in global food exhibition Gulfood 2025 - Dubai, with a full showcase of the Bayara portfolio, featuring live cooking demonstrations featuring seasoning expertise and bakery applications using Ganna Mix and Tahi margarine.",
+        // e2title: "Corporate governance excellence",
+        // e2body:
+        //   "Savola participated in Gulf Food Manufacturing and was recognized for its excellence in corporate governance, reflecting commitment to transparency and responsible business conduct.",
       },
       december: {
         name: "December",
-        e1title: "Corporate governance excellence",
+        e1title: "Corporate governance excellence recognition",
         e1body:
-          "For the 4th consecutive year, Savola Group ranked in the Top 5 at the Saudi Exchange Corporate Governance Award, recognized for its performance in transparency, accountability, and investor relations.",
-        e2title: "Strategic charter of Savola Turkey",
+          "Savola Group has, for the 4th consecutive year, ranked among the top 10 in the Corporate Governance Index (CGI) issued by the Corporate Governance Center at Alfaisal University for non-financial companies listed on the Saudi Exchange (Tadawul), underscoring its strong commitment to oversight, transparency and accountability",
+        e2title: "Strategic merger of Savola Turkey",
         e2body:
-          "Savola entered a strategic partnership with Tripoli Anadolu, part of the leading Tripoli Agri Group in Turkey, restructuring operations into a renewed entity and acquiring a 20.5% stake through a rights offering.",
+          "Savola entered into a strategic partnership with Tiryaki Anadolu, part of the leading Tiryaki Agro Holding Group in Turkey, under which Savola Turkey’s operations were combined into a new joint entity, strengthening the Group’s competitive position and presence in the Turkish market. Savola, through one of its subsidiaries, now holds a 15% minority stake in this new entity, with the Turkish partner holding 85%, leading to this business being reclassified as an investment rather than a consolidated operation in our financial statements",
         e3title: "Best CX in Retail Award recognition",
         e3body:
-          "Panda Retail received the Silver Award for Best Customer Experience in the Retail Category at the Customer Experience Awards during the CX World Forum in London, recognizing the Group's commitment to customer experience through technology and partnership.",
+          "Panda Retail Company received the Silver Award for Best Customer Experience in the Retail category at the Customer Experience Awards during the CX World Forum in Riyadh, recognizing progress in elevating the shopping experience through technology and partnerships.",
       },
     },
   },

@@ -1,6 +1,6 @@
-import MainHeader from "../modules/common/components/headers/MainHeader";
-import CfoHeader from "../assets/images/headers/cfo.png";
-import CfoMobileHeader from "../assets/images/headers/cfo-mobile.png";
+// import MainHeader from "../modules/common/components/headers/MainHeader";
+import CfoHeader from "../assets/images/new-headers/cfo.jpg";
+// import CfoMobileHeader from "../assets/images/headers/cfo-mobile.png";
 import LeadershipHeader from "../modules/leadership/components/LeadershipHeader";
 import CfoPersonImage from "../assets/images/leadership/cfo.png";
 import CfoSignImage from "../assets/images/leadership/cfo-sign.png";
@@ -9,6 +9,7 @@ import StarIcon from "../assets/icons/star.png";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
+import NewHeader from "../modules/common/components/headers/NewHeader";
 
 const sectionKeys = [
   "strengthenedPosition",
@@ -23,10 +24,14 @@ const ChiefFinancialOfficerReviewPage = () => {
 
   return (
     <div>
-      <MainHeader
+      {/* <MainHeader
         title={t("cfo.pageTitle")}
         imageUrl={CfoHeader}
         mobileImageUrl={CfoMobileHeader}
+      /> */}
+      <NewHeader 
+        imageUrl={CfoHeader}
+        title={t("cfo.pageTitle")}
       />
       <div className="py-16">
         <LeadershipHeader

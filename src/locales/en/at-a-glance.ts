@@ -18,7 +18,7 @@ const atAGlance = {
     operationalTitle: "Operational Highlights",
     sustainabilityTitle: "Sustainability Highlights",
     // Production card
-    prodLabel: "Savola Foods' production volumes reached a yearly record.",
+    prodLabel: "Savola Foods' production volumes reached a yearly record",
     prodUnit: "million metric tons",
     // Panda stores card
     pandaStoresBefore: "Panda added",
