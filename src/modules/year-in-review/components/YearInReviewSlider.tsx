@@ -9,6 +9,7 @@ import Ellipse2 from "../../../assets/images/year-in-review/ellipse-2.png";
 interface MonthEvent {
   title: string;
   body: string;
+  body2?: string;
   image?: string;
 }
 
@@ -60,10 +61,10 @@ const YearInReviewSlider = () => {
           title: t("yearInReview.months.may.e1title"),
           body: t("yearInReview.months.may.e1body"),
         },
-        {
-          title: t("yearInReview.months.may.e2title"),
-          body: t("yearInReview.months.may.e2body"),
-        },
+        // {
+        //   title: t("yearInReview.months.may.e2title"),
+        //   body: t("yearInReview.months.may.e2body"),
+        // },
       ],
     },
     {
@@ -88,6 +89,10 @@ const YearInReviewSlider = () => {
           title: t("yearInReview.months.july.e1title"),
           body: t("yearInReview.months.july.e1body"),
         },
+        {
+          title: t("yearInReview.months.july.e2title"),
+          body: t("yearInReview.months.july.e2body"),
+        },
       ],
     },
     {
@@ -98,10 +103,14 @@ const YearInReviewSlider = () => {
           title: t("yearInReview.months.september.e1title"),
           body: t("yearInReview.months.september.e1body"),
         },
+        {
+          title: t("yearInReview.months.september.e2title"),
+          body: t("yearInReview.months.september.e2body"),
+        }
       ],
     },
     {
-      flex: 2,
+      flex: 3,
       month: t("yearInReview.months.october.name"),
       events: [
         {
@@ -112,6 +121,7 @@ const YearInReviewSlider = () => {
         {
           title: t("yearInReview.months.october.e2title"),
           body: t("yearInReview.months.october.e2body"),
+          body2: t("yearInReview.months.october.e2body2"),
           image: Ellipse2,
         },
       ],
@@ -124,14 +134,14 @@ const YearInReviewSlider = () => {
           title: t("yearInReview.months.november.e1title"),
           body: t("yearInReview.months.november.e1body"),
         },
-        {
-          title: t("yearInReview.months.november.e2title"),
-          body: t("yearInReview.months.november.e2body"),
-        },
+        // {
+        //   title: t("yearInReview.months.november.e2title"),
+        //   body: t("yearInReview.months.november.e2body"),
+        // },
       ],
     },
     {
-      flex: 2,
+      flex: 3,
       month: t("yearInReview.months.december.name"),
       events: [
         {
@@ -198,7 +208,7 @@ const YearInReviewSlider = () => {
               {MONTHS.map((monthData) => (
                 <div
                   key={monthData.month}
-                  className={`shrink-0 ${monthData.events.length === 1 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[35vw] " : monthData.events.length === 2 ? "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[80vw] " : "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[80vw] "}`}
+                  className={`shrink-0 ${monthData.flex === 3 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-screen" : monthData.events.length === 1 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[35vw] " : monthData.events.length === 2 ? "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[60vw] " : "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[80vw] "}`}
                 >
                   {/* Month label */}
                   <div className="mb-4 pt-8 border-t-4 border-savola-green relative">
@@ -211,18 +221,28 @@ const YearInReviewSlider = () => {
                   {/* Events stacked vertically */}
                   <div className="flex gap-3 overflow-y-auto max-h-[calc(100vh-220px)]">
                     {monthData.events.map((event, i) => (
-                      <div key={i} className="flex">
+                      <div key={i} className="flex flex-1">
                         <div className="pe-4">
                           <h3 className="font-bold text-savola-orange text-xl sm:text-2xl lg:text-3xl leading-snug mb-2">
                             {event.title}
                           </h3>
-                          <p
-                            className="text-savola-cool-grey/70 text-sm sm:text-base lg:text-lg leading-relaxed"
-                            dangerouslySetInnerHTML={{ __html: event.body }}
-                          ></p>
+                          <div className="flex gap-2">
+                            <p
+                              className="text-savola-cool-grey/70 text-sm sm:text-base lg:text-lg leading-relaxed"
+                              dangerouslySetInnerHTML={{ __html: event.body }}
+                            ></p>
+                            {event.body2 && (
+                              <p
+                                className="text-savola-cool-grey/70 text-sm sm:text-base lg:text-lg leading-relaxed"
+                                dangerouslySetInnerHTML={{
+                                  __html: event.body2,
+                                }}
+                              ></p>
+                            )}
+                          </div>
                         </div>
                         {event.image && (
-                          <div className="h-auto w-90 bg-white flex items-end justify-center pr-4">
+                          <div className={`h-auto w-90 bg-white flex items-end justify-center ${lang === "ar" ? "pl-6" : "pr-6"}`}>
                             <img
                               src={event.image}
                               alt={event.title}

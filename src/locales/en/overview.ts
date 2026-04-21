@@ -23,27 +23,37 @@ const overview = {
       stat2Label: "Annual Transactions",
       stat2Value: "111.5 MN",
       b1Title: "Regional leadership",
-      b1Body: "One of the region's most prominent food and retail investment holding groups.",
+      b1Body:
+        "One of the region's most prominent food and retail investment holding groups.",
       b2Title: "Market pioneers",
-      b2Body: "The #1 player in MENAT for staples like edible oils, sugar, pasta, nuts, spices, snacks and frozen foods. Panda, Savola's flagship grocery retailer, boasts a 21% share in Saudi Arabia's growing modern retail market.",
+      b2Body:
+        "The #1 player in MENAT for staples like edible oils, sugar, pasta, nuts, spices, snacks and frozen foods. Panda, Savola's flagship grocery retailer, boasts a 21% share in Saudi Arabia's growing modern retail market.",
       b3Title: "Industry recognition",
-      b3Body: "Consistently ranked among Forbes Middle East's Top 100 companies, highlighting Savola's operational excellence and robust market presence.",
+      b3Body:
+        "Consistently ranked among Forbes Middle East's Top 100 companies, highlighting Savola's operational excellence and robust market presence.",
     },
     pillar2Detail: {
       b1Title: "Extensive retail network",
-      b1Body: "Operating 227 stores across Saudi Arabia and Egypt, supported by a logistics network handling over 111.5 million annual transactions.",
+      b1Body:
+        "Operating 227 stores across Saudi Arabia and Egypt, supported by a logistics network handling over 111.5 million annual transactions.",
       b2Title: "Expansive market reach",
-      b2Body: "Manufacturing and distributing across six countries with 14 production facilities, serving over 400 million consumers.",
+      b2Body:
+        "Manufacturing and distributing across six countries with 14 production facilities, serving over 400 million consumers.",
       b3Title: "Expanding food portfolio",
-      b3Body: "Exploring opportunities in new high growth food sectors primarily in the GCC and Egypt to enhance growth potential.",
+      b3Body:
+        "Exploring opportunities in new high growth food sectors primarily in the GCC and Egypt to enhance growth potential.",
       b4Title: "Regional adaptability",
-      b4Body: "Tailoring products, brands and operations to meet the unique cultural and economic needs of diverse markets.",
+      b4Body:
+        "Tailoring products, brands and operations to meet the unique cultural and economic needs of diverse markets.",
       b5Title: "Consumer-centric innovation approach",
-      b5Body: "Leveraging deep consumer insight to introduce and scale innovative food products, solutions and ingredients to our consumer and B2B clients.",
+      b5Body:
+        "Leveraging deep consumer insight to introduce and scale innovative food products, solutions and ingredients to our consumer and B2B clients.",
       b6Title: "Adaptable product portfolio",
-      b6Body: "Proactively evolving to meet the demands of MENAT's dynamic consumer landscape.",
+      b6Body:
+        "Proactively evolving to meet the demands of MENAT's dynamic consumer landscape.",
       b7Title: "Customer focus",
-      b7Body: "A relentless commitment to delivering value through innovation and product development.",
+      b7Body:
+        "A relentless commitment to delivering value through innovation and product development.",
     },
     pillar3Detail: {
       stat1Label: "Stores across KSA & Egypt",
@@ -51,21 +61,28 @@ const overview = {
       stat2Label: "Production Facilities",
       stat2Value: "14",
       b1Title: "Proven investment model",
-      b1Body: "A flexible holding company structure enabling strategic investments in high-growth food and retail sectors.",
+      b1Body:
+        "A flexible holding company structure enabling strategic investments in high-growth food and retail sectors.",
       b2Title: "Experienced management",
-      b2Body: "A visionary leadership team guarantees optimal capital deployment to increase shareholder returns.",
+      b2Body:
+        "A visionary leadership team guarantees optimal capital deployment to increase shareholder returns.",
       b3Title: "Future-focused investments",
-      b3Body: "Dedicated to exploring opportunities in food and retail to secure sustainable growth for the Group.",
+      b3Body:
+        "Dedicated to exploring opportunities in food and retail to secure sustainable growth for the Group.",
     },
     pillar4Detail: {
       b1Title: "ESG strategy",
-      b1Body: "Showcasing our commitment to ensure sustainability integration into in-house and portfolio operations through the development of a stand-alone environment, social and governance (ESG) strategy.",
+      b1Body:
+        "Showcasing our commitment to ensure sustainability integration into in-house and portfolio operations through the development of a stand-alone environment, social and governance (ESG) strategy.",
       b2Title: "Driving environmental stewardship and innovation",
-      b2Body: "Implementing measures to lead and promote efforts aimed at responsibly managing environmental activities and applying innovative solutions to mitigate environmental challenges.",
+      b2Body:
+        "Implementing measures to lead and promote efforts aimed at responsibly managing environmental activities and applying innovative solutions to mitigate environmental challenges.",
       b3Title: "Fostering community wellness and employee welfare",
-      b3Body: "Actively promoting and supporting initiatives that improve the health, wellness and overall quality of life for the community, customers and employees.",
+      b3Body:
+        "Actively promoting and supporting initiatives that improve the health, wellness and overall quality of life for the community, customers and employees.",
       b4Title: "Advancing ethical governance and stakeholder trust",
-      b4Body: "Proactively strengthening ethical governance and investment practices within Savola, with the aim of enhancing trust and confidence among stakeholders.",
+      b4Body:
+        "Proactively strengthening ethical governance and investment practices within Savola, with the aim of enhancing trust and confidence among stakeholders.",
     },
   },
 
@@ -85,7 +102,7 @@ const overview = {
         name: "April",
         e1title: 'Launch of "Negaderha Sawa" podcast',
         e1body:
-          'Savola World launched the “Negaderha Sawa” podcast, achieving a reach of 2.3 million, 277,000 views and 303 social engagements across all publishing platforms.',
+          "Savola World launched the “Negaderha Sawa” podcast, achieving a reach of 2.3 million, 277,000 views and 303 social engagements across all publishing platforms.",
         e2title: "Top 10 most influential brands in the Kingdom",
         e2body:
           "Panda Retail Company was ranked among the top 10 most influential brands in Saudi Arabia and secured third place overall, reflecting strong consumer trust and brand relevance in the <br />retail sector.",
@@ -95,16 +112,16 @@ const overview = {
         e1title: "Saudi Food Show in Riyadh – Platinum sponsorship",
         e1body:
           "Savola Foods Company participated as a Platinum Sponsor at the Saudi Food Show in Riyadh, activating a B2B-led stand featuring a live baking kitchen powered by Saudi chef Ammar Albarakati and showcasing freshly baked products using Savola’s butter, margarine, sugar and oil products.",
-        e2title: "Top 100 listed companies by Forbes Middle East",
-        e2body:
-          "Savola Group was ranked among the Top 100 listed Companies in the Middle East by Forbes Middle East, underscoring its operational excellence and strong market position.",
+        // e2title: "Top 100 listed companies by Forbes Middle East",
+        // e2body:
+        //   "Savola Group was ranked among the Top 100 listed Companies in the Middle East by Forbes Middle East, underscoring its operational excellence and strong market position.",
       },
       june: {
         name: "June",
         e1title: '"Haj Without Waste" initiative',
         e1body:
           'Savola World Foundation partnered with Eta’am, the Saudi Food Bank, during the 2025 Hajj season on the “Hajj Without Waste” initiative, resulting in 1,259,992 saved food units and 2,014 saved sacrifices with a total value of <i class="riyal-icon"></i> 17,310,864.',
-        e2title: "Support for Purple Saturday initiative",
+        e2title: "Top 100 listed companies by Forbes Middle East",
         e2body:
           "Savola Group was ranked among the Top 100 listed Companies in the Middle East by Forbes Middle East, underscoring its operational excellence and strong market position.",
       },
@@ -114,7 +131,8 @@ const overview = {
         e1body:
           "Savola Group announced the appointment of Mr. Sameh Hassan as Group Chief Executive Officer, building on his role as CEO of Savola Foods Company since December 2018 and reinforcing leadership continuity and strategic alignment.",
         e2title: "Support for Purple Saturday initiative",
-        e2body: "Savola Group operating companies participated in the Purple Saturday initiative in collaboration with the Association of People with Disability, supporting inclusion and accessibility across communities.",
+        e2body:
+          "Savola Group operating companies participated in the Purple Saturday initiative in collaboration with the Association of People with Disability, supporting inclusion and accessibility across communities.",
       },
       september: {
         name: "September",
@@ -122,7 +140,8 @@ const overview = {
         e1body:
           "Savola Group achieved second rank for Best Sustainability and ESG Report in the MENA region, as recognized by the Middle East Investor Relations Association, reflecting the strength and transparency of its 2024 disclosures.",
         e2title: "MoU with General Food Security Authority",
-        e2body: "Panda Retail Company signed a Memorandum of Understanding with the General Food Security Authority (GFSA) to strengthen cooperation on reducing food waste and advancing sustainable food security in Saudi Arabia."
+        e2body:
+          "Panda Retail Company signed a Memorandum of Understanding with the General Food Security Authority (GFSA) to strengthen cooperation on reducing food waste and advancing sustainable food security in Saudi Arabia.",
       },
       october: {
         name: "October",
@@ -131,7 +150,9 @@ const overview = {
           "Savola Group Chief Executive Officer Mr. Sameh Hassan was ranked among Sustainability Leaders by Forbes Middle East in recognition of leadership impact and commitment to sustainability.",
         e2title: "Corporate Social Responsibility Award – Gold category",
         e2body:
-          "The Ministry of Human Resources and Social Development awarded Savola Group the Gold Category CSR Award, recognizing its contribution to community development and sustainable social impact. <br /><br />Savola Group was awarded the Gold Category CSR Award by the Ministry of Human Resources and Social Development, recognizing its contribution to community development and sustainable social impact.",
+          "The Ministry of Human Resources and Social Development awarded Savola Group the Gold Category CSR Award, recognizing its contribution to community development and sustainable social impact. ",
+        e2body2:
+          "Savola Group was awarded the Gold Category CSR Award by the Ministry of Human Resources and Social Development, recognizing its contribution to community development and sustainable social impact.",
       },
       november: {
         name: "November",
