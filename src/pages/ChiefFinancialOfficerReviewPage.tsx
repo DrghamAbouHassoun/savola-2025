@@ -5,7 +5,6 @@ import LeadershipHeader from "../modules/leadership/components/LeadershipHeader"
 import CfoPersonImage from "../assets/images/leadership/cfo.png";
 import CfoSignImage from "../assets/images/leadership/cfo-sign.png";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
-import StarIcon from "../assets/icons/star.png";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
@@ -48,19 +47,15 @@ const ChiefFinancialOfficerReviewPage = () => {
         <SmallContainer>
           {/* Page title */}
           <AnimationSlideTop>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-savola-green mb-6">
-              {t("cfo.mainTitle")}
+            <h2 className="text-3xl md:text-4xl font-extrabold text-savola-green mb-6" dangerouslySetInnerHTML={{ __html: t("cfo.mainTitle")}}>
+              
             </h2>
           </AnimationSlideTop>
 
           {/* Intro paragraphs */}
           <AnimationFadeIn className="mb-12 space-y-4">
-            <p className="text-savola-cool-grey leading-relaxed">
-              {t("cfo.introParagraph")}
-            </p>
-            <p className="text-savola-cool-grey leading-relaxed">
-              {t("cfo.introFinancials")}
-            </p>
+            <p className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: t("cfo.introParagraph") }} />
+            <p className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: t("cfo.introFinancials") }} />
           </AnimationFadeIn>
 
           {/* Content sections */}
@@ -78,21 +73,17 @@ const ChiefFinancialOfficerReviewPage = () => {
                   </h3>
                   <div className="space-y-4">
                     {paragraphs.map((para, j) => (
-                      <p key={j} className="text-savola-cool-grey leading-relaxed">
-                        {para}
-                      </p>
+                      <p key={j} className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: para }} />
                     ))}
                     {bullets.length > 0 && (
                       <ul className="list-disc list-inside space-y-1 text-savola-cool-grey ps-2">
                         {bullets.map((bullet, j) => (
-                          <li key={j}>{bullet}</li>
+                          <li key={j} dangerouslySetInnerHTML={{ __html: bullet }} />
                         ))}
                       </ul>
                     )}
                     {hasClosing && (
-                      <p className="text-savola-cool-grey leading-relaxed">
-                        {closingParagraph}
-                      </p>
+                      <p className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: closingParagraph }} />
                     )}
                   </div>
                 </AnimationSlideTop>
@@ -101,32 +92,25 @@ const ChiefFinancialOfficerReviewPage = () => {
           </div>
 
           {/* Looking Ahead highlighted box */}
-          <AnimationFadeIn className="mt-12 bg-savola-green-20 p-8">
-            <h3 className="text-2xl font-bold text-savola-cool-grey mb-4 flex items-center gap-2">
-              <img src={StarIcon} alt="Star" className="inline-block w-8 h-8" />
+          <AnimationFadeIn className="py-16">
+            <h3 className=" font-extrabold text-savola-cool-grey mb-4 flex items-center gap-2">
               {t("cfo.outlookTitle")}
             </h3>
-            <p className="text-savola-cool-grey leading-relaxed mb-4">
-              {t("cfo.outlookParagraph")}
-            </p>
+            <p className="text-savola-cool-grey leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: t("cfo.outlookParagraph") }} />
             {tArray("cfo.outlookBullets").length > 0 && (
               <ul className="list-disc list-inside space-y-1 text-savola-cool-grey ps-2 mb-4">
                 {tArray("cfo.outlookBullets").map((bullet, i) => (
-                  <li key={i}>{bullet}</li>
+                  <li key={i} dangerouslySetInnerHTML={{ __html: bullet }} />
                 ))}
               </ul>
             )}
-            <p className="text-savola-cool-grey leading-relaxed">
-              {t("cfo.outlookClosing")}
-            </p>
+            <p className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: t("cfo.outlookClosing") }} />
           </AnimationFadeIn>
 
-          {/* Closing quote */}
+          {/* Closing quote
           <AnimationSlideTop className="mt-12 mb-16">
-            <p className="text-savola-cool-grey text-xl md:text-2xl font-extrabold">
-              {t("cfo.outlookClosing")}
-            </p>
-          </AnimationSlideTop>
+            <p className="text-savola-cool-grey text-xl md:text-2xl font-extrabold" dangerouslySetInnerHTML={{ __html: t("cfo.outlookClosing") }} />
+          </AnimationSlideTop> */}
         </SmallContainer>
       </div>
     </div>

@@ -81,7 +81,7 @@ const ChairmanStatementPage = () => {
           </div>
 
           {/* Outlook 2026 highlighted box */}
-          <AnimationFadeIn className="mt-12 bg-savola-green-20 p-8">
+          <AnimationFadeIn className="mt-12 bg-linear-to-b from-savola-green-50 to-savola-green-50/0 p-8">
             <h3 className="text-2xl font-bold text-savola-cool-grey mb-4 flex items-center gap-2">
               <img src={StarIcon} alt="Star" className="inline-block w-8 h-8" />
               {t("chairman.outlookTitle")}
@@ -104,11 +104,11 @@ const ChairmanStatementPage = () => {
             </p>
 
             {/* Closing quote */}
-            <AnimationSlideTop className="mb-16">
+            {/* <AnimationSlideTop className="mb-16">
               <p className="text-savola-cool-grey text-xl md:text-2xl font-extrabold">
                 {t("chairman.closingQuote")}
               </p>
-            </AnimationSlideTop>
+            </AnimationSlideTop> */}
           </AnimationFadeIn>
         </SmallContainer>
       </div>

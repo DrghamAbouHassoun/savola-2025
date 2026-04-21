@@ -85,8 +85,8 @@ const leadership = {
         title: "Financial Performance Anchored in Operating Discipline",
         paragraphs: [
           "Savola delivered a resilient and stable financial performance in 2025, underpinned by disciplined execution across the Group and a continued focus on efficiency, margin quality and cash generation. Despite ongoing macroeconomic volatility, the Group maintained stability through tighter cost control, improved operating leverage and more disciplined capital allocation.",
-          "For the year ended 2025, the Group generated revenues of SAR 26.1 billion and EBITDA of SAR 2.4 billion, excluding the impact of discontinued and divested businesses, reflecting improving performance across its core operations. Net income reached SAR 674 million, supported by stronger operating performance fundamentals and disciplined financial management. Operating cash flow amounted to SAR 1.07 billion, reinforcing the Group's capacity to fund growth, meet its obligations, and maintain a robust balance sheet.",
-          "Capital expenditure of SAR 850.5 million was directed primarily toward strengthening core manufacturing capacity, operational resilience and critical infrastructure across food manufacturing and retail. Balance sheet management remained prudent, with leverage and liquidity maintained at appropriate levels. This financial discipline continues to be a central pillar of how we protect downside risk while retaining flexibility to invest in long-term value creation.",
+          "For the year ended 2025, the Group generated revenues of <i class='riyal-icon'></i> 26.1 billion and EBITDA of <i class='riyal-icon'></i> 2.4 billion, excluding the impact of discontinued and divested businesses, reflecting improving performance across its core operations. Net income reached <i class='riyal-icon'></i> 674 million, supported by stronger operating performance fundamentals and disciplined financial management. Operating cash flow amounted to <i class='riyal-icon'></i> 1.07 billion, reinforcing the Group's capacity to fund growth, meet its obligations, and maintain a robust balance sheet.",
+          "Capital expenditure of <i class='riyal-icon'></i> 850.5 million was directed primarily toward strengthening core manufacturing capacity, operational resilience and critical infrastructure across food manufacturing and retail. Balance sheet management remained prudent, with leverage and liquidity maintained at appropriate levels. This financial discipline continues to be a central pillar of how we protect downside risk while retaining flexibility to invest in long-term value creation.",
         ],
       },
       operationalPerformance: {
@@ -119,7 +119,7 @@ const leadership = {
         title: "ESG and Sustainability as Long-Term Enablers",
         paragraphs: [
           "Sustainability remains integral to Savola's strategy and to the way we operate it. In 2025, we delivered meaningful progress across our ESG priorities, achieving measurable improvements in environmental efficiency, supply chain responsibility and community engagement. Savola Foods increased its percentage of locally sourced inputs, reducing supply chain exposure and contributing to national food security. Panda continued to integrate sustainability into its value chain. At the same time, through Savola World Foundation, we expanded our societal impact by advancing social inclusion and economic empowerment.",
-          "This commitment translated into tangible results. Savola Foods delivered a 16.2% reduction in greenhouse gas emissions intensity, supported by efficiency initiatives that also contributed to a reduction in net energy use and material losses, while advancing more sustainable and resource-efficient operations. Our social impact efforts continued to advance through strong partnerships, enabling the mobilisation of food valued at over SAR 12 million among the less-resourced, delivering community programmes benefitting local communities and advancing STEM education for youth. Savola's Integrated Annual Report 2025 outlines our detailed performance against our ESG KPIs. These efforts reinforce our commitment to responsible growth, environmental stewardship and positive societal impact.",
+          "This commitment translated into tangible results. Savola Foods delivered a 16.2% reduction in greenhouse gas emissions intensity, supported by efficiency initiatives that also contributed to a reduction in net energy use and material losses, while advancing more sustainable and resource-efficient operations. Our social impact efforts continued to advance through strong partnerships, enabling the mobilisation of food valued at over <i class='riyal-icon'></i> 12 million among the less-resourced, delivering community programmes benefitting local communities and advancing STEM education for youth. Savola's Integrated Annual Report 2025 outlines our detailed performance against our ESG KPIs. These efforts reinforce our commitment to responsible growth, environmental stewardship and positive societal impact.",
         ],
       },
     },
@@ -142,18 +142,18 @@ const leadership = {
     title: "Group Chief Financial Officer",
     quote: "Fiscal year 2025 marked the first full year in which Savola operated with a streamlined capital structure and a sharpened strategic focus following the transformational steps completed.",
     pageTitle: "Chief Financial Officer's Review",
-    mainTitle: "Financial Strength. Focused Execution. Sustainable Value Creation.",
+    mainTitle: "Financial Strength.<br /> Focused Execution.<br /> Sustainable Value Creation.",
     introParagraph:
       "Our priorities were clear: preserve financial strength, reinforce operating discipline and allocate capital to areas where we have scale, capability and long-term conviction.",
     introFinancials:
-      "Group revenue increased to SAR 26.1 billion, reflecting steady performance across both food and retail segments. Net income attributable to shareholders amounted to SAR 674 million, compared to SAR 97 billion in the prior year, which includes SAR 740 million gain from the deconsolidation of the Almarai investment. On a normalised basis, adjusted net income rose to SAR 539 million from SAR 296 million in FY2024, underscoring improvement in underlying operational performance and value delivery. Operating cash flow reached a total of SAR 1.07 billion, supporting continued investment in core operations while maintaining balance sheet discipline.",
+      "Group revenue increased to <i class='riyal-icon'></i> 26.1 billion, reflecting steady performance across both food and retail segments. Net income attributable to shareholders amounted to <i class='riyal-icon'></i> 674 million, compared to <i class='riyal-icon'></i> 97 billion in the prior year, which includes <i class='riyal-icon'></i> 740 million gain from the deconsolidation of the Almarai investment. On a normalised basis, adjusted net income rose to <i class='riyal-icon'></i> 539 million from <i class='riyal-icon'></i> 296 million in FY2024, underscoring improvement in underlying operational performance and value delivery. Operating cash flow reached a total of <i class='riyal-icon'></i> 1.07 billion, supporting continued investment in core operations while maintaining balance sheet discipline.",
     sections: {
       strengthenedPosition: {
         title: "Strengthened Financial Position",
         paragraphs: [
           "The capital restructuring executed in the prior year materially reshaped the Group's financial foundation. During 2025, our focus was to consolidate these gains and embed financial discipline across the organisation.",
-          "Total equity increased to SAR 4.47 billion at year-end. Borrowings declined significantly compared to historical levels. After deducting term deposits and investments in government Sukuk, net debt reflects a strengthened and manageable leverage aligned with the Group's long-term risk parameters.",
-          "Debt maturities are appropriately staggered, liquidity buffers remain sound and financial flexibility is materially stronger than in previous years.",
+          "Total equity increased to <i class='riyal-icon'></i> 4.47 billion at year-end. Borrowings declined significantly compared to historical levels. After deducting term deposits and investments in government Sukuk, net debt reflects a strengthened and manageable leverage aligned with the Group's long-term risk parameters.",
+          "Debt maturities are appropriately staggered, liquidity buffers remain sound and financial flexibility is materially stronger than in previous years.<br /><br />Our capital allocation principles remain firmly anchored:",
         ],
         bullets: [
           "Prioritise balance sheet resilience",
@@ -174,7 +174,7 @@ const leadership = {
       retail: {
         title: "Retail",
         paragraphs: [
-          "Panda Retail Company delivered revenue growth of 6.6% to SAR 11.3 billion, supported by measured store expansion and continued execution of the ERP initiative.",
+          "Panda Retail Company delivered revenue growth of 6.6% to <i class='riyal-icon'></i> 11.3 billion, supported by measured store expansion and continued execution of the ERP initiative.",
           "18 new stores were added during the year, net of closures, extending geographic reach while strengthening operational standards and customer engagement. Ongoing investment in digital capabilities further enhanced omni-channel positioning in a competitive market environment.",
           "While competitive pricing pressures impacted margins, disciplined cost management and working capital oversight remained central priorities.",
         ],
@@ -182,7 +182,7 @@ const leadership = {
       turkey: {
         title: "Turkey Strategic Repositioning",
         paragraphs: [
-          "During the year, our edible oils business in Turkey was merged with a leading integrated agribusiness player, resulting in a 15% equity stake in the enlarged entity. The transaction was completed without cash outflow and resulted in a net gain of SAR 3.9 million.",
+          "During the year, our edible oils business in Turkey was merged with a leading integrated agribusiness player, resulting in a 15% equity stake in the enlarged entity. The transaction was completed without cash outflow and resulted in a net gain of <i class='riyal-icon'></i> 3.9 million.",
           "This repositioning enhances capital efficiency, reduces stand-alone exposure to market volatility, and preserves participation in a structurally stronger and more integrated platform.",
         ],
       },
@@ -196,7 +196,7 @@ const leadership = {
     },
     outlookTitle: "Looking Ahead",
     outlookParagraph:
-      "Savola moves forward as a focused food and retail platform supported by a strengthened capital structure and clearer strategic alignment.",
+      "Savola moves forward as a focused food and retail platform supported by a strengthened capital structure and clearer strategic alignment.<br /><br /> Our priorities remain consistent:",
     outlookBullets: [
       "Deepen our presence in core food categories",
       "Enhance operational efficiency across units",

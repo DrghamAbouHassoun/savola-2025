@@ -53,9 +53,7 @@ const GroupCEOMessagePage = () => {
 
           {/* Intro paragraph */}
           <AnimationFadeIn className="mb-12">
-            <p className="text-savola-cool-grey leading-relaxed">
-              {t("ceo.introParagraph")}
-            </p>
+            <p className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: t("ceo.introParagraph") }} />
           </AnimationFadeIn>
 
           {/* Content sections */}
@@ -67,9 +65,7 @@ const GroupCEOMessagePage = () => {
                 </h3>
                 <div className="space-y-4">
                   {section.paragraphs.map((para, j) => (
-                    <p key={j} className="text-savola-cool-grey leading-relaxed">
-                      {para}
-                    </p>
+                    <p key={j} className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: para }} />
                   ))}
                 </div>
               </AnimationSlideTop>
@@ -83,9 +79,7 @@ const GroupCEOMessagePage = () => {
             </h3>
             <div className="space-y-4">
               {tArray("ceo.outlookParagraphs").map((para, i) => (
-                <p key={i} className="text-savola-cool-grey leading-relaxed">
-                  {para}
-                </p>
+                <p key={i} className="text-savola-cool-grey leading-relaxed" dangerouslySetInnerHTML={{ __html: para }} />
               ))}
             </div>
           </AnimationFadeIn>
@@ -95,19 +89,15 @@ const GroupCEOMessagePage = () => {
             <h4 className="text-savola-cool-grey font-extrabold">
               {t("ceo.closingTitle")}
             </h4>
-            <p className="text-savola-cool-grey leading-relaxed mb-4">
-              {t("ceo.closingP1")}
-            </p>
-            <p className="text-savola-cool-grey leading-relaxed mb-8">
-              {t("ceo.closingP2")}
-            </p>
+            <p className="text-savola-cool-grey leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: t("ceo.closingP1") }} />
+            <p className="text-savola-cool-grey leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: t("ceo.closingP2") }} />
 
-            {/* Closing quote */}
+            {/* Closing quote
             <AnimationSlideTop className="mb-16">
               <p className="text-savola-cool-grey text-xl md:text-2xl font-extrabold">
                 {t("ceo.closingQuote")}
               </p>
-            </AnimationSlideTop>
+            </AnimationSlideTop> */}
           </AnimationFadeIn>
         </SmallContainer>
       </div>
