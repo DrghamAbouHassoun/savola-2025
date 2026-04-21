@@ -14,7 +14,7 @@ const common = {
       "2025-at-a-glance": "لمحة عن العام 2025م",
       "year-in-review": "استعراض العام",
       "geographical-footprint": "نطاق أعمالنا الجغرافي",
-      "investment-case": "الاستثمار في صفولا",
+      "investment-case": "الاستثمار في صافولا",
       "stakeholder-engagement": "إشراك أصحاب المصلحة",
       "strategy-and-business-model": "الاستراتيجية ونموذج الأعمال",
       "strategy-groups-transformation-journey": "رحلة تحول مجموعة الاستراتيجية",

@@ -3,13 +3,15 @@ import Container from "../../common/components/container/Container";
 import SliderImage1 from "../../../assets/images/home/slider/1.png";
 import SliderImage2 from "../../../assets/images/home/slider/2.png";
 import SliderImage3 from "../../../assets/images/home/slider/3.png";
+import SliderImage3Ar from "../../../assets/images/home/slider/3-arabic.png";
 import Trapezium from "../../../assets/vectors/trapezium.png";
 import Logo from "../../../assets/logo/logo.svg";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { useLocale } from "../../common/hooks/useLocale";
 
-const slides = [SliderImage1, SliderImage2, SliderImage3];
-const N = slides.length;
+const slidesEn = [SliderImage1, SliderImage2, SliderImage3];
+const slidesAr = [SliderImage1, SliderImage2, SliderImage3Ar];
+const N = slidesEn.length;
 const GAP = 16;
 
 const mod = (x: number, n: number) => ((x % n) + n) % n;
@@ -24,6 +26,7 @@ const Hero = () => {
   const { t } = useTranslation("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerSize, setContainerSize] = useState({ w: 0, h: 0 });
+  const slides = lang === "ar" ? slidesAr : slidesEn;
 
   // Spring physics state — all in refs to avoid re-render overhead
   const targetRef = useRef(0);
@@ -214,9 +217,9 @@ const Hero = () => {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      objectPosition: "top left",
+                      objectPosition: isRTL && ri === 2 ? "top right" : "top left",
                       display: "block",
-                      transform: isRTL ? "scaleX(-1)" : undefined,
+                      transform: isRTL && ri !== 2 ? "scaleX(-1)" : undefined,
                     }}
                   />
                 </div>
