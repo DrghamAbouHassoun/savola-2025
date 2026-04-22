@@ -15,7 +15,7 @@ const common = {
       "year-in-review": "استعراض العام",
       "geographical-footprint": "نطاق أعمالنا الجغرافي",
       "investment-case": "الاستثمار في صافولا",
-      "stakeholder-engagement": "إشراك أصحاب المصلحة",
+      "stakeholder-engagement": "التواصل مع أصحاب المصلحة",
       "strategy-and-business-model": "الاستراتيجية ونموذج الأعمال",
       "strategy-groups-transformation-journey": "رحلة تحول مجموعة الاستراتيجية",
       "saudi-vision-2030": "رؤية السعودية 2030",

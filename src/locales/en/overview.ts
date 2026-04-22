@@ -177,6 +177,188 @@ const overview = {
       },
     },
   },
+  geographicalFootprint: {
+    pageTitle: "Geographical Footprint",
+    mainTitle: "Expanding Across Regions",
+    desc: "of a food group built for sustained growth. Anchored by strong domestic operations and extended through regional manufacturing, distribution, retail and export platforms, the Group’s presence enables proximity to consumers, operational efficiency and disciplined market execution. This scale and reach underpin Savola’s ability to serve diverse markets, manage complexity and deploy capital and capabilities to create the greatest long-term value.",
+  },
+  stakeholderEngagement: {
+    heading: "Creating Value Through<br /> Strategic Partnerships and Insightful Collaboration",
+    intro: "As one of the MENAT region’s leading strategic investors in the food and retail sector, we are accountable to a broad range of stakeholders, including our subsidiaries, employees, suppliers, local communities, partners, consumers, customers, investors, shareholders and government entities. Each group has distinct interests and expectations of Savola Group.",
+    commitmentLabel: "Our Commitment",
+    concernsLabel: "Key Concerns",
+    channelsLabel: "Engagement Methods / Channels",
+
+    investors: {
+      title: "Investors and Shareholders",
+      commitment: "To achieve long-term, profitable growth, we collaborate closely with investors and shareholders within a framework of responsible and ethical business practices.",
+      concerns: [
+        "Positive return on investment",
+        "Reputation management",
+        "Risk management",
+      ],
+      channels: [
+        "Board of Directors",
+        "Subsidiaries, Boards and Committees",
+        "Regular meetings for strategic and operational direction",
+        "Participate in shareholders’ General Assembly and Extraordinary General Assembly Meetings",
+        "Investor relation programs for investors",
+        "Financial results",
+        "Financial and non-financial reports on Tadawul website and in the published media",
+        "Department for shareholders’ affairs",
+      ],
+    },
+
+    suppliers: {
+      title: "Suppliers",
+      commitment: "Investing in long-term relationships with our suppliers and forming strategic supplier alliances guaranteeing value generation at every level of our extended value chain.",
+      concerns: [
+        "Transparent bidding process",
+        "Smooth invoicing and payment processes",
+      ],
+      channels: [
+        "Strengthening relationships with business partners",
+        "Integrated social and environmental considerations into the supplier selection process",
+        "Adherence to the Code of Conduct and ethical values",
+        "Support local suppliers in the Kingdom of Saudi Arabia",
+      ],
+    },
+
+    operatingCompanies: {
+      title: "Operating Companies",
+      commitment: "To focus on synergies while simplifying decision making and resource allocation, and to strengthen our position as the leading investment holding firm.",
+      concerns: [
+        "Board of Directors",
+        "Subsidiaries, Boards and Committees",
+        "Regular meetings for strategic and operational direction",
+      ],
+      channels: [
+        "Clear CSR guidelines from HQ",
+        "CSR champions assigned across all functions",
+        "Clear goals, direction and strategy",
+        "Support and tools for improving performance",
+      ],
+    },
+
+    employees: {
+      title: "Employees",
+      commitment: "To work consistently to foster a work culture that encourages open communication, camaraderie and great performance for our valued workers.",
+      concerns: [
+        "Job security",
+        "Fair compensation and benefits",
+        "Opportunities to develop",
+        "Ethical conduct",
+      ],
+      channels: [
+        "Program for training and employing people with disabilities",
+        "Initiatives to measure employee engagement, enhance the work environment and bring employees and their families together",
+        "Programs for women empowerment and employment",
+        "Employee assistance",
+        "Health benefits and seminars",
+        "Volunteering opportunities",
+      ],
+    },
+
+    community: {
+      title: "Community",
+      commitment: "To collaborate with community members, non-profit organizations, charity institutions, workers, suppliers and other stakeholders on innovative projects and long-standing programs that have a positive impact and improve community wellness.",
+      concerns: [
+        "Engagement and involvement in decision making",
+        "Investment in local communities",
+        "Supporting local enterprises",
+      ],
+      channels: [
+        "The ‘Leave the Change for Them’ charity initiative allows Panda customers to donate the small change from their purchases to charities across the Kingdom of Saudi Arabia",
+        "Makeen program to train and employ people with disabilities",
+        "Cooperating and supporting other social institutions to design educational, health and social programs",
+        "Internship opportunities for undergraduates",
+        "Board of Trustees of Savola World",
+      ],
+    },
+
+    consumers: {
+      title: "Consumers and Customers",
+      commitment: "To prioritize understanding and addressing the requirements of customers while also exceeding their expectations. By putting them at the center of our operations and establishing excellent name through trusted brands, we can support our customers’ lifestyle choices.",
+      concerns: [
+        "Fair prices",
+        "Ethical business conduct",
+        "Creating value for society’s 5 different economic segments by providing value for money products and services, and world-class quality experiences",
+      ],
+      channels: [
+        "Business development process",
+        "Market and satisfaction surveys",
+        "Consumer focus groups",
+        "Traditional media channels, social media and online portals",
+        "Website",
+      ],
+    },
+
+    board: {
+      title: "Board of Directors",
+      commitment: "To take the lead in sustainability and consistently uphold the Group’s principles.",
+      concerns: [
+        "Setting the Group’s strategic direction and plans",
+        "Positive return on investment",
+        "Reputation management",
+        "Risk management",
+      ],
+      channels: [
+        "Board of Directors meetings",
+        "Shareholders’ General Assembly",
+        "Board Committees",
+        "Engagement with Executives",
+        "Financial and non-financial reports and their transparency and integrity",
+        "Approving policies and procedures including Corporate Governance Code and rules",
+      ],
+    },
+
+    ngos: {
+      title: "NGOs",
+      commitment: "To help meet unfulfilled social needs among the most disadvantaged elements of society.",
+      concerns: [
+        "Supporting local causes",
+      ],
+      channels: [
+        "Funds and financial support",
+        "Partnerships to contribute to social and economic development",
+        "Volunteering activities",
+        "Social and environmental initiatives",
+      ],
+    },
+
+    partners: {
+      title: "Partners",
+      commitment: "To develop solid ties with recognized partners, with whom we may collaborate to produce good value.",
+      concerns: [
+        "Fair dealings",
+        "Openness and transparency",
+        "Creating mutually beneficial dealings",
+      ],
+      channels: [
+        "Participate in innovative sustainability initiatives",
+        "Develop new programs and solutions",
+        "Utilize strengths to make a positive impact",
+        "Collaboration agreements (MoUs)",
+      ],
+    },
+
+    government: {
+      title: "Government and Regulators",
+      commitment: "To comply with national and international rules and regulations, to work in a responsible manner that contributes to the progress of the country and business performance, allowing us to benefit the community while also contributing to a healthy environment.",
+      concerns: [
+        "Compliance with laws and regulations",
+        "Local employment opportunities",
+        "Support Saudi Vision 2030 and SDGs",
+      ],
+      channels: [
+        "Strong management and governance systems",
+        "Respond to government requests and participate in government programs",
+        "Collaborate with government stakeholders to advance common citizenship goals",
+        "Publish quarterly financial results",
+        "Support government efforts and enhance national food security",
+      ],
+    },
+  },
 };
 
 export default overview;
