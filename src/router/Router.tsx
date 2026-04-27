@@ -11,7 +11,7 @@ import InvestmentCasePage from "../pages/InvestmentCasePage";
 import StakeholderEngagementPage from "../pages/StakeholderEngagementPage";
 
 import StrategyAndBusinessModelPage from "../pages/StrategyAndBusinessModelPage";
-import StrategyGroupsTransformationJourneyPage from "../pages/StrategyGroupsTransformationJourneyPage";
+import SavolaGroupsTransformationJourneyPage from "../pages/SavolaGroupsTransformationJourneyPage";
 import SaudiVision2030Page from "../pages/SaudiVision2030Page";
 import TechnologyAndInnovationPage from "../pages/TechnologyAndInnovationPage";
 
@@ -77,7 +77,7 @@ export const pages: Section[] = [
     name: "Strategic Review",
     pages: [
       { id: "strategy-and-business-model", path: "strategy-and-business-model", name: "Strategy and Business Model" },
-      { id: "strategy-groups-transformation-journey", path: "strategy-groups-transformation-journey", name: "Strategy Group's Transformation Journey" },
+      { id: "savola-groups-transformation-journey", path: "savola-groups-transformation-journey", name: "Savola Group's Transformation Journey" },
       { id: "saudi-vision-2030", path: "saudi-vision-2030", name: "Saudi Vision 2030" },
       { id: "technology-and-innovation", path: "technology-and-innovation", name: "Technology and Innovation" },
     ],
@@ -141,8 +141,8 @@ const Router = () => {
     // Strategic Review
     case "strategy-and-business-model":
       return <StrategyAndBusinessModelPage />;
-    case "strategy-groups-transformation-journey":
-      return <StrategyGroupsTransformationJourneyPage />;
+    case "savola-groups-transformation-journey":
+      return <SavolaGroupsTransformationJourneyPage />;
     case "saudi-vision-2030":
       return <SaudiVision2030Page />;
     case "technology-and-innovation":

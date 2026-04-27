@@ -17,7 +17,7 @@ const common = {
       "investment-case": "الاستثمار في صافولا",
       "stakeholder-engagement": "التواصل مع أصحاب المصلحة",
       "strategy-and-business-model": "الاستراتيجية ونموذج الأعمال",
-      "strategy-groups-transformation-journey": "رحلة تحول مجموعة الاستراتيجية",
+      "savola-groups-transformation-journey": "رحلة تحول مجموعة الاستراتيجية",
       "saudi-vision-2030": "رؤية السعودية 2030",
       "technology-and-innovation": "التكنولوجيا والابتكار",
       "chairmans-statement": "كلمة رئيس مجلس الإدارة",

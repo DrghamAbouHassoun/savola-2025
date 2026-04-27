@@ -17,7 +17,7 @@ const common = {
       "investment-case": "Investment Case",
       "stakeholder-engagement": "Stakeholder Engagement",
       "strategy-and-business-model": "Strategy and Business Model",
-      "strategy-groups-transformation-journey": "Strategy Group's Transformation Journey",
+      "savola-groups-transformation-journey": "Savola Group's Transformation Journey",
       "saudi-vision-2030": "Saudi Vision 2030",
       "technology-and-innovation": "Technology and Innovation",
       "chairmans-statement": "Chairman's Statement",
