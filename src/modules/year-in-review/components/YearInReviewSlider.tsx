@@ -120,8 +120,8 @@ const YearInReviewSlider = () => {
         },
         {
           title: t("yearInReview.months.october.e2title"),
-          body: t("yearInReview.months.october.e2body"),
-          body2: t("yearInReview.months.october.e2body2"),
+          body: t("yearInReview.months.october.e2body2"),
+          // body2: t("yearInReview.months.october.e2body2"),
           image: Ellipse2,
         },
       ],

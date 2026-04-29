@@ -161,7 +161,7 @@ const Hero = () => {
       <div className="w-full h-screen relative overflow-hidden">
         <div
           key={`${heroAnimationKey}-trapezium`}
-          className={`fixed ${lang === "ar" ? "left-0 rotate-y-180" : "right-0"} bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s z-30`}
+          className={`fixed hidden sm:block ${lang === "ar" ? "left-0 rotate-y-180" : "right-0"} bottom-0 w-[50%] h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s -z-10`}
         >
           <img
             src={Trapezium}

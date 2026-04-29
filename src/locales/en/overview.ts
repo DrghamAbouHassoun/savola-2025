@@ -105,7 +105,7 @@ const overview = {
           "Savola World launched the “Negaderha Sawa” podcast, achieving a reach of 2.3 million, 277,000 views and 303 social engagements across all publishing platforms.",
         e2title: "Top 10 most influential brands in the Kingdom",
         e2body:
-          "Panda Retail Company was ranked among the top 10 most influential brands in Saudi Arabia and secured third place overall, reflecting strong consumer trust and brand relevance in the <br />retail sector.",
+          "Panda Retail Company was ranked among the top 10 most influential brands in Saudi Arabia and secured third place overall, reflecting strong consumer trust and brand relevance in the retail sector.",
       },
       may: {
         name: "May",
@@ -118,7 +118,7 @@ const overview = {
       },
       june: {
         name: "June",
-        e1title: '"Haj Without Waste" initiative',
+        e1title: '"Hajj Without Waste" initiative',
         e1body:
           'Savola World Foundation partnered with Eta’am, the Saudi Food Bank, during the 2025 Hajj season on the “Hajj Without Waste” initiative, resulting in 1,259,992 saved food units and 2,014 saved sacrifices with a total value of <i class="riyal-icon"></i> 17,310,864.',
         e2title: "Top 100 listed companies by Forbes Middle East",
@@ -149,8 +149,8 @@ const overview = {
         e1body:
           "Savola Group Chief Executive Officer Mr. Sameh Hassan was ranked among Sustainability Leaders by Forbes Middle East in recognition of leadership impact and commitment to sustainability.",
         e2title: "Corporate Social Responsibility Award – Gold category",
-        e2body:
-          "The Ministry of Human Resources and Social Development awarded Savola Group the Gold Category CSR Award, recognizing its contribution to community development and sustainable social impact. ",
+        // e2body:
+        //   "The Ministry of Human Resources and Social Development awarded Savola Group the Gold Category CSR Award, recognizing its contribution to community development and sustainable social impact. ",
         e2body2:
           "Savola Group was awarded the Gold Category CSR Award by the Ministry of Human Resources and Social Development, recognizing its contribution to community development and sustainable social impact.",
       },
@@ -167,10 +167,10 @@ const overview = {
         name: "December",
         e1title: "Corporate governance excellence recognition",
         e1body:
-          "Savola Group has, for the 4th consecutive year, ranked among the top 10 in the Corporate Governance Index (CGI) issued by the Corporate Governance Center at Alfaisal University for non-financial companies listed on the Saudi Exchange (Tadawul), underscoring its strong commitment to oversight, transparency and accountability",
+          "Savola Group has, for the 4th consecutive year, ranked among the top 10 in the Corporate Governance Index (CGI) issued by the Corporate Governance Center at Alfaisal University for non-financial companies listed on the Saudi Exchange (Tadawul), underscoring its strong commitment to oversight, transparency and accountability.",
         e2title: "Strategic merger of Savola Turkey",
         e2body:
-          "Savola entered into a strategic partnership with Tiryaki Anadolu, part of the leading Tiryaki Agro Holding Group in Turkey, under which Savola Turkey’s operations were combined into a new joint entity, strengthening the Group’s competitive position and presence in the Turkish market. Savola, through one of its subsidiaries, now holds a 15% minority stake in this new entity, with the Turkish partner holding 85%, leading to this business being reclassified as an investment rather than a consolidated operation in our financial statements",
+          "Savola entered into a strategic partnership with Tiryaki Anadolu, part of the leading Tiryaki Agro Holding Group in Turkey, under which Savola Turkey’s operations were combined into a new joint entity, strengthening the Group’s competitive position and presence in the Turkish market. Savola, through one of its subsidiaries, now holds a 15% minority stake in this new entity, with the Turkish partner holding 85%, leading to this business being reclassified as an investment rather than a consolidated operation in our financial statements.",
         e3title: "Best CX in Retail Award recognition",
         e3body:
           "Panda Retail Company received the Silver Award for Best Customer Experience in the Retail category at the Customer Experience Awards during the CX World Forum in Riyadh, recognizing progress in elevating the shopping experience through technology and partnerships.",

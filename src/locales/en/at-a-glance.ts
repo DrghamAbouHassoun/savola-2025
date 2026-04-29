@@ -17,7 +17,6 @@ const atAGlance = {
   highlights: {
     operationalTitle: "Operational Highlights",
     sustainabilityTitle: "Sustainability Highlights",
-    // Production card
     prodLabel: "Savola Foods' production volumes reached a yearly record",
     prodUnit: "million metric tons",
     // Panda stores card
@@ -31,8 +30,7 @@ const atAGlance = {
     pandaLoyaltyMid: "in 2025, with around",
     pandaLoyaltyAfterBold: "million active members.",
     // Market shares card
-    marketLabel:
-      "Savola Foods sustained growth across markets and categories.",
+    marketLabel: "Savola Foods sustained growth across markets and categories.",
     afiaSaudiOils: "Afia, Arabi, Shams drove share in Saudi oils.",
     rawabyEgyptGhee: "Rawaby and Ganna reached share in Egypt ghee.",
     osraSaudiSugar: "Osra held share in Saudi sugar.",
@@ -59,7 +57,7 @@ const atAGlance = {
     trainingC: "virtual training hours delivered across the Group.",
     // Sustainability - Hajj
     hajjLabel:
-      "Savola World partnered with Eta'am on the \"Hajj Without Waste\" initiative, saving",
+      'Savola World partnered with Eta\'am on the "Hajj Without Waste" initiative, saving',
     hajjFoodUnit: "food units",
     hajjSacrificeUnit: "sacrificial offerings",
     hajjValueLabel: "with a total value exceeding",
@@ -68,8 +66,7 @@ const atAGlance = {
 
   awards: {
     title: "Awards and Recognitions",
-    forbes100Title:
-      "Ranked among Top 100 Listed Companies in the Middle East",
+    forbes100Title: "Ranked among Top 100 Listed Companies in the Middle East",
     forbes100Body:
       "Savola Group was recognized by Forbes Middle East as one of the Top 100 listed companies in the Middle East.",
     meiraTitle: "Second Rank - Best Sustainability and ESG Report",
@@ -103,7 +100,7 @@ const atAGlance = {
 
   keyStats: {
     stat1Label: "Panda loyalty platform membership exceeded",
-    stat1Value: "14MN",
+    stat1Value: "14 MN",
     stat1Sub: "customers",
     stat2Label: "Production volumes reached a yearly record",
     stat2Value: "3.74 MN",

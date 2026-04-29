@@ -142,23 +142,111 @@ const strategicReview = {
       },
     },
     section2: {
-      title: "Transformation Timeline: From Portfolio Reshaping to Focused Growth",
+      title:
+        "Transformation Timeline: From Portfolio Reshaping to Focused Growth",
       qoute: {
         text: "With a clear strategy and aligned leadership, we are entering the next phase of our journey focused on disciplined growth, operational excellence and creating enduring value for our shareholders and stakeholders.",
         name: "Sameh Hassan",
-        position: "Group CEO"
-      }
-    }
+        position: "Group CEO",
+      },
+      portfolio: {
+        pre2024:
+          "<b>Pre-2024:</b> Portfolio optimization and groundwork for transformation",
+        y2024:
+          "<b>2024:</b> Capital strengthening and completion of major value-enhancing actions",
+        y2025:
+          "<b>2025:</b> Leadership alignment and confirmation of food-led strategy",
+        lookingAhed:
+          "<b>Looking ahead:</b> Scaled, integrated food platform with regional growth ambitions",
+        lookingAhedPart: {
+          title: "Looking Ahead with Focus and Confidence",
+          desc: "With its transformation foundations in place, Savola Group is positioned to build a scaled, branded and consumer-centric food platform. The Group’s focus now shifts to execution, growth and value creation, supported by aligned leadership, a clear operating model and a renewed strategic mandate.",
+        },
+      },
+      savloaGroupJourney: {
+        title:
+          "Savola Group Journey <br /><b>Restoring Greatness, De-Risking Portfolio and Fit for Growth</b>",
+        strategicPhaseText: "Strategic Phase",
+        netIncomeText: "Net Income ($ million)",
+        keyChallengesText: "Key Challenges / Initiatives",
+        tabs: [
+          {
+            title: "2018",
+            strategicPhase: {
+              text: "Valuation Gap, Operational Complexity and Performance Challenges",
+            },
+            netIncome: {
+              list: ["Savola Foods: (17)", "Panda: (917)", "Group: (520)"],
+            },
+            keyChallenges: {
+              list: [
+                "Savola Foods posted <i class='riyal-icon'></i> 17 million loss, the first in its history",
+                "Panda losses from Pandati exit, broken balance sheet, and weak store economics",
+                "Slower monetization of non-core assets",
+                "Acquired controlling stake in Al Kabeer – Frozen Food business",
+                "Market trading at a deep discount to intrinsic value",
+              ],
+            },
+          },
+          {
+            title: "2019-2021",
+            strategicPhase: {
+              text: "Restoring Greatness",
+            },
+            netIncome: {
+              list: ["Savola Foods for 2021: 316", "Panda for 2021: (587)", "Group: 222"],
+            },
+            keyChallenges: {
+              list: [
+                `Performance improvement through three key initiatives:
+                <ul>
+                  <li>refocus the business</li>
+                  <li>re-base costs</li>
+                  <li>realigning organization</li>
+                </ul>
+                `,
+                "Strategic acquisition of UAE market leader in nuts, spices and pulses(NSP) – Bayara",
+                "Introduction of CXR program in Panda to turn around operations, with further capitalization by the Group",
+                "received <i class='riyal-icon'></i> 147 million excess cash repatriation from Kinan",
+              ],
+            },
+          },
+          {
+            title: "2022-2025",
+            strategicPhase: {
+              text: "Years of Targeted Strategic and Operational Initiatives",
+            },
+            netIncome: {
+              list: ["Savola Foods for 2025: 481", "Panda for 2025: 115", "Group for 2025: 874", "Group (normalized): 539"],
+            },
+            keyChallenges: {
+              list: [
+                `Project Sigma:
+                <ul>
+                  <li>Optimization of leverage and readiness for future growth</li>
+                  <li>Unlocking the value of core businesses by distributing Almarai shares</li>
+                </ul>
+                `,
+                "Exited high-risk markets to de-risk Savola Foods",
+                "Post-merger restructuring to enhance competitiveness",
+              ],
+            },
+          },
+        ],
+      },
+    },
   },
   technology: {
     pageTitle: "Technology and Innovation ",
     title: "Building a Smarter Enterprise Powered by Digital Advantage",
-    desc1: "Savola Group continues to embed technology and innovation into the heart of its operating model. Our objective is to apply advanced digital capabilities to sharpen competitiveness, elevate execution and build a more resilient and sustainable organization.",
-    desc2: "By modernizing core platforms, accelerating automation and deepening analytics, we are enabling faster decisions, stronger visibility and smarter ways of working. Through strategic partnerships and a forward-looking roadmap, we are laying foundations for future growth and positioning our business to benefit from national digital priorities including Saudi Vision 2030.",
+    desc1:
+      "Savola Group continues to embed technology and innovation into the heart of its operating model. Our objective is to apply advanced digital capabilities to sharpen competitiveness, elevate execution and build a more resilient and sustainable organization.",
+    desc2:
+      "By modernizing core platforms, accelerating automation and deepening analytics, we are enabling faster decisions, stronger visibility and smarter ways of working. Through strategic partnerships and a forward-looking roadmap, we are laying foundations for future growth and positioning our business to benefit from national digital priorities including Saudi Vision 2030.",
     foucs: {
       title: "Technology and Innovation Focus ",
       p1: "Throughout 2025, we intensified efforts to strengthen operational agility by moving core systems to the cloud and partnering with leading platforms that improve flexibility and scalability. Our modern ERP system became a central enabler, integrating key functions, standardizing processes and providing real-time insight across planning, manufacturing, supply chain and commercial operations. These enhancements boosted demand-forecasting accuracy, accelerated decision-making, and increased frontline responsiveness to shifting market needs.",
-      p2: "Automation and analytics were also expanded across workflows, reducing manual effort and empowering teams with better tools and information. As day-to-day decision-making improved, employee productivity increased, while stronger data discipline strengthened the consistency and quality of execution. Together, these investments reinforced our operational backbone and deepened our digital capabilities."
+      p2: "Automation and analytics were also expanded across workflows, reducing manual effort and empowering teams with better tools and information. As day-to-day decision-making improved, employee productivity increased, while stronger data discipline strengthened the consistency and quality of execution. Together, these investments reinforced our operational backbone and deepened our digital capabilities.",
     },
     impact: {
       title: "Innovation and Measurable Impact ",
@@ -168,7 +256,173 @@ const strategicReview = {
     },
     drivingValue: {
       title: "Technology Partnerships Driving Value",
-      p1: "Partnerships with technology leaders accelerated this progress and expanded our capability stack. This included our ERP optimization and integrating business systems securely in the cloud, as well as enabling advanced data management and analytics capabilities to make insights faster and more scalable. In addition, key partnerships supported AI enablement, digital collaboration and productivity tools. These strategic relationships strengthened automation programs, advanced our smart factory initiatives and helped drive the culture shift toward digital-first thinking."
+      p1: "Partnerships with technology leaders accelerated this progress and expanded our capability stack. This included our ERP optimization and integrating business systems securely in the cloud, as well as enabling advanced data management and analytics capabilities to make insights faster and more scalable. In addition, key partnerships supported AI enablement, digital collaboration and productivity tools. These strategic relationships strengthened automation programs, advanced our smart factory initiatives and helped drive the culture shift toward digital-first thinking.",
+    },
+  },
+  saudiVision: {
+    pageTitle: "Saudi Vision 2030",
+    title: "Enabling Vision 2030 Through an Integrated Food Ecosystem",
+    subtitle: "Savola’s role in advancing Vision 2030 is anchored in the scale, diversity and integration of its operating model.",
+    p1: "As a Saudi-born food group with deep roots in the Kingdom, Savola contributes directly to national priorities spanning food security, industrial development, digital transformation and human capital growth. Its activities support Vision 2030 not through a single channel, but through a coordinated platform that touches manufacturing, retail, food services, logistics and consumer markets at scale, enabling impact across multiple sectors simultaneously.",
+    p2: "Savola is differentiated by the breadth and connectivity of its ecosystem. Few regional food groups operate end to end across large-scale food manufacturing, advanced omnichannel retail and consumer-facing food services under one integrated structure. Through Savola Foods and Al Kabeer, the Group strengthens local manufacturing capacity and resilient supply chains. Through Panda, it operates one of the Kingdom’s most advanced AI-enabled retail ecosystems, improving affordability, access and productivity. Through Herfy, Savola continues to invest in a Saudi homegrown QSR platform that combines digital innovation with national talent development. This farm-to-factory-to-store-to-consumer model allows Savola to drive economic diversification, technology adoption and workforce development in a coordinated way, reinforcing its position as a multi-sector enabler of Vision 2030 outcome.",
+    p3: "Savola is differentiated by the breadth and connectivity of its ecosystem. Few regional food groups operate end to end across large-scale food manufacturing, advanced omnichannel retail and consumer-facing food services under one integrated structure. Through Savola Foods and Al Kabeer, the Group strengthens local manufacturing capacity and resilient supply chains. Through Panda, it operates one of the Kingdom’s most advanced AI-enabled retail ecosystems, improving affordability, access and productivity. Through Herfy, Savola continues to invest in a Saudi homegrown QSR platform that combines digital innovation with national talent development. This farm-to-factory-to-store-to-consumer model allows Savola to drive economic diversification, technology adoption and workforce development in a coordinated way, reinforcing its position as a multi-sector enabler of Vision 2030 outcomes.",
+    label: "Production volumes<br />reached a yearly record<br /><b>3.74 MN</b><br /><b>metric tons</b>",
+    table: {
+      headers: [
+        "Vision 2030 Pillar and Goal",
+        "Savola’s Strategic Objectives",
+        "2025 Achievements",
+      ],
+      rows: [
+        [
+          {
+            title: "A Thriving Economy",
+            subtitle: "Build a globally competitive industrial and manufacturing base"
+          },
+          {
+            list: [
+              "Expand Saudi-based food manufacturing capacity (Savola Foods)",
+              "Localize production of strategic food categories (edible oils, packaged foods)",
+              "Invest in advanced production infrastructure and refineries",
+            ]
+          },
+          {
+            list: [
+              "Savola Foods completed major CAPEX initiatives including a new factory in Jeddah and refinery overhauls, strengthening domestic food manufacturing capacity and supporting the Vision 2030 goal of localizing non-oil industries.",
+              "Total production volumes reached a record 3.74 million metric tons (+8% YoY), reinforcing Saudi Arabia’s role as a regional food-production hub and advancing Vision 2030’s ambition to grow Saudi-based exports and industrial output.",
+            ]
+          }
+        ],
+        [
+          {
+            title: "A Thriving Economy",
+            subtitle: "Drive economic diversification through branded consumer industries",
+          },
+          {
+            list: [
+              "Build strong Saudi-rooted food brands (Savola Foods)",
+              "Expand value-added food platforms (frozen, packaged, healthy products)",
+            ],
+          },
+          {
+            list: [  
+              "Savola Foods strengthened its brand platforms in Saudi Arabia, including Afia’s relaunch and expansion into new categories (olive oil, canned tuna, spices, pulses, sugar) building competitive Saudi food brands in line with Vision 2030’s ambition, and the supporting local manufacturing and potential exports.  ",
+              "Savola Foods introduced a locally sourced Al Jouf olive oil variant, reinforcing agricultural linkage and local value creation consistent with Vision 2030’s rural development and local-content agenda.",
+              "Savola’s CEO was ranked among Forbes Middle East’s “Sustainability Leaders,” underscoring the Group’s role in advancing Vision 2030’s sustainability agenda and positioning Saudi companies as regional ESG champions.",
+              "Panda Retail Company was ranked among the top 10 most influential brands in Saudi Arabia and secured 3rd place overall, underscoring Panda’s role as a leading Saudi retail brand that strengthens consumer trust, supports modern trade development and advances Vision 2030’s goal to drive economic diversification through strong, homegrown branded consumer industries.",
+            ]
+          }
+        ],
+        [
+          {
+            title: "A Thriving Economy",
+            subtitle: "Advance digital transformation of traditional industries",
+          },
+          {
+            list: [
+              "Digitize retail and logistics (Panda)",
+            ],
+          },
+          {
+            list: [
+              "Panda deployed AI-driven customer agents, advanced CRM, automated fulfillment and real-time inventory systems; e-commerce scaled to ~& 320 million revenue in 2025, contributing to Vision 2030’s aspiration to build a leading digital and e-commerce ecosystem in the Kingdom.",
+            ]
+          }
+        ],
+        [
+          {
+            title: "A Thriving Economy",
+            subtitle: "Improve productivity and industrial efficiency",
+          },
+          {
+            list: [
+              "Deploy operational excellence programs (Savola Foods) ",
+              "Optimize supply chain, inventory and production yields",
+            ]
+          },
+          {
+            list: [
+              "Savola Foods achieved a 33% reduction in customer complaints, and a 75% YoY decrease in quality incidents (SQIs), reflecting improved industrial quality systems that support Vision 2030’s drive for world-class standards in Saudi manufacturing and services.",
+            ]
+          }
+        ],
+        [
+          {
+            title: "A Thriving Economy",
+            subtitle: "Develop human capital and industrial skills",
+          },
+          {
+            list: [
+              "Workforce training in manufacturing and safety (Savola Foods)",
+              "Retail and logistics capability building (Panda)",
+            ],
+          },
+          {
+            list: [
+              "Savola Foods delivered 3,400+ Health, Safety and Environment (HSE) training sessions and recognized 2,000+ employees across operations, strengthening industrial safety and technical skills in support of Vision 2030’s emphasis on a highly skilled, productive national workforce. ",
+              "Panda expanded digital, logistics and data roles through omnichannel operations growth, creating future-ready jobs and capabilities aligned with Vision 2030’s digital economy and human-capital development pillars.",
+              "Savola received the Comprehensive Performance and Rewards award from SHRM MENA, highlighting its investment in people, progressive HR practices and talent development in line with Vision 2030’s ambition to build a highly skilled, productive and engaged national workforce.",
+            ]
+          }
+        ],
+        [
+          {
+            title: "A Thriving Economy",
+            subtitle: "Strengthen food security and local supply chains",
+          },
+          {
+            list: [
+              "Secure long-term domestic production of essential food categories (Savola Foods) ",
+              "Expand cold-chain and frozen food infrastructure (Al Kabeer) ",
+              "Vertical integration in fresh categories (Panda)",
+            ],
+          },
+          {
+            list: [
+              "Savola Foods expanded local production of edible oils and packaged foods through the Jeddah facility and refinery upgrades, reducing reliance on imports and contributing to Vision 2030 targets on food security, economic resilience and local content. ",
+              "Al Kabeer operates a Saudi manufacturing facility supported by an extensive cold-chain network, ensuring nationwide frozen food availability and aligning with Vision 2030’s focus on reliable food access and modern logistics infrastructure.",
+              "Panda increased localized sourcing and vertical integration in bakery, produce and proteins to improve availability and cost stability, directly supporting the objectives of Vision 2030 to develop local supply chains and strengthen the role of Saudi SMEs and farmers.",
+            ]
+          }
+        ],
+        [
+          {
+            title: "A Vibrant Society",
+            subtitle: "Enhance quality of life and affordability of food",
+          },
+          {
+            list: [
+              "Maintain affordable access to food (Panda)",
+              "Improve nutritional product offerings (Savola Foods)",
+            ],
+          },
+          {
+            list: [
+              "Panda achieved market-leading NPS of 94 and highest brand preference, improving everyday food access nationwide, in line with Vision 2030’s goal of improving quality of life for citizens and residents. ",
+              "Savola Foods expanded better-for-you products such as Fitness Sugar and diversified its healthy cooking oil portfolio in Saudi Arabia, directly supporting Vision 2030’s “living healthy, being healthy” agenda by enabling healthier daily nutrition choices.",
+            ]
+          }
+        ],
+        [
+          {
+            title: "Ambitious Nation ",
+            subtitle: "Strengthen governance, transparency and ESG disclosure",
+          },
+          {
+            list: [
+              "Advance corporate governance and risk management (Savola Group)",
+              "Enhance ESG disclosure and investor transparency (Savola Group)"
+            ],
+          },
+          {
+            list: [
+              "Savola received recognition for excellence in corporate governance from Alfaisal University, reflecting strong transparency, accountability and risk management practices that reinforce Vision 2030’s goal of building world-class institutions and a trusted business environment.",
+              "Savola achieved second place for Best Sustainability and ESG Report from the Middle East Investor Relations Association, underscoring leading disclosure and investor transparency in line with Vision 2030’s focus on robust governance, mature capital markets and responsible private-sector leadership.",
+            ]
+          }
+        ],
+        
+      ]
     }
   }
 };

@@ -53,6 +53,8 @@
   --color-savola-cool-grey: #4E5F6D;
   --color-savola-cool-grey-10: #EEEFF1;
   --color-savola-cool-grey-7: #F2F4F5;
+
+  --color-savola-navy: #1D3461;
 }
 
 @layer base {
@@ -68,6 +70,7 @@
 
 .riyal-icon {
   font-family: var(--font-riyal);
+  font-style: normal;
 }
 
 .riyal-icon::before {
