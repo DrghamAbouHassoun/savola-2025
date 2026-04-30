@@ -11,6 +11,7 @@ import enOperatingReview from "../../../locales/en/operating-review";
 import enSustainabilityReview from "../../../locales/en/sustainability-review";
 import enDownloadCenter from "../../../locales/en/download-center";
 import enBusinessReview from "../../../locales/en/business-review";
+import enEsgReview from "../../../locales/en/esg-review";
 
 // AR translations
 import arCommon from "../../../locales/ar/common";
@@ -23,6 +24,7 @@ import arOperatingReview from "../../../locales/ar/operating-review";
 import arSustainabilityReview from "../../../locales/ar/sustainability-review";
 import arDownloadCenter from "../../../locales/ar/download-center";
 import arBusinessReview from "../../../locales/ar/business-review";
+import arEsgReview from "../../../locales/ar/esg-review";
 
 const translations = {
   en: {
@@ -36,6 +38,7 @@ const translations = {
     "sustainability-review": enSustainabilityReview,
     "download-center": enDownloadCenter,
     "business-review": enBusinessReview,
+    "esg-review": enEsgReview,
   },
   ar: {
     common: arCommon,
@@ -48,6 +51,7 @@ const translations = {
     "sustainability-review": arSustainabilityReview,
     "download-center": arDownloadCenter,
     "business-review": arBusinessReview,
+    "esg-review": arEsgReview,
   },
 };
 
