@@ -13,13 +13,14 @@ interface CountUpProps {
 
 const CountUp = ({
   end,
-  decimals = 0,
+  decimals,
   duration = 1400,
   className = "",
   prefix = "",
   suffix = "",
   separator = ",",
 }: CountUpProps) => {
+  const resolvedDecimals = decimals ?? (end % 1 !== 0 ? String(end).split(".")[1]?.length ?? 0 : 0);
   const { inView, ref } = useInView<HTMLSpanElement>({ partial: true, triggerOnce: true });
   const [value, setValue] = useState(0);
   const frameRef = useRef<number | null>(null);
@@ -49,7 +50,7 @@ const CountUp = ({
   }, [inView, end, duration]);
 
   const format = (v: number) => {
-    const fixed = v.toFixed(decimals);
+    const fixed = v.toFixed(resolvedDecimals);
     if (!separator) return `${prefix}${fixed}${suffix}`;
     const [int, dec] = fixed.split(".");
     const withSep = int.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
