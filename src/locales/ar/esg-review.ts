@@ -83,7 +83,7 @@ export default {
   materiality: {
     pageTitle: "تقييم الأهمية النسبية",
     intro:
-      "For Savola Group, materiality assessment goes beyond ESG disclosure and compliance. It serves as a strategic tool to identify impact hotspots, prioritize areas for action, and clearly communicate where the Group’s key priorities lie through a well-defined materiality matrix.",
+      "وبالنسبة لمجموعة صافولا، لا يقتصر تقييم الأهمية النسبية لموضوعات البيئة والمجتمع والحوكمة على تلبية متطلبات الإفصاح أو الامتثال التنظيمي فحسب، بل يعد أداة استراتيجية لتحديد مجالات التأثير الرئيسية، وترتيب أولويات العمل، وتوضيح المجالات التي تتركز عندها جهود المجموعة من خلال مصفوفة أهمية نسبية تعكس توجهها الاستراتيجي وواقعها التشغيلي.",
     matrix: {
       title: "مصفوفة الأهمية النسبية",
       subtitle:
