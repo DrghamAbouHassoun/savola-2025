@@ -77,4 +77,109 @@ export default {
       "Avoiding implications of reputational risks",
     ],
   },
+  materiality: {
+    pageTitle: "Materiality Assessment",
+    intro:
+      "For Savola Group, materiality assessment goes beyond ESG disclosure and compliance. It serves as a strategic tool to identify impact hotspots, prioritize areas for action, and clearly communicate where the Group’s key priorities lie through a well-defined materiality matrix.",
+    matrix: {
+      title: "Materiality Matrix",
+      subtitle:
+        "The materiality assessment produced a matrix that prioritizes key sustainability topics, serving as a valuable tool for risk management and opportunity identification.",
+    },
+    points: {
+      mostImportant: {
+        title: "Most Important",
+        list: [
+          {
+            index: 1,
+            title: "Food quality and safety",
+          },
+          {
+            index: 2,
+            title: "Clean and efficient energy",
+          },
+          {
+            index: 3,
+            title: "Climate change and emissions ",
+          },
+          {
+            index: 4,
+            title: "Waste and circular economy",
+          },
+          {
+            index: 5,
+            title: "Health,wellness and quality oflife ",
+          },
+          {
+            index: 6,
+            title: "Human capitalretention, engagement and development ",
+          },
+        ],
+      },
+      veryImportant: {
+        title: "Very Important",
+        list: [
+          {
+            index: 7,
+            title: "Transparency and reporting",
+          },
+          {
+            index: 8,
+            title: "Corporate governance",
+          },
+          {
+            index: 9,
+            title: "Sustainable packaging",
+          },
+          {
+            index: 10,
+            title: "Nationalization",
+          },
+          {
+            index: 11,
+            title: "Community impact and investment",
+          },
+        ],
+      },
+      important: {
+        title: "Important",
+        list: [
+          {
+            index: 12,
+            title: "Business ethics and integrity",
+          },
+          {
+            index: 13,
+            title: "Diversity,equity and inclusion",
+          },
+          {
+            index: 14,
+            title: "Nutrition andhealth",
+          },
+          {
+            index: 15,
+            title: "Customer experience and relationship",
+          },
+          {
+            index: 16,
+            title: "Responsible investment",
+          },
+        ],
+      },
+      keys: [
+        {
+          color: "grey",
+          text: "Environmental",
+        },
+        {
+          color: "green",
+          text: "Social",
+        },
+        {
+          color: "orange",
+          text: "Governance",
+        },
+      ],
+    },
+  },
 };
