@@ -50,7 +50,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
   };
 
   const section2 = {
-    title: t("journey.section2.savloaGroupJourney.title"),
+    title: t("journey.section2.title"),
     quote: {
       text: t("journey.section2.qoute.text"),
       name: t("journey.section2.qoute.name"),
@@ -67,6 +67,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
       },
     },
     journey: {
+      title: t("journey.section2.savloaGroupJourney.title"),
       strategicPhaseText: t(
         "journey.section2.savloaGroupJourney.strategicPhaseText",
       ),
@@ -284,6 +285,15 @@ const SavolaGroupsTransformationJourneyPage = () => {
               </p>
             </AnimationSlideTop>
 
+            <AnimationFadeIn>
+              <h3
+                className="text-2xl font-bold text-savola-green mb-4"
+                dangerouslySetInnerHTML={{
+                  __html: section2.journey.title,
+                }}
+              ></h3>
+            </AnimationFadeIn>
+
             {/* Journey Table */}
             <AnimationFadeIn>
               {/* Tabs */}
@@ -309,7 +319,9 @@ const SavolaGroupsTransformationJourneyPage = () => {
                   {/* Headers */}
 
                   {/* Strategic Phase */}
-                  <div className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-green-20 to-savola-green-20/0`}>
+                  <div
+                    className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-green-20 to-savola-green-20/0`}
+                  >
                     <div className="mb-4">
                       <p className="font-bold text-savola-cool-grey text-lg">
                         {section2.journey.strategicPhaseText}
@@ -321,7 +333,9 @@ const SavolaGroupsTransformationJourneyPage = () => {
                   </div>
 
                   {/* Net Income */}
-                  <div className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-orange-20 to-savola-orange-20/0`}>
+                  <div
+                    className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-orange-20 to-savola-orange-20/0`}
+                  >
                     <div className="mb-4">
                       <p
                         className="font-bold text-savola-cool-grey text-lg"
@@ -344,7 +358,9 @@ const SavolaGroupsTransformationJourneyPage = () => {
                   </div>
 
                   {/* Key Challenges */}
-                  <div className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-cool-grey-10 to-savola-cool-grey-10/0`}>
+                  <div
+                    className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-cool-grey-10 to-savola-cool-grey-10/0`}
+                  >
                     <div className="mb-4">
                       <p className="font-bold text-savola-cool-grey text-lg">
                         {section2.journey.keyChallengesText}

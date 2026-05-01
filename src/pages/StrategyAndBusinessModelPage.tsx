@@ -10,6 +10,7 @@ import HowWeAddValueIcon from "../assets/icons/business-model/how-we-add-value.s
 import OurCorporateValuesIcon from "../assets/icons/business-model/our-corporate-values.svg";
 
 import SavolaAngleGreen from "../assets/vectors/savola-angel-green.svg";
+import FlowerTwoIcon from "../assets/icons/flower-2.svg";
 
 type StrengthItem = { title: string; desc: string };
 type AddValueItem = { title: string; desc: string };
@@ -22,6 +23,7 @@ type BusinessModel = {
   ourChallenges: { title: string; items: string[] };
   howWeAddedValue: { title: string; items: AddValueItem[] };
   ourCorporateValue: { title: string; items: CorporateValueItem[] };
+  outro: string;
 };
 
 const StrategyAndBusinessModelPage = () => {
@@ -185,6 +187,9 @@ const StrategyAndBusinessModelPage = () => {
               );
             })}
           </div>
+          <h3 className='text-2xl text-savola-cool-grey font-bold p-4 py-8 bg-linear-to-b from-savola-green-20 to-savola-green/0 flex justify-center mt-32 gap-4'>
+            <img src={FlowerTwoIcon} alt="" className="w-16 h-16" />{data.outro}
+          </h3>
         </SmallContainer>
       </section>
     </div>

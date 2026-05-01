@@ -116,7 +116,7 @@ const SaudiVision2030Page = () => {
                           className="text-savola-cool-grey text-xs flex items-start gap-2 leading-relaxed"
                         >
                           <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-green shrink-0" />
-                          {item}
+                          <span dangerouslySetInnerHTML={{ __html: item }} />
                         </li>
                       ))}
                     </ul>
@@ -131,7 +131,7 @@ const SaudiVision2030Page = () => {
                           className="text-savola-cool-grey text-xs flex items-start gap-2 leading-relaxed"
                         >
                           <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-green shrink-0" />
-                          {item}
+                          <span dangerouslySetInnerHTML={{ __html: item }} />
                         </li>
                       ))}
                     </ul>

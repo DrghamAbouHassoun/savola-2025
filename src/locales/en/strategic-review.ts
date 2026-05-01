@@ -91,6 +91,7 @@ const strategicReview = {
         },
       ],
     },
+    outro: "By combining disciplined capital deployment with long-term consumer trend analysis, we grow our share of consumer spending and create sustainable value for shareholders.",
   },
   journey: {
     pageTitle: "Savola Group’s Transformation Journey",
@@ -325,7 +326,7 @@ const strategicReview = {
           },
           {
             list: [
-              "Panda deployed AI-driven customer agents, advanced CRM, automated fulfillment and real-time inventory systems; e-commerce scaled to ~& 320 million revenue in 2025, contributing to Vision 2030’s aspiration to build a leading digital and e-commerce ecosystem in the Kingdom.",
+              "Panda deployed AI-driven customer agents, advanced CRM, automated fulfillment and real-time inventory systems; e-commerce scaled to ~<i class='riyal-icon'></i> 320 million revenue in 2025, contributing to Vision 2030’s aspiration to build a leading digital and e-commerce ecosystem in the Kingdom.",
             ]
           }
         ],
