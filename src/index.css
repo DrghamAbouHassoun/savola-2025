@@ -37,8 +37,43 @@
   src: url("./assets/fonts/Riyal/Riyal.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "TheSans";
+  src: url("./assets/fonts/TheSans/TheSansArabic-SemiLight.otf") format("opentype"),
+       url("./assets/fonts/TheSans/TheSansArab-SemiLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TheSans";
+  src: url("./assets/fonts/TheSans/TheSansArabic-Plain.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TheSans";
+  src: url("./assets/fonts/TheSans/TheSansArabic-SemiBold.otf") format("opentype"),
+       url("./assets/fonts/TheSans/TheSansArab-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TheSans";
+  src: url("./assets/fonts/TheSans/TheSansArab-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-avenir: "Avenir", sans-serif;
+  --font-thesans: "TheSans", sans-serif;
   --font-riyal: "Riyal", sans-serif;
   --breakpoint-2xl: 1410px;
   /* Primary Colors */
@@ -60,6 +95,11 @@
 @layer base {
   body {
     font-family: var(--font-avenir);
+  }
+
+  :lang(ar) body,
+  [dir="rtl"] body {
+    font-family: var(--font-thesans);
   }
 }
 

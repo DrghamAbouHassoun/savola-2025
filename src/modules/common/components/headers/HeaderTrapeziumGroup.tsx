@@ -9,7 +9,7 @@ const HeaderTrapeziumGroup = () => {
           src={TrapeziumItem1}
           alt=""
           className="absolute bottom-0 right-0 h-[80vh] w-auto object-contain object-right animate-trapezium-cycle"
-          style={{ animationDelay: `${delay}s` }}
+          style={{ animationDelay: `${delay}s`, right: `${delay * 10}px` }}
         />
       ))}
     </div>

@@ -12,7 +12,7 @@ const common = {
     pages: {
       "theme-of-the-year": "محور العام",
       "2025-at-a-glance": "لمحة عن العام 2025م",
-      "year-in-review": "استعراض العام",
+      "year-in-review": "أبرز محطات العام 2025م",
       "geographical-footprint": "نطاق أعمالنا الجغرافي",
       "investment-case": "الاستثمار في صافولا",
       "stakeholder-engagement": "التواصل مع أصحاب المصلحة",

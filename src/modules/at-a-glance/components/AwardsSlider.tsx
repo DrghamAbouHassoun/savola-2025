@@ -22,19 +22,79 @@ interface AwardData {
 }
 
 const AWARDS_DATA: AwardData[] = [
-  { key: "forbes-top-100", logo: forbes, logoAlt: "Forbes", titleKey: "awards.forbes100Title", bodyKey: "awards.forbes100Body" },
-  { key: "meira", logo: meira, logoAlt: "Middle East Investor Relations Association", titleKey: "awards.meiraTitle", bodyKey: "awards.meiraBody" },
-  { key: "hrsd", logo: human, logoAlt: "Human Resources and Social Development", titleKey: "awards.hrsdTitle", bodyKey: "awards.hrsdBody" },
-  { key: "forbes-sustainability", logo: forbes, logoAlt: "Forbes", titleKey: "awards.forbesSustTitle", bodyKey: "awards.forbesSustBody" },
-  { key: "advantage", logo: advantage, logoAlt: "Advantage", titleKey: "awards.advantageTitle", bodyKey: "awards.advantageBody" },
-  { key: "silver-cx", logo: silver, logoAlt: "Silver Award", titleKey: "awards.silverTitle", bodyKey: "awards.silverBody" },
-  { key: "shrm-mena", logo: shrmMena, logoAlt: "SHRM MENA 25 Annual Conference & Expo", titleKey: "awards.shrmTitle", bodyKey: "awards.shrmBody" },
-  { key: "effie", logo: effie, logoAlt: "Effie Awards", titleKey: "awards.effieTitle", bodyKey: "awards.effieBody" },
-  { key: "cgc", logo: cgc, logoAlt: "Corporate Governance Center - Alfaisal University", titleKey: "awards.cgcTitle", bodyKey: "awards.cgcBody" },
-  { key: "top-employer", logo: top, logoAlt: "Top Employer Egypt 2025", titleKey: "awards.topTitle", bodyKey: "awards.topBody" },
+  {
+    key: "forbes-top-100",
+    logo: forbes,
+    logoAlt: "Forbes",
+    titleKey: "awards.forbes100Title",
+    bodyKey: "awards.forbes100Body",
+  },
+  {
+    key: "meira",
+    logo: meira,
+    logoAlt: "Middle East Investor Relations Association",
+    titleKey: "awards.meiraTitle",
+    bodyKey: "awards.meiraBody",
+  },
+  {
+    key: "hrsd",
+    logo: human,
+    logoAlt: "Human Resources and Social Development",
+    titleKey: "awards.hrsdTitle",
+    bodyKey: "awards.hrsdBody",
+  },
+  {
+    key: "forbes-sustainability",
+    logo: forbes,
+    logoAlt: "Forbes",
+    titleKey: "awards.forbesSustTitle",
+    bodyKey: "awards.forbesSustBody",
+  },
+  {
+    key: "advantage",
+    logo: advantage,
+    logoAlt: "Advantage",
+    titleKey: "awards.advantageTitle",
+    bodyKey: "awards.advantageBody",
+  },
+  {
+    key: "silver-cx",
+    logo: silver,
+    logoAlt: "Silver Award",
+    titleKey: "awards.silverTitle",
+    bodyKey: "awards.silverBody",
+  },
+  {
+    key: "shrm-mena",
+    logo: shrmMena,
+    logoAlt: "SHRM MENA 25 Annual Conference & Expo",
+    titleKey: "awards.shrmTitle",
+    bodyKey: "awards.shrmBody",
+  },
+  {
+    key: "effie",
+    logo: effie,
+    logoAlt: "Effie Awards",
+    titleKey: "awards.effieTitle",
+    bodyKey: "awards.effieBody",
+  },
+  {
+    key: "cgc",
+    logo: cgc,
+    logoAlt: "Corporate Governance Center - Alfaisal University",
+    titleKey: "awards.cgcTitle",
+    bodyKey: "awards.cgcBody",
+  },
+  {
+    key: "top-employer",
+    logo: top,
+    logoAlt: "Top Employer Egypt 2025",
+    titleKey: "awards.topTitle",
+    bodyKey: "awards.topBody",
+  },
 ];
 
-const SCROLL_PER_AWARD_VH = 80;
+const SCROLL_PER_AWARD_VH = 120;
 const SECTION_HEIGHT_VH = (AWARDS_DATA.length - 1) * SCROLL_PER_AWARD_VH + 100;
 
 const ProgressDots = ({ total, active }: { total: number; active: number }) => (
@@ -106,10 +166,8 @@ const AwardsSlider = () => {
         className="relative hidden md:block"
       >
         <div className="sticky top-0 h-screen overflow-hidden">
-
           <Container className="h-full flex items-center">
             <div className="grid grid-cols-2 gap-12 lg:gap-20 w-full items-center">
-
               {/* LEFT: Text panel */}
               <div>
                 <p className="text-savola-green text-sm font-bold uppercase tracking-widest mb-6">
@@ -137,9 +195,10 @@ const AwardsSlider = () => {
                       <h2 className="text-2xl lg:text-3xl font-black text-savola-cool-grey leading-snug mb-4">
                         {t(award.titleKey)}
                       </h2>
-                      <p className="text-savola-cool-grey/70 text-base leading-relaxed">
-                        {t(award.bodyKey)}
-                      </p>
+                      <p
+                        className="text-savola-cool-grey/70 text-base leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: t(award.bodyKey) }}
+                      ></p>
                     </div>
                   ))}
                 </div>
@@ -164,7 +223,6 @@ const AwardsSlider = () => {
                   />
                 ))}
               </div>
-
             </div>
           </Container>
         </div>
@@ -203,9 +261,10 @@ const AwardsSlider = () => {
                     <h3 className="font-bold text-savola-cool-grey text-sm leading-snug">
                       {t(award.titleKey)}
                     </h3>
-                    <p className="text-savola-cool-grey/70 text-sm leading-relaxed">
-                      {t(award.bodyKey)}
-                    </p>
+                    <p
+                      className="text-savola-cool-grey/70 text-sm leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: t(award.bodyKey) }}
+                    ></p>
                   </div>
                 </div>
               </div>

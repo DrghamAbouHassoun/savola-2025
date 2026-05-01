@@ -55,7 +55,7 @@ const KpiBar = ({ item, maxValue, index, inView, isRtl, yearSuffix }: KpiBarProp
     <div className="grid items-center gap-3">
       <div className="relative h-5 overflow-hidden bg-savola-green-20">
         <span
-          className={`absolute font-bold text-savola-cool-grey/80 ${
+          className={`absolute ${item.year.includes("2025") ? "text-white" : "text-savola-cool-grey/80"} ${
             isRtl ? "right-2" : "left-2"
           }`}
         >
@@ -64,7 +64,7 @@ const KpiBar = ({ item, maxValue, index, inView, isRtl, yearSuffix }: KpiBarProp
         <div
           className={`h-full transition-[width] ease-out ${
             isRtl ? "rounded-tl-full" : "rounded-tr-full"
-          } ${item.highlight ? "bg-savola-green" : "bg-savola-green/75"}`}
+          } ${item.highlight ? "bg-savola-green" : "bg-savola-green/50"}`}
           style={{
             width: inView ? `${pct}%` : "0%",
             minWidth: inView ? "45%" : "0%",
@@ -75,7 +75,7 @@ const KpiBar = ({ item, maxValue, index, inView, isRtl, yearSuffix }: KpiBarProp
         />
         <span
           ref={spanRef}
-          className={`absolute top-1/2 -translate-y-1/2 font-black mt-0.5 transition-opacity duration-300 ${
+          className={`absolute top-1/2 -translate-y-1/2 mt-0.5 transition-opacity duration-300 ${
             item.highlight ? "text-white" : "text-savola-cool-grey"
           }`}
           style={{

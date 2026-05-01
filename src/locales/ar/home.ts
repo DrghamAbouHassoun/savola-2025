@@ -1,6 +1,6 @@
 const home = {
   hero: {
-    heading: "مرحلة جديدة من\nالنمو المُركَّز",
+    heading: "مرحلة جديدة\n من النمو",
     annualReport: "التقرير السنوي",
   },
 };
