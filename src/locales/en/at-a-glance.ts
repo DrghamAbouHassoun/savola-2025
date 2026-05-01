@@ -86,7 +86,7 @@ const atAGlance = {
       "Panda Retail Company received the Silver Award for Best Customer Experience in Retail from the Customer Experience Awards (CX World Forum, Riyadh).",
     shrmTitle: "Comprehensive Performance and Rewards Award",
     shrmBody:
-      "Panda Foods was recognized at the SHRM MENA Regional Awards for HR excellence and leading people practices.",
+      "Savola Foods was recognized at the SHRM MENA Regional Awards for HR excellence and leading people practices.",
     effieTitle: "Multiple Effie Awards - Ganna Brand (Egypt)",
     effieBody:
       "Savola Foods' Ganna brand in Egypt received two Bronze Effie Awards for New product line extension and Product innovation.",
@@ -95,7 +95,7 @@ const atAGlance = {
       "Savola Group was recognized for excellence in corporate governance by the Corporate Governance Center at Alfaisal University under the Alfaisal Corporate Governance Index.",
     topTitle: "Savola Foods Egypt Top Employer Certification",
     topBody:
-      "Savola Foods Egypt was certified as a Top Employer by Top Employer Egypt, making it one of Egypt's leading employers.",
+      "Savola Foods Egypt was certified as a Top Employer by Top Employer Egypt, recognizing it as one of Egypt's leading employers.",
   },
 
   keyStats: {

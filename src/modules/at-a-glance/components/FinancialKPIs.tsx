@@ -195,7 +195,7 @@ const FinancialKPIs = () => {
       maxValue: 915,
       items: [
         { year: "2023", value: 915 },
-        { year: "2024", value: 744 },
+        { year: "2024", value: 774 },
         { year: "2025", value: 859, highlight: true },
       ],
     },

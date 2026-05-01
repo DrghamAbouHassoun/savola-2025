@@ -15,13 +15,13 @@ const NewHeader = ({ imageUrl, title }: NewHeaderProps) => {
   const isAr = lang === "ar";
   return (
     <div className="w-full min-h-screen flex flex-col lg:flex-row lg:items-center lg:relative overflow-hidden">
-      <div className={`absolute ${lang === "ar" ? "left-0" : "right-0"} bottom-0 -z-10 w-[70vw] h-screen`}>
+      <div className={`absolute ${lang === "ar" ? "left-0" : "right-0"} bottom-0 -z-10 w-full h-screen`}>
         <HeaderTrapeziumGroup />
       </div>
       {/* Title */}
       <div className="w-full max-w-7xl mx-auto px-4 py-16 lg:pl-16 xl:pl-4 pt-32 lg:pt-0 lg:relative">
         <AnimationPopUp>
-          <h1 className="text-4xl font-bold">{title}</h1>
+          <h1 className="text-4xl font-bold max-w-110">{title}</h1>
         </AnimationPopUp>
       </div>
 

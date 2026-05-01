@@ -208,7 +208,7 @@ const YearInReviewSlider = () => {
               {MONTHS.map((monthData) => (
                 <div
                   key={monthData.month}
-                  className={`shrink-0 ${monthData.flex === 3 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-screen" : monthData.events.length === 1 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[35vw] " : monthData.events.length === 2 ? "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[60vw] " : "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[80vw] "}`}
+                  className={`shrink-0 ${monthData.flex === 3 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-screen min-w-300" : monthData.events.length === 1 ? "w-[85vw] sm:w-[55vw] md:w-[42vw] lg:w-[35vw] " : monthData.events.length === 2 ? "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[60vw] " : "w-[170vw] sm:w-[110vw] md:w-[164vw] lg:w-[80vw] "}`}
                 >
                   {/* Month label */}
                   <div className="mb-4 pt-8 border-t-4 border-savola-green relative">

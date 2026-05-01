@@ -335,3 +335,35 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+@keyframes TrapeziumCycle {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  22% {
+    opacity: 1;
+    transform: translateX(-35vw);
+  }
+  33% {
+    opacity: 0;
+    transform: translateX(-45vw);
+  }
+  33.01% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+}
+
+.animate-trapezium-cycle {
+  opacity: 0;
+  transform: translateX(100vw);
+  animation-name: TrapeziumCycle;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}

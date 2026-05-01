@@ -145,7 +145,7 @@ const overview = {
       },
       october: {
         name: "October",
-        e1title: "Forbes Middle East CEO Leadership recognition",
+        e1title: "Forbes Middle East Sustainability Leadership recognition",
         e1body:
           "Savola Group Chief Executive Officer Mr. Sameh Hassan was ranked among Sustainability Leaders by Forbes Middle East in recognition of leadership impact and commitment to sustainability.",
         e2title: "Corporate Social Responsibility Award – Gold category",
@@ -180,7 +180,7 @@ const overview = {
   geographicalFootprint: {
     pageTitle: "Geographical Footprint",
     mainTitle: "Expanding Across Regions",
-    desc: "of a food group built for sustained growth. Anchored by strong domestic operations and extended through regional manufacturing, distribution, retail and export platforms, the Group’s presence enables proximity to consumers, operational efficiency and disciplined market execution. This scale and reach underpin Savola’s ability to serve diverse markets, manage complexity and deploy capital and capabilities to create the greatest long-term value.",
+    desc: "Savola's geographic footprint reflects the scale, integration and resilience of a food group built for sustained growth. Anchored by strong domestic operations and extended through regional manufacturing, distribution, retail and export platforms, the Group’s presence enables proximity to consumers, operational efficiency and disciplined market execution. This scale and reach underpin Savola’s ability to serve diverse markets, manage complexity and deploy capital and capabilities to create the greatest long-term value.",
   },
   stakeholderEngagement: {
     heading: "Creating Value Through<br /> Strategic Partnerships and Insightful Collaboration",
@@ -278,7 +278,7 @@ const overview = {
 
     consumers: {
       title: "Consumers and Customers",
-      commitment: "To prioritize understanding and addressing the requirements of customers while also exceeding their expectations. By putting them at the center of our operations and establishing excellent name through trusted brands, we can support our customers’ lifestyle choices.",
+      commitment: "To prioritize understanding and addressing the requirements of customers while also exceeding their expectations. By putting them at the center of our operations and supplying excellent name through trusted brands, we can support our customers’ lifestyle choices.",
       concerns: [
         "Fair prices",
         "Ethical business conduct",
@@ -287,7 +287,7 @@ const overview = {
       channels: [
         "Business development process",
         "Market and satisfaction surveys",
-        "Consumer focus groups",
+        "Customer focus groups",
         "Traditional media channels, social media and online portals",
         "Website",
       ],
@@ -332,7 +332,7 @@ const overview = {
       concerns: [
         "Fair dealings",
         "Openness and transparency",
-        "Creating mutually beneficial dealings",
+        "Creating value through mutually beneficial dealings",
       ],
       channels: [
         "Participate in innovative sustainability initiatives",
@@ -344,7 +344,7 @@ const overview = {
 
     government: {
       title: "Government and Regulators",
-      commitment: "To comply with national and international rules and regulations, to work in a responsible manner that contributes to the progress of the country and business performance, allowing us to benefit the community while also contributing to a healthy environment.",
+      commitment: "To comply with national and international rules and regulations; to work in a responsible manner that contributes to the progress of the country and business performance, allowing us to benefit the community while also contributing to a healthy environment.",
       concerns: [
         "Compliance with laws and regulations",
         "Local employment opportunities",
