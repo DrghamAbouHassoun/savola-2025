@@ -348,11 +348,11 @@
     opacity: 0;
     transform: translateX(-25vw);
   }
-  95% {
+  99% {
     opacity: 0;
     transform: translateX(-25vw);
   }
-  95.01% {
+  99.01% {
     opacity: 0;
     transform: translateX(100vw);
   }
@@ -383,11 +383,11 @@
     opacity: 0;
     transform: translateX(25vw);
   }
-  95% {
+  99% {
     opacity: 0;
     transform: translateX(25vw);
   }
-  95.01% {
+  99.01% {
     opacity: 0;
     transform: translateX(-100vw);
   }
