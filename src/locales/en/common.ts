@@ -13,7 +13,7 @@ const common = {
       "theme-of-the-year": "Theme of the Year",
       "2025-at-a-glance": "2025 at a Glance",
       "year-in-review": "Year in Review",
-      "geographical-footprint": "Geographical Footprint",
+      "geographical-footprint": "Our Geographical Footprint",
       "investment-case": "Investment Case",
       "stakeholder-engagement": "Stakeholder Engagement",
       "strategy-and-business-model": "Strategy and Business Model",

@@ -35,6 +35,11 @@ const LeadershipHeader = ({
         {/* Name & title — hidden on mobile (shown in combined block below) */}
         <AnimationSlideTop className="hidden md:flex md:flex-1 flex-col justify-center items-center animate-delay-0_2s">
           <div className="flex flex-col">
+            <img
+              src={signImageUrl}
+              alt={`${name}'s signature`}
+              className="w-16 h-auto mt-2 md:mt-4"
+            />
             <h2 className="text-lg text-savola-green font-semibold">{name}</h2>
             <h4 className="text-savola-cool-grey font-thin">{title}</h4>
           </div>
@@ -44,19 +49,23 @@ const LeadershipHeader = ({
         <AnimationSlideTop className="flex flex-col items-center text-center md:items-start md:text-start md:flex-1 md:justify-center md:pt-16 gap-2 animate-delay-0_4s">
           {/* Name/title visible only on mobile */}
           <div className="md:hidden">
+            <img
+              src={signImageUrl}
+              alt={`${name}'s signature`}
+              className="w-16 h-auto mt-2 md:mt-4 mx-auto"
+            />
             <h2 className="text-lg text-savola-green font-semibold">{name}</h2>
             <h4 className="text-savola-cool-grey font-thin">{title}</h4>
           </div>
-          <p className="text-savola-cool-grey text-base md:text-lg font-extrabold">{quote}</p>
-          <img
-            src={signImageUrl}
-            alt={`${name}'s signature`}
-            className="w-14 h-auto mt-2 md:mt-4"
-          />
+          <p className="text-savola-cool-grey text-base md:text-lg font-extrabold">
+            {quote}
+          </p>
         </AnimationSlideTop>
 
         {/* Background trapezium */}
-        <div className={`absolute flex top-0 ${lang === "ar" ? "left-0 rotate-y-180 justify-end" : "left-0"} w-full h-full -z-10`}>
+        <div
+          className={`absolute flex top-0 ${lang === "ar" ? "left-0 rotate-y-180 justify-end" : "left-0"} w-full h-full -z-10`}
+        >
           <img
             src={LeadershipTrapezium}
             alt="Leadership Trapezium"

@@ -178,7 +178,7 @@ const overview = {
     },
   },
   geographicalFootprint: {
-    pageTitle: "Geographical Footprint",
+    pageTitle: "Our Geographical Footprint",
     mainTitle: "Expanding Across Regions",
     desc: "Savola's geographic footprint reflects the scale, integration and resilience of a food group built for sustained growth. Anchored by strong domestic operations and extended through regional manufacturing, distribution, retail and export platforms, the Group’s presence enables proximity to consumers, operational efficiency and disciplined market execution. This scale and reach underpin Savola’s ability to serve diverse markets, manage complexity and deploy capital and capabilities to create the greatest long-term value.",
   },

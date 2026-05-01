@@ -104,11 +104,11 @@ const ChairmanStatementPage = () => {
             </p>
 
             {/* Closing quote */}
-            {/* <AnimationSlideTop className="mb-16">
+            <AnimationSlideTop className="mb-16">
               <p className="text-savola-cool-grey text-xl md:text-2xl font-extrabold">
                 {t("chairman.closingQuote")}
               </p>
-            </AnimationSlideTop> */}
+            </AnimationSlideTop>
           </AnimationFadeIn>
         </SmallContainer>
       </div>
