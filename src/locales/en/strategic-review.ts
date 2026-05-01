@@ -65,28 +65,28 @@ const strategicReview = {
         {
           title: "Personal Values",
           list: [
-            "<b>Tawado:</b> Confident humility; having confidence to perform our responsibilities while having the humility to minimize our ego.",
-            "<b>It’qan:</b> Relentless pursuit of perfection; the ability, willingness, desire and intention to do our best to ensure that work is completed to the best standards.",
-            "<b>Azm:</b> Fierce resolve; apply what we learn to improve ourselves.",
-            "<b>Iq’tida:</b> Apprenticeship; to seek out, interact with, and learn from those who are more knowledgeable than us.",
+            "<b>Tawado:</b> Confident humility; we accept advice and seek knowledge.",
+            "<b>It’qan:</b> Pursuit of perfection; we aim for precision and quality.",
+            "<b>Azm:</b> Fierce resolve; the power of will.",
+            "<b>Iq’tida:</b> Apprenticeship; in search of those who lead the path.",
           ],
         },
         {
-          title: "Group Values",
+          title: "Team Values",
           list: [
-            "<b>Ihsan Al-Dhan:</b> Trusting; trusting others’ intentions without doubting them.",
-            "<b>Mu’azarah:</b> Caring; provide support to our colleagues to help enable their success. ",
-            "<b>Qabool:</b> Acceptance; endure the views of others by going beyond tolerance or acceptance.",
-            "<b>Iq’bal:</b> Approaching; improve what we do by using what we have learned from the interaction with others.",
+            "<b>Ihsan Al-Dhan:</b> Trusting; trust and goodwill in dealing.",
+            "<b>Mu’azarah:</b> Caring; we support each other to reach our goals.",
+            "<b>Qabool:</b> Acceptance; our difference is a source of strength.",
+            "<b>Iq’bal:</b> Approaching; from “I and Them” to “We”.",
           ],
         },
         {
           title: "Corporate Values",
           list: [
-            "<b>Taqwa:</b> Conscientiousness; fulfillment of our responsibility toward external parties.",
-            "<b>Amanah:</b> Honesty; fulfillment of our responsibilities toward investors.",
-            "<b>Mujahadah:</b> Personal control; achieving the personal discipline necessary to fulfill our responsibilities.",
-            "<b>Birr:</b> Caring Justice; fulfillment of our responsibility toward our colleagues and the employees of the Group.",
+            "<b>Taqwa:</b> Conscientiousness; an ethical compass guiding our actions.",
+            "<b>Amanah:</b> Honesty; we fulfill promises and build trust",
+            "<b>Mujahadah:</b> Personal control; we strive to develop our abilities.",
+            "<b>Birr:</b> Caring Justice; we care for others and leave a lasting impact.",
           ],
         },
       ],
@@ -98,7 +98,7 @@ const strategicReview = {
       title:
         "Savola Group’s Transformation Journey: A Focused Food Group, Aligned for Growth",
       qoute: {
-        text: "Completing our transformation allows us to move forward with clarity and purpose. By aligning our leadership, structure and capital around food as our core business, we are building a stronger, more focused Savola positioned to deliver sustainable growth and long-term ",
+        text: "Completing our transformation allows us to move forward with clarity and purpose. By aligning our leadership, structure and capital around food as our core business, we are building a stronger, more focused Savola positioned to deliver sustainable growth and long-term value.",
         name: "Sameh Hassan",
         position: "Group CEO",
       },
@@ -167,7 +167,7 @@ const strategicReview = {
         title:
           "Savola Group Journey <br /><b>Restoring Greatness, De-Risking Portfolio and Fit for Growth</b>",
         strategicPhaseText: "Strategic Phase",
-        netIncomeText: "Net Income ($ million)",
+        netIncomeText: "Net Income (<i class='riyal-icon'></i> million)",
         keyChallengesText: "Key Challenges / Initiatives",
         tabs: [
           {

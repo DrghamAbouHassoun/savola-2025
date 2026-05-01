@@ -159,7 +159,7 @@ const strategicReview = {
         title:
           "مسيرة مجموعة صافولا: <br /><b>استعادة الريادة، وخفض المخاطر الاستثمارية، والجاهزية لمرحلة النمو المقبلة</b>",
         strategicPhaseText: "المرحلة الاستراتيجية",
-        netIncomeText: "صافي الربح (مليون $)",
+        netIncomeText: "صافي الربح (مليون <i class='riyal-icon'></i>)",
         keyChallengesText: "أبرز التحديات / المبادرات",
         tabs: [
           {

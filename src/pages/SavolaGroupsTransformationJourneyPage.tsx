@@ -6,9 +6,11 @@ import AnimationSlideTop from "../modules/common/components/Animations/Animation
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import QuoteIcon from "../assets/icons/qoute.png";
+import { useLocale } from "../modules/common/hooks/useLocale";
 
 const SavolaGroupsTransformationJourneyPage = () => {
   const { t, tArray } = useTranslation("strategic-review");
+  const { lang } = useLocale();
   const [activeTab, setActiveTab] = useState(0);
 
   const section1 = {
@@ -203,7 +205,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
                         key={i}
                         className="text-savola-cool-grey text-sm flex items-start gap-2"
                       >
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-green shrink-0" />
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-cool-grey shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -221,7 +223,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
                         key={i}
                         className="text-savola-cool-grey text-sm flex items-start gap-2"
                       >
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" />
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-savola-cool-grey" />
                         {item}
                       </li>
                     ))}
@@ -285,15 +287,15 @@ const SavolaGroupsTransformationJourneyPage = () => {
             {/* Journey Table */}
             <AnimationFadeIn>
               {/* Tabs */}
-              <div className="flex gap-2 mb-0">
+              <div className="flex justify-center gap-2 mb-6">
                 {section2.journey.tabs.map((tab, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveTab(i)}
-                    className={`px-6 py-2 rounded-t-lg text-sm font-bold transition-colors ${
+                    className={`px-8 py-2 ${lang === "ar" ? "rounded-bl-2xl" : "rounded-br-2xl"} text-lg font-bold transition-colors text-savola-cool-grey ${
                       activeTab === i
-                        ? "bg-savola-green text-white"
-                        : "bg-savola-cool-grey-7 text-savola-cool-grey hover:bg-savola-green-50"
+                        ? "bg-savola-green"
+                        : "bg-savola-cool-grey-7 hover:bg-savola-green-50"
                     }`}
                   >
                     {tab.title}
@@ -302,41 +304,39 @@ const SavolaGroupsTransformationJourneyPage = () => {
               </div>
 
               {/* Table body */}
-              <div className="bg-white rounded-b-xl rounded-tr-xl shadow-sm overflow-hidden">
-                <div className="grid grid-cols-3 divide-x divide-savola-cool-grey-10">
+              <div className="overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
                   {/* Headers */}
-                  <div className="p-4 bg-savola-green-20">
-                    <p className="font-extrabold text-savola-cool-grey text-sm">
-                      {section2.journey.strategicPhaseText}
-                    </p>
-                  </div>
-                  <div className="p-4 bg-savola-green-20">
-                    <p className="font-extrabold text-savola-cool-grey text-sm">
-                      {section2.journey.netIncomeText}
-                    </p>
-                  </div>
-                  <div className="p-4 bg-savola-green-20">
-                    <p className="font-extrabold text-savola-cool-grey text-sm">
-                      {section2.journey.keyChallengesText}
-                    </p>
-                  </div>
 
                   {/* Strategic Phase */}
-                  <div className="p-4 align-top">
+                  <div className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-green-20 to-savola-green-20/0`}>
+                    <div className="mb-4">
+                      <p className="font-bold text-savola-cool-grey text-lg">
+                        {section2.journey.strategicPhaseText}
+                      </p>
+                    </div>
                     <p className="text-savola-cool-grey text-sm leading-relaxed">
                       {activeTabData.strategicPhase}
                     </p>
                   </div>
 
                   {/* Net Income */}
-                  <div className="p-4">
+                  <div className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-orange-20 to-savola-orange-20/0`}>
+                    <div className="mb-4">
+                      <p
+                        className="font-bold text-savola-cool-grey text-lg"
+                        dangerouslySetInnerHTML={{
+                          __html: section2.journey.netIncomeText,
+                        }}
+                      ></p>
+                    </div>
                     <ul className="space-y-1">
                       {activeTabData.netIncome.map((item, i) => (
                         <li
                           key={i}
                           className="text-savola-cool-grey text-sm flex items-start gap-2"
                         >
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-green shrink-0" />
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-cool-grey shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -344,14 +344,20 @@ const SavolaGroupsTransformationJourneyPage = () => {
                   </div>
 
                   {/* Key Challenges */}
-                  <div className="p-4">
+                  <div className={`p-4 pb-16 ${lang === "ar" ? "bg-linear-to-l rounded-br-[64px]" : "bg-linear-to-r"} from-savola-cool-grey-10 to-savola-cool-grey-10/0`}>
+                    <div className="mb-4">
+                      <p className="font-bold text-savola-cool-grey text-lg">
+                        {section2.journey.keyChallengesText}
+                      </p>
+                    </div>
+
                     <ul className="space-y-2">
                       {activeTabData.keyChallenges.map((item, i) => (
                         <li
                           key={i}
                           className="text-savola-cool-grey text-sm flex items-start gap-2 [&_ul]:list-disc [&_ul]:ps-4 [&_ul]:mt-1 [&_ul]:space-y-1"
                         >
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-green shrink-0" />
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-savola-cool-grey shrink-0" />
                           <span dangerouslySetInnerHTML={{ __html: item }} />
                         </li>
                       ))}
