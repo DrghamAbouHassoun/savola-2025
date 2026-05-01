@@ -140,7 +140,7 @@ const leadership = {
   cfo: {
     name: "Wajid Usman Khan",
     title: "Group Chief Financial Officer",
-    quote: "Fiscal year 2025 marked the first full year in which Savola operated with a streamlined capital structure and a sharpened strategic focus following the transformational steps completed.",
+    quote: "Fiscal year 2025 marked the first full year in which Savola operated with a streamlined capital structure and a sharpened strategic focus following the transformational steps completed in the prior year.",
     pageTitle: "Chief Financial Officer's Review",
     mainTitle: "Financial Strength.<br /> Focused Execution.<br /> Sustainable Value Creation.",
     introParagraph:
@@ -156,8 +156,8 @@ const leadership = {
           "Debt maturities are appropriately staggered, liquidity buffers remain sound and financial flexibility is materially stronger than in previous years. <br /><br />Our capital allocation principles remain firmly anchored:",
         ],
         bullets: [
-          "Prioritise balance sheet resilience",
-          "Reinforce investment in core platforms",
+          "Preserve balance sheet resilience",
+          "Prioritize investment in core platforms",
           "Apply disciplined return thresholds",
           "Maintain flexibility through cycles",
         ],

@@ -73,7 +73,11 @@ const FosteringCommunityWellnessPage = () => {
           >
             <span
               className={`shrink-0 font-bold mt-0.5 ${
-                color === "green" ? "text-savola-green": color === "grey" ? "text-savola-cool-grey" : "text-savola-orange"
+                color === "green"
+                  ? "text-savola-green"
+                  : color === "grey"
+                    ? "text-savola-cool-grey"
+                    : "text-savola-orange"
               }`}
             >
               •
@@ -506,19 +510,36 @@ const FosteringCommunityWellnessPage = () => {
 
               {/* Div 3: Learning Scale + SHRM Award */}
               <div className="mb-4">
-                <SubSectionTitle
-                  text={t("fostering.tabs.0.capability.divs.3.title")}
-                />
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="flex-1">
-                    {[0, 1, 2].map((i) => (
-                      <Paragraph
-                        key={i}
-                        text={t(
-                          `fostering.tabs.0.capability.divs.3.paragraphs.${i}`,
-                        )}
-                      />
-                    ))}
+                    <SubSectionTitle
+                      text={t("fostering.tabs.0.capability.divs.3.title")}
+                    />
+                    <div className="flex-1">
+                      {[0, 1, 2].map((i) => (
+                        <Paragraph
+                          key={i}
+                          text={t(
+                            `fostering.tabs.0.capability.divs.3.paragraphs.${i}`,
+                          )}
+                        />
+                      ))}
+                    </div>
+                    {lang === "ar" && (
+                      <>
+                        <h5 className="font-bold text-savola-cool-grey mb-2">{t("fostering.tabs.0.capability.divs.4.title")}</h5>
+                        <div className="flex-1">
+                          {[0, 1].map((i) => (
+                            <Paragraph
+                              key={i}
+                              text={t(
+                                `fostering.tabs.0.capability.divs.4.paragraphs.${i}`,
+                              )}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
                   </div>
                   <AnimationSlideTop className="shrink-0 w-full md:max-w-84">
                     <div className="text-2xl">
@@ -704,9 +725,7 @@ const FosteringCommunityWellnessPage = () => {
                   </h2>
                 </AnimationSlideTop>
                 <AnimationSlideTop>
-                  <p
-                    className={`font-bold text-savola-cool-grey mb-3`}
-                  >
+                  <p className={`font-bold text-savola-cool-grey mb-3`}>
                     {t("fostering.tabs.1.intro.subtitle")}
                   </p>
                 </AnimationSlideTop>
@@ -815,9 +834,7 @@ const FosteringCommunityWellnessPage = () => {
                           </ul>
                           {p2Key && (
                             <p
-                              className={`text-savola-cool-grey text-sm leading-relaxed ${
-                                isAr ? "text-end" : ""
-                              }`}
+                              className={`text-savola-cool-grey text-sm leading-relaxed`}
                               dangerouslySetInnerHTML={{ __html: t(p2Key) }}
                             />
                           )}
@@ -893,9 +910,7 @@ const FosteringCommunityWellnessPage = () => {
                 {[0, 1].map((divIdx) => (
                   <AnimationSlideTop key={divIdx}>
                     <div className="h-full">
-                      <h4
-                        className={`font-bold text-savola-cool-grey mb-2`}
-                      >
+                      <h4 className={`font-bold text-savola-cool-grey mb-2`}>
                         {t(`fostering.tabs.1.sections.3.divs.${divIdx}.title`)}
                       </h4>
                       <p

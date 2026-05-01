@@ -11,6 +11,8 @@ import CountUp from "../modules/common/components/Animations/CountUp";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import { LangContext } from "../modules/common/contexts/LangProvider";
 import useInView from "../modules/common/hooks/useInView";
+import HerfyChartsEn from "../assets/images/business-review/herfy-charts-en.svg";
+import HerfyChartsAr from "../assets/images/business-review/hrefy-charts-ar.svg";
 
 function parseValue(v: number | string): number {
   if (typeof v === "number") return v;
@@ -18,14 +20,18 @@ function parseValue(v: number | string): number {
   return match ? -parseInt(match[0], 10) : 0;
 }
 
+const HALF_HEIGHT = 180;
+
 interface ChartBarProps {
   year: string | number;
   rawValue: number | string;
   maxAbs: number;
   index: number;
   inView: boolean;
-  isRtl: boolean;
   highlight: boolean;
+  hasNegative: boolean;
+  hasPositive: boolean;
+  isRtl: boolean;
 }
 
 const ChartBar = ({
@@ -34,8 +40,10 @@ const ChartBar = ({
   maxAbs,
   index,
   inView,
-  isRtl,
   highlight,
+  hasNegative,
+  hasPositive,
+  isRtl,
 }: ChartBarProps) => {
   const numeric = parseValue(rawValue);
   const isNegative = numeric < 0;
@@ -56,60 +64,136 @@ const ChartBar = ({
     else reset();
   }, [inView]);
 
-  const pct = Math.max(16, (absVal / maxAbs) * 100);
-  const valuePct = pct > 45 ? `${pct - 15}%` : "30%";
-  const barColor = isNegative
-    ? highlight
-      ? "bg-savola-orange"
-      : "bg-savola-orange/70"
-    : highlight
-      ? "bg-savola-green"
-      : "bg-savola-green/75";
+  const barHeightPx = Math.max(20, (absVal / maxAbs) * HALF_HEIGHT);
+  // Match SVG colors exactly: #A4CE4E (highlight) and #D1E6A6 (non-highlight)
+  const barBg = highlight ? "bg-savola-green" : "bg-savola-green-50";
+  // Match SVG text: white on highlight, dark on non-highlight
+  const valueTextClass = highlight ? "text-white" : "text-savola-cool-grey";
+  const isMixed = hasNegative && hasPositive;
+  const showInside = barHeightPx >= 36;
+  // Single rounded corner per bar (matches Figma SVG: only the leading-end corner is rounded)
+  const positiveBorderRadius = isRtl ? "0 9999px 0 0" : "9999px 0 0 0";
+  const negativeBorderRadius = isRtl ? "0 0 9999px 0" : "0 0 0 9999px";
 
   return (
-    <div className="grid items-center gap-3">
-      <div className="relative h-5 overflow-hidden">
-        <span
-          className={`absolute font-bold text-savola-cool-grey/80 z-10 ${isRtl ? "right-2" : "left-2"}`}
-        >
-          {year}
-        </span>
+    <div className="flex flex-col items-center flex-1 min-w-0">
+      {/* Positive bar area — bars grow up from bottom */}
+      {hasPositive && (
         <div
-          className={`h-full transition-[width] ease-out ${
-            isRtl ? "rounded-tl-full" : "rounded-tr-full"
-          } ${barColor}`}
-          style={{
-            width: inView ? `${pct}%` : "0%",
-            minWidth: inView ? "45%" : "0%",
-            transitionDuration: "700ms",
-            transitionDelay: inView ? `${index * 120}ms` : "0ms",
-            ...(isRtl ? { marginLeft: "auto" } : {}),
-          }}
-        />
-        {isNegative ? (
-          <span
-            className="absolute top-1/2 -translate-y-1/2 font-black mt-0.5 text-white transition-opacity duration-300"
-            style={{
-              [isRtl ? "right" : "left"]: valuePct,
-              opacity: inView ? 1 : 0,
-              transitionDelay: inView ? `${index * 120 + 300}ms` : "0ms",
-            }}
-          >
-            ({absVal})
-          </span>
-        ) : (
-          <span
-            ref={spanRef}
-            className={`absolute top-1/2 -translate-y-1/2 font-black mt-0.5 transition-opacity duration-300 ${
-              highlight ? "text-white" : "text-savola-cool-grey"
-            }`}
-            style={{
-              [isRtl ? "right" : "left"]: valuePct,
-              opacity: inView ? 1 : 0,
-              transitionDelay: inView ? `${index * 120 + 300}ms` : "0ms",
-            }}
-          />
-        )}
+          className="relative flex items-end w-full"
+          style={{ height: HALF_HEIGHT, overflow: "visible" }}
+        >
+          {!isNegative && (
+            <div
+              className={`relative w-full ${barBg}`}
+              style={{
+                height: inView ? `${barHeightPx}px` : "0px",
+                borderRadius: positiveBorderRadius,
+                transition: "height 700ms ease-out",
+                transitionDelay: inView ? `${index * 120}ms` : "0ms",
+              }}
+            >
+              {showInside ? (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span
+                    ref={spanRef}
+                    className={`font-black text-xs transition-opacity duration-300 ${valueTextClass}`}
+                    style={{
+                      writingMode: "vertical-lr",
+                      opacity: inView ? 1 : 0,
+                      transitionDelay: inView
+                        ? `${index * 120 + 300}ms`
+                        : "0ms",
+                    }}
+                  />
+                </div>
+              ) : (
+                <div
+                  className="absolute w-full flex justify-center"
+                  style={{ bottom: "100%", paddingBottom: 4 }}
+                >
+                  <span
+                    ref={spanRef}
+                    className="font-black text-xs text-savola-cool-grey transition-opacity duration-300"
+                    style={{
+                      writingMode: "vertical-lr",
+                      opacity: inView ? 1 : 0,
+                      transitionDelay: inView
+                        ? `${index * 120 + 300}ms`
+                        : "0ms",
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Zero baseline */}
+      {isMixed && <div className="w-full h-0.5 bg-savola-cool-grey/30" />}
+
+      {/* Negative bar area — bars grow down from top */}
+      {hasNegative && (
+        <div
+          className="relative flex items-start w-full"
+          style={{ height: HALF_HEIGHT, overflow: "visible" }}
+        >
+          {isNegative && (
+            <div
+              className={`relative w-full ${barBg}`}
+              style={{
+                height: inView ? `${barHeightPx}px` : "0px",
+                borderRadius: negativeBorderRadius,
+                transition: "height 700ms ease-out",
+                transitionDelay: inView ? `${index * 120}ms` : "0ms",
+              }}
+            >
+              {showInside ? (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span
+                    className={`font-black text-xs transition-opacity duration-300 ${valueTextClass}`}
+                    style={{
+                      writingMode: "vertical-lr",
+                      opacity: inView ? 1 : 0,
+                      transitionDelay: inView
+                        ? `${index * 120 + 300}ms`
+                        : "0ms",
+                    }}
+                  >
+                    ({absVal.toLocaleString()})
+                  </span>
+                </div>
+              ) : (
+                <div
+                  className="absolute w-full flex justify-center"
+                  style={{ top: "100%", paddingTop: 4 }}
+                >
+                  <span
+                    className="font-black text-xs text-savola-cool-grey transition-opacity duration-300"
+                    style={{
+                      writingMode: "vertical-lr",
+                      opacity: inView ? 1 : 0,
+                      transitionDelay: inView
+                        ? `${index * 120 + 300}ms`
+                        : "0ms",
+                    }}
+                  >
+                    ({absVal.toLocaleString()})
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Year label — rotated to read bottom-to-top */}
+      <div
+        className="mt-3 text-xs font-bold text-savola-cool-grey"
+        style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+      >
+        {year}
       </div>
     </div>
   );
@@ -127,15 +211,17 @@ interface ChartProps {
   isRtl: boolean;
 }
 
-const Chart = ({ title, unit, data, isRtl }: ChartProps) => {
+export const Chart = ({ title, unit, data, isRtl }: ChartProps) => {
   const { ref, inView } = useInView<HTMLDivElement>();
-  const maxAbs = Math.max(...data.map((d) => Math.abs(parseValue(d.value)))) * 1.1;
+  const maxAbs =
+    Math.max(...data.map((d) => Math.abs(parseValue(d.value)))) * 1.1;
   const hasNegative = data.some((d) => parseValue(d.value) < 0);
+  const hasPositive = data.some((d) => parseValue(d.value) >= 0);
 
   return (
     <article
       ref={ref}
-      className="flex flex-col gap-2.5 bg-linear-to-b from-savola-green-20 to-savola-green/0 px-2 py-4"
+      className="flex flex-col gap-2.5 bg-savola-orange-20 px-3 py-4"
     >
       <AnimationSlideTop>
         <div className="flex justify-between items-start mb-2">
@@ -148,14 +234,12 @@ const Chart = ({ title, unit, data, isRtl }: ChartProps) => {
               dangerouslySetInnerHTML={{ __html: unit }}
             />
           </div>
-          <span
-            className={`text-lg leading-none ${hasNegative ? "text-savola-orange" : "text-savola-green"}`}
-          >
+          <span className="text-lg leading-none text-savola-green">
             {hasNegative ? "▼" : "▲"}
           </span>
         </div>
       </AnimationSlideTop>
-      <div className="flex flex-col gap-3">
+      <div className="flex gap-3">
         {data.map((item, i) => (
           <ChartBar
             key={String(item.year)}
@@ -164,8 +248,10 @@ const Chart = ({ title, unit, data, isRtl }: ChartProps) => {
             maxAbs={maxAbs}
             index={i}
             inView={inView}
-            isRtl={isRtl}
             highlight={i === data.length - 1}
+            hasNegative={hasNegative}
+            hasPositive={hasPositive}
+            isRtl={isRtl}
           />
         ))}
       </div>
@@ -181,7 +267,7 @@ const HerfyFoodServicePage = () => {
   const herfyData = translations[lang as "en" | "ar"]["business-review"].herfy;
   const strategicParagraphs = tArray("herfy.strategicHighlights.paragraphs");
   const labels = herfyData.labels;
-  const charts = herfyData.charts;
+  // const charts = herfyData.charts;
 
   return (
     <div>
@@ -298,8 +384,7 @@ const HerfyFoodServicePage = () => {
             </div>
 
             {/* Right: charts */}
-            <div className="flex flex-col gap-6">
-              {/* Top row: first two charts side by side */}
+            {/* <div className="flex flex-col gap-6">
               <div className="grid grid-cols-2 gap-4">
                 {charts.slice(0, 2).map((chart, i) => (
                   <Chart
@@ -311,7 +396,6 @@ const HerfyFoodServicePage = () => {
                   />
                 ))}
               </div>
-              {/* Bottom: third chart full width */}
               {charts[2] && (
                 <Chart
                   title={charts[2].title}
@@ -320,6 +404,13 @@ const HerfyFoodServicePage = () => {
                   isRtl={isRtl}
                 />
               )}
+            </div> */}
+            <div className="flex-1">
+              <img
+                src={lang === "ar" ? HerfyChartsAr : HerfyChartsEn}
+                className="w-full h-auto object-contain"
+                alt=""
+              />
             </div>
           </div>
         </SmallContainer>

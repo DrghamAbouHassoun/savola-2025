@@ -279,7 +279,7 @@ const PandaRetailCompanyPage = () => {
 
           {/* Subsection 3: Digital Operations + KPI cards */}
           <div className="mb-12">
-            <h3 className="text-lg font-bold text-savola-navy mb-4 border-s-4 border-savola-green ps-4">
+            <h3 className="font-bold text-savola-navy mb-4">
               {t("panda.together.powering.subsections.3.title")}
             </h3>
             {powSubParagraphs[3].map((p, i) => (
