@@ -52,7 +52,7 @@ const LeadershipHeader = ({
             <img
               src={signImageUrl}
               alt={`${name}'s signature`}
-              className="w-16 h-auto mt-2 md:mt-4 mx-auto"
+              className="w-18 h-auto mt-2 md:mt-4 mx-auto"
             />
             <h2 className="text-lg text-savola-green font-semibold">{name}</h2>
             <h4 className="text-savola-cool-grey font-thin">{title}</h4>

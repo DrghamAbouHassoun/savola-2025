@@ -164,7 +164,7 @@ const InvestmentCasePage = () => {
       className={`${lang === "ar" ? "rounded-br-2xl bg-linear-to-l" : "rounded-bl-[64px] bg-linear-to-r"} ${pillar.contentBg}  p-6 `}
     >
       {/* Stats row */}
-      {pillar.stats && (
+      {/* {pillar.stats && (
         <div className="flex items-start gap-4 mb-5 pb-5 border-b border-gray-100">
           <div className="flex-1 min-w-0">
             <img src={pillar.stats[0].icon} className="w-6 h-6 mb-1" alt="" />
@@ -186,14 +186,14 @@ const InvestmentCasePage = () => {
             </p>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Bullet points — 2 columns on desktop for wider panel */}
       <ul className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {pillar.bullets.map((bullet, bIdx) => (
           <li
             key={bIdx}
-            className="flex gap-2 text-sm leading-relaxed text-savola-cool-grey"
+            className="flex gap-2 text-sm text-savola-cool-grey"
           >
             <span className="text-savola-green shrink-0 mt-0.5">•</span>
             <span>
@@ -221,6 +221,31 @@ const InvestmentCasePage = () => {
             {t("investmentCase.introParagraph")}
           </p>
 
+          <div className="my-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-4">
+            {pillars.map((pillar) => (
+              <>
+                {pillar.stats &&
+                  pillar.stats.length > 0 &&
+                  pillar.stats.map((item) => (
+                    <div className="flex-1 min-w-0">
+                      <img
+                        src={item.icon}
+                        className="w-6 h-6 mb-1"
+                        alt=""
+                      />
+                      <p className=" text-savola-cool-grey leading-snug">
+                        {item.label}
+                      </p>
+                      <p
+                        className={`text-2xl font-black text-savola-cool-grey`}
+                      >
+                        {item.value}
+                      </p>
+                    </div>
+                  ))}
+              </>
+            ))}
+          </div>
           <div className="my-16">
             {/*
               Wrapper is relative so desktop panels can be absolutely positioned.

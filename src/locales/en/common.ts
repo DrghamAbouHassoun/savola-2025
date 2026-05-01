@@ -33,7 +33,7 @@ const common = {
       "driving-environmental-stewardship": "Driving Environmental Stewardship and Innovation",
       "driving-environmental-stewardship-appear": "Driving Environmental Stewardship <br /> and Innovation",
       "fostering-community-wellness": "Fostering Community Wellness and Employee Welfare",
-      "fostering-community-wellness-appear": "Fostering Community Wellness <br /> and Employee Welfare",
+      "fostering-community-wellness-appear": "Fostering Community Wellness and Employee <br /> Welfare",
     },
   },
 };

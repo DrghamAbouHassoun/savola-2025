@@ -1,4 +1,4 @@
-import JourneyBg from "../assets/images/new-headers/journey.jpg";
+import JourneyBg from "../assets/images/new-headers/saudi-vision.jpg";
 import NewHeader from "../modules/common/components/headers/NewHeader";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";

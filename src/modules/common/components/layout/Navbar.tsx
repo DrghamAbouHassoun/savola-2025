@@ -10,7 +10,7 @@ import { Download, Grip } from "lucide-react";
 import { MenuContext } from "../../contexts/MenuProvider";
 
 const NavDropdown = ({ section }: { section: Section }) => {
-  const { navigate } = useContext(RouterContext);
+  const { navigate, currentRoute } = useContext(RouterContext);
   const { t } = useTranslation("common");
   const { lang } = useLocale();
   const [open, setOpen] = useState(false);
@@ -70,7 +70,7 @@ const NavDropdown = ({ section }: { section: Section }) => {
               <button
                 key={page.id}
                 type="button"
-                className="block text-start text-lg px-4 py-2 text-black hover:bg-white/50 first-of-type:pt-4 last-of-type:pb-4 w-full"
+                className={`block text-start text-lg px-4 py-2 text-black hover:bg-white/50 ${currentRoute === page.path && "bg-white/60"} first-of-type:pt-4 last-of-type:pb-4 w-full`}
                 onClick={() => {
                   navigate(page.path);
                   setOpen(false);
