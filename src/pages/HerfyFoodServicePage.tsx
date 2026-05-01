@@ -363,7 +363,7 @@ const HerfyFoodServicePage = () => {
                         className="text-savola-cool-grey text-sm font-semibold mb-1"
                         dangerouslySetInnerHTML={{ __html: label.title }}
                       />
-                      <p className="font-black text-2xl text-savola-orange leading-none">
+                      <p className="font-black text-2xl text-savola-green leading-none">
                         <span
                           dangerouslySetInnerHTML={{
                             __html: label.number.prefix ?? "",

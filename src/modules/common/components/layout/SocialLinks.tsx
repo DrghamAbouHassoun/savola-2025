@@ -56,7 +56,7 @@ const SocialLinks = () => {
   return (
     <div
       key={socialAnimationKey}
-      className={`fixed z-40 top-1/2 ${lang === "ar" ? "right-4 animate-fade-right-50 active animate-delay-6_8s" : "left-4 animate-fade-left-50 active animate-delay-6_8s"} -translate-y-1/2`}
+      className={`fixed z-40 top-1/2 ${lang === "ar" ? `right-4 animate-fade-right-50 active ${currentRoute === "home" && "animate-delay-6_8s"}` : `left-4 animate-fade-left-50 active ${currentRoute === "" && "animate-delay-6_8s"}`} -translate-y-1/2`}
     >
       <div
         key={`${socialAnimationKey}-pill`}

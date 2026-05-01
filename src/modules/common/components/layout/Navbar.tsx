@@ -94,11 +94,11 @@ const Navbar = () => {
   const { t } = useTranslation("common");
   const { lang, setLang } = useLocale();
   const { toggleMenu } = useContext(MenuContext);
-  const { goHome, homeKey } = useContext(RouterContext);
+  const { goHome, homeKey, currentRoute } = useContext(RouterContext);
   const navAnimationKey = `${homeKey}-${lang}`;
 
   return (
-    <div key={navAnimationKey} className="w-full absolute top-0 left-0 z-50 isolate animate-fade-down-100 active animate-delay-6_8s">
+    <div key={navAnimationKey} className={`w-full absolute top-0 left-0 z-50 isolate animate-fade-down-100 active ${currentRoute === "" ? "animate-delay-6_8s" : "animate-delay-0_2s"}`}>
       <div className={`w-full max-w-7xl mx-auto py-4 ${lang === "ar" ? "px-4 lg:pr-16 xl:pr-4" : " px-4 lg:pl-16 xl:pl-4"} flex justify-between items-center gap-4`}>
         <button type="button" className="w-35" onClick={goHome}>
           <img src={MainLogo} alt="Savola Logo" className="w-full h-auto" />

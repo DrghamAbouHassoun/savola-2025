@@ -343,13 +343,13 @@
   }
   66% {
     opacity: 1;
-    transform: translateX(-35vw);
+    transform: translateX(-25vw);
   }
-  90% {
+  95% {
     opacity: 0;
-    transform: translateX(-35vw);
+    transform: translateX(-25vw);
   }
-  90.01% {
+  95.01% {
     opacity: 0;
     transform: translateX(100vw);
   }
@@ -363,7 +363,39 @@
   opacity: 0;
   transform: translateX(100vw);
   animation-name: TrapeziumCycle;
-  animation-duration: 20s;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+@keyframes TrapeziumCycleAr {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(25vw);
+  }
+  95% {
+    opacity: 0;
+    transform: translateX(25vw);
+  }
+  95.01% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+}
+
+.animate-trapezium-cycle-ar {
+  opacity: 0;
+  transform: translateX(-100vw);
+  animation-name: TrapeziumCycleAr;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
