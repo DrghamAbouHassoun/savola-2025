@@ -2,7 +2,8 @@ import { useContext, useState, useRef, useEffect } from "react";
 import MainLogo from "../../../../assets/logo/logo.svg";
 import { pages } from "../../../../router/Router";
 import type { Section } from "../../../../router/Router";
-import SavolaAngle from "../vectors/SavolaAngle";
+// import SavolaAngle from "../vectors/SavolaAngle";
+import GreenAngle from "../../../../assets/icons/accordion-arrow.svg";
 import { RouterContext } from "../../contexts/RouterProvider";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useLocale } from "../../hooks/useLocale";
@@ -52,7 +53,8 @@ const NavDropdown = ({ section }: { section: Section }) => {
         <span
           className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         >
-          <SavolaAngle />
+          {/* <SavolaAngle /> */}
+          <img src={GreenAngle} alt="" className="w-4 h-auto object-contain" />
         </span>
       </button>
 
@@ -77,7 +79,9 @@ const NavDropdown = ({ section }: { section: Section }) => {
                 }}
               >
                 {hasAppear ? (
-                  <span dangerouslySetInnerHTML={{ __html: appearTranslation }} />
+                  <span
+                    dangerouslySetInnerHTML={{ __html: appearTranslation }}
+                  />
                 ) : (
                   t(`nav.pages.${page.id}`)
                 )}
@@ -94,18 +98,35 @@ const Navbar = () => {
   const { t } = useTranslation("common");
   const { lang, setLang } = useLocale();
   const { toggleMenu } = useContext(MenuContext);
-  const { goHome, homeKey, currentRoute } = useContext(RouterContext);
+  const { navigate, goHome, homeKey, currentRoute } = useContext(RouterContext);
   const navAnimationKey = `${homeKey}-${lang}`;
 
   return (
-    <div key={navAnimationKey} className={`w-full absolute top-0 left-0 z-50 isolate animate-fade-down-100 active ${currentRoute === "" ? "animate-delay-6_8s" : "animate-delay-0_2s"}`}>
-      <div className={`w-full max-w-7xl mx-auto py-4 ${lang === "ar" ? "px-4 lg:pr-16 xl:pr-4" : " px-4 lg:pl-16 xl:pl-4"} flex justify-between items-center gap-4`}>
+    <div
+      key={navAnimationKey}
+      className={`w-full absolute top-0 left-0 z-50 isolate animate-fade-down-100 active ${currentRoute === "" ? "animate-delay-6_8s" : "animate-delay-0_2s"}`}
+    >
+      <div
+        className={`w-full max-w-7xl mx-auto py-4 ${lang === "ar" ? "px-4 lg:pr-16 xl:pr-4" : " px-4 lg:pl-16 xl:pl-4"} flex justify-between items-center gap-4`}
+      >
         <button type="button" className="w-35" onClick={goHome}>
           <img src={MainLogo} alt="Savola Logo" className="w-full h-auto" />
         </button>
         <div className="flex-1 hidden xl:flex gap-6 items-center justify-center">
           {pages.map((section) => (
-            <NavDropdown key={section.id} section={section} />
+            <>
+              {section.type === "dropdown" ? (
+                <NavDropdown key={section.id} section={section} />
+              ) : (
+                <button
+                  type="button"
+                  className="font-medium text-gray-700 flex justify-center items-center gap-2"
+                  onClick={() => navigate(section.id)}
+                >
+                  {t(`nav.sections.${section.id}`)}
+                </button>
+              )}
+            </>
           ))}
         </div>
         <div className="flex gap-4 justify-center items-center text-savola-cool-grey">
@@ -116,10 +137,18 @@ const Navbar = () => {
           >
             {t("nav.language")}
           </button>
-          <button type="button" className=" hover:text-savola-green transition-all duration-500">
+          <button
+            type="button"
+            className=" hover:text-savola-green transition-all duration-500"
+            onClick={() => navigate("download-center")}
+          >
             <Download />
           </button>
-          <button type="button" className="block xl:hidden  hover:text-savola-green transition-all duration-500" onClick={() => toggleMenu(true)}>
+          <button
+            type="button"
+            className="block xl:hidden  hover:text-savola-green transition-all duration-500"
+            onClick={() => toggleMenu(true)}
+          >
             <Grip size={32} />
           </button>
         </div>

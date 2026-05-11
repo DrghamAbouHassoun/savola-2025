@@ -7,18 +7,21 @@ import { RouterProvider } from "./modules/common/contexts/RouterProvider";
 import LangProvider from "./modules/common/contexts/LangProvider";
 import Router from "./router/Router";
 import MenuProvider from "./modules/common/contexts/MenuProvider";
+import InfoModalProvider from "./modules/common/contexts/InfoModalProvider";
 
 function App() {
   return (
     <>
       <LangProvider>
-        <RouterProvider>
-          <MenuProvider>
-            <Layout>
-              <Router />
-            </Layout>
-          </MenuProvider>
-        </RouterProvider>
+        <InfoModalProvider>
+          <RouterProvider>
+            <MenuProvider>
+              <Layout>
+                <Router />
+              </Layout>
+            </MenuProvider>
+          </RouterProvider>
+        </InfoModalProvider>
       </LangProvider>
     </>
   );

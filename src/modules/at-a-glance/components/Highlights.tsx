@@ -177,6 +177,8 @@ const SustCard = ({
     suffix: string;
     number: number;
     prefix: string;
+    number2?: number;
+    prefix2?: string
   };
   span2?: string;
   num2?: {
@@ -198,6 +200,7 @@ const SustCard = ({
     >
       {span1 && <p className="text-lg">{span1}</p>}
       {num1 && (
+        <>
         <div className="flex items-end gap-1">
           {num1.suffix && (
             <span
@@ -213,6 +216,16 @@ const SustCard = ({
             />
           )}
         </div>
+        {num1.number2 && <div className="flex items-end gap-1">
+          <CountUp end={num1.number2} className="text-4xl font-bold" />
+          {num1.prefix2 && (
+            <span
+              className="text-4xl font-bold"
+              dangerouslySetInnerHTML={{ __html: num1.prefix2 }}
+            />
+          )}
+        </div>}
+        </>
       )}
       {span2 && <p>{span2}</p>}
       {num2 && (
@@ -338,9 +351,9 @@ const Highlights = () => {
           </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {/* Row 1 */}
-            <AnimationSlideTop style={{ animationDelay: "0ms" }}>
+            {/* <AnimationSlideTop style={{ animationDelay: "0ms" }}>
               <SustCard span1={sustainData.rank.span1} />
-            </AnimationSlideTop>
+            </AnimationSlideTop> */}
 
             <AnimationSlideTop style={{ animationDelay: "100ms" }}>
               <SustCard

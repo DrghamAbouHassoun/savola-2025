@@ -31,6 +31,7 @@ import DrivingEnvironmentalStewardshipPage from "../pages/DrivingEnvironmentalSt
 import FosteringCommunityWellnessPage from "../pages/FosteringCommunityWellnessPage";
 
 import DownloadCenterPage from "../pages/DownloadCenterPage";
+import FinancialStatementsPage from "../pages/FinancialStatementsPage";
 
 export interface Page {
   id: string;
@@ -43,6 +44,7 @@ export interface Section {
   id: string;
   name: string;
   pages: Page[];
+  type: "dropdown" | "standalone";
 }
 
 export interface StandalonePage {
@@ -63,54 +65,147 @@ export const pages: Section[] = [
   {
     id: "overview",
     name: "Overview",
+    type: "dropdown",
     pages: [
-      { id: "theme-of-the-year", path: "theme-of-the-year", name: "Theme of the Year" },
-      { id: "2025-at-a-glance", path: "2025-at-a-glance", name: "2025 at a Glance" },
+      {
+        id: "theme-of-the-year",
+        path: "theme-of-the-year",
+        name: "Theme of the Year",
+      },
+      {
+        id: "2025-at-a-glance",
+        path: "2025-at-a-glance",
+        name: "2025 at a Glance",
+      },
       { id: "year-in-review", path: "year-in-review", name: "Year in Review" },
-      { id: "geographical-footprint", path: "geographical-footprint", name: "Geographical Footprint" },
-      { id: "investment-case", path: "investment-case", name: "Investment Case" },
-      { id: "stakeholder-engagement", path: "stakeholder-engagement", name: "Stakeholder Engagement" },
+      {
+        id: "geographical-footprint",
+        path: "geographical-footprint",
+        name: "Geographical Footprint",
+      },
+      {
+        id: "investment-case",
+        path: "investment-case",
+        name: "Investment Case",
+      },
+      {
+        id: "stakeholder-engagement",
+        path: "stakeholder-engagement",
+        name: "Stakeholder Engagement",
+      },
     ],
   },
   {
     id: "strategic-review",
     name: "Strategic Review",
+    type: "dropdown",
     pages: [
-      { id: "strategy-and-business-model", path: "strategy-and-business-model", name: "Strategy and Business Model" },
-      { id: "savola-groups-transformation-journey", path: "savola-groups-transformation-journey", name: "Savola Group's Transformation Journey" },
-      { id: "saudi-vision-2030", path: "saudi-vision-2030", name: "Saudi Vision 2030" },
-      { id: "technology-and-innovation", path: "technology-and-innovation", name: "Technology and Innovation" },
+      {
+        id: "strategy-and-business-model",
+        path: "strategy-and-business-model",
+        name: "Strategy and Business Model",
+      },
+      {
+        id: "savola-groups-transformation-journey",
+        path: "savola-groups-transformation-journey",
+        name: "Savola Group's Transformation Journey",
+      },
+      {
+        id: "saudi-vision-2030",
+        path: "saudi-vision-2030",
+        name: "Saudi Vision 2030",
+      },
+      {
+        id: "technology-and-innovation",
+        path: "technology-and-innovation",
+        name: "Technology and Innovation",
+      },
     ],
   },
   {
     id: "leadership",
     name: "Leadership",
+    type: "dropdown",
     pages: [
-      { id: "chairmans-statement", path: "chairmans-statement", name: "Chairman's Statement" },
-      { id: "group-ceos-message", path: "group-ceos-message", name: "Group CEO's Message" },
-      { id: "chief-financial-officers-review", path: "chief-financial-officers-review", name: "Chief Financial Officer's Review" },
+      {
+        id: "chairmans-statement",
+        path: "chairmans-statement",
+        name: "Chairman's Statement",
+      },
+      {
+        id: "group-ceos-message",
+        path: "group-ceos-message",
+        name: "Group CEO's Message",
+      },
+      {
+        id: "chief-financial-officers-review",
+        path: "chief-financial-officers-review",
+        name: "Chief Financial Officer's Review",
+      },
     ],
   },
   {
     id: "business-review",
     name: "Business Review",
+    type: "dropdown",
     pages: [
       { id: "savola-food", path: "savola-food", name: "Savola Food" },
-      { id: "panda-retail-company", path: "panda-retail-company", name: "Panda Retail Company" },
-      { id: "al-kabeer-group", path: "al-kabeer-group", name: "Al Kabeer Group" },
-      { id: "herfy-food-service", path: "herfy-food-service", name: "Herfy Food Service" },
+      {
+        id: "panda-retail-company",
+        path: "panda-retail-company",
+        name: "Panda Retail Company",
+      },
+      {
+        id: "al-kabeer-group",
+        path: "al-kabeer-group",
+        name: "Al Kabeer Group",
+      },
+      {
+        id: "herfy-food-service",
+        path: "herfy-food-service",
+        name: "Herfy Food Service",
+      },
     ],
   },
   {
     id: "esg-review",
     name: "ESG Review",
+    type: "dropdown",
     pages: [
-      { id: "our-esg-approach", path: "our-esg-approach", name: "Our ESG Approach" },
-      { id: "our-esg-strategy", path: "our-esg-strategy", name: "Our ESG Strategy" },
-      { id: "materiality-assessment", path: "materiality-assessment", name: "Materiality Assessment" },
-      { id: "driving-environmental-stewardship", path: "driving-environmental-stewardship", name: "Driving Environmental Stewardship and Innovation", appearName: "Driving Environmental Stewardship <br /> and Innovation" },
-      { id: "fostering-community-wellness", path: "fostering-community-wellness", name: "Fostering Community Wellness and Employee Welfare", appearName: "Fostering Community Wellness <br /> and Employee Welfare" },
+      {
+        id: "our-esg-approach",
+        path: "our-esg-approach",
+        name: "Our ESG Approach",
+      },
+      {
+        id: "our-esg-strategy",
+        path: "our-esg-strategy",
+        name: "Our ESG Strategy",
+      },
+      {
+        id: "materiality-assessment",
+        path: "materiality-assessment",
+        name: "Materiality Assessment",
+      },
+      {
+        id: "driving-environmental-stewardship",
+        path: "driving-environmental-stewardship",
+        name: "Driving Environmental Stewardship and Innovation",
+        appearName: "Driving Environmental Stewardship <br /> and Innovation",
+      },
+      {
+        id: "fostering-community-wellness",
+        path: "fostering-community-wellness",
+        name: "Fostering Community Wellness and Employee Welfare",
+        appearName: "Fostering Community Wellness <br /> and Employee Welfare",
+      },
     ],
+  },
+  {
+    id: "financial-statements",
+    name: "Financial Statements",
+    type: "standalone",
+    pages: [],
   },
 ];
 
@@ -177,6 +272,8 @@ const Router = () => {
       return <DrivingEnvironmentalStewardshipPage />;
     case "fostering-community-wellness":
       return <FosteringCommunityWellnessPage />;
+    case "financial-statements":
+      return <FinancialStatementsPage />;
 
     // Standalone
     case "download-center":

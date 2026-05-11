@@ -102,12 +102,10 @@ const KpiCard = ({ group, yearSuffix }: { group: KpiGroup; yearSuffix: string })
             {group.labelKey}
           </span>
         </AnimationSlideTop>
-        (
         <span
-          className="text-xs text-savola-cool-grey/55"
-          dangerouslySetInnerHTML={{ __html: group.unit }}
+          className="text-lg text-savola-cool-grey/70"
+          dangerouslySetInnerHTML={{ __html: `(${group.unit})` }}
         />
-        )
       </div>
       {group.items.map((item, i) => (
         <KpiBar

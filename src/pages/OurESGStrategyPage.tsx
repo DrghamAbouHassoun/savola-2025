@@ -114,7 +114,7 @@ const OurESGStrategyPage = () => {
             <div className="flex-1">
               <AnimationSlideTop>
                 <h4
-                  className={`text-savola-orange font-bold text-lg mb-4 ${isAr ? "text-end" : ""}`}
+                  className={`text-savola-orange font-bold text-lg mb-4`}
                 >
                   {t("strategy.driversText")}
                 </h4>

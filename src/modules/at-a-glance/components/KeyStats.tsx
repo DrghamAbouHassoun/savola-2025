@@ -38,7 +38,7 @@ const KeyStats = ({ column = false }: { column?: boolean }) => {
         {STATS.map((stat) => (
           <AnimationPopUp
             key={stat.id}
-            className={`${stat.bg} ${stat.textColor} flex h-40 w-40 xl:h-44 xl:w-44 flex-col items-center justify-center rounded-full p-5 text-center shadow-[0_18px_35px_rgba(78,95,109,0.08)]`}
+            className={`${stat.bg} ${stat.textColor} flex h-40 w-40 xl:h-50 xl:w-50 flex-col items-center justify-center rounded-full p-5 text-center shadow-[0_18px_35px_rgba(78,95,109,0.08)] hover:scale-105 transition-all duration-500`}
           >
             <p className="mb-3 max-w-28 leading-snug opacity-90 text-xs xl:text-sm">
               {stat.label}

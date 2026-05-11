@@ -77,6 +77,8 @@ export default {
           y2025: 741,
         },
       ],
+      title2: "Volume",
+      title2Unit: " (thousands metric tons)",
       items2: [
         {
           number: 1322,

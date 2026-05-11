@@ -8,6 +8,7 @@ const common = {
       leadership: "Leadership",
       "business-review": "Business Review",
       "esg-review": "ESG Review",
+      "financial-statements": "Financial Statements",
     },
     pages: {
       "theme-of-the-year": "Theme of the Year",
@@ -17,7 +18,8 @@ const common = {
       "investment-case": "Investment Case",
       "stakeholder-engagement": "Stakeholder Engagement",
       "strategy-and-business-model": "Strategy and Business Model",
-      "savola-groups-transformation-journey": "Savola Group's Transformation Journey",
+      "savola-groups-transformation-journey":
+        "Savola Group's Transformation Journey",
       "saudi-vision-2030": "Saudi Vision 2030",
       "technology-and-innovation": "Technology and Innovation",
       "chairmans-statement": "Chairman's Statement",
@@ -30,12 +32,23 @@ const common = {
       "our-esg-approach": "Our ESG Approach",
       "our-esg-strategy": "Our ESG Strategy",
       "materiality-assessment": "Materiality Assessment",
-      "driving-environmental-stewardship": "Driving Environmental Stewardship and Innovation",
-      "driving-environmental-stewardship-appear": "Driving Environmental Stewardship <br /> and Innovation",
-      "fostering-community-wellness": "Fostering Community Wellness and Employee Welfare",
-      "fostering-community-wellness-appear": "Fostering Community Wellness and Employee <br /> Welfare",
+      "driving-environmental-stewardship":
+        "Driving Environmental Stewardship and Innovation",
+      "driving-environmental-stewardship-appear":
+        "Driving Environmental Stewardship <br /> and Innovation",
+      "fostering-community-wellness":
+        "Fostering Community Wellness and Employee Welfare",
+      "fostering-community-wellness-appear":
+        "Fostering Community Wellness and Employee <br /> Welfare",
+      "financial-statements": "Financial Statements",
+      "download-center": "Download Center",
     },
   },
+  investors: "Investor Relations Department",
+  address: "Address",
+  poBox: "P.O.Box",
+  email: "Email",
+  phone: "Phone",
 };
 
 export default common;

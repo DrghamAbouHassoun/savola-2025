@@ -99,7 +99,7 @@ const SaudiVision2030Page = () => {
                 >
                   {/* Col 1: Pillar */}
                   <div className="p-4">
-                    <p className="font-bold text-savola-orange text-sm mb-1">
+                    <p className={`font-bold ${i === tableRows.length - 1 ? "text-savola-navy" : i === tableRows.length - 2 ? "text-savola-green" : "text-savola-orange"} text-sm mb-1`}>
                       {row.pillar.title}
                     </p>
                     <p className="text-savola-cool-grey text-xs leading-relaxed">

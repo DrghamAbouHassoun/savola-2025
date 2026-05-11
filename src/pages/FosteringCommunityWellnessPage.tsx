@@ -23,7 +23,6 @@ const PILLAR_ICONS = [icon1, icon2, icon3, icon4, icon5, icon6];
 const FosteringCommunityWellnessPage = () => {
   const { t, tArray } = useTranslation("esg-review");
   const { lang } = useLocale();
-  const isAr = lang === "ar";
 
   const [activeTab, setActiveTab] = useState(0);
   const [activeSubTab, setActiveSubTab] = useState(0);
@@ -266,7 +265,7 @@ const FosteringCommunityWellnessPage = () => {
                                 key={ci}
                                 className={`px-3 py-2 text-center border border-savola-cool-grey-10 ${lang === "en" && ci !== 0 ? "text-end" : "text-start"} ${ci % 2 !== 0 ? "bg-savola-green-20" : ""} ${ci === 0 ? "font-bold" : ""}`}
                               >
-                                {cell}
+                                {ci > 0 ? Number(cell).toLocaleString("en") : cell}
                               </td>
                             ))}
                           </tr>
@@ -305,7 +304,7 @@ const FosteringCommunityWellnessPage = () => {
           </section>
 
           {/* ── Section 3: Desired Culture Framework ── */}
-          <section className="pb-4 bg-white">
+          <section className="pb-4 bg-white pt-4">
             <SmallContainer>
               <SubSectionTitle
                 text={t(
@@ -356,7 +355,7 @@ const FosteringCommunityWellnessPage = () => {
                           ))}
                         </ul>
                         {cardIdx === 5 && (
-                          <p className={`text-savola-cool-grey mt-2 `}>
+                          <p className={`text-savola-cool-grey mt-2 text-xs`}>
                             {t(
                               "fostering.tabs.0.ourPeople.ourPeople.sections.3.cards.5.note",
                             )}
@@ -495,7 +494,7 @@ const FosteringCommunityWellnessPage = () => {
                                 {row[0]}
                               </td>
                               <td
-                                className={`px-4 py-3 text-sm leading-relaxed align-top border border-savola-cool-grey-10`}
+                                className={`px-4 py-3 text-sm font-normal leading-relaxed align-top border border-savola-cool-grey-10`}
                               >
                                 {row[1]}
                               </td>
@@ -554,7 +553,7 @@ const FosteringCommunityWellnessPage = () => {
                       <span className="text-savola-orange font-bold text-lg mb-2">
                         {t("fostering.tabs.0.capability.divs.3.label.title")}
                       </span>{" "}
-                      <span className="text-savola-black font-bold text-lg leading-relaxed">
+                      <span className="text-savola-black text-lg leading-relaxed">
                         {t(
                           "fostering.tabs.0.capability.divs.3.label.description",
                         )}
@@ -570,9 +569,7 @@ const FosteringCommunityWellnessPage = () => {
           <section className="py-16 bg-savola-cool-grey-7">
             <SmallContainer>
               <div
-                className={`flex flex-wrap gap-0 mb-8 border-b border-savola-cool-grey-10 ${
-                  isAr ? "flex-row-reverse" : ""
-                }`}
+                className={`flex flex-wrap gap-0 mb-8 border-b border-savola-cool-grey-10 `}
               >
                 {[0, 1, 2].map((subIdx) => {
                   const labelKey =
@@ -958,7 +955,7 @@ const FosteringCommunityWellnessPage = () => {
                   </div>
                 </AnimationSlideTop>
                 <AnimationSlideTop>
-                  <div className="h-full">
+                  <div className="h-full mt-4">
                     <h4
                       className={`font-bold text-savola-cool-grey text-sm mb-3`}
                     >
@@ -969,7 +966,7 @@ const FosteringCommunityWellnessPage = () => {
                     >
                       {t("fostering.tabs.1.sections.4.divs.1.p")}
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 text-sm">
                       {tArray("fostering.tabs.1.sections.4.divs.1.list").map(
                         (item, i) => (
                           <li

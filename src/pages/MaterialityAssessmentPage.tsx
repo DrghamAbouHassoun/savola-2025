@@ -55,7 +55,7 @@ const MaterialityAssessmentPage = () => {
                   alt=""
                   className="w-12 h-12 object-contain shrink-0"
                 />
-                <div className={isAr ? "text-end" : ""}>
+                <div className={""}>
                   <h3 className="text-xl font-bold text-savola-green mb-1">
                     {t("materiality.matrix.title")}
                   </h3>
@@ -90,7 +90,7 @@ const MaterialityAssessmentPage = () => {
                   {Array.from({ length: MOST_IMPORTANT_COUNT }, (_, i) => (
                     <AnimationSlideTop key={i}>
                       <div
-                        className={`flex items-start gap-2 `}
+                        className={`flex items-center gap-2 `}
                       >
                         <img
                           src={getMaterialityIconUrl(i + 1)}
@@ -98,7 +98,7 @@ const MaterialityAssessmentPage = () => {
                           className="w-7 h-7 shrink-0"
                         />
                         <span
-                          className={`text-xs text-savola-cool-grey leading-tight ${isAr ? "text-end" : ""}`}
+                          className={`text-xs text-savola-cool-grey leading-tight`}
                         >
                           {t(
                             `materiality.points.mostImportant.list.${i}.title`,
@@ -121,7 +121,7 @@ const MaterialityAssessmentPage = () => {
                   {Array.from({ length: VERY_IMPORTANT_COUNT }, (_, i) => (
                     <AnimationSlideTop key={i}>
                       <div
-                        className={`flex items-start gap-2`}
+                        className={`flex items-center gap-2`}
                       >
                         <img
                           src={getMaterialityIconUrl(i + 7)}
@@ -129,7 +129,7 @@ const MaterialityAssessmentPage = () => {
                           className="w-7 h-7 shrink-0"
                         />
                         <span
-                          className={`text-xs text-savola-cool-grey leading-tight ${isAr ? "text-end" : ""}`}
+                          className={`text-xs text-savola-cool-grey leading-tight`}
                         >
                           {t(
                             `materiality.points.veryImportant.list.${i}.title`,
@@ -152,7 +152,7 @@ const MaterialityAssessmentPage = () => {
                   {Array.from({ length: IMPORTANT_COUNT }, (_, i) => (
                     <AnimationSlideTop key={i}>
                       <div
-                        className={`flex items-start gap-2 `}
+                        className={`flex items-center gap-2 `}
                       >
                         <img
                           src={getMaterialityIconUrl(i + 12)}
@@ -160,7 +160,7 @@ const MaterialityAssessmentPage = () => {
                           className="w-7 h-7 shrink-0"
                         />
                         <span
-                          className={`text-xs text-savola-cool-grey leading-tight ${isAr ? "text-end" : ""}`}
+                          className={`text-xs text-savola-cool-grey leading-tigh`}
                         >
                           {t(`materiality.points.important.list.${i}.title`)}
                         </span>

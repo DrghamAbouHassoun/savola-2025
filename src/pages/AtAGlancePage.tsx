@@ -20,18 +20,16 @@ const AtAGlancePage = () => {
       <Highlights />
       {/* <AwardsHighlights /> */}
 
-      {/* ── Tablet / small laptop: stacked ── */}
+      {/* ── Mobile / tablet: stacked ── */}
       <div className="lg:hidden">
         <KeyStats />
         <AwardsSlider />
       </div>
 
-      {/* ── Desktop: KeyStats sticky column beside AwardsSlider ── */}
+      {/* ── Desktop: KeyStats column beside AwardsSlider ── */}
       <div className="hidden lg:flex">
-        <div className="w-72 xl:w-80 shrink-0 bg-white">
-          <div className="sticky top-0 h-screen flex items-center justify-center">
-            <KeyStats column />
-          </div>
+        <div className="w-72 xl:w-80 shrink-0 bg-white flex items-start justify-center py-16">
+          <KeyStats column />
         </div>
         <div className="flex-1 min-w-0">
           <AwardsSlider />

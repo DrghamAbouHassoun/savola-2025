@@ -11,6 +11,7 @@ import CountUp from "../modules/common/components/Animations/CountUp";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import { LangContext } from "../modules/common/contexts/LangProvider";
 import useInView from "../modules/common/hooks/useInView";
+import DoubleArrow from "../assets/icons/double-arrow.svg";
 
 interface ChartBarProps {
   year: string;
@@ -118,7 +119,9 @@ const Chart = ({ title, titleUnit, data, isRtl, yearSuffix }: ChartProps) => {
               dangerouslySetInnerHTML={{ __html: titleUnit }}
             />
           </div>
-          <span className="text-savola-green text-lg leading-none">▲</span>
+          <span className="text-savola-green text-lg leading-none">
+            <img src={DoubleArrow} alt="" className="w-6 h-auto object-contain" />
+          </span>
         </div>
       </AnimationSlideTop>
       <div className="flex flex-col gap-3">
@@ -147,7 +150,8 @@ const AlKabeerGroupPage = () => {
   const yearSuffix = isRtl ? "م" : "";
 
   const strategicParagraphs = tArray("alKabeer.strategicHighlights.paragraphs");
-  const alKabeerData = translations[lang as "en" | "ar"]["business-review"].alKabeer;
+  const alKabeerData =
+    translations[lang as "en" | "ar"]["business-review"].alKabeer;
   const charts = alKabeerData.charts;
   const labels = alKabeerData.intro.labels;
 
@@ -172,9 +176,12 @@ const AlKabeerGroupPage = () => {
               </div>
               <div className="p-4">
                 <AnimationPopUp>
-                  <p className="font-bold text-savola-cool-grey text-base md:text-lg leading-relaxed mb-4">
-                    {t("alKabeer.header.text")}
-                  </p>
+                  <p
+                    className="font-bold text-savola-cool-grey text-base md:text-lg leading-relaxed mb-4"
+                    dangerouslySetInnerHTML={{
+                      __html: t("alKabeer.header.text"),
+                    }}
+                  ></p>
                   <p className="font-bold text-savola-orange text-base">
                     {t("alKabeer.header.label1")}
                   </p>
@@ -221,7 +228,9 @@ const AlKabeerGroupPage = () => {
                   />
                   <p className="font-black text-2xl text-savola-orange leading-none">
                     <span
-                      dangerouslySetInnerHTML={{ __html: label.number.prefix ?? "" }}
+                      dangerouslySetInnerHTML={{
+                        __html: label.number.prefix ?? "",
+                      }}
                     />
                     <CountUp end={label.number.num} />
                     <span
@@ -242,7 +251,9 @@ const AlKabeerGroupPage = () => {
           <AnimationSlideTop>
             <p
               className="text-savola-cool-grey leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: t("alKabeer.intro.paragraph") }}
+              dangerouslySetInnerHTML={{
+                __html: t("alKabeer.intro.paragraph"),
+              }}
             />
           </AnimationSlideTop>
         </SmallContainer>

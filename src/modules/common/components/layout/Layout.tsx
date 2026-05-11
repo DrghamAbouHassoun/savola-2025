@@ -1,3 +1,4 @@
+import InfoModal from "./InfoModal";
 import Menu from "./Menu";
 import Navbar from "./Navbar";
 import NavigationArrows from "./NavigationArrows";
@@ -10,6 +11,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="w-full">
+      <InfoModal />
       <Navbar />
       <Menu />
       <SocialLinks />

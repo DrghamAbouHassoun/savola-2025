@@ -102,7 +102,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
     <div className="bg-linear-to-b from-savola-green-50 to-savola-green-50/0 p-8 my-8">
       <img src={QuoteIcon} alt="" className="w-10 mb-4" />
       <p
-        className="font-bold text-savola-navy text-base md:text-lg leading-relaxed italic"
+        className="font-bold text-savola-navy text-base md:text-lg leading-relaxed"
         dangerouslySetInnerHTML={{ __html: text }}
       />
       <p className="font-bold text-savola-cool-grey mt-4">{name}</p>
@@ -308,7 +308,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
                         : "bg-savola-cool-grey-7 hover:bg-savola-green-50"
                     }`}
                   >
-                    {tab.title}
+                    {tab.title}{lang === 'ar' ? "م" : ""}
                   </button>
                 ))}
               </div>

@@ -6,12 +6,15 @@ import { MenuContext } from "../../contexts/MenuProvider";
 import savolaAngel from "../../../../assets/icons/savola-angel.svg";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useLocale } from "../../hooks/useLocale";
+import { socialLinksData } from "./SocialLinks";
+import { InfoModalContext } from "../../contexts/InfoModalProvider";
 
 const Menu = () => {
   const { lang } = useLocale();
   const { t } = useTranslation("common");
   const { currentRoute, navigate } = useContext(RouterContext);
   const { toggleMenu, isOpen } = useContext(MenuContext);
+  const { toggleModal } = useContext(InfoModalContext);
   const [openSection, setOpenSection] = useState<string>(pages[0].id);
 
   useEffect(() => {
@@ -21,6 +24,11 @@ const Menu = () => {
   const handleSectionClick = (sectionId: string) => {
     setOpenSection((prev) => (prev === sectionId ? "" : sectionId));
   };
+
+  const handleOpenInfoModal = () => {
+    toggleMenu(false);
+    toggleModal(true);
+  }
 
   return (
     <div
@@ -78,6 +86,30 @@ const Menu = () => {
               </div>
             );
           })}
+        </div>
+        <div className="flex flex-row gap-2">
+          {socialLinksData.map((link) => (
+            <>
+              {link.type === "button" ? (
+                <button
+                  key={link.name}
+                  className="flex items-center p-2 w-8.5 h-8.5"
+                  onClick={() => handleOpenInfoModal()}
+                >
+                  {link.icon}
+                </button>
+              ) : (
+                <a
+                  href={link.hrefAr && lang === "ar" ? link.hrefAr : link.href}
+                  target="_blank"
+                  key={link.name}
+                  className="flex items-center p-2 w-8.5 h-8.5"
+                >
+                  {link.icon}
+                </a>
+              )}
+            </>
+          ))}
         </div>
       </div>
     </div>

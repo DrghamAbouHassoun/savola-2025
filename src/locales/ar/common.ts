@@ -8,6 +8,7 @@ const common = {
       leadership: "القيادة",
       "business-review": "مراجعة الأعمال",
       "esg-review": "مراجعة الحوكمة البيئية",
+      "financial-statements": "القوائم المالية",
     },
     pages: {
       "theme-of-the-year": "محور العام",
@@ -28,14 +29,24 @@ const common = {
       "al-kabeer-group": "مجموعة الكبير",
       "herfy-food-service": "شركة هرفي للخدمات الغذائية",
       "our-esg-approach": "نهجنا في الحوكمة البيئية",
-      "our-esg-strategy": "استراتيجيتنا في الحوكمة البيئية",
+      "our-esg-strategy": "استراتيجية الممارسات البيئية والاجتماعية والحوكمة",
       "materiality-assessment": "تقييم الأهمية النسبية",
-      "driving-environmental-stewardship": "ترسيخ ريادتنا في الالتزام البيئي والابتكار",
-      "driving-environmental-stewardship-appear": "ترسيخ ريادتنا في الالتزام <br /> البيئي والابتكار",
+      "driving-environmental-stewardship":
+        "ترسيخ ريادتنا في الالتزام البيئي والابتكار",
+      "driving-environmental-stewardship-appear":
+        "ترسيخ ريادتنا في الالتزام <br /> البيئي والابتكار",
       "fostering-community-wellness": "تعزيز صحة المجتمع ورفاهية الموظفين",
-      "fostering-community-wellness-appear": "تعزيز صحة المجتمع <br /> ورفاهية الموظفين",
+      "fostering-community-wellness-appear":
+        "تعزيز صحة المجتمع <br /> ورفاهية الموظفين",
+      "financial-statements": "القوائم المالية",
+      "download-center" : "مركز التحميل",
     },
   },
+  investors: "إدارة علاقات المستثمرين",
+  address: "العنوان",
+  poBox: "صندوق البريد",
+  email: "البريد الإلكتروني",
+  phone: "الهاتف",
 };
 
 export default common;

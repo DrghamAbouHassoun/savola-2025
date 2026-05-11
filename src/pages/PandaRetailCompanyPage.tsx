@@ -194,7 +194,7 @@ const PandaRetailCompanyPage = () => {
                   <p className="text-xs text-savola-cool-grey mb-2 font-medium ">
                     {t(`panda.together.economic.cards.${i}.year`)}
                   </p>
-                  <p className="text-xs font-semibold text-savola-cool-grey mb-3 uppercase tracking-wide">
+                  <p className="text-xs font-bold text-savola-cool-grey mb-3 uppercase tracking-wide">
                     {t(`panda.together.economic.cards.${i}.subtitle`)}
                   </p>
                   <p className="text-sm text-savola-cool-grey leading-relaxed">
@@ -298,7 +298,7 @@ const PandaRetailCompanyPage = () => {
                       alt=""
                       className="h-10 w-auto mb-3 object-contain"
                     />
-                    <p className="text-lg text-savola-cool-grey my-4 font-bold">
+                    <p className="text-lg text-savola-cool-grey my-4 mb-0 font-bold">
                       {t(
                         `panda.together.powering.subsections.3.cards.${i}.title`,
                       )}
@@ -319,7 +319,7 @@ const PandaRetailCompanyPage = () => {
 
           {/* Subsection 4: Strategic Enablement */}
           <div>
-            <h3 className="text-savola-orange font-bold">
+            <h3 className="text-savola-orange font-bold mb-2">
               {t("panda.together.powering.subsections.4.title")}
             </h3>
             {powSubParagraphs[4].map((p, i) => (

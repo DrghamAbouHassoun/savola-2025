@@ -257,6 +257,18 @@ const SavolaFoodPage = () => {
                       }}
                     />
                     <p className="font-black text-2xl text-savola-cool-grey leading-none">
+                      {t(
+                        `savolaFoods.foodsIn2025.items.${i}.number.prefix`,
+                      ) !== `savolaFoods.foodsIn2025.items.${i}.number.prefix` && (
+                        <span
+                          className="text-base ms-1 font-bold"
+                          dangerouslySetInnerHTML={{
+                            __html: t(
+                              `savolaFoods.foodsIn2025.items.${i}.number.prefix`,
+                            ),
+                          }}
+                        />
+                      )}
                       <CountUp end={num} decimals={FOODS_2025_DECIMALS[i]} />
                       <span
                         className="text-base ms-1 font-bold"
@@ -293,10 +305,13 @@ const SavolaFoodPage = () => {
           </div>
 
           {/* Volume metrics (items2) */}
+          <h3 className="text-lg font-bold text-savola-orange">{t("savolaFoods.revenue.title2")} <span className="text-base text-savola-cool-grey">{t("savolaFoods.revenue.title2Unit")}</span></h3>
           <div className="pt-4 flex flex-col lg:flex-row w-full">
             {ITEMS2_NUMS.map((num, i) => (
               <div key={i} className={`relative w-full flex-1 `}>
-                <div className={`absolute w-full h-full top-0 left-0 -z-10 ${lang === 'ar' ? "rotate-y-180" : ""}`}>
+                <div
+                  className={`absolute w-full h-full top-0 left-0 -z-10 ${lang === "ar" ? "rotate-y-180" : ""}`}
+                >
                   <img
                     src={TrapeziumShape}
                     alt=""
