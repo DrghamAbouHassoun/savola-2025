@@ -48,6 +48,23 @@ const Menu = () => {
         <div className="flex flex-col w-full max-w-md gap-1">
           {pages.map((section) => {
             const isExpanded = openSection === section.id;
+
+            if (section.type === "standalone") {
+              return (
+                <div key={section.id} className="w-full">
+                  <button
+                    type="button"
+                    onClick={() => navigate(section.id)}
+                    className="w-full flex items-center justify-center gap-4 px-4 py-3 rounded-lg hover:bg-black/5 transition-colors duration-200"
+                  >
+                    <span className="text-xl font-bold text-black">
+                      {t(`nav.sections.${section.id}`)}
+                    </span>
+                  </button>
+                </div>
+              );
+            }
+
             return (
               <div key={section.id} className="w-full">
                 <button

@@ -844,7 +844,7 @@ const FosteringCommunityWellnessPage = () => {
 
               {/* Foundation report + smartphone mockup */}
               <div
-                className={`flex flex-col md:flex-row gap-8 items-center mt-10`}
+                className={`flex flex-col md:flex-row gap-8 items-center mt-10 bg-savola-orange-20`}
               >
                 <AnimationSlideTop className="flex-1 flex justify-center">
                   <p
@@ -938,7 +938,7 @@ const FosteringCommunityWellnessPage = () => {
                 <AnimationSlideTop>
                   <div className="">
                     <h4
-                      className={`font-bold text-savola-cool-grey text-sm mb-3`}
+                      className={`font-bold text-savola-cool-grey mb-3`}
                     >
                       {t("fostering.tabs.1.sections.4.divs.0.title")}
                     </h4>
@@ -947,7 +947,7 @@ const FosteringCommunityWellnessPage = () => {
                     ).map((para, i) => (
                       <p
                         key={i}
-                        className={`text-savola-cool-grey leading-relaxed mb-2`}
+                        className={`text-savola-cool-grey text-sm leading-relaxed mb-2`}
                       >
                         {para}
                       </p>
@@ -957,7 +957,7 @@ const FosteringCommunityWellnessPage = () => {
                 <AnimationSlideTop>
                   <div className="h-full mt-4">
                     <h4
-                      className={`font-bold text-savola-cool-grey text-sm mb-3`}
+                      className={`font-bold text-savola-cool-grey mb-3`}
                     >
                       {t("fostering.tabs.1.sections.4.divs.1.title")}
                     </h4>
