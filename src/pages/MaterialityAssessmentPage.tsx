@@ -5,7 +5,7 @@ import { useLocale } from "../modules/common/hooks/useLocale";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import FlowerImage from "../assets/icons/flower.svg";
-import ChartEn from "../assets/vectors/esg/materiality-chart-en.svg";
+// import ChartEn from "../assets/vectors/esg/materiality-chart-en.svg";
 // import ChartAr from "../assets/vectors/esg/materiality-chart-ar.svg";
 import Chart from "../modules/esg/components/chart";
 import ChartAr from "../modules/esg/components/ChartAr";

@@ -410,28 +410,30 @@
 
 @keyframes TrapeziumLayer1 {
   0%    { opacity: 0; transform: translateX(120vw); }
-  5%    { opacity: 1; transform: translateX(120vw); }
-  25%   { opacity: 1; transform: translateX(0);     }
-  62%   { opacity: 1; transform: translateX(0);     }
-  75%   { opacity: 0; transform: translateX(120vw); }
+  4%    { opacity: 1; transform: translateX(120vw); }
+  24%   { opacity: 1; transform: translateX(0);     }
+  70%   { opacity: 1; transform: translateX(0);     }
+  84%   { opacity: 0; transform: translateX(120vw); }
   100%  { opacity: 0; transform: translateX(120vw); }
 }
 
 @keyframes TrapeziumLayer2 {
   0%    { opacity: 0; transform: translateX(120vw); }
-  12%   { opacity: 1; transform: translateX(120vw); }
-  32%   { opacity: 1; transform: translateX(6vw);   }
-  62%   { opacity: 1; transform: translateX(6vw);   }
-  75%   { opacity: 0; transform: translateX(120vw); }
+  24%   { opacity: 0; transform: translateX(120vw); }
+  28%   { opacity: 1; transform: translateX(120vw); }
+  46%   { opacity: 1; transform: translateX(clamp(40px, 6vw, 88px)); }
+  72%   { opacity: 1; transform: translateX(clamp(40px, 6vw, 88px)); }
+  86%   { opacity: 0; transform: translateX(120vw); }
   100%  { opacity: 0; transform: translateX(120vw); }
 }
 
 @keyframes TrapeziumLayer3 {
   0%    { opacity: 0; transform: translateX(120vw); }
-  20%   { opacity: 1; transform: translateX(120vw); }
-  40%   { opacity: 1; transform: translateX(12vw);  }
-  65%   { opacity: 1; transform: translateX(12vw);  }
-  78%   { opacity: 0; transform: translateX(120vw); }
+  46%   { opacity: 0; transform: translateX(120vw); }
+  50%   { opacity: 1; transform: translateX(120vw); }
+  68%   { opacity: 1; transform: translateX(clamp(80px, 12vw, 160px)); }
+  74%   { opacity: 1; transform: translateX(clamp(80px, 12vw, 160px)); }
+  88%   { opacity: 0; transform: translateX(120vw); }
   100%  { opacity: 0; transform: translateX(120vw); }
 }
 
@@ -439,7 +441,7 @@
   opacity: 0;
   transform: translateX(120vw);
   animation-name: TrapeziumLayer1;
-  animation-duration: 12s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
@@ -448,7 +450,7 @@
   opacity: 0;
   transform: translateX(120vw);
   animation-name: TrapeziumLayer2;
-  animation-duration: 12s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
@@ -457,7 +459,7 @@
   opacity: 0;
   transform: translateX(120vw);
   animation-name: TrapeziumLayer3;
-  animation-duration: 12s;
+  animation-duration: 24s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
@@ -466,28 +468,30 @@
 
 @keyframes TrapeziumLayer1Ar {
   0%    { opacity: 0; transform: translateX(-120vw); }
-  5%    { opacity: 1; transform: translateX(-120vw); }
-  25%   { opacity: 1; transform: translateX(0);      }
-  62%   { opacity: 1; transform: translateX(0);      }
-  75%   { opacity: 0; transform: translateX(-120vw); }
+  4%    { opacity: 1; transform: translateX(-120vw); }
+  24%   { opacity: 1; transform: translateX(0);      }
+  70%   { opacity: 1; transform: translateX(0);      }
+  84%   { opacity: 0; transform: translateX(-120vw); }
   100%  { opacity: 0; transform: translateX(-120vw); }
 }
 
 @keyframes TrapeziumLayer2Ar {
   0%    { opacity: 0; transform: translateX(-120vw); }
-  12%   { opacity: 1; transform: translateX(-120vw); }
-  32%   { opacity: 1; transform: translateX(-6vw);   }
-  62%   { opacity: 1; transform: translateX(-6vw);   }
-  75%   { opacity: 0; transform: translateX(-120vw); }
+  24%   { opacity: 0; transform: translateX(-120vw); }
+  28%   { opacity: 1; transform: translateX(-120vw); }
+  46%   { opacity: 1; transform: translateX(clamp(-88px, -6vw, -40px)); }
+  72%   { opacity: 1; transform: translateX(clamp(-88px, -6vw, -40px)); }
+  86%   { opacity: 0; transform: translateX(-120vw); }
   100%  { opacity: 0; transform: translateX(-120vw); }
 }
 
 @keyframes TrapeziumLayer3Ar {
   0%    { opacity: 0; transform: translateX(-120vw); }
-  20%   { opacity: 1; transform: translateX(-120vw); }
-  40%   { opacity: 1; transform: translateX(-12vw);  }
-  65%   { opacity: 1; transform: translateX(-12vw);  }
-  78%   { opacity: 0; transform: translateX(-120vw); }
+  46%   { opacity: 0; transform: translateX(-120vw); }
+  50%   { opacity: 1; transform: translateX(-120vw); }
+  68%   { opacity: 1; transform: translateX(clamp(-160px, -12vw, -80px)); }
+  74%   { opacity: 1; transform: translateX(clamp(-160px, -12vw, -80px)); }
+  88%   { opacity: 0; transform: translateX(-120vw); }
   100%  { opacity: 0; transform: translateX(-120vw); }
 }
 

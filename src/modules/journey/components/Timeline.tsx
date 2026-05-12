@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const Timeline = ({ list }: { list: string[] }) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
