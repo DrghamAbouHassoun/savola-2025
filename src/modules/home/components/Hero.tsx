@@ -7,9 +7,10 @@ import SliderImage3Ar from "../../../assets/images/home/slider/3-arabic.png";
 import Trapezium from "../../../assets/vectors/trapezium.png";
 import TrapeziumGray from "../../../assets/vectors/trapezium-grey.svg";
 import TrapeziumOrange from "../../../assets/vectors/trapezium-orang.svg";
-import Logo from "../../../assets/logo/logo.svg";
+// import Logo from "../../../assets/logo/logo.svg";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { useLocale } from "../../common/hooks/useLocale";
+import Logo from "../../common/components/vectors/Logo";
 
 const slidesEn = [SliderImage1, SliderImage2, SliderImage3];
 const slidesAr = [SliderImage1, SliderImage2, SliderImage3Ar];
@@ -158,13 +159,14 @@ const Hero = () => {
     <>
       <div
         key={`${heroAnimationKey}-logo-splash`}
-        className="fixed w-full h-screen top-0 left-0 z-30 flex justify-center items-center bg-white animate-fade-out animate-delay-2s"
+        className="fixed w-full h-screen overflow-hidden top-0 left-0 z-30 flex justify-center items-center bg-white animate-fade-out animate-delay-2s"
       >
-        <img
+        {/* <img
           src={Logo}
           alt="Savola Logo"
           className="w-70 h-auto object-top-left"
-        />
+        /> */}
+        <Logo />
       </div>
       <div className="w-full h-screen relative overflow-hidden">
         <div

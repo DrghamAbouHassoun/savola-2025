@@ -1,7 +1,7 @@
 import Trapezium1 from "../../../../assets/vectors/trapezium-group/1.svg";
 import Trapezium2 from "../../../../assets/vectors/trapezium-group/2.svg";
 import Trapezium3 from "../../../../assets/vectors/trapezium-group/3.svg";
-// import { useLocale } from "../../hooks/useLocale";
+import { useLocale } from "../../hooks/useLocale";
 
 const layers = [
   {
@@ -25,20 +25,22 @@ const layers = [
 ];
 
 const HeaderTrapeziumGroup = () => {
-  // const { lang } = useLocale();
-  // const isAr = lang === "ar";
+  const { lang } = useLocale();
+  const isAr = lang === "ar";
 
   return (
     <div className="relative w-full h-full overflow-hidden">
       {layers.map(({ src }, index) => (
+        <div key={src} className={`absolute ${isAr ? "left-0 animate-trapezium-layer1-ar" : "right-0 animate-trapezium-layer1"}  ${index === 1 ? "animate-delay-1s" : index === 2 ? "animate-delay-2s" : ""}`}>
         <img
           key={src}
           src={src}
           alt=""
           aria-hidden="true"
           draggable={false}
-          className={`absolute right-0 animate-trapezium-layer1 ${index === 1 ? "animate-delay-1s" : index === 2 ? "animate-delay-2s" : ""}`}
+          className={`${lang === "ar" ? "rotate-y-180" : ""}`}
         />
+        </div>
       ))}
     </div>
   );
