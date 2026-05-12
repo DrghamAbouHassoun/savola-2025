@@ -152,9 +152,9 @@ const StrategyAndBusinessModelPage = () => {
                       {/* Our Corporate Values */}
                       {idx === 3 && (
                         <div>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                             {data.ourCorporateValue.items[0]?.desc && (
-                              <p className="text-savola-cool-grey text-sm leading-relaxed mb-8">
+                              <p className="text-savola-cool-grey text-sm leading-relaxed">
                                 {data.ourCorporateValue.items[0].desc}
                               </p>
                             )}
@@ -162,7 +162,7 @@ const StrategyAndBusinessModelPage = () => {
                               .slice(1)
                               .map((item, i) => (
                                 <div key={i}>
-                                  <h4 className="text-savola-green font-bold text-base mb-3">
+                                  <h4 className="text-savola-green font-bold text-base">
                                     {item.title}
                                   </h4>
                                   <ul className="space-y-2 list-outside list-disc px-4">

@@ -17,6 +17,9 @@ import icon5 from "../assets/icons/esg/fostering/5.svg";
 import icon6 from "../assets/icons/esg/fostering/6.svg";
 import accordionArrow from "../assets/icons/geo/accordion-arrow.png";
 import FlowerIcon from "../assets/icons/flower.svg";
+import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
+import SavolaWorldImage from "../assets/images/esg/fostering/savola-world.png";
+import NutritionImage from "../assets/images/esg/fostering/nutrition.png";
 
 const PILLAR_ICONS = [icon1, icon2, icon3, icon4, icon5, icon6];
 
@@ -87,6 +90,30 @@ const FosteringCommunityWellnessPage = () => {
       </ul>
     </AnimationSlideTop>
   );
+
+  const BoxesList = ({
+    items,
+  }: {
+    items: { title: string; desc: string }[];
+  }) => {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+        {items.map((item) => (
+          <AnimationPopUp>
+            <div
+              key={item.title}
+              className="h-full bg-savola-orange-20 text-savola-cool-grey text-sm p-4 py-6 rounded-xl hover:scale-105 transition-all duration-700"
+            >
+              <h4 className="font-bold text-savola-orange mb-2">
+                {item.title}
+              </h4>
+              <p>{item.desc}</p>
+            </div>
+          </AnimationPopUp>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -265,7 +292,9 @@ const FosteringCommunityWellnessPage = () => {
                                 key={ci}
                                 className={`px-3 py-2 text-center border border-savola-cool-grey-10 ${lang === "en" && ci !== 0 ? "text-end" : "text-start"} ${ci % 2 !== 0 ? "bg-savola-green-20" : ""} ${ci === 0 ? "font-bold" : ""}`}
                               >
-                                {ci > 0 ? Number(cell).toLocaleString("en") : cell}
+                                {ci > 0
+                                  ? Number(cell).toLocaleString("en")
+                                  : cell}
                               </td>
                             ))}
                           </tr>
@@ -526,7 +555,9 @@ const FosteringCommunityWellnessPage = () => {
                     </div>
                     {lang === "ar" && (
                       <>
-                        <h5 className="font-bold text-savola-cool-grey mb-2">{t("fostering.tabs.0.capability.divs.4.title")}</h5>
+                        <h5 className="font-bold text-savola-cool-grey mb-2">
+                          {t("fostering.tabs.0.capability.divs.4.title")}
+                        </h5>
                         <div className="flex-1">
                           {[0, 1].map((i) => (
                             <Paragraph
@@ -721,33 +752,45 @@ const FosteringCommunityWellnessPage = () => {
                     {t("fostering.tabs.1.intro.title")}
                   </h2>
                 </AnimationSlideTop>
-                <AnimationSlideTop>
-                  <p className={`font-bold text-savola-cool-grey mb-3`}>
-                    {t("fostering.tabs.1.intro.subtitle")}
-                  </p>
-                </AnimationSlideTop>
-                <BulletList
-                  items={tArray("fostering.tabs.1.intro.list")}
-                  color="grey"
-                />
-                <Paragraph text={t("fostering.tabs.1.intro.p")} />
               </SmallContainer>
             </section>
           </div>
 
           {/* ── Section 0: Savola World Foundation ── */}
           <section className="py-4">
-            <SmallContainer>
-              <SectionTitle text={t("fostering.tabs.1.sections.0.title")} />
-              <AnimationSlideTop>
-                <div className="">
-                  <SubSectionTitle
-                    text={t("fostering.tabs.1.sections.0.div.title")}
+            <div className="w-full relative">
+              <div className="flex max-w-5xl mx-auto">
+                <div className="flex-1 py-32 px-4">
+                  <AnimationSlideTop>
+                    <p className={`font-bold text-savola-cool-grey mb-3`}>
+                      {t("fostering.tabs.1.intro.subtitle")}
+                    </p>
+                  </AnimationSlideTop>
+                  <BulletList
+                    items={tArray("fostering.tabs.1.intro.list")}
+                    color="grey"
                   />
-                  <Paragraph text={t("fostering.tabs.1.sections.0.div.desc")} />
+                  <Paragraph text={t("fostering.tabs.1.intro.p")} />
+                  <SectionTitle text={t("fostering.tabs.1.sections.0.title")} />
+                  <AnimationSlideTop>
+                    <div className="">
+                      <SubSectionTitle
+                        text={t("fostering.tabs.1.sections.0.div.title")}
+                      />
+                      <Paragraph
+                        text={t("fostering.tabs.1.sections.0.div.desc")}
+                      />
+                    </div>
+                  </AnimationSlideTop>
                 </div>
-              </AnimationSlideTop>
-            </SmallContainer>
+                <div className="flex-1 flex justify-end "></div>
+              </div>
+              <img
+                src={SavolaWorldImage}
+                alt=""
+                className={`w-full lg:w-auto h-full object-contain ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-right right-0"} xl:absolute top-0`}
+              />
+            </div>
           </section>
 
           {/* ── Section 1: Savola World 2025 ── */}
@@ -893,15 +936,20 @@ const FosteringCommunityWellnessPage = () => {
               <SectionTitle text={t("fostering.tabs.1.sections.3.title")} />
               <AnimationSlideTop>
                 <p
-                  className={`text-savola-cool-grey text-sm leading-relaxed mb-4`}
+                  className={`text-savola-cool-grey text-sm leading-relaxed mb-1`}
                   dangerouslySetInnerHTML={{
                     __html: t("fostering.tabs.1.sections.3.desc"),
                   }}
                 />
               </AnimationSlideTop>
-              <BulletList
-                items={tArray("fostering.tabs.1.sections.3.list")}
-                color="grey"
+              <BoxesList
+                items={
+                  tArray("fostering.tabs.1.sections.3.list") as unknown as {
+                    title: string;
+                    desc: string;
+                  }[]
+                }
+                // color="grey"
               />
               <div className="">
                 {[0, 1].map((divIdx) => (
@@ -926,65 +974,73 @@ const FosteringCommunityWellnessPage = () => {
           </section>
 
           {/* ── Section 4: Nutrition and Health ── */}
-          <section className="py-16 bg-white">
-            <SmallContainer>
-              <SectionTitle text={t("fostering.tabs.1.sections.4.title")} />
-              <Paragraph text={t("fostering.tabs.1.sections.4.p")} />
-              <BulletList
-                items={tArray("fostering.tabs.1.sections.4.list")}
-                color="grey"
-              />
-              <div className="">
-                <AnimationSlideTop>
+          <section className=" ">
+            <div className="w-full relative ">
+              <div className=" py-16 w-full flex flex-col lg:flex-row  max-w-5xl mx-auto px-4">
+                <div className="flex-1">
+                  <SectionTitle text={t("fostering.tabs.1.sections.4.title")} />
+                  <Paragraph text={t("fostering.tabs.1.sections.4.p")} />
+                  <BulletList
+                    items={tArray("fostering.tabs.1.sections.4.list")}
+                    color="grey"
+                  />
                   <div className="">
-                    <h4
-                      className={`font-bold text-savola-cool-grey mb-3`}
-                    >
-                      {t("fostering.tabs.1.sections.4.divs.0.title")}
-                    </h4>
-                    {tArray(
-                      "fostering.tabs.1.sections.4.divs.0.paragraphs",
-                    ).map((para, i) => (
-                      <p
-                        key={i}
-                        className={`text-savola-cool-grey text-sm leading-relaxed mb-2`}
-                      >
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-                </AnimationSlideTop>
-                <AnimationSlideTop>
-                  <div className="h-full mt-4">
-                    <h4
-                      className={`font-bold text-savola-cool-grey mb-3`}
-                    >
-                      {t("fostering.tabs.1.sections.4.divs.1.title")}
-                    </h4>
-                    <p
-                      className={`text-savola-cool-grey text-sm leading-relaxed mb-3`}
-                    >
-                      {t("fostering.tabs.1.sections.4.divs.1.p")}
-                    </p>
-                    <ul className="space-y-2 text-sm">
-                      {tArray("fostering.tabs.1.sections.4.divs.1.list").map(
-                        (item, i) => (
-                          <li
+                    <AnimationSlideTop>
+                      <div className="">
+                        <h4 className={`font-bold text-savola-cool-grey mb-3`}>
+                          {t("fostering.tabs.1.sections.4.divs.0.title")}
+                        </h4>
+                        {tArray(
+                          "fostering.tabs.1.sections.4.divs.0.paragraphs",
+                        ).map((para, i) => (
+                          <p
                             key={i}
-                            className={`flex items-start gap-2 text-savola-cool-grey`}
+                            className={`text-savola-cool-grey text-sm leading-relaxed mb-2`}
                           >
-                            <span className="text-savola-cool-grey shrink-0 font-bold mt-0.5">
-                              •
-                            </span>
-                            <span dangerouslySetInnerHTML={{ __html: item }} />
-                          </li>
-                        ),
-                      )}
-                    </ul>
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                    </AnimationSlideTop>
+                    <AnimationSlideTop>
+                      <div className="h-full mt-4">
+                        <h4 className={`font-bold text-savola-cool-grey mb-3`}>
+                          {t("fostering.tabs.1.sections.4.divs.1.title")}
+                        </h4>
+                        <p
+                          className={`text-savola-cool-grey text-sm leading-relaxed mb-3`}
+                        >
+                          {t("fostering.tabs.1.sections.4.divs.1.p")}
+                        </p>
+                        <ul className="space-y-2 text-sm">
+                          {tArray(
+                            "fostering.tabs.1.sections.4.divs.1.list",
+                          ).map((item, i) => (
+                            <li
+                              key={i}
+                              className={`flex items-start gap-2 text-savola-cool-grey`}
+                            >
+                              <span className="text-savola-cool-grey shrink-0 font-bold mt-0.5">
+                                •
+                              </span>
+                              <span
+                                dangerouslySetInnerHTML={{ __html: item }}
+                              />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </AnimationSlideTop>
                   </div>
-                </AnimationSlideTop>
+                </div>
+                <div className="flex-1"></div>
               </div>
-            </SmallContainer>
+              <img
+                src={NutritionImage}
+                alt=""
+                className={`h-full w-full lg:w-auto lg:max-w-[50%] object-contain lg:absolute bottom-0 ${lang === "ar" ? "left-0 object-bottom-left rotate-y-180" : "right-0 object-bottom-right"}`}
+              />
+            </div>
           </section>
         </div>
       )}

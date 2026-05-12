@@ -13,7 +13,8 @@ const SaudiVision2030Page = () => {
   const subtitle = t("saudiVision.subtitle");
   const p1 = t("saudiVision.p1");
   const p2 = t("saudiVision.p2");
-  const p3 = t("saudiVision.p3");
+  const p3 =
+    t("saudiVision.p3") === "saudiVision.p3" ? "" : t("saudiVision.p3");
   const label = t("saudiVision.label");
 
   const tableHeaders = [0, 1, 2].map((i) =>
@@ -56,9 +57,11 @@ const SaudiVision2030Page = () => {
               <AnimationFadeIn>
                 <p>{p2}</p>
               </AnimationFadeIn>
-              <AnimationFadeIn>
-                <p>{p3}</p>
-              </AnimationFadeIn>
+              {p3 && (
+                <AnimationFadeIn>
+                  <p>{p3}</p>
+                </AnimationFadeIn>
+              )}
             </div>
 
             {/* Circular green badge */}
@@ -98,8 +101,10 @@ const SaudiVision2030Page = () => {
                   className="grid grid-cols-3 divide-x divide-savola-cool-grey-10"
                 >
                   {/* Col 1: Pillar */}
-                  <div className="p-4">
-                    <p className={`font-bold ${i === tableRows.length - 1 ? "text-savola-navy" : i === tableRows.length - 2 ? "text-savola-green" : "text-savola-orange"} text-sm mb-1`}>
+                  <div className="p-4 bg-savola-cool-grey-7">
+                    <p
+                      className={`font-bold ${i === tableRows.length - 1 ? "text-savola-navy" : i === tableRows.length - 2 ? "text-savola-green" : "text-savola-orange"} text-sm mb-1`}
+                    >
                       {row.pillar.title}
                     </p>
                     <p className="text-savola-cool-grey text-xs leading-relaxed">

@@ -1,4 +1,5 @@
 import NewHeader from "../modules/common/components/headers/NewHeader";
+import SectionStickyNav from "../modules/common/components/SectionStickyNav";
 import HeaderBg from "../assets/images/new-headers/panda.jpg";
 import PandaLogo from "../assets/images/business-review/panda-logo.png";
 import ActiveCustomers from "../assets/images/business-review/active-customers-reached.png";
@@ -69,6 +70,7 @@ const PandaRetailCompanyPage = () => {
     <div>
       {/* 1. Header */}
       <NewHeader imageUrl={HeaderBg} title={t("panda.pageTitle")} />
+      <SectionStickyNav sectionId="business-review" />
 
       {/* 2. Intro + Callout */}
       <section className="py-12 md:py-16">

@@ -643,12 +643,25 @@ export default {
           },
           {
             title: "Food Quality and Safety",
-            desc: "Savola Group prioritizes food quality and safety through rigorous standards and continuous improvement initiatives. <br />The Group’s approach includes:",
+            desc: "Savola Group prioritizes food quality and safety through rigorous standards and continuous improvement initiatives. <br /><br />The Group’s approach includes:",
             list: [
-              "<b>Regulatory compliance:</b> Aligning operations with international food safety guidelines to enhance consumer trust.",
-              "<b>Quality assurance:</b> Implementing strict inspection protocols to ensure compliance with food safety regulations.",
-              "<b>Food safety standards:</b> Employing quality inspectors to safeguard production processes and maintain high safety standards.",
-              "<b>Sustainable practices:</b> Developing healthier food alternatives in collaboration with scientific institutions.",
+              
+              {
+                title: "Regulatory compliance",
+                desc: "Aligning operations with international food safety guidelines to enhance consumer trust.",
+              },
+              {
+                title: "Quality assurance",
+                desc: "Implementing strict inspection protocols to ensure compliance with food safety regulations.",
+              },
+              {
+                title: "Food safety standards",
+                desc: "Employing quality inspectors to safeguard production processes and maintain high safety standards.",
+              },
+              {
+                title: "Sustainable practices",
+                desc: "Developing healthier food alternatives in collaboration with scientific institutions.",
+              },
             ],
             divs: [
               {

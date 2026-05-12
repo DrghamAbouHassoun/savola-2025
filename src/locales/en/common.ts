@@ -24,7 +24,7 @@ const common = {
       "technology-and-innovation": "Technology and Innovation",
       "chairmans-statement": "Chairman's Statement",
       "group-ceos-message": "Group CEO's Message",
-      "chief-financial-officers-review": "Chief Financial Officer's Review",
+      "chief-financial-officers-review": "CFO’s Review",
       "savola-food": "Savola Food",
       "panda-retail-company": "Panda Retail Company",
       "al-kabeer-group": "Al Kabeer Group",

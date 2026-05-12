@@ -4,6 +4,7 @@ import HeaderBg from "../assets/images/new-headers/herfy.jpg";
 import HerfyLogo from "../assets/images/business-review/herfy.png";
 import TrapeziumShape from "../assets/vectors/business-review/trapezium.svg";
 import NewHeader from "../modules/common/components/headers/NewHeader";
+import SectionStickyNav from "../modules/common/components/SectionStickyNav";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
@@ -273,6 +274,7 @@ const HerfyFoodServicePage = () => {
     <div>
       {/* 1. Header */}
       <NewHeader imageUrl={HeaderBg} title={t("herfy.pageTitle")} />
+      <SectionStickyNav sectionId="business-review" />
 
       {/* 2. Intro trapezium + logo */}
       <section className="py-12 md:py-16">

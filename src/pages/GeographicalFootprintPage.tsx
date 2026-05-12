@@ -2,15 +2,16 @@ import NewHeader from "../modules/common/components/headers/NewHeader";
 import GeoHeader from "../assets/images/new-headers/geo.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
-import GeoMapEn from "../assets/vectors/geo/map-en.svg";
-import GeoMapAr from "../assets/vectors/geo/map-ar.svg";
-import { useLocale } from "../modules/common/hooks/useLocale";
+// import GeoMapEn from "../assets/vectors/geo/map-en.svg";
+// import GeoMapAr from "../assets/vectors/geo/map-ar.svg";
+// import { useLocale } from "../modules/common/hooks/useLocale";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
+import Map from "../modules/Geo/components/Map";
 
 const GeographicalFootprintPage = () => {
   const { t } = useTranslation("overview");
-  const { lang } = useLocale();
+  // const { lang } = useLocale();
 
   return (
     <div>
@@ -35,11 +36,12 @@ const GeographicalFootprintPage = () => {
       <div className="w-full min-h-[80vh] lg:min-h-screen bg-savola-orange-20 py-30">
         <SmallContainer>
           <AnimationPopUp>
-            <img
+            {/* <img
               src={lang === "en" ? GeoMapEn : GeoMapAr}
               alt="Geographical Footprint Map"
               className="w-full h-auto object-contain"
-            />
+            /> */}
+            <Map />
           </AnimationPopUp>
         </SmallContainer>
       </div>

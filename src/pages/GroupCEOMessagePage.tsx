@@ -7,6 +7,7 @@ import SmallContainer from "../modules/common/components/container/SmallContaine
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
+import SectionStickyNav from "../modules/common/components/SectionStickyNav";
 
 const sectionKeys = [
   "definingStory",
@@ -31,6 +32,7 @@ const GroupCEOMessagePage = () => {
         title={t("ceo.pageTitle")}
         imageUrl={CeoHeader}
       />
+      <SectionStickyNav sectionId="leadership" />
       <div className="py-16">
         <LeadershipHeader
           imageUrl={CeoPersonImage}
@@ -86,7 +88,7 @@ const GroupCEOMessagePage = () => {
 
           {/* Closing section */}
           <AnimationFadeIn className="mt-12">
-            <h4 className="text-savola-cool-grey font-extrabold">
+            <h4 className="text-savola-cool-grey font-extrabold mb-4">
               {t("ceo.closingTitle")}
             </h4>
             <p className="text-savola-cool-grey leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: t("ceo.closingP1") }} />

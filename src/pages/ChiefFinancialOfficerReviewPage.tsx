@@ -9,6 +9,7 @@ import AnimationSlideTop from "../modules/common/components/Animations/Animation
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import NewHeader from "../modules/common/components/headers/NewHeader";
+import SectionStickyNav from "../modules/common/components/SectionStickyNav";
 
 const sectionKeys = [
   "strengthenedPosition",
@@ -28,10 +29,11 @@ const ChiefFinancialOfficerReviewPage = () => {
         imageUrl={CfoHeader}
         mobileImageUrl={CfoMobileHeader}
       /> */}
-      <NewHeader 
+      <NewHeader
         imageUrl={CfoHeader}
         title={t("cfo.pageTitle")}
       />
+      <SectionStickyNav sectionId="leadership" />
       <div className="py-16">
         <LeadershipHeader
           imageUrl={CfoPersonImage}

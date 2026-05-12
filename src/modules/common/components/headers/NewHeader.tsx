@@ -19,7 +19,7 @@ const NewHeader = ({ imageUrl, title }: NewHeaderProps) => {
         <HeaderTrapeziumGroup />
       </div>
       {/* Title */}
-      <div className="w-full max-w-7xl mx-auto px-4 py-16 lg:pl-16 xl:pl-4 pt-32 lg:pt-0 lg:relative">
+      <div className={`w-full max-w-7xl mx-auto pt-32 lg:pt-0 ${lang === "ar" ? "px-4 lg:pr-16 xl:pr-4" : "px-4 lg:pl-16 xl:pl-4"} lg:relative`}>
         <AnimationPopUp>
           <h1 className="text-4xl font-bold max-w-110">{title}</h1>
         </AnimationPopUp>

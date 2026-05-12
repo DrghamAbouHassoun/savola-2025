@@ -8,6 +8,7 @@ import StarIcon from "../assets/icons/star.png";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
+import SectionStickyNav from "../modules/common/components/SectionStickyNav";
 
 const sectionKeys = [
   "strategicEvolution",
@@ -32,6 +33,7 @@ const ChairmanStatementPage = () => {
         title={t("chairman.pageTitle")}
         imageUrl={ChairmanHeader}
       />
+      <SectionStickyNav sectionId="leadership" />
       <div className="py-16">
         <LeadershipHeader
           imageUrl={ChairmanPersonImage}

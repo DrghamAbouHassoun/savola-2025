@@ -103,7 +103,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
       <img src={QuoteIcon} alt="" className="w-10 mb-4" />
       <p
         className="font-bold text-savola-navy text-base md:text-lg leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: text }}
+        dangerouslySetInnerHTML={{ __html: `"${text}"` }}
       />
       <p className="font-bold text-savola-cool-grey mt-4">{name}</p>
       <p className="text-savola-cool-grey text-sm">{position}</p>

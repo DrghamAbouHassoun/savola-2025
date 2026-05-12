@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import { useCountUp } from "react-countup";
 import NewHeader from "../modules/common/components/headers/NewHeader";
+import SectionStickyNav from "../modules/common/components/SectionStickyNav";
 import SavolaFoodBg from "../assets/images/new-headers/savola-foods.jpg";
 import SavolaFoodLogo from "../assets/logo/savola-food-logo.png";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
@@ -185,6 +186,7 @@ const SavolaFoodPage = () => {
     <div>
       {/* 1. Header */}
       <NewHeader imageUrl={SavolaFoodBg} title={t("savolaFoods.pageTitle")} />
+      <SectionStickyNav sectionId="business-review" />
 
       {/* 2. Intro + BusinessReviewHeader */}
       <section className="py-12 md:py-16">

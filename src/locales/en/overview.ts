@@ -181,6 +181,10 @@ const overview = {
     pageTitle: "Our Geographical Footprint",
     mainTitle: "Expanding Across Regions",
     desc: "Savola's geographic footprint reflects the scale, integration and resilience of a food group built for sustained growth. Anchored by strong domestic operations and extended through regional manufacturing, distribution, retail and export platforms, the Group’s presence enables proximity to consumers, operational efficiency and disciplined market execution. This scale and reach underpin Savola’s ability to serve diverse markets, manage complexity and deploy capital and capabilities to create the greatest long-term value.",
+    manufacturing: "Manufacturing / Production facilities",
+    distribution: "Distribution centers",
+    stores: "Retail stores",
+    markets: "Export markets"
   },
   stakeholderEngagement: {
     heading: "Creating Value Through<br /> Strategic Partnerships and Insightful Collaboration",
@@ -268,7 +272,7 @@ const overview = {
         "Supporting local enterprises",
       ],
       channels: [
-        "The ‘Leave the Change for Them’ charity initiative allows Panda customers to donate the small change from their purchases to charities across the Kingdom of Saudi Arabia",
+        "The  “Leave the Change for Them” charity initiative allows Panda customers to donate the small change from their purchases to charities across the Kingdom of Saudi Arabia",
         "Makeen program to train and employ people with disabilities",
         "Cooperating and supporting other social institutions to design educational, health and social programs",
         "Internship opportunities for undergraduates",

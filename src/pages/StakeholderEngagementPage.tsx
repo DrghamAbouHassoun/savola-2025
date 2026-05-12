@@ -97,9 +97,9 @@ const StakeholderEngagementPage = () => {
                       isOpen ? "max-h-300" : "max-h-0"
                     }`}
                   >
-                    <div className="grid grid-cols-1 md:grid-cols-3 bg-white">
-                      <div className="p-5">
-                        <h4 className="text-savola-green font-bold text-lg uppercase tracking-wider mb-3">
+                    <div className="flex flex-col bg-white">
+                      <div className="p-5 flex flex-col md:flex-row gap-2">
+                        <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
                           {t("stakeholderEngagement.commitmentLabel")}
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
@@ -107,8 +107,8 @@ const StakeholderEngagementPage = () => {
                         </p>
                       </div>
 
-                      <div className="p-5">
-                        <h4 className="text-savola-green font-bold text-lg uppercase tracking-wider mb-3">
+                      <div className="p-5 flex flex-col md:flex-row gap-2">
+                        <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
                           {t("stakeholderEngagement.concernsLabel")}
                         </h4>
                         <ul className="space-y-2">
@@ -126,8 +126,8 @@ const StakeholderEngagementPage = () => {
                         </ul>
                       </div>
 
-                      <div className="p-5">
-                        <h4 className="text-savola-green font-bold text-lg uppercase tracking-wider mb-3">
+                      <div className="p-5 flex flex-col md:flex-row gap-2">
+                        <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
                           {t("stakeholderEngagement.channelsLabel")}
                         </h4>
                         <ul className="space-y-2">

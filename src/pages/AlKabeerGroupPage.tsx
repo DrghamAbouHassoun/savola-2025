@@ -4,6 +4,7 @@ import HeaderBg from "../assets/images/new-headers/al-kabeer-group.png";
 import AlKabeerLogo from "../assets/images/business-review/al-kabeer.png";
 import TrapeziumShape from "../assets/vectors/business-review/trapezium.svg";
 import NewHeader from "../modules/common/components/headers/NewHeader";
+import SectionStickyNav from "../modules/common/components/SectionStickyNav";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
@@ -159,6 +160,7 @@ const AlKabeerGroupPage = () => {
     <div>
       {/* 1. Header */}
       <NewHeader imageUrl={HeaderBg} title={t("alKabeer.pageTitle")} />
+      <SectionStickyNav sectionId="business-review" />
 
       {/* 2. Intro header with trapezium + logo */}
       <section className="py-12 md:py-16">

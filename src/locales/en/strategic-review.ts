@@ -23,8 +23,8 @@ const strategicReview = {
     ourChallenges: {
       title: "Our Challenges",
       items: [
-        "<b>Challenging macro-environment whereas a number</b> of countries introduced economic reforms that may have a negative impact on the purchasing power of consumers and overall global cost inflation.",
-        "<b>Change in consumer behavior where consumer</b> preferences and tastes may change in a more pronounced manner that may impact current products and business models.",
+        "<b>Challenging macro-environment</b> whereas a number of countries introduced economic reforms that may have a negative impact on the purchasing power of consumers and overall global cost inflation.",
+        "<b>Change in consumer behavior</b> where consumer preferences and tastes may change in a more pronounced manner that may impact current products and business models.",
         "<b>Limited number of transactable assets</b> from the perspective of an investment holding whose key directive is to allocate capital.",
         "<b>High relative valuation of food assets,</b> in view of scarcity of sizeable assets that fit strategically with Savola Group’s investment mandate, as well as other factors, including the economic and business cycles and their impact on such assets.",
       ],
@@ -84,7 +84,7 @@ const strategicReview = {
           title: "Corporate Values",
           list: [
             "<b>Taqwa:</b> Conscientiousness; an ethical compass guiding our actions.",
-            "<b>Amanah:</b> Honesty; we fulfill promises and build trust",
+            "<b>Amanah:</b> Honesty; we fulfill promises and build trust.",
             "<b>Mujahadah:</b> Personal control; we strive to develop our abilities.",
             "<b>Birr:</b> Caring Justice; we care for others and leave a lasting impact.",
           ],
@@ -206,9 +206,9 @@ const strategicReview = {
                   <li>realigning organization</li>
                 </ul>
                 `,
-                "Strategic acquisition of UAE market leader in nuts, spices and pulses(NSP) – Bayara",
+                "Strategic acquisition of UAE market leader in nuts, spices and pulses (NSP) – Bayara",
                 "Introduction of CXR program in Panda to turn around operations, with further capitalization by the Group",
-                "received <i class='riyal-icon'></i> 147 million excess cash repatriation from Kinan",
+                "Received <i class='riyal-icon'></i> 147 million excess cash repatriation from Kinan",
               ],
             },
           },
@@ -266,7 +266,6 @@ const strategicReview = {
     subtitle: "Savola’s role in advancing Vision 2030 is anchored in the scale, diversity and integration of its operating model.",
     p1: "As a Saudi-born food group with deep roots in the Kingdom, Savola contributes directly to national priorities spanning food security, industrial development, digital transformation and human capital growth. Its activities support Vision 2030 not through a single channel, but through a coordinated platform that touches manufacturing, retail, food services, logistics and consumer markets at scale, enabling impact across multiple sectors simultaneously.",
     p2: "Savola is differentiated by the breadth and connectivity of its ecosystem. Few regional food groups operate end to end across large-scale food manufacturing, advanced omnichannel retail and consumer-facing food services under one integrated structure. Through Savola Foods and Al Kabeer, the Group strengthens local manufacturing capacity and resilient supply chains. Through Panda, it operates one of the Kingdom’s most advanced AI-enabled retail ecosystems, improving affordability, access and productivity. Through Herfy, Savola continues to invest in a Saudi homegrown QSR platform that combines digital innovation with national talent development. This farm-to-factory-to-store-to-consumer model allows Savola to drive economic diversification, technology adoption and workforce development in a coordinated way, reinforcing its position as a multi-sector enabler of Vision 2030 outcome.",
-    p3: "Savola is differentiated by the breadth and connectivity of its ecosystem. Few regional food groups operate end to end across large-scale food manufacturing, advanced omnichannel retail and consumer-facing food services under one integrated structure. Through Savola Foods and Al Kabeer, the Group strengthens local manufacturing capacity and resilient supply chains. Through Panda, it operates one of the Kingdom’s most advanced AI-enabled retail ecosystems, improving affordability, access and productivity. Through Herfy, Savola continues to invest in a Saudi homegrown QSR platform that combines digital innovation with national talent development. This farm-to-factory-to-store-to-consumer model allows Savola to drive economic diversification, technology adoption and workforce development in a coordinated way, reinforcing its position as a multi-sector enabler of Vision 2030 outcomes.",
     label: "Production volumes<br />reached a yearly record<br /><b>3.74 MN</b><br /><b>metric tons</b>",
     table: {
       headers: [
