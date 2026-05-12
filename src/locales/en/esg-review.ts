@@ -13,7 +13,7 @@ export default {
       pillars: [
         {
           index: "01",
-          name: "Departmental",
+          name: "Departmental analysis",
         },
         {
           index: "02",
@@ -393,11 +393,26 @@ export default {
         ourValues: {
           title: "Living our Values in Action",
           paragraphs: [
+
             "In 2025, our values continued to guide how we lead, decide and work across the Group. They are embedded in daily behaviors and serve as a practical framework for integrity, accountability, and respect in every interaction. By grounding our culture in clear principles, we ensured consistency between intent and execution as the organization evolved.",
             "<b class='text-savola-orange'>Our institutional values</b> <b>– Amanah</b> (trustworthiness), <b>Taqwa</b> (conscious integrity), <b>Birr</b> (righteous conduct) and <b>Mujahadah</b> (perseverance) – define our ethical foundation and shape how we manage investments, build stakeholder confidence and uphold our responsibilities.",
             "<b class='text-savola-orange'>Our individual values</b> <b>– Tawado</b> (humility), <b>Iq’tida</b> (leading by example), <b>Azm</b> (determination) and <b>It’qan</b> (excellence and mastery) – guide personal conduct and reinforce accountability, continuous improvement and high performance.",
             "<b class='text-savola-orange'>Our collective values</b> <b>– Ihsan Al-Dhan</b> (positive intent), <b>Qabool</b> (acceptance), <b>Iq’bal</b> (engagement) and <b>Mu’azarah</b> (mutual support) – strengthen collaboration, foster belonging and cultivate a unified culture built on trust and teamwork.",
             "We embedded our values through visible leadership behaviors, targeted training and recognition systems that reinforce desired actions. Values were integrated into performance frameworks, communications, and decision-making processes, while individual and team behaviors such as humility, trust and collaboration were actively encouraged.",
+          ],
+          accordion: [
+            {
+              title: "Our institutional values",
+              content: "<b>– Amanah</b> (trustworthiness), <b>Taqwa</b> (conscious integrity), <b>Birr</b> (righteous conduct) and <b>Mujahadah</b> (perseverance) – define our ethical foundation and shape how we manage investments, build stakeholder confidence and uphold our responsibilities.",
+            },
+            {
+              title: "Our individual values",
+              content: "<b>– Tawado</b> (humility), <b>Iq’tida</b> (leading by example), <b>Azm</b> (determination) and <b>It’qan</b> (excellence and mastery) – guide personal conduct and reinforce accountability, continuous improvement and high performance.",
+            },
+            {
+              title: "Our collective values",
+              content: "Ihsan Al-Dhan</b> (positive intent), <b>Qabool</b> (acceptance), <b>Iq’bal</b> (engagement) and <b>Mu’azarah</b> (mutual support) – strengthen collaboration, foster belonging and cultivate a unified culture built on trust and teamwork.",
+            },
           ],
           label:
             "Completion rate<br />of Desired Culture<br />Framework activities<br /><span class='text-savola-green'>80%</span>",

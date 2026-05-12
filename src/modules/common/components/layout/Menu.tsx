@@ -105,28 +105,26 @@ const Menu = () => {
           })}
         </div>
         <div className="flex flex-row gap-2">
-          {socialLinksData.map((link) => (
-            <>
-              {link.type === "button" ? (
-                <button
-                  key={link.name}
-                  className="flex items-center p-2 w-8.5 h-8.5"
-                  onClick={() => handleOpenInfoModal()}
-                >
-                  {link.icon}
-                </button>
-              ) : (
-                <a
-                  href={link.hrefAr && lang === "ar" ? link.hrefAr : link.href}
-                  target="_blank"
-                  key={link.name}
-                  className="flex items-center p-2 w-8.5 h-8.5"
-                >
-                  {link.icon}
-                </a>
-              )}
-            </>
-          ))}
+          {socialLinksData.map((link) =>
+            link.type === "button" ? (
+              <button
+                key={link.name}
+                className="flex items-center p-2 w-8.5 h-8.5"
+                onClick={() => handleOpenInfoModal()}
+              >
+                {link.icon}
+              </button>
+            ) : (
+              <a
+                key={link.name}
+                href={link.hrefAr && lang === "ar" ? link.hrefAr : link.href}
+                target="_blank"
+                className="flex items-center p-2 w-8.5 h-8.5"
+              >
+                {link.icon}
+              </a>
+            )
+          )}
         </div>
       </div>
     </div>

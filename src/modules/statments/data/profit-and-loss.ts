@@ -199,7 +199,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Equity-accounted investees - share of loss reclassified to P&L",
+        "Equity-accounted investees - share of other comprehensive loss reclassified to profit or loss",
         "18",
         "-",
         "367,101",
@@ -261,6 +261,9 @@ export const profitAndLossEn = {
       isBold: false,
     },
     {
+      data: ["", "", "874,462", "9,974,266 "],
+    },
+    {
       data: [
         "Total comprehensive income / (loss) attributable to:",
         "",
@@ -304,12 +307,29 @@ export const profitAndLossEn = {
       isBold: false,
     },
     {
-      data: ["Earnings per share (Continuing operations - in $)", "", "", ""],
+      data: ["", "", "955,162", "11,271,637"],
+      isBold: false,
+    },
+    {
+      data: [
+        "Earnings per share (Continuing operations - in <i class='riyal-icon'></i>)",
+        "",
+        "",
+        "",
+      ],
       isBold: true,
     },
     { data: ["Basic", "31", "2.95", "12.08"], isBold: false },
     { data: ["Diluted", "31", "2.94", "12.06"], isBold: false },
-    { data: ["Earnings per share (Total - in $)", "", "", ""], isBold: true },
+    {
+      data: [
+        "Earnings per share (Total - in <i class='riyal-icon'></i>)",
+        "",
+        "",
+        "",
+      ],
+      isBold: true,
+    },
     { data: ["Basic", "31", "2.93", "10.61"], isBold: false },
     { data: ["Diluted", "31", "2.92", "10.59"], isBold: false },
   ],
@@ -534,6 +554,10 @@ export const profitAndLossAr = {
       isBold: false,
     },
     {
+      data: ["", "", "874,462", "9,974,266"],
+      isBold: false,
+    },
+    {
       data: ["إجمالي الدخل / (الخسارة) الشامل العائد إلى:", "", "", ""],
       isBold: true,
     },
@@ -547,19 +571,23 @@ export const profitAndLossAr = {
       isBold: true,
     },
     {
+      data: ["", "", "955,162", "11,271,637"],
+      isBold: false,
+    },
+    {
       data: ["إجمالي الدخل الشامل الآخر العائد إلى مساهمي الشركة:", "", "", ""],
       isBold: true,
     },
     { data: ["العمليات المستمرة", "", "883,171", "11,349,349"], isBold: false },
     { data: ["العمليات المتوقفة", "", "71,991", "(77,712)"], isBold: false },
     {
-      data: ["ربحية السهم من العمليات المستمرة ($)", "", "", ""],
+      data: ["ربحية السهم من العمليات المستمرة (<i class='riyal-icon'></i>)", "", "", ""],
       isBold: true,
     },
     { data: ["الأساسية", "31", "2.95", "12.08"], isBold: false },
     { data: ["المخفضة", "31", "2.94", "12.06"], isBold: false },
     {
-      data: ["ربحية السهم العائدة إلى مساهمي الشركة ($)", "", "", ""],
+      data: ["ربحية السهم العائدة إلى مساهمي الشركة (<i class='riyal-icon'></i>)", "", "", ""],
       isBold: true,
     },
     { data: ["الأساسية", "31", "2.93", "10.61"], isBold: false },

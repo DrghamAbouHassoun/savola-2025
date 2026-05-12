@@ -261,7 +261,7 @@ export default {
             ],
           },
           {
-            title: "Crm, Loyalty and Data as a Growth Engine",
+            title: "CRM, Loyalty and Data as a Growth Engine",
             paragraphs: [
               "CRM and loyalty progressed from a transactional, discount-led model to a more transformational, data-driven platform.",
               "Active customers reached 9 million, representing 80% of transactions and enabling more relevant value delivery.",
@@ -323,7 +323,7 @@ export default {
   alKabeer: {
     pageTitle: "Al Kabeer Group",
     header: {
-      text: "Since 1974, the Al Kabeer Group has built a strong and enduring market presence, emerging as one of the region’s most reputable and established companies in frozen and processed foods. Robust and efficient distribution network:",
+      text: "Since 1974, the Al Kabeer Group has built a strong and enduring market presence, emerging as one of the region’s most reputable and established companies in frozen and processed foods. <br /><br />Robust and efficient distribution network:",
       label1: "28 cold stores",
       label2: "12 distribution centers",
     },
@@ -340,7 +340,7 @@ export default {
         {
           title: "Net Revenue",
           number: {
-            prefix: "(<i class='riyal-icon'></i>)",
+            prefix: "(<i class='riyal-icon'></i>) ",
             num: 805,
             suffix: "MN",
           },
@@ -448,7 +448,7 @@ export default {
       {
         title: "Net Revenue",
         number: {
-          prefix: "(<i class='riyal-icon'></i>)",
+          prefix: "(<i class='riyal-icon'></i>) ",
           num: 1083,
           suffix: " MN",
         }

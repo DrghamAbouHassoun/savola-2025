@@ -121,7 +121,11 @@ const Chart = ({ title, titleUnit, data, isRtl, yearSuffix }: ChartProps) => {
             />
           </div>
           <span className="text-savola-green text-lg leading-none">
-            <img src={DoubleArrow} alt="" className="w-6 h-auto object-contain" />
+            <img
+              src={DoubleArrow}
+              alt=""
+              className="w-6 h-auto object-contain"
+            />
           </span>
         </div>
       </AnimationSlideTop>
@@ -163,19 +167,19 @@ const AlKabeerGroupPage = () => {
       <SectionStickyNav sectionId="business-review" />
 
       {/* 2. Intro header with trapezium + logo */}
-      <section className="py-12 md:py-16">
-        <SmallContainer>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-90">
+      <section className=" relative w-full mt-16">
+        <div
+          className={`absolute top-0 left-0 w-full h-full ${isRtl ? "rotate-y-180" : ""}`}
+        >
+          <img
+            src={TrapeziumShape}
+            className="w-full md:w-2/3 h-full object-cover object-top-left"
+            alt=""
+          />
+        </div>
+        <SmallContainer className="">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-100">
             <div className="relative w-full h-full flex items-end">
-              <div
-                className={`absolute top-0 left-0 w-full h-full ${isRtl ? "rotate-y-180" : ""}`}
-              >
-                <img
-                  src={TrapeziumShape}
-                  className="w-full h-full object-contain object-bottom-left"
-                  alt=""
-                />
-              </div>
               <div className="p-4">
                 <AnimationPopUp>
                   <p

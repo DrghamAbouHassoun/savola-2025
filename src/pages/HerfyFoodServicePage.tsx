@@ -277,19 +277,19 @@ const HerfyFoodServicePage = () => {
       <SectionStickyNav sectionId="business-review" />
 
       {/* 2. Intro trapezium + logo */}
-      <section className="py-12 md:py-16">
+      <section className=" relative w-full mt-16">
+        <div
+          className={`absolute top-0 left-0 w-full h-full ${isRtl ? "rotate-y-180" : ""}`}
+        >
+          <img
+            src={TrapeziumShape}
+            className="w-full md:w-2/3 h-full object-cover object-top-left"
+            alt=""
+          />
+        </div>
         <SmallContainer>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-90">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-100">
             <div className="relative w-full h-full flex items-end">
-              <div
-                className={`absolute top-0 left-0 w-full h-full ${isRtl ? "rotate-y-180" : ""}`}
-              >
-                <img
-                  src={TrapeziumShape}
-                  className="w-full h-full object-contain object-bottom-left"
-                  alt=""
-                />
-              </div>
               <div className="p-4">
                 <AnimationPopUp>
                   <p className="font-bold text-savola-cool-grey text-base md:text-lg leading-relaxed">

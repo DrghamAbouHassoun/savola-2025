@@ -1,6 +1,7 @@
 import AnimationPopUp from "../../common/components/Animations/AnimationPopUp";
 import TrapeziumeShape from "../../../assets/vectors/business-review/trapezium.svg";
 import { useLocale } from "../../common/hooks/useLocale";
+import SmallContainer from "../../common/components/container/SmallContainer";
 
 interface BusinessReviewProps {
   title: string;
@@ -15,32 +16,36 @@ const BusinessReviewHeader = ({
 }: BusinessReviewProps) => {
   const { lang } = useLocale();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-90">
-      <div className="relative w-full h-full flex items-end">
-        <div className={`absolute top-0 left-0 w-full h-full ${lang === "ar" ? "rotate-y-180" : ""}`}>
-          <img
-            src={TrapeziumeShape}
-            className="w-full h-full object-contain object-bottom-left"
-          />
+    <div className="relative w-full">
+      <div
+        className={`absolute top-0 w-full h-full ${lang === "ar" ? "right-0" : " left-0"}`}
+      >
+        <img
+          src={TrapeziumeShape}
+          className={`w-full md:w-2/3 h-full object-cover ${lang === "ar" ? "object-top-right rotate-y-180" : "object-top-left"}`}
+        />
+      </div>
+      <SmallContainer className=" grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-100">
+        <div className=" w-full h-full flex items-end">
+          <div className="p-4">
+            <AnimationPopUp>
+              <p className="font-bold text-savola-orange text-2xl md:text-xl leading-tight mb-3">
+                {title}
+              </p>
+              <p className="text-savola-cool-grey font-bold leading-relaxed">
+                {subtitle}
+              </p>
+            </AnimationPopUp>
+          </div>
         </div>
-        <div className="p-4">
+        <div className="flex md:justify-start items-end h-full w-full">
           <AnimationPopUp>
-            <p className="font-bold text-savola-orange text-2xl md:text-xl leading-tight mb-3">
-              {title}
-            </p>
-            <p className="text-savola-cool-grey font-bold leading-relaxed">
-              {subtitle}
-            </p>
+            <div className="">
+              <img src={logoUrl} alt="Panda" className="h-24 w-auto" />
+            </div>
           </AnimationPopUp>
         </div>
-      </div>
-      <div className="flex md:justify-start items-end h-full w-full">
-        <AnimationPopUp>
-          <div className="">
-            <img src={logoUrl} alt="Panda" className="h-24 w-auto" />
-          </div>
-        </AnimationPopUp>
-      </div>
+      </SmallContainer>
     </div>
   );
 };

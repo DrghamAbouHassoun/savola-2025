@@ -82,15 +82,15 @@ const OurESGApproachPage = () => {
                   key={i}
                   className="flex flex-col items-center p-6 text-center border-e border-white/20 last:border-e-0"
                 >
-                  <div className="w-14 h-14 rounded-full bg-linear-to-r from-white/50 to-white/0 flex items-center justify-center mb-4">
-                    <AnimationPopUp>
-                      <span className="text-white font-bold text-base">
+                  <AnimationPopUp className={`animate-delay-${((i + 1) * 2) % 10 !== 0 ? `0_${(i + 1) * 2}`: `1_2`}s`}>
+                    <div className="w-14 h-14 rounded-full bg-linear-to-r from-white/50 to-white/0 flex items-center justify-center mb-4">
+                      <span className="text-white text-base">
                         {t(`approach.roadmap.pillars.${i}.index`)}
                       </span>
-                    </AnimationPopUp>
-                  </div>
-                  <AnimationSlideTop>
-                    <p className="text-white font-semibold text-sm leading-tight">
+                    </div>
+                  </AnimationPopUp>
+                  <AnimationSlideTop className={`text-white font-semibold text-sm leading-tight animate-delay-${((i + 1) * 2) % 10 !== 0 ? `0_${(i + 1) * 2}`: `1_2`}s`}>
+                    <p className="text-white font-semibold text-sm leading-tight ">
                       {t(`approach.roadmap.pillars.${i}.name`)}
                     </p>
                   </AnimationSlideTop>

@@ -14,6 +14,25 @@ import { LangContext } from "../modules/common/contexts/LangProvider";
 import useInView from "../modules/common/hooks/useInView";
 import FlowerIcon from "../assets/icons/flower.svg";
 import TrapeziumShape from "../assets/vectors/business-review/trapezium-card.svg";
+import DrivingSectionBg from "../assets/images/business-review/driving.jpg";
+import DrivingSectionShape from "../assets/vectors/business-review/trapezium-driving.png";
+
+// Country Flags
+import AlgeriaFlag from "../assets/vectors/business-review/flags/algeria.svg";
+import EgyptFlag from "../assets/vectors/business-review/flags/egypt.svg";
+import JordanFlag from "../assets/vectors/business-review/flags/jordan.svg";
+import KsaFlag from "../assets/vectors/business-review/flags/ksa.svg";
+import TrukyFlag from "../assets/vectors/business-review/flags/turkye.svg";
+import UaeFlag from "../assets/vectors/business-review/flags/uae.svg";
+
+const COUNTRIES_FLAGS = [
+  KsaFlag,
+  EgyptFlag,
+  UaeFlag,
+  AlgeriaFlag,
+  JordanFlag,
+  TrukyFlag,
+];
 
 const FOODS_2025_NUMS = [13280, 1024, 7.7, 481];
 const FOODS_2025_DECIMALS = [0, 0, 1, 0];
@@ -190,13 +209,13 @@ const SavolaFoodPage = () => {
 
       {/* 2. Intro + BusinessReviewHeader */}
       <section className="py-12 md:py-16">
-        <SmallContainer>
-          <BusinessReviewHeader
-            title={t("savolaFoods.intro.title")}
-            subtitle={t("savolaFoods.intro.desc")}
-            logoUrl={SavolaFoodLogo}
-          />
-        </SmallContainer>
+        {/* <SmallContainer> */}
+        <BusinessReviewHeader
+          title={t("savolaFoods.intro.title")}
+          subtitle={t("savolaFoods.intro.desc")}
+          logoUrl={SavolaFoodLogo}
+        />
+        {/* </SmallContainer> */}
       </section>
 
       {/* 3. Production Volumes + Strategic Focus */}
@@ -259,9 +278,8 @@ const SavolaFoodPage = () => {
                       }}
                     />
                     <p className="font-black text-2xl text-savola-cool-grey leading-none">
-                      {t(
-                        `savolaFoods.foodsIn2025.items.${i}.number.prefix`,
-                      ) !== `savolaFoods.foodsIn2025.items.${i}.number.prefix` && (
+                      {t(`savolaFoods.foodsIn2025.items.${i}.number.prefix`) !==
+                        `savolaFoods.foodsIn2025.items.${i}.number.prefix` && (
                         <span
                           className="text-base ms-1 font-bold"
                           dangerouslySetInnerHTML={{
@@ -307,7 +325,12 @@ const SavolaFoodPage = () => {
           </div>
 
           {/* Volume metrics (items2) */}
-          <h3 className="text-lg font-bold text-savola-orange">{t("savolaFoods.revenue.title2")} <span className="text-base text-savola-cool-grey">{t("savolaFoods.revenue.title2Unit")}</span></h3>
+          <h3 className="text-lg font-bold text-savola-orange">
+            {t("savolaFoods.revenue.title2")}{" "}
+            <span className="text-base text-savola-cool-grey">
+              {t("savolaFoods.revenue.title2Unit")}
+            </span>
+          </h3>
           <div className="pt-4 flex flex-col lg:flex-row w-full">
             {ITEMS2_NUMS.map((num, i) => (
               <div key={i} className={`relative w-full flex-1 `}>
@@ -346,7 +369,12 @@ const SavolaFoodPage = () => {
           {Array.from({ length: COUNTRY_COUNT }, (_, i) => (
             <div key={i} className="mb-10 last:mb-0">
               <AnimationSlideTop>
-                <h3 className="text-lg font-bold text-savola-navy">
+                <h3 className="text-lg font-bold text-savola-navy flex items-center gap-2">
+                  <img
+                    src={COUNTRIES_FLAGS[i]}
+                    alt=""
+                    className="w-8 h-5 object-contain"
+                  />
                   {t(`savolaFoods.winningLocally.countries.${i}.title`)}
                 </h3>
                 <p className="text-savola-orange font-semibold mb-1">
@@ -367,60 +395,74 @@ const SavolaFoodPage = () => {
       </section>
 
       {/* 7. Driving Sustainable Growth */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 relative">
         <SmallContainer>
-          <AnimationSlideTop>
-            <h2 className="text-xl font-bold text-savola-navy mb-6">
-              {t("savolaFoods.drivingSustainable.title")}
-            </h2>
-            <p
-              className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
-              dangerouslySetInnerHTML={{
-                __html: t("savolaFoods.drivingSustainable.p1"),
-              }}
-            ></p>
-            <p
-              className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
-              dangerouslySetInnerHTML={{
-                __html: t("savolaFoods.drivingSustainable.p2"),
-              }}
-            ></p>
-            <p
-              className="text-savola-cool-grey leading-relaxed mb-10 text-sm"
-              dangerouslySetInnerHTML={{
-                __html: t("savolaFoods.drivingSustainable.p3"),
-              }}
-            ></p>
-          </AnimationSlideTop>
-
-          {/* Outro: text + 3 pillars */}
-          <div className="flex flex-col lg:flex-row gap-4">
-            <AnimationPopUp className="flex-1">
+          <h2 className="text-xl md:text-2xl font-bold text-savola-navy mb-6">
+            {t("savolaFoods.drivingSustainable.title")}
+          </h2>
+        </SmallContainer>
+        <SmallContainer className="relative">
+          <img
+            src={DrivingSectionBg}
+            alt=""
+            className="w-full h-full object-cover absolute top-0 left-0 -z-10"
+          />
+          <img
+            src={DrivingSectionShape}
+            alt=""
+            className="w-full h-full object-cover object-top-right absolute top-0 left-0 hidden lg:block"
+          />
+          <div className="p-4 py-16 w-[95%] mx-auto lg:mx-0 lg:max-w-[70%] bg-savola-green/90 lg:bg-transparent ">
+            <AnimationSlideTop className="max-w-[90%]">
               <p
-                className="text-savola-cool-grey text-lg leading-relaxed"
+                className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
                 dangerouslySetInnerHTML={{
-                  __html: t("savolaFoods.drivingSustainable.outro.text"),
+                  __html: t("savolaFoods.drivingSustainable.p1"),
                 }}
-              />
-            </AnimationPopUp>
-            <AnimationPopUp className="flex-1">
-              <div className="">
-                {outroLabels.map((label, i) => (
-                  <p
-                    key={i}
-                    className={`font-black text-4xl md:text-4xl leading-tight ${
-                      i === 0
-                        ? "text-savola-green"
-                        : i === 1
-                          ? "text-savola-orange"
-                          : "text-savola-cool-grey"
-                    }`}
-                  >
-                    {label}
-                  </p>
-                ))}
-              </div>
-            </AnimationPopUp>
+              ></p>
+              <p
+                className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
+                dangerouslySetInnerHTML={{
+                  __html: t("savolaFoods.drivingSustainable.p2"),
+                }}
+              ></p>
+              <p
+                className="text-savola-cool-grey leading-relaxed mb-10 text-sm"
+                dangerouslySetInnerHTML={{
+                  __html: t("savolaFoods.drivingSustainable.p3"),
+                }}
+              ></p>
+            </AnimationSlideTop>
+
+            {/* Outro: text + 3 pillars */}
+            <div className="flex flex-col lg:flex-row gap-4">
+              <AnimationPopUp className="flex-1">
+                <p
+                  className="text-savola-cool-grey text-lg leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: t("savolaFoods.drivingSustainable.outro.text"),
+                  }}
+                />
+              </AnimationPopUp>
+              <AnimationPopUp className="flex-1">
+                <div className="">
+                  {outroLabels.map((label, i) => (
+                    <p
+                      key={i}
+                      className={`font-black text-4xl md:text-4xl leading-tight ${
+                        i === 0
+                          ? "text-savola-green"
+                          : i === 1
+                            ? "text-savola-orange"
+                            : "text-savola-cool-grey"
+                      }`}
+                    >
+                      {label}
+                    </p>
+                  ))}
+                </div>
+              </AnimationPopUp>
+            </div>
           </div>
         </SmallContainer>
       </section>

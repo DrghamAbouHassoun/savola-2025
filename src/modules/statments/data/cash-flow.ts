@@ -2,6 +2,202 @@ export const cashFlowStatementsEn = {
   headers: ["", "Note", "2025", "2024"],
   raws: [
     {
+      data: ["Cash flows from operating activities", "", "", ""],
+      isBold: true,
+    },
+    {
+      data: ["Profit for the year", "", "940,499", "9,915,352"],
+      isBold: false,
+    },
+    {
+      data: ["Adjustments for:", "", "", ""],
+      isBold: true,
+    },
+    {
+      data: ["Depreciation and amortisation", "", "1,198,359", "1,154,964"],
+      isBold: false,
+    },
+    {
+      data: ["Net finance cost", "22 & 41", "423,753", "1,030,227"],
+      isBold: false,
+    },
+    {
+      data: [
+        "Share of results in equity-accounted investees, net of zakat and tax",
+        "10.1",
+        "(51,775)",
+        "(808,635)",
+      ],
+      isBold: false,
+    },
+    {
+      data: ["Share based payment expense", "18", "8,804", "36,356"],
+      isBold: false,
+    },
+    {
+      data: ["Impairment charge, net", "40", "24,640", "390,409"],
+      isBold: false,
+    },
+    {
+      data: [
+        "Loss on sale / write-off of property, plant and equipment and software",
+        "",
+        "30,313",
+        "895",
+      ],
+      isBold: false,
+    },
+    {
+      data: [
+        "Gain on distribution of investment in equity-accounted investee",
+        "16",
+        "-",
+        "(11,554,662)",
+      ],
+      isBold: false,
+    },
+    {
+      data: [
+        "Loss on derecognition of investment in equity-accounted investee",
+        "1",
+        "-",
+        "139,001",
+      ],
+      isBold: false,
+    },
+    {
+      data: [
+        "(Gain) / loss on derecognition of subsidiaries",
+        "22",
+        "(33,958)",
+        "1,422,268",
+      ],
+      isBold: false,
+    },
+    {
+      data: ["Loss on FVTPL investments", "38", "4,764", "18,496"],
+      isBold: false,
+    },
+    {
+      data: ["Net impairment loss on financial assets", "13", "51,755", "1,987"],
+      isBold: false,
+    },
+    {
+      data: [
+        "Provision for employee benefits liability",
+        "24",
+        "110,541",
+        "111,776",
+      ],
+      isBold: false,
+    },
+    {
+      data: ["Zakat (reversal) / expense, net", "29", "(217,425)", "350,010"],
+      isBold: false,
+    },
+    {
+      data: ["Income tax expense", "29", "117,005", "252,604"],
+      isBold: false,
+    },
+    {
+      data: ["", "", "2,607,275", "2,461,048"],
+      isBold: true,
+    },
+    {
+      data: ["Changes in:", "", "", ""],
+      isBold: true,
+    },
+    {
+      data: ["Inventories", "", "(546,134)", "(330,979)"],
+      isBold: false,
+    },
+    {
+      data: ["Trade receivables", "", "(59,465)", "(672,982)"],
+      isBold: false,
+    },
+    {
+      data: [
+        "Prepayments and other receivables",
+        "",
+        "77,157",
+        "(201,103)",
+      ],
+      isBold: false,
+    },
+    {
+      data: ["Trade payables", "", "268,378", "532,126"],
+      isBold: false,
+    },
+    {
+      data: ["Accrued and other liabilities", "", "(422,649)", "582,577"],
+      isBold: false,
+    },
+    {
+      data: [
+        "Cash generated from operating activities",
+        "",
+        "1,924,562",
+        "2,370,687",
+      ],
+      isBold: true,
+    },
+    {
+      data: [
+        "Finance cost paid on loans and borrowings",
+        "21.2",
+        "(369,320)",
+        "(768,056)",
+      ],
+      isBold: false,
+    },
+    {
+      data: [
+        "Finance cost paid on lease liabilities",
+        "23",
+        "(196,555)",
+        "(178,404)",
+      ],
+      isBold: false,
+    },
+    {
+      data: ["Zakat and income tax paid", "29", "(192,623)", "(202,347)"],
+      isBold: false,
+    },
+    {
+      data: ["Employee benefits liabilities paid", "24", "(97,410)", "(81,987)"],
+      isBold: false,
+    },
+    {
+      data: [
+        "Net cash generated from operating activities",
+        "",
+        "1,068,654",
+        "1,139,893",
+      ],
+      isBold: true,
+    },
+    {
+      data: ["Cash flows from investing activities", "", "", ""],
+      isBold: true,
+    },
+    {
+      data: [
+        "Acquisition of property, plant and equipment",
+        "6",
+        "(800,529)",
+        "(733,345)",
+      ],
+      isBold: false,
+    },
+    {
+      data: ["Acquisition of intangible assets", "8", "(57,971)", "(41,034)"],
+      isBold: false,
+    },
+    {
+      data: ["Purchase of Government Sukuks", "11.5", "(523,858)", "-"],
+      isBold: false,
+    },
+    {
       data: [
         "Proceeds from sale of property, plant and equipment",
         "",
@@ -216,7 +412,7 @@ export const cashFlowStatementsAr = {
   "raws": [
     {
       "data": [
-        "التدفقات النقدية من األنشطة التشغيلية",
+        "التدفقات النقدية من الأنشطة التشغيلية",
         "",
         "",
         ""
@@ -234,7 +430,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "تعديالت على:",
+        "تعديلات على:",
         "",
         "",
         ""
@@ -243,7 +439,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "استهالك واطفاء",
+        "استهلاك واطفاء",
         "",
         "1,198,359",
         "1,154,964"
@@ -279,7 +475,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "مخصص خسارة االنخفاض في القيمة، بالصافي",
+        "مخصص خسارة الانخفاض في القيمة، بالصافي",
         "40",
         "24,640",
         "390,409"
@@ -288,7 +484,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "خسارة/ (ربح) من بيع أو وشطب ممتلكات وآالت ومعدات و برامج",
+        "خسارة/ (ربح) من بيع أو وشطب ممتلكات وآلات ومعدات و برامج",
         "",
         "30,313",
         "895"
@@ -306,7 +502,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "خسارة ناتجة عن إلغاء االعرتاف باالستثمار في شركة مستثمر فيها بطريقة حقوق الملكية",
+        "خسارة ناتجة عن إلغاء الاعتراف بالاستثمار في شركة مستثمر فيها بطريقة حقوق الملكية",
         "1",
         "-",
         "139,001"
@@ -315,7 +511,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "ربح / (خسارة) ناتجة عن إلغاء االعرتاف بالشركات التابعة",
+        "ربح / (خسارة) ناتجة عن إلغاء الاعتراف بالشركات التابعة",
         "22",
         "(33,958)",
         "1,422,268"
@@ -324,7 +520,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "خسارة من استثمارات بالقيمة العادلة من خالل الربح أو الخسارة",
+        "خسارة من استثمارات بالقيمة العادلة من خلال الربح أو الخسارة",
         "38",
         "4,764",
         "18,496"
@@ -405,7 +601,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "مدفوعات مقدمًًا وذمم مدينة أخرى",
+        "مدفوعات مقدمًا وذمم مدينة أخرى",
         "",
         "77,157",
         "(201,103)"
@@ -432,7 +628,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "النقد الناتج من األنشطة التشغيلية",
+        "النقد الناتج من الأنشطة التشغيلية",
         "",
         "1,924,562",
         "2,370,687"
@@ -477,7 +673,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "صافي النقد الناتج من األنشطة التشغيلية",
+        "صافي النقد الناتج من الأنشطة التشغيلية",
         "",
         "1,068,654",
         "1,139,893"
@@ -486,7 +682,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "التدفقات النقدية من األنشطة االستثمارية",
+        "التدفقات النقدية من الأنشطة الاستثمارية",
         "",
         "",
         ""
@@ -495,7 +691,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "استحواذ على ممتلكات وآالت ومعدات",
+        "استحواذ على ممتلكات وآلات ومعدات",
         "6",
         "(800,529)",
         "(733,345)"
@@ -504,7 +700,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "استحواذ على موجودات غري ملموسة",
+        "استحواذ على موجودات غير ملموسة",
         "8",
         "(57,971)",
         "(41,034)"
@@ -522,7 +718,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "متحصالت من بيع ممتلكات وآالت ومعدات",
+        "متحصلات من بيع ممتلكات وآلات ومعدات",
         "",
         "58,020",
         "136,304"
@@ -549,7 +745,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "استحواذ على حقوق ملكية غري مسيطرة",
+        "استحواذ على حقوق ملكية غير مسيطرة",
         "1",
         "(25,010)",
         "-"
@@ -567,7 +763,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "التدفق النقدي الخارج نتيجة إلغاء االعرتاف بشركة تابعة",
+        "التدفق النقدي الخارج نتيجة إلغاء الاعتراف بشركة تابعة",
         "22",
         "(29,265)",
         "(452,165)"
@@ -576,7 +772,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "متحصالت من بيع شركة تابعة",
+        "متحصلات من بيع شركة تابعة",
         "22",
         "473,587",
         "231,413"
@@ -594,7 +790,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "توزيعات ارباح من استثمارات بالقيمة العادلة من خالل الدخل الشامل االخر",
+        "توزيعات ارباح من استثمارات بالقيمة العادلة من خلال الدخل الشامل الاخر",
         "",
         "2,126",
         "-"
@@ -603,7 +799,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "ودائع ألجل مودعة",
+        "ودائع لأجل مودعة",
         "",
         "(1,465,747)",
         "(1,385,315)"
@@ -612,7 +808,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "ودائع ألجل مسرتدة",
+        "ودائع لأجل مسرتدة",
         "",
         "1,959,191",
         "1,193,861"
@@ -621,7 +817,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "صافي النقد المستخدم في األنشطة االستثمارية",
+        "صافي النقد المستخدم في الأنشطة الاستثمارية",
         "",
         "(238,663)",
         "(436,093)"
@@ -630,7 +826,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "التدفقات النقدية من األنشطة التمويلية",
+        "التدفقات النقدية من الأنشطة التمويلية",
         "",
         "",
         ""
@@ -639,7 +835,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "متحصالت من قروض وسلف طويلة األجل",
+        "متحصلات من قروض وسلف طويلة الأجل",
         "21",
         "-",
         "976,535"
@@ -648,7 +844,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "سداد قروض وسلف طويلة األجل",
+        "سداد قروض وسلف طويلة الأجل",
         "21",
         "(260,487)",
         "(5,782,930)"
@@ -657,7 +853,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "صافي التغري في قروض وسلف قصرية األجل",
+        "صافي التغير في قروض وسلف قصرية الأجل",
         "",
         "(984,180)",
         "136,566"
@@ -666,7 +862,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "متحصالت من إصدار الحقوق",
+        "متحصلات من إصدار الحقوق",
         "16",
         "-",
         "6,000,000"
@@ -675,7 +871,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "التكاليف المرتبطة بطرح حقوق األولوية وتخفيض رأس المال والتوزيع",
+        "التكاليف المرتبطة بطرح حقوق الأولوية وتخفيض رأس المال والتوزيع",
         "",
         "-",
         "(47,691)"
@@ -693,7 +889,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "مدفوعات الجزء األساسي من مطلوبات عقود إيجار",
+        "مدفوعات الجزء الأساسي من مطلوبات عقود إيجار",
         "23",
         "(529,588)",
         "(482,171)"
@@ -711,7 +907,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "توزيعات أرباح مدفوعة لحقوق ملكية غري مسيطرة",
+        "توزيعات أرباح مدفوعة لحقوق ملكية غير مسيطرة",
         "",
         "(72,492)",
         "(53,016)"
@@ -729,7 +925,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "صافي النقد (المستخدم في) / الناتج من األنشطة التمويلية",
+        "صافي النقد (المستخدم في) / الناتج من الأنشطة التمويلية",
         "",
         "(2,191,071)",
         "646,570"
@@ -738,7 +934,7 @@ export const cashFlowStatementsAr = {
     },
     {
       "data": [
-        "صافي التغري في النقد وما في حكمه",
+        "صافي التغير في النقد وما في حكمه",
         "",
         "(1,361,080)",
         "1,350,370"

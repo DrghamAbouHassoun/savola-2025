@@ -113,21 +113,20 @@ const Navbar = () => {
           <img src={MainLogo} alt="Savola Logo" className="w-full h-auto" />
         </button>
         <div className="flex-1 hidden xl:flex gap-6 items-center justify-center">
-          {pages.map((section) => (
-            <>
-              {section.type === "dropdown" ? (
-                <NavDropdown key={section.id} section={section} />
-              ) : (
-                <button
-                  type="button"
-                  className="font-medium text-gray-700 flex justify-center items-center gap-2"
-                  onClick={() => navigate(section.id)}
-                >
-                  {t(`nav.sections.${section.id}`)}
-                </button>
-              )}
-            </>
-          ))}
+          {pages.map((section) =>
+            section.type === "dropdown" ? (
+              <NavDropdown key={section.id} section={section} />
+            ) : (
+              <button
+                key={section.id}
+                type="button"
+                className="font-medium text-gray-700 flex justify-center items-center gap-2"
+                onClick={() => navigate(section.id)}
+              >
+                {t(`nav.sections.${section.id}`)}
+              </button>
+            )
+          )}
         </div>
         <div className="flex gap-4 justify-center items-center text-savola-cool-grey">
           <button

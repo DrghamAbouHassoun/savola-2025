@@ -31,7 +31,7 @@ const ProfitTable = () => {
                     i === 0 ? "text-start min-w-70" : lang === 'ar' ? "text-start min-w-20" : "text-end min-w-20"
                   } ${i === BOLD_COL_INDEX && "bg-savola-orange"}`}
                 >
-                  {header}
+                  <span dangerouslySetInnerHTML={{ __html: header }} />
                 </th>
               ))}
             </tr>
@@ -48,7 +48,7 @@ const ProfitTable = () => {
                       cellIndex === BOLD_COL_INDEX && "bg-savola-orange-20"
                     }`}
                   >
-                    {cell}
+                    <span dangerouslySetInnerHTML={{ __html: cell }} />
                   </td>
                 ))}
               </tr>

@@ -6,7 +6,9 @@ import SmallContainer from "../modules/common/components/container/SmallContaine
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import FlowerImage from "../assets/icons/flower.svg";
 import ChartEn from "../assets/vectors/esg/materiality-chart-en.svg";
-import ChartAr from "../assets/vectors/esg/materiality-chart-ar.svg";
+// import ChartAr from "../assets/vectors/esg/materiality-chart-ar.svg";
+import Chart from "../modules/esg/components/chart";
+import ChartAr from "../modules/esg/components/ChartAr";
 
 const getMaterialityIconUrl = (index: number) =>
   new URL(`../assets/icons/esg/materiality/${index}.svg`, import.meta.url).href;
@@ -69,11 +71,12 @@ const MaterialityAssessmentPage = () => {
             {/* Chart */}
             <AnimationSlideTop>
               <div className="mb-12 max-w-170">
-                <img
+                {/* <img
                   src={isAr ? ChartAr : ChartEn}
                   alt="Materiality Matrix Chart"
                   className="w-full object-contain"
-                />
+                /> */}
+                {isAr ? <ChartAr /> : <Chart />}
               </div>
             </AnimationSlideTop>
 

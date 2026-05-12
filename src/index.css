@@ -108,6 +108,13 @@
   to   { transform: translateX(-50%); }
 }
 
+@keyframes spike-wave {
+  0% { transform: rotate(0deg); }
+  50%       { transform: rotate(16deg); }
+  /* 75%       { transform: rotate(-3deg); } */
+  100% { transform: 0deg; }
+}
+
 .riyal-icon {
   font-family: var(--font-riyal);
   font-style: normal;
@@ -115,4 +122,11 @@
 
 .riyal-icon::before {
   content: "$";
+}
+
+/* Pillar flip cards: hover flips on pointer-capable devices (desktop/laptop) */
+@media (hover: hover) and (pointer: fine) {
+  .group:hover > div {
+    transform: rotateY(180deg) !important;
+  }
 }

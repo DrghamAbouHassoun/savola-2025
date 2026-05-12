@@ -5,7 +5,7 @@ import { useTranslation } from "../modules/common/hooks/useTranslation";
 import { useLocale } from "../modules/common/hooks/useLocale";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
-import employeesImg from "../assets/images/esg/fostering/employees.png";
+// import employeesImg from "../assets/images/esg/fostering/employees.png";
 import frameworkImg from "../assets/images/esg/fostering/framework.png";
 import shrmImg from "../assets/images/esg/fostering/shrm-mena-25.jpg";
 import smartPhoneImg from "../assets/images/esg/fostering/smart-phone.png";
@@ -28,8 +28,14 @@ const FosteringCommunityWellnessPage = () => {
   const { lang } = useLocale();
 
   const [activeTab, setActiveTab] = useState(0);
+  const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({});
+
+  const toggleCard = (idx: number) => {
+    setFlippedCards((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  };
   const [activeSubTab, setActiveSubTab] = useState(0);
   const [openAccordion, setOpenAccordion] = useState<number>(0);
+  const [openValuesAccordion, setOpenValuesAccordion] = useState<number>(-1);
 
   const SectionTitle = ({ text }: { text: string }) => (
     <AnimationSlideTop>
@@ -243,7 +249,7 @@ const FosteringCommunityWellnessPage = () => {
                     )}
                   />
                 </div>
-                <AnimationSlideTop className="shrink-0 flex-1 border-b-2 border-t-2 border-black items-center ">
+                {/* <AnimationSlideTop className="shrink-0 flex-1 border-b-2 border-t-2 border-black items-center ">
                   <div className="flex items-center">
                     <p
                       className="text-xl text-savola-cool-grey font-semibold leading-relaxed"
@@ -261,7 +267,7 @@ const FosteringCommunityWellnessPage = () => {
                       />
                     </AnimationSlideTop>
                   </div>
-                </AnimationSlideTop>
+                </AnimationSlideTop> */}
               </div>
 
               <AnimationSlideTop>
@@ -353,43 +359,71 @@ const FosteringCommunityWellnessPage = () => {
                   const listItems = tArray(
                     `fostering.tabs.0.ourPeople.ourPeople.sections.3.cards.${cardIdx}.list`,
                   );
+                  const isFlipped = flippedCards[cardIdx] ?? false;
                   return (
                     <AnimationSlideTop key={cardIdx}>
-                      <div className="bg-savola-orange-20 rounded-xl p-4 h-full">
-                        <div className={`flex items-center gap-3 mb-3`}>
-                          <img
-                            src={icon}
-                            alt=""
-                            className="w-8 h-8 object-contain shrink-0"
-                          />
-                          <h5
-                            className={`text-savola-orange font-bold text-sm leading-tight`}
+                      {/* Flip card container — fixed height so front/back share space */}
+                      <div
+                        className="group relative h-48 cursor-pointer"
+                        style={{ perspective: "1000px" }}
+                        onClick={() => toggleCard(cardIdx)}
+                      >
+                        {/* Inner wrapper that rotates */}
+                        <div
+                          className="relative w-full h-full transition-transform duration-500"
+                          style={{
+                            transformStyle: "preserve-3d",
+                            transform:
+                              isFlipped
+                                ? "rotateY(180deg)"
+                                : "rotateY(0deg)",
+                          }}
+                        >
+                          {/* ── FRONT ── */}
+                          <div
+                            className="absolute inset-0 bg-savola-orange-20 rounded-xl flex flex-col items-center justify-center gap-3 p-4"
+                            style={{ backfaceVisibility: "hidden" }}
                           >
-                            {t(
-                              `fostering.tabs.0.ourPeople.ourPeople.sections.3.cards.${cardIdx}.title`,
+                            <img
+                              src={icon}
+                              alt=""
+                              className="w-12 h-12 object-contain"
+                            />
+                            <h5 className="text-savola-orange font-bold text-sm leading-tight text-center">
+                              {t(
+                                `fostering.tabs.0.ourPeople.ourPeople.sections.3.cards.${cardIdx}.title`,
+                              )}
+                            </h5>
+                          </div>
+
+                          {/* ── BACK ── */}
+                          <div
+                            className="absolute inset-0 bg-savola-orange rounded-xl p-4 overflow-y-auto"
+                            style={{
+                              backfaceVisibility: "hidden",
+                              transform: "rotateY(180deg)",
+                            }}
+                          >
+                            <ul className="space-y-1">
+                              {listItems.filter(Boolean).map((item, li) => (
+                                <li
+                                  key={li}
+                                  className="text-white text-xs flex items-start gap-1.5"
+                                >
+                                  <span className="shrink-0 mt-0.5 font-bold">•</span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            {cardIdx === 5 && (
+                              <p className="text-white/80 mt-2 text-xs">
+                                {t(
+                                  "fostering.tabs.0.ourPeople.ourPeople.sections.3.cards.5.note",
+                                )}
+                              </p>
                             )}
-                          </h5>
+                          </div>
                         </div>
-                        <ul className="space-y-1">
-                          {listItems.filter(Boolean).map((item, li) => (
-                            <li
-                              key={li}
-                              className={`text-savola-cool-grey flex items-start gap-1.5`}
-                            >
-                              <span className="text-savola-cool-grey shrink-0 mt-0.5 font-bold">
-                                •
-                              </span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {cardIdx === 5 && (
-                          <p className={`text-savola-cool-grey mt-2 text-xs`}>
-                            {t(
-                              "fostering.tabs.0.ourPeople.ourPeople.sections.3.cards.5.note",
-                            )}
-                          </p>
-                        )}
                       </div>
                     </AnimationSlideTop>
                   );
@@ -423,12 +457,56 @@ const FosteringCommunityWellnessPage = () => {
               <SectionTitle text={t("fostering.tabs.0.ourValues.title")} />
               <div className="flex flex-col md:flex-row gap-10 items-start">
                 <div className="flex-1">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <Paragraph
-                      key={i}
-                      text={t(`fostering.tabs.0.ourValues.paragraphs.${i}`)}
-                    />
-                  ))}
+                  <Paragraph
+                    text={t("fostering.tabs.0.ourValues.paragraphs.0")}
+                  />
+                  <div className="flex flex-col gap-0.75 my-4">
+                    {[0, 1, 2].map((accIdx) => {
+                      const isOpen = openValuesAccordion === accIdx;
+                      return (
+                        <div key={accIdx} className="overflow-hidden">
+                          <button
+                            onClick={() =>
+                              setOpenValuesAccordion(isOpen ? -1 : accIdx)
+                            }
+                            className="w-full flex items-center justify-between px-5 py-4 bg-savola-green-20 hover:bg-savola-green-50/40 transition-colors duration-200 cursor-pointer"
+                          >
+                            <span className="text-savola-orange font-bold text-base text-start">
+                              {t(
+                                `fostering.tabs.0.ourValues.accordion.${accIdx}.title`,
+                              )}
+                            </span>
+                            <img
+                              src={accordionArrow}
+                              alt=""
+                              className={`w-5 h-5 shrink-0 object-contain transition-transform duration-300 ${
+                                isOpen ? "rotate-180" : "rotate-0"
+                              }`}
+                            />
+                          </button>
+                          <div
+                            className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+                              isOpen ? "max-h-300" : "max-h-0"
+                            }`}
+                          >
+                            <div className="p-5">
+                              <p
+                                className="text-savola-cool-grey text-sm leading-relaxed"
+                                dangerouslySetInnerHTML={{
+                                  __html: t(
+                                    `fostering.tabs.0.ourValues.accordion.${accIdx}.content`,
+                                  ),
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <Paragraph
+                    text={t("fostering.tabs.0.ourValues.paragraphs.4")}
+                  />
                 </div>
                 <AnimationSlideTop className="flex-1 w-full md:max-w-66">
                   <img
@@ -600,7 +678,7 @@ const FosteringCommunityWellnessPage = () => {
           <section className="py-16 bg-savola-cool-grey-7">
             <SmallContainer>
               <div
-                className={`flex flex-wrap gap-0 mb-8 border-b border-savola-cool-grey-10 `}
+                className={`flex flex-wrap gap-4 mb-8 border-b border-savola-cool-grey-10 `}
               >
                 {[0, 1, 2].map((subIdx) => {
                   const labelKey =
@@ -611,10 +689,10 @@ const FosteringCommunityWellnessPage = () => {
                     <button
                       key={subIdx}
                       onClick={() => setActiveSubTab(subIdx)}
-                      className={`px-4 py-3 flex-1 font-semibold border-b-2 transition-all duration-200 ${
+                      className={`rounded-full px-4 py-3 flex-1 font-semibold border-2 transition-all duration-200 ${
                         activeSubTab === subIdx
-                          ? "border-savola-orange text-savola-orange"
-                          : "border-transparent text-savola-cool-grey hover:text-black"
+                          ? "border-savola-orange bg-savola-orange text-white"
+                          : "border-transparent bg-savola-cool-grey hover:bg-savola-cool-grey/80 text-white"
                       }`}
                     >
                       {t(labelKey)}

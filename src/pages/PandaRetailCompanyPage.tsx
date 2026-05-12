@@ -20,6 +20,8 @@ import AnimationSlideTop from "../modules/common/components/Animations/Animation
 import CountUp from "../modules/common/components/Animations/CountUp";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import BusinessReviewHeader from "../modules/business-review/components/BusinessReviewHeader";
+import PandaOutroBg from "../assets/images/business-review/panda-outro.png"
+import { useLocale } from "../modules/common/hooks/useLocale";
 
 const CHALLENGE_ICONS = [
   InflationIcon,
@@ -55,6 +57,7 @@ const KPI_NUMS = [92, 14, 26];
 
 const PandaRetailCompanyPage = () => {
   const { t, tArray } = useTranslation("business-review");
+  const { lang } = useLocale()
 
   const challengeLabels = tArray("panda.together.economic.labels");
   const outperformingParagraphs = tArray("panda.outperforming.paragraphs");
@@ -74,14 +77,14 @@ const PandaRetailCompanyPage = () => {
 
       {/* 2. Intro + Callout */}
       <section className="py-12 md:py-16">
-        <SmallContainer>
-          {/* Title + Logo row */}
-          <BusinessReviewHeader
-            title={t("panda.title")}
-            subtitle={t("panda.desc")}
-            logoUrl={PandaLogo}
-          />
-        </SmallContainer>
+        {/* <SmallContainer> */}
+        {/* Title + Logo row */}
+        <BusinessReviewHeader
+          title={t("panda.title")}
+          subtitle={t("panda.desc")}
+          logoUrl={PandaLogo}
+        />
+        {/* </SmallContainer> */}
       </section>
 
       <section>
@@ -196,7 +199,7 @@ const PandaRetailCompanyPage = () => {
                   <p className="text-xs text-savola-cool-grey mb-2 font-medium ">
                     {t(`panda.together.economic.cards.${i}.year`)}
                   </p>
-                  <p className="text-xs font-bold text-savola-cool-grey mb-3 uppercase tracking-wide">
+                  <p className="text-xs font-bold text-savola-cool-grey mb-3 tracking-wide">
                     {t(`panda.together.economic.cards.${i}.subtitle`)}
                   </p>
                   <p className="text-sm text-savola-cool-grey leading-relaxed">
@@ -281,7 +284,7 @@ const PandaRetailCompanyPage = () => {
 
           {/* Subsection 3: Digital Operations + KPI cards */}
           <div className="mb-12">
-            <h3 className="font-bold text-savola-navy mb-4">
+            <h3 className="font-bold text-savola-orange mb-4">
               {t("panda.together.powering.subsections.3.title")}
             </h3>
             {powSubParagraphs[3].map((p, i) => (
@@ -291,7 +294,7 @@ const PandaRetailCompanyPage = () => {
                 dangerouslySetInnerHTML={{ __html: p }}
               />
             ))}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 divide-x-2 divide-savola-green">
               {KPI_ICONS.map((icon, i) => (
                 <AnimationPopUp key={i}>
                   <div className=" p-6">
@@ -336,8 +339,8 @@ const PandaRetailCompanyPage = () => {
       </section>
 
       {/* 8. New Launches */}
-      <section className="">
-        <SmallContainer>
+      {/* <section className="">
+        <div className="w-[60%] mx-auto">
           <AnimationSlideTop>
             <h2 className="text-lg md:text-xl font-bold text-savola-navy mb-6">
               {t("panda.together.newLaunches.title")}
@@ -350,7 +353,35 @@ const PandaRetailCompanyPage = () => {
               />
             ))}
           </AnimationSlideTop>
-        </SmallContainer>
+        </div>
+      </section> */}
+      <section className=" ">
+        <div className="w-full relative ">
+          <div className=" py-16 w-full flex flex-col lg:flex-row  max-w-5xl mx-auto px-4">
+            <div className="flex-1">
+              <div className="">
+                <AnimationSlideTop>
+                  <h2 className="text-lg md:text-xl font-bold text-savola-navy mb-6">
+                    {t("panda.together.newLaunches.title")}
+                  </h2>
+                  {newLaunchesParagraphs.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-savola-cool-grey leading-relaxed mb-4"
+                      dangerouslySetInnerHTML={{ __html: p }}
+                    />
+                  ))}
+                </AnimationSlideTop>
+              </div>
+            </div>
+            <div className="flex-1"></div>
+          </div>
+          <img
+            src={PandaOutroBg}
+            alt=""
+            className={`h-full w-full lg:w-auto lg:max-w-[50%] object-contain lg:absolute bottom-0 ${lang === "ar" ? "left-0 object-bottom-left rotate-y-180" : "right-0 object-bottom-right"}`}
+          />
+        </div>
       </section>
     </div>
   );

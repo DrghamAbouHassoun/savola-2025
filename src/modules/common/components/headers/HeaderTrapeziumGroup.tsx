@@ -1,22 +1,32 @@
-import TrapeziumGroup from "../../../../assets/vectors/trapezium-group/group.svg";
+import Trapezium1 from "../../../../assets/vectors/trapezium-group/1.svg";
+import Trapezium2 from "../../../../assets/vectors/trapezium-group/2.svg";
+import Trapezium3 from "../../../../assets/vectors/trapezium-group/3.svg";
 import { useLocale } from "../../hooks/useLocale";
+
+const layers = [
+  { src: Trapezium3, ltr: "animate-trapezium-layer3", rtl: "animate-trapezium-layer3-ar" },
+  { src: Trapezium2, ltr: "animate-trapezium-layer2", rtl: "animate-trapezium-layer2-ar" },
+  { src: Trapezium1, ltr: "animate-trapezium-layer1", rtl: "animate-trapezium-layer1-ar" },
+];
 
 const HeaderTrapeziumGroup = () => {
   const { lang } = useLocale();
+  const isAr = lang === "ar";
+
   return (
     <div className="relative w-full h-full overflow-hidden">
-      {/* {[0.2, 0.4, 0.8].map((delay) => (
+      {layers.map(({ src, ltr, rtl }) => (
         <img
-          key={delay}
-          src={TrapeziumItem1}
+          key={src}
+          src={src}
           alt=""
-          className="absolute bottom-0 right-0 h-[80vh] w-auto object-contain object-right animate-trapezium-cycle"
-          style={{ animationDelay: `${delay}s`, right: `${delay * 10}px` }}
+          className={`absolute bottom-0 h-[80vh] w-auto object-contain ${
+            isAr
+              ? `object-left left-0 ${rtl}`
+              : `object-right right-0 ${ltr}`
+          }`}
         />
-      ))} */}
-      <div className={`absolute bottom-0 h-[80vh] w-auto object-contain ${lang === "ar" ? "object-left animate-trapezium-cycle-ar left-0" : "object-right animate-trapezium-cycle right-0"} `}>
-      <img src={TrapeziumGroup} alt="" className={`w-full h-full object-contain ${lang === "ar" ? "rotate-y-180" : ""}`} />
-      </div>
+      ))}
     </div>
   );
 };

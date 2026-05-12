@@ -7,6 +7,11 @@ import AnimationFadeIn from "../modules/common/components/Animations/AnimationFa
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import QuoteIcon from "../assets/icons/qoute.png";
 import { useLocale } from "../modules/common/hooks/useLocale";
+// import Timeline1 from "../assets/vectors/journey/timeline/1.svg"
+// import Timeline2 from "../assets/vectors/journey/timeline/2.svg"
+// import Timeline3 from "../assets/vectors/journey/timeline/3.svg"
+// import Timeline4 from "../assets/vectors/journey/timeline/4.svg"
+import Timeline from "../modules/journey/components/Timeline";
 
 const SavolaGroupsTransformationJourneyPage = () => {
   const { t, tArray } = useTranslation("strategic-review");
@@ -171,14 +176,14 @@ const SavolaGroupsTransformationJourneyPage = () => {
               style={{ animationDelay: "0.4s" }}
               className="mt-12"
             >
-              <h3 className="font-extrabold text-savola-cool-grey text-base mb-2">
+              <h3 className="font-extrabold text-savola-cool-grey text-base mb-2 text-center">
                 {section1.whatChanged.title}
               </h3>
-              <p className="text-savola-cool-grey text-sm leading-relaxed mb-6">
+              <p className="text-savola-cool-grey text-sm leading-relaxed mb-6 text-center">
                 {section1.whatChanged.desc}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 {section1.whatChanged.list.map((item, i) => (
                   <div
                     key={i}
@@ -187,12 +192,15 @@ const SavolaGroupsTransformationJourneyPage = () => {
                     {item}
                   </div>
                 ))}
+              </div> */}
+              <div className="relative max-w-180 mx-auto">
+                <Timeline list={section1.whatChanged.list} />
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex justify-center flex-col sm:flex-row gap-4">
                 {/* Card 1 */}
-                <div className="bg-savola-cool-grey/10 rounded-xl p-6">
-                  <div className="bg-linear-to-l from-savola-orange/20 to-savola-orange/0 rounded-xl w-fit pr-4 py-0.5">
+                <div className="rounded-xl p-6">
+                  <div className="bg-linear-to-l from-savola-orange/80 to-savola-orange/0 rounded-xl w-fit pr-16 py-0.5 mb-3">
                     <p className=" font-extrabold text-sm mb-1">
                       {section1.whatChanged.card1.title}
                     </p>
@@ -214,10 +222,13 @@ const SavolaGroupsTransformationJourneyPage = () => {
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-savola-cool-grey/10 rounded-xl p-6">
-                  <p className="font-extrabold text-sm mb-3">
+                <div className="rounded-xl p-6">
+                   <div className="bg-linear-to-l from-savola-green/80 to-savola-orange/0 rounded-xl w-fit pr-16 py-0.5 mb-3">
+                    <p className="font-extrabold text-sm mb-3">
                     {section1.whatChanged.card2.title}
                   </p>
+                  </div>
+                  
                   <ul className="space-y-1">
                     {section1.whatChanged.card2.list.map((item, i) => (
                       <li
