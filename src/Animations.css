@@ -409,57 +409,67 @@
 /* ── Layered trapezium: 3 separate SVGs, exit always rightward ── */
 
 @keyframes TrapeziumLayer1 {
-  0%    { opacity: 0; transform: translateX(120vw); }
-  4%    { opacity: 1; transform: translateX(120vw); }
-  24%   { opacity: 1; transform: translateX(0);     }
-  70%   { opacity: 1; transform: translateX(0);     }
-  84%   { opacity: 0; transform: translateX(120vw); }
-  100%  { opacity: 0; transform: translateX(120vw); }
+  0% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
 }
 
 @keyframes TrapeziumLayer2 {
-  0%    { opacity: 0; transform: translateX(120vw); }
-  24%   { opacity: 0; transform: translateX(120vw); }
-  28%   { opacity: 1; transform: translateX(120vw); }
+  0%    { opacity: 0; transform: translateX(140vw); }
+  24%   { opacity: 0; transform: translateX(140vw); }
+  28%   { opacity: 1; transform: translateX(140vw); }
   46%   { opacity: 1; transform: translateX(clamp(40px, 6vw, 88px)); }
   72%   { opacity: 1; transform: translateX(clamp(40px, 6vw, 88px)); }
-  86%   { opacity: 0; transform: translateX(120vw); }
-  100%  { opacity: 0; transform: translateX(120vw); }
+  86%   { opacity: 0; transform: translateX(140vw); }
+  100%  { opacity: 0; transform: translateX(140vw); }
 }
 
 @keyframes TrapeziumLayer3 {
-  0%    { opacity: 0; transform: translateX(120vw); }
-  46%   { opacity: 0; transform: translateX(120vw); }
-  50%   { opacity: 1; transform: translateX(120vw); }
+  0%    { opacity: 0; transform: translateX(160vw); }
+  46%   { opacity: 0; transform: translateX(160vw); }
+  50%   { opacity: 1; transform: translateX(160vw); }
   68%   { opacity: 1; transform: translateX(clamp(80px, 12vw, 160px)); }
   74%   { opacity: 1; transform: translateX(clamp(80px, 12vw, 160px)); }
-  88%   { opacity: 0; transform: translateX(120vw); }
-  100%  { opacity: 0; transform: translateX(120vw); }
+  88%   { opacity: 0; transform: translateX(160vw); }
+  100%  { opacity: 0; transform: translateX(160vw); }
 }
 
 .animate-trapezium-layer1 {
   opacity: 0;
-  transform: translateX(120vw);
+  transform: translateX(100vw);
   animation-name: TrapeziumLayer1;
-  animation-duration: 24s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
 
 .animate-trapezium-layer2 {
-  opacity: 0;
-  transform: translateX(120vw);
-  animation-name: TrapeziumLayer2;
-  animation-duration: 24s;
+  /* opacity: 0;
+  transform: translateX(140vw); */
+  /* animation-name: TrapeziumLayer2; */
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
 
 .animate-trapezium-layer3 {
-  opacity: 0;
-  transform: translateX(120vw);
-  animation-name: TrapeziumLayer3;
-  animation-duration: 24s;
+  /* opacity: 0;
+  transform: translateX(160vw); */
+  /* animation-name: TrapeziumLayer3; */
+  animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-out;
 }
