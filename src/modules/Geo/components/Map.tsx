@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Layers
 import WholeMapLayer from "../../../assets/vectors/geo/map-layers/whole-map.png";
@@ -23,14 +23,41 @@ const LAYERS: { key: LayerKey; src: string }[] = [
   { key: "markets", src: ExportMarketsLayer },
 ];
 
+const BUTTONS: { key: LayerKey; icon: string; labelKey: string }[] = [
+  { key: "manufacturing", icon: ManufactoringIcon, labelKey: "geographicalFootprint.manufacturing" },
+  { key: "distribution", icon: CentersIcon, labelKey: "geographicalFootprint.distribution" },
+  { key: "stores", icon: StoresIcon, labelKey: "geographicalFootprint.stores" },
+  { key: "markets", icon: MarketsIcon, labelKey: "geographicalFootprint.markets" },
+];
+
+const useIsDesktop = () => {
+  const [isDesktop, setIsDesktop] = useState(
+    () => window.matchMedia("(min-width: 1024px)").matches
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return isDesktop;
+};
+
 const Map = () => {
   const { t } = useTranslation("overview");
+  const isDesktop = useIsDesktop();
+
+  // click-based state (mobile/tablet)
   const [active, setActive] = useState<LayerKey | null>(null);
+  // hover-based state (desktop)
+  const [hovered, setHovered] = useState<LayerKey | null>(null);
 
-  const toggle = (key: LayerKey) =>
-    setActive((prev) => (prev === key ? null : key));
+  const focused = isDesktop ? hovered : active;
+  const isVisible = (key: LayerKey) => focused === null || focused === key;
 
-  const isVisible = (key: LayerKey) => active === null || active === key;
+  const handleClick = (key: LayerKey) => {
+    if (!isDesktop) setActive((prev) => (prev === key ? null : key));
+  };
 
   return (
     <div>
@@ -55,25 +82,20 @@ const Map = () => {
       </div>
 
       <div className="flex gap-4 items-center justify-center mt-8 text-sm flex-wrap">
-        {(
-          [
-            { key: "manufacturing" as LayerKey, icon: ManufactoringIcon, label: t("geographicalFootprint.manufacturing") },
-            { key: "distribution" as LayerKey, icon: CentersIcon, label: t("geographicalFootprint.distribution") },
-            { key: "stores" as LayerKey, icon: StoresIcon, label: t("geographicalFootprint.stores") },
-            { key: "markets" as LayerKey, icon: MarketsIcon, label: t("geographicalFootprint.markets") },
-          ] as const
-        ).map(({ key, icon, label }) => (
+        {BUTTONS.map(({ key, icon, labelKey }) => (
           <button
             key={key}
             type="button"
-            onClick={() => toggle(key)}
+            onClick={() => handleClick(key)}
+            onMouseEnter={() => isDesktop && setHovered(key)}
+            onMouseLeave={() => isDesktop && setHovered(null)}
             className={[
               "bg-transparent flex items-center gap-2 transition-opacity duration-300",
-              active !== null && active !== key ? "opacity-40" : "opacity-100",
+              focused !== null && focused !== key ? "opacity-40" : "opacity-100",
             ].join(" ")}
           >
             <img src={icon} className="w-8 h-8 object-contain" />
-            <span>{label}</span>
+            <span>{t(labelKey)}</span>
           </button>
         ))}
       </div>
