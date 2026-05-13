@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-visible">
       <svg
         width="47"
         height="39"

@@ -4,7 +4,7 @@
   }
   to {
     opacity: 0;
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -631,6 +631,7 @@
     scale: 1;
   }
   100% {
+    opacity: 0;
     scale: 50;
   }
 }
@@ -640,5 +641,5 @@
   scale: 1;
   animation-name: ScaleUpFade;
   animation-duration: 2s;
-  animation-fill-mode: forwards;
+  /* animation-fill-mode: forwards; */
 }
