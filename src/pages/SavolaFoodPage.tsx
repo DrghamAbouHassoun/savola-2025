@@ -16,6 +16,7 @@ import FlowerIcon from "../assets/icons/flower.svg";
 import TrapeziumShape from "../assets/vectors/business-review/trapezium-card.svg";
 import DrivingSectionBg from "../assets/images/business-review/driving.jpg";
 import DrivingSectionShape from "../assets/vectors/business-review/trapezium-driving.png";
+import DoupleArrow from "../assets/icons/double-arrow.svg";
 
 // Country Flags
 import AlgeriaFlag from "../assets/vectors/business-review/flags/algeria.svg";
@@ -146,8 +147,9 @@ const RevenueChart = ({
   return (
     <article
       ref={ref}
-      className="flex flex-col gap-2.5 bg-linear-to-b from-savola-orange-20 to-savola-orange/0 px-2 py-4"
+      className="relative flex flex-col gap-2.5 bg-linear-to-b from-savola-orange-20 to-savola-orange/0 px-2 py-4"
     >
+      <img src={DoupleArrow} alt="" className="absolute right-4 top-2 w-5 h-10" />
       {/* Revenue title */}
       <AnimationSlideTop>
         <p className="font-bold text-savola-navy text-lg mb-1 inline">
@@ -451,7 +453,7 @@ const SavolaFoodPage = () => {
                       key={i}
                       className={`font-black text-4xl md:text-4xl leading-tight ${
                         i === 0
-                          ? "text-savola-green"
+                          ? "text-savola-cool-grey"
                           : i === 1
                             ? "text-savola-orange"
                             : "text-savola-cool-grey"

@@ -5,7 +5,7 @@ import SmallContainer from "../modules/common/components/container/SmallContaine
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
-import QuoteIcon from "../assets/icons/qoute.png";
+import QuoteIcon from "../assets/icons/qoute.svg";
 import { useLocale } from "../modules/common/hooks/useLocale";
 // import Timeline1 from "../assets/vectors/journey/timeline/1.svg"
 // import Timeline2 from "../assets/vectors/journey/timeline/2.svg"
@@ -108,7 +108,7 @@ const SavolaGroupsTransformationJourneyPage = () => {
       <img src={QuoteIcon} alt="" className="w-10 mb-4" />
       <p
         className="font-bold text-savola-navy text-base md:text-lg leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: `"${text}"` }}
+        dangerouslySetInnerHTML={{ __html: `${text}` }}
       />
       <p className="font-bold text-savola-cool-grey mt-4">{name}</p>
       <p className="text-savola-cool-grey text-sm">{position}</p>

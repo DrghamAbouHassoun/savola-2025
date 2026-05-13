@@ -21,6 +21,7 @@ export const RouterProvider = ({ children }: { children: ReactNode }) => {
 
   const navigate = (path: string) => {
     setCurrentRoute(path);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   const goHome = () => {
