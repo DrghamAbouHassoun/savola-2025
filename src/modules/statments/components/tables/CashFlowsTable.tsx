@@ -56,6 +56,9 @@ const CashFlowsTable = () => {
           </tbody>
         </table>
       </div>
+      <p className="text-sm py-8">
+        {t("note")}
+      </p>
     </div>
   );
 };

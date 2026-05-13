@@ -110,6 +110,9 @@ const EquityTable = () => {
       <StatementHeader title={t("headers.equity")} />
       <YearTable data={data2025} lang={lang} />
       <YearTable data={data2024} lang={lang} />
+      <p className="text-sm py-8">
+        {t("note")}
+      </p>
     </div>
   );
 };
