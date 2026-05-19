@@ -51,6 +51,10 @@ export const profitAndLossEn = {
       data: ["Results from operating activities", "", "1,137,233", "1,385,563"],
       isBold: true,
     },
+    {
+      data: ["", "", "", ""],
+      isBold: false,
+    },
     { data: ["Finance income", "", "205,247", "128,506"], isBold: false },
     { data: ["Finance costs", "", "(480,772)", "(993,051)"], isBold: false },
     {
@@ -127,7 +131,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Investments at fair value through OCI – net change in fair value",
+        "Investments at fair value through other comprehensive income – net change in fair value",
         "11",
         "(78,328)",
         "1,911",
@@ -136,7 +140,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Equity accounted investees - share of OCI",
+        "Equity accounted investees - share of other comprehensive income",
         "10.1",
         "(239)",
         "(19,806)",
@@ -154,7 +158,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Release of foreign currency translation differences on disposal",
+        "Release of foreign currency translation differences on disposal of subsidiaries",
         "22",
         "81,437",
         "1,563,014",
@@ -163,7 +167,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Equity accounted investees – FCTD reclassified to profit or loss",
+        "Equity accounted investees –  share of foreign currency translation differences reclassified to profit or loss",
         "",
         "-",
         "(11,907)",
@@ -190,7 +194,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Investment in equity-accounted investees - share of OCI",
+        "Investment in equity-accounted investees - share of other comprehensive income reclassified to profit or loss",
         "10",
         "-",
         "(89,086)",
@@ -235,11 +239,11 @@ export const profitAndLossEn = {
     },
     { data: ["Profit / (loss) attributable to:", "", "", ""], isBold: true },
     {
-      data: ["Owners of the Company", "", "874,462", "9,974,266"],
+      data: ["&nbsp;Owners of the Company", "", "874,462", "9,974,266"],
       isBold: false,
     },
     {
-      data: ["Non-controlling interests", "", "66,037", "(58,914)"],
+      data: ["&nbsp;Non-controlling interests", "", "66,037", "(58,914)"],
       isBold: false,
     },
     { data: ["Profit for the year", "", "940,499", "9,915,352"], isBold: true },
@@ -253,11 +257,11 @@ export const profitAndLossEn = {
       isBold: true,
     },
     {
-      data: ["Continuing operations", "", "881,665", "11,357,280"],
+      data: ["&nbsp;Continuing operations", "", "881,665", "11,357,280"],
       isBold: false,
     },
     {
-      data: ["Discontinued operations", "", "(7,203)", "(1,383,014)"],
+      data: ["&nbsp;Discontinued operations", "", "(7,203)", "(1,383,014)"],
       isBold: false,
     },
     {
@@ -273,11 +277,11 @@ export const profitAndLossEn = {
       isBold: true,
     },
     {
-      data: ["Owners of the Company", "", "955,162", "11,271,637"],
+      data: ["&nbsp;Owners of the Company", "", "955,162", "11,271,637"],
       isBold: false,
     },
     {
-      data: ["Non-controlling interests", "", "77,607", "(68,737)"],
+      data: ["&nbsp;Non-controlling interests", "", "77,607", "(68,737)"],
       isBold: false,
     },
     {
@@ -299,11 +303,11 @@ export const profitAndLossEn = {
       isBold: true,
     },
     {
-      data: ["Continuing operations", "", "883,171", "11,349,349"],
+      data: ["&nbsp;Continuing operations", "", "883,171", "11,349,349"],
       isBold: false,
     },
     {
-      data: ["Discontinued operations", "", "71,991", "(77,712)"],
+      data: ["&nbsp;Discontinued operations", "", "71,991", "(77,712)"],
       isBold: false,
     },
     {
@@ -312,7 +316,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Earnings per share (Continuing operations - in <i class='riyal-icon'></i>)",
+        "Earnings per share attributable to the Owners of the Company from <br />continuing operations (in <i class='riyal-icon'></i>)",
         "",
         "",
         "",
@@ -323,7 +327,7 @@ export const profitAndLossEn = {
     { data: ["Diluted", "31", "2.94", "12.06"], isBold: false },
     {
       data: [
-        "Earnings per share (Total - in <i class='riyal-icon'></i>)",
+        "Earnings per share attributable to the Owners of the Company (in <i class='riyal-icon'></i>)",
         "",
         "",
         "",

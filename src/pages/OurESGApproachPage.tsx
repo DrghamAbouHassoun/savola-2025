@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import HeaderBg from "../assets/images/new-headers/esg-aproach.jpg";
 import NewHeader from "../modules/common/components/headers/NewHeader";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
@@ -7,12 +8,35 @@ import AnimationSlideTop from "../modules/common/components/Animations/Animation
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 
 const PILLAR_COUNT = 5;
+const PILLAR_PULSE_DURATION = 5000;
+const PULSE_START_DELAY = 2500;
 
 const OurESGApproachPage = () => {
   const { t } = useTranslation("esg-review");
   const { t: tCommon } = useTranslation("common");
   const { lang } = useLocale();
   const isAr = lang === "ar";
+  const [activePillar, setActivePillar] = useState<number | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    const startSequence = (index: number) => {
+      if (!isMounted) return;
+      setActivePillar(index);
+      timeoutId = setTimeout(() => {
+        startSequence((index + 1) % PILLAR_COUNT);
+      }, PILLAR_PULSE_DURATION);
+    };
+
+    timeoutId = setTimeout(() => startSequence(0), PULSE_START_DELAY);
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   const roadmapTitle = t("approach.roadmap.title");
 
@@ -75,15 +99,15 @@ const OurESGApproachPage = () => {
 
           <div className="bg-savola-green">
             <div
-              className={`grid grid-cols-5 py-3 ${isAr ? "flex-row-reverse" : ""}`}
+              className={`grid grid-cols-2 md:grid-cols-5 items-center py-3 ${isAr ? "flex-row-reverse" : ""}`}
             >
               {Array.from({ length: PILLAR_COUNT }, (_, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center p-6 text-center border-e border-white/20 last:border-e-0"
+                  className={`flex flex-col items-center p-6 text-center md:border-e border-white/20 last:border-e-0 ${i === PILLAR_COUNT - 1 ? "col-span-2 md:col-span-1" : ""}`}
                 >
                   <AnimationPopUp className={`animate-delay-${((i + 1) * 2) % 10 !== 0 ? `0_${(i + 1) * 2}`: `1_2`}s`}>
-                    <div className="w-14 h-14 rounded-full bg-linear-to-r from-white/50 to-white/0 flex items-center justify-center mb-4">
+                    <div className={`w-14 h-14 rounded-full bg-linear-to-r from-white/50 to-white/0 flex items-center justify-center mb-4 ${activePillar === i ? "pillar-pulse-ring" : ""}`}>
                       <span className="text-white text-base">
                         {t(`approach.roadmap.pillars.${i}.index`)}
                       </span>

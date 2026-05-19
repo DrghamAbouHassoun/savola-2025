@@ -48,7 +48,7 @@ const ProfitTable = () => {
                       cellIndex === BOLD_COL_INDEX && "bg-savola-orange-20"
                     }`}
                   >
-                    <span dangerouslySetInnerHTML={{ __html: cell }} />
+                    <span dangerouslySetInnerHTML={{ __html: cell || "" }} className="h-full min-h-3 block" />
                   </td>
                 ))}
               </tr>

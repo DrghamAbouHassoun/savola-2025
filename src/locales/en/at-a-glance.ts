@@ -58,7 +58,7 @@ const atAGlance = {
     // Sustainability - Hajj
     hajjLabel:
       'Savola World partnered with Eta\'am on the "Hajj Without Waste" initiative, saving',
-    hajjFoodUnit: "food units",
+    hajjFoodUnit: " food units",
     hajjSacrificeUnit: "sacrificial offerings",
     hajjValueLabel: "with a total value exceeding",
     hajjValueUnit: "million",

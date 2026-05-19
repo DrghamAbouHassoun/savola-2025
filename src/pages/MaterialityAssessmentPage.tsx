@@ -70,7 +70,7 @@ const MaterialityAssessmentPage = () => {
 
             {/* Chart */}
             <AnimationSlideTop>
-              <div className="mb-12 max-w-170">
+              <div className="mb-12 max-w-full md:max-w-170">
                 {/* <img
                   src={isAr ? ChartAr : ChartEn}
                   alt="Materiality Matrix Chart"

@@ -4,6 +4,7 @@ import StakeholderHeader from "../assets/images/new-headers/stackholder.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
+import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 
 import investorsIcon from "../assets/icons/geo/investors.png";
 import suppliersIcon from "../assets/icons/geo/suppliers.png";
@@ -16,6 +17,7 @@ import ngosIcon from "../assets/icons/geo/ngos.png";
 import partnersIcon from "../assets/icons/geo/partners.png";
 import governmentIcon from "../assets/icons/geo/goverment.png";
 import accordionArrow from "../assets/icons/geo/accordion-arrow.png";
+import Container from "../modules/common/components/container/Container";
 
 const STAKEHOLDERS = [
   { key: "investors", icon: investorsIcon },
@@ -33,7 +35,22 @@ const STAKEHOLDERS = [
 const StakeholderEngagementPage = () => {
   const { t: tCommon } = useTranslation("common");
   const { t, tArray } = useTranslation("overview");
-  const [openIndex, setOpenIndex] = useState<number>(0);
+
+  // Accordion state (mobile/tablet) — -1 means all closed
+  const [accordionIndex, setAccordionIndex] = useState<number>(0);
+
+  // Tabs state (desktop)
+  const [tabIndex, setTabIndex] = useState<number>(0);
+  const [contentKey, setContentKey] = useState<number>(0);
+
+  const handleTabChange = (index: number) => {
+    setTabIndex(index);
+    setContentKey((k) => k + 1);
+  };
+
+  const { key: activeKey } = STAKEHOLDERS[tabIndex];
+  const tabConcerns = tArray(`stakeholderEngagement.${activeKey}.concerns`);
+  const tabChannels = tArray(`stakeholderEngagement.${activeKey}.channels`);
 
   return (
     <div>
@@ -59,18 +76,20 @@ const StakeholderEngagementPage = () => {
           </AnimationSlideTop>
         </SmallContainer>
       </section>
+
       <section className="pb-16">
-        <SmallContainer>
-          <div className="flex flex-col gap-0.75">
+        <Container>
+          {/* Accordion — mobile & tablet (< lg) */}
+          <div className="flex flex-col gap-0.75 lg:hidden">
             {STAKEHOLDERS.map(({ key, icon }, index) => {
-              const isOpen = openIndex === index;
+              const isOpen = accordionIndex === index;
               const concerns = tArray(`stakeholderEngagement.${key}.concerns`);
               const channels = tArray(`stakeholderEngagement.${key}.channels`);
 
               return (
-                <div key={key} className="overflow-hidden ">
+                <div key={key} className="overflow-hidden">
                   <button
-                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    onClick={() => setAccordionIndex(isOpen ? -1 : index)}
                     className="w-full flex items-center justify-between px-5 py-4 bg-savola-green-20 hover:bg-savola-green-50/40 transition-colors duration-200 cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
@@ -97,8 +116,8 @@ const StakeholderEngagementPage = () => {
                       isOpen ? "max-h-300" : "max-h-0"
                     }`}
                   >
-                    <div className="flex flex-col bg-white">
-                      <div className="p-5 flex flex-col md:flex-row gap-2">
+                    <div className="flex flex-col sm:flex-row bg-white">
+                      <div className="flex-1 p-5 flex flex-col gap-2">
                         <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
                           {t("stakeholderEngagement.commitmentLabel")}
                         </h4>
@@ -107,7 +126,7 @@ const StakeholderEngagementPage = () => {
                         </p>
                       </div>
 
-                      <div className="p-5 flex flex-col md:flex-row gap-2">
+                      <div className="flex-1 p-5 flex flex-col gap-2">
                         <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
                           {t("stakeholderEngagement.concernsLabel")}
                         </h4>
@@ -126,7 +145,7 @@ const StakeholderEngagementPage = () => {
                         </ul>
                       </div>
 
-                      <div className="p-5 flex flex-col md:flex-row gap-2">
+                      <div className="flex-1 p-5 flex flex-col gap-2">
                         <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
                           {t("stakeholderEngagement.channelsLabel")}
                         </h4>
@@ -150,7 +169,96 @@ const StakeholderEngagementPage = () => {
               );
             })}
           </div>
-        </SmallContainer>
+
+          {/* Tabs — laptop & desktop (lg+) */}
+          <div className="hidden lg:flex flex-row gap-0.75">
+            {/* Vertical tab list */}
+            <div className="flex flex-col gap-0.75 w-84 shrink-0">
+              {STAKEHOLDERS.map(({ key, icon }, index) => {
+                const isActive = tabIndex === index;
+                return (
+                  <AnimationSlideTop
+                    key={key}
+                    className="w-full"
+                    style={{ animationDelay: `${index * 0.07}s` }}
+                  >
+                    <button
+                      onClick={() => handleTabChange(index)}
+                      className={`w-full flex items-center gap-3 px-5 py-4 transition-all duration-200 cursor-pointer text-start ${
+                        isActive
+                          ? "bg-savola-green-50/40 border-savola-orange"
+                          : "bg-transparent hover:bg-savola-green-50/40"
+                      }`}
+                    >
+                      <img
+                        src={icon}
+                        alt=""
+                        className={`w-8 h-8 object-contain shrink-0 transition-transform duration-200 ${
+                          isActive ? "scale-110" : ""
+                        }`}
+                      />
+                      <span className="text-savola-orange font-bold text-lg">
+                        {t(`stakeholderEngagement.${key}.title`)}
+                      </span>
+                    </button>
+                  </AnimationSlideTop>
+                );
+              })}
+            </div>
+
+            {/* Content panel — remounts on tab change to replay animation */}
+            <AnimationFadeIn key={contentKey} className="flex-1">
+              <div className="flex flex-row bg-white h-full">
+                <div className="flex-1 p-5 flex flex-col gap-2">
+                  <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
+                    {t("stakeholderEngagement.commitmentLabel")}
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {t(`stakeholderEngagement.${activeKey}.commitment`)}
+                  </p>
+                </div>
+
+                <div className="flex-1 p-5 flex flex-col gap-2">
+                  <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
+                    {t("stakeholderEngagement.concernsLabel")}
+                  </h4>
+                  <ul className="space-y-2">
+                    {tabConcerns.map((item, i) => (
+                      <li
+                        key={i}
+                        className="text-gray-600 text-sm flex items-start gap-2"
+                      >
+                        <span className="text-savola-green mt-0.5 shrink-0 font-bold">
+                          •
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex-1 p-5 flex flex-col gap-2">
+                  <h4 className="text-savola-green font-bold text-lg tracking-wider mb-3 w-full max-w-90">
+                    {t("stakeholderEngagement.channelsLabel")}
+                  </h4>
+                  <ul className="space-y-2">
+                    {tabChannels.map((item, i) => (
+                      <li
+                        key={i}
+                        className="text-gray-600 text-sm flex items-start gap-2"
+                      >
+                        <span className="text-savola-green mt-0.5 shrink-0 font-bold">
+                          •
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </AnimationFadeIn>
+          </div>
+        </Container>
       </section>
     </div>
   );

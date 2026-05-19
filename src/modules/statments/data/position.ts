@@ -71,7 +71,16 @@ export const financialPositionEn = {
     { data: ["Other reserves", "18", "(170,156)", "(67,894)"], isBold: false },
     {
       data: [
-        "Effect of transactions with non-controlling interests",
+        "Effect of transactions with non-controlling interests without",
+        "",
+        "",
+        "",
+      ],
+      isBold: false,
+    },
+    {
+      data: [
+        "&nbsp;change in control",
         "",
         "(39,772)",
         "(39,772)",

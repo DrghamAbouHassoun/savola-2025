@@ -42,14 +42,12 @@ const PositionTable = () => {
                   <td
                     key={cellIndex}
                     className={`px-4 py-2 border-b border-gray-500 ${
-                      row.isBold || cellIndex === BOLD_COL_INDEX
-                        ? "font-semibold"
-                        : "font-normal"
+                      (row.isBold && cellIndex != 3) || cellIndex === BOLD_COL_INDEX ?  "font-semibold" : "font-normal"
                     } ${cellIndex === 0 ? "text-start" : lang === "ar" ? "text-start" : "text-end"} ${
                       cellIndex === BOLD_COL_INDEX && "bg-savola-orange-20"
                     }`}
                   >
-                    {cell}
+                    <span dangerouslySetInnerHTML={{ __html: cell || "" }} className="h-full min-h-3 block" />
                   </td>
                 ))}
               </tr>

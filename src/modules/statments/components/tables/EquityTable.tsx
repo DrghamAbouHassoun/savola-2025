@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import type { CSSProperties } from "react";
 import { LangContext } from "../../../common/contexts/LangProvider";
 import {
   equityStatements2025En,
@@ -30,28 +31,34 @@ const getBoldNumberRows = (raws: string[][]): Set<number> => {
   return indices;
 };
 
-type Props = { data: EquityYearData; lang: string };
+const getStickyColStyle = (lang: string, zIndex = 10): CSSProperties => ({
+  position: "sticky",
+  left: lang === "ar" ? undefined : 0,
+  right: lang === "ar" ? 0 : undefined,
+  zIndex,
+  backgroundColor: "white",
+});
 
-const YearTable = ({ data, lang }: Props) => {
-  const boldNumberRows = getBoldNumberRows(data.raws);
+type Props = { data: EquityYearData; lang: string; headerColSpan: number; boldNumbers?: boolean };
+
+const YearTable = ({ data, lang, headerColSpan, boldNumbers: enableBoldNumbers = true }: Props) => {
+  const boldNumberRows = enableBoldNumbers ? getBoldNumberRows(data.raws) : new Set<number>();
   const isRtl = lang === "ar";
+  const stickyColStyle = getStickyColStyle(lang);
+  // const stickyHeadStyle = getStickyColStyle(lang, 20);
 
   return (
     <div className="overflow-auto w-full py-8">
       <table className="min-w-175 w-full text-sm" dir={isRtl ? "rtl" : "ltr"}>
         <thead>
           <tr>
-            <td></td>
+            <td className="bg-transparent"></td>
             <td
-              colSpan={data.colSpans[0]}
+              colSpan={headerColSpan}
               className="font-bold border-b border-white text-center p-2 bg-savola-orange"
               dangerouslySetInnerHTML={{ __html: data.topGroupLabel }}
             />
-            <td
-              colSpan={data.colSpans[1]}
-              className="font-bold border-b border-white text-center p-2 bg-savola-orange"
-              dangerouslySetInnerHTML={{ __html: data.topGroupLabel }}
-            />
+            
             <td className="bg-savola-orange"></td>
             <td className="bg-savola-orange"></td>
           </tr>
@@ -66,6 +73,7 @@ const YearTable = ({ data, lang }: Props) => {
                       ? "text-start min-w-20 bg-savola-orange"
                       : "text-end min-w-20 bg-savola-orange"
                 }`}
+                // style={i === 0 ? stickyHeadStyle : undefined}
                 dangerouslySetInnerHTML={{ __html: header }}
               />
             ))}
@@ -78,13 +86,14 @@ const YearTable = ({ data, lang }: Props) => {
             return (
               <tr key={rowIndex}>
                 {row.map((cell, cellIndex) => {
-                  const isBold = boldRow || (boldNumbers && cellIndex > 0);
+                  const isBold = cellIndex === 0 ? boldRow : boldNumbers && cellIndex > 0;
                   return (
                     <td
                       key={cellIndex}
                       className={`px-4 py-2 border-b border-gray-500 ${
                         isBold ? "font-semibold" : "font-normal"
                       } ${cellIndex === 0 ? "text-start" : lang === "ar" ? "text-start" : "text-end"}`}
+                      style={cellIndex === 0 ? stickyColStyle : undefined}
                       dangerouslySetInnerHTML={{ __html: cell }}
                     />
                   );
@@ -108,8 +117,8 @@ const EquityTable = () => {
   return (
     <div>
       <StatementHeader title={t("headers.equity")} />
-      <YearTable data={data2025} lang={lang} />
-      <YearTable data={data2024} lang={lang} />
+      <YearTable data={data2025} lang={lang} headerColSpan={9} />
+      <YearTable data={data2024} lang={lang} headerColSpan={10} boldNumbers={false} />
       <p className="text-sm py-8">
         {t("note")}
       </p>

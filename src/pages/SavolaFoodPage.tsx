@@ -25,6 +25,7 @@ import JordanFlag from "../assets/vectors/business-review/flags/jordan.svg";
 import KsaFlag from "../assets/vectors/business-review/flags/ksa.svg";
 import TrukyFlag from "../assets/vectors/business-review/flags/turkye.svg";
 import UaeFlag from "../assets/vectors/business-review/flags/uae.svg";
+import { useLocale } from "../modules/common/hooks/useLocale";
 
 const COUNTRIES_FLAGS = [
   KsaFlag,
@@ -141,6 +142,7 @@ const RevenueChart = ({
   isRtl,
 }: RevenueChartProps) => {
   const { t } = useTranslation("business-review");
+  const { lang } = useLocale();
   const { ref, inView } = useInView<HTMLDivElement>();
   const maxValue = Math.max(y2024, y2025) * 1.1;
 
@@ -149,7 +151,7 @@ const RevenueChart = ({
       ref={ref}
       className="relative flex flex-col gap-2.5 bg-linear-to-b from-savola-orange-20 to-savola-orange/0 px-2 py-4"
     >
-      <img src={DoupleArrow} alt="" className="absolute right-4 top-2 w-5 h-10" />
+      <img src={DoupleArrow} alt="" className={`absolute ${lang === "ar" ? "left-4" : "right-4"} top-2 w-5 h-10`} />
       {/* Revenue title */}
       <AnimationSlideTop>
         <p className="font-bold text-savola-navy text-lg mb-1 inline">

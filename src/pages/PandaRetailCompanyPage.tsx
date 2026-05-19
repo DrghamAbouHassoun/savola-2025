@@ -20,8 +20,9 @@ import AnimationSlideTop from "../modules/common/components/Animations/Animation
 import CountUp from "../modules/common/components/Animations/CountUp";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import BusinessReviewHeader from "../modules/business-review/components/BusinessReviewHeader";
-import PandaOutroBg from "../assets/images/business-review/panda-outro.png"
+import PandaOutroBg from "../assets/images/business-review/panda-outro.png";
 import { useLocale } from "../modules/common/hooks/useLocale";
+import { useWindowDimensions } from "../modules/common/hooks/useWindowDimensions";
 
 const CHALLENGE_ICONS = [
   InflationIcon,
@@ -57,7 +58,8 @@ const KPI_NUMS = [92, 14, 26];
 
 const PandaRetailCompanyPage = () => {
   const { t, tArray } = useTranslation("business-review");
-  const { lang } = useLocale()
+  const { lang } = useLocale();
+  const { width: winWidth } = useWindowDimensions();
 
   const challengeLabels = tArray("panda.together.economic.labels");
   const outperformingParagraphs = tArray("panda.outperforming.paragraphs");
@@ -213,19 +215,21 @@ const PandaRetailCompanyPage = () => {
       </section>
 
       {/* 7. Powering Omnichannel Growth */}
-      <section className="py-12 md:py-16">
-        <SmallContainer>
+      <section className="pt-12 md:pt-16 pb-4">
+        <div>
           <AnimationSlideTop>
-            <h2 className="text-savola-navy font-bold mb-2">
-              {t("panda.together.powering.title")}
-            </h2>
-            <p className="text-savola-cool-grey leading-relaxed mb-10">
-              {t("panda.together.powering.desc")}
-            </p>
+            <SmallContainer>
+              <h2 className="text-savola-navy font-bold mb-2">
+                {t("panda.together.powering.title")}
+              </h2>
+              <p className="text-savola-cool-grey leading-relaxed mb-10">
+                {t("panda.together.powering.desc")}
+              </p>
+            </SmallContainer>
           </AnimationSlideTop>
 
           {/* Subsection 0: E-Commerce + Active Customers card */}
-          <div className="mb-12">
+          <SmallContainer className="mb-12">
             <h3 className="text-savola-orange font-bold mb-2">
               {t("panda.together.powering.subsections.0.title")}
             </h3>
@@ -264,66 +268,88 @@ const PandaRetailCompanyPage = () => {
                 </div>
               </AnimationPopUp>
             </div>
-          </div>
+          </SmallContainer>
 
           {/* Subsections 1 & 2: plain text */}
-          {[1, 2].map((i) => (
-            <div key={i} className="mb-12">
-              <h3 className="text-savola-orange font-bold mb-2">
-                {t(`panda.together.powering.subsections.${i}.title`)}
+          <SmallContainer>
+            {[1, 2].map((i) => (
+              <div key={i} className="mb-12">
+                <h3 className="text-savola-orange font-bold mb-2">
+                  {t(`panda.together.powering.subsections.${i}.title`)}
+                </h3>
+                {powSubParagraphs[i].map((p, j) => (
+                  <p
+                    key={j}
+                    className="text-savola-cool-grey leading-relaxed mb-4"
+                    dangerouslySetInnerHTML={{ __html: p }}
+                  />
+                ))}
+              </div>
+            ))}
+          </SmallContainer>
+
+          {/* Subsection 3: Digital Operations + KPI cards */}
+          <div className="mb-12">
+            <SmallContainer>
+              <h3 className="font-bold text-savola-orange mb-2">
+                {t("panda.together.powering.subsections.3.title")}
               </h3>
-              {powSubParagraphs[i].map((p, j) => (
+              {powSubParagraphs[3].map((p, i) => (
                 <p
-                  key={j}
+                  key={i}
                   className="text-savola-cool-grey leading-relaxed mb-4"
                   dangerouslySetInnerHTML={{ __html: p }}
                 />
               ))}
-            </div>
-          ))}
-
-          {/* Subsection 3: Digital Operations + KPI cards */}
-          <div className="mb-12">
-            <h3 className="font-bold text-savola-orange mb-4">
-              {t("panda.together.powering.subsections.3.title")}
-            </h3>
-            {powSubParagraphs[3].map((p, i) => (
-              <p
-                key={i}
-                className="text-savola-cool-grey leading-relaxed mb-4"
-                dangerouslySetInnerHTML={{ __html: p }}
-              />
-            ))}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 divide-x-2 divide-savola-green">
-              {KPI_ICONS.map((icon, i) => (
-                <AnimationPopUp key={i}>
-                  <div className=" p-6">
-                    <img
-                      src={icon}
-                      alt=""
-                      className="h-10 w-auto mb-3 object-contain"
-                    />
-                    <p className="text-lg text-savola-cool-grey my-4 mb-0 font-bold">
-                      {t(
-                        `panda.together.powering.subsections.3.cards.${i}.title`,
-                      )}
-                    </p>
-                    <p className="font-black text-4xl text-savola-green leading-none">
-                      <CountUp end={KPI_NUMS[i]} />
-                      <span className="text-4xl ms-1">
-                        {t(
-                          `panda.together.powering.subsections.3.cards.${i}.number.suffix`,
-                        )}
-                      </span>
-                    </p>
-                  </div>
-                </AnimationPopUp>
-              ))}
+            </SmallContainer>
+            <div className="w-full bg-savola-green-20 py-3">
+              <SmallContainer>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 divide-x-2 divide-savola-green w-full">
+                  {KPI_ICONS.map((icon, i) => (
+                    <AnimationPopUp key={i}>
+                      <div className=" p-6">
+                        <img
+                          src={icon}
+                          alt=""
+                          className="h-10 w-auto mb-3 object-contain"
+                        />
+                        <p className="text-lg text-savola-cool-grey my-4 mb-0 font-bold">
+                          {t(
+                            `panda.together.powering.subsections.3.cards.${i}.title`,
+                          )}
+                        </p>
+                        <p className="font-black text-4xl text-savola-green leading-none">
+                          {i !== 1 && lang === "ar" ? (
+                            <>
+                              <span className="text-4xl ms-1">
+                                {t(
+                                  `panda.together.powering.subsections.3.cards.${i}.number.suffix`,
+                                )}
+                              </span>
+                              <CountUp end={KPI_NUMS[i]} />
+                            </>
+                          ) : (
+                            <>
+                              <CountUp end={KPI_NUMS[i]} />
+                              {i === 1 && <>&nbsp;</>}
+                              <span className="text-4xl ms-1">
+                                {t(
+                                  `panda.together.powering.subsections.3.cards.${i}.number.suffix`,
+                                )}
+                              </span>
+                            </>
+                          )}
+                        </p>
+                      </div>
+                    </AnimationPopUp>
+                  ))}
+                </div>
+              </SmallContainer>
             </div>
           </div>
 
           {/* Subsection 4: Strategic Enablement */}
-          <div>
+          <SmallContainer>
             <h3 className="text-savola-orange font-bold mb-2">
               {t("panda.together.powering.subsections.4.title")}
             </h3>
@@ -334,8 +360,8 @@ const PandaRetailCompanyPage = () => {
                 dangerouslySetInnerHTML={{ __html: p }}
               />
             ))}
-          </div>
-        </SmallContainer>
+          </SmallContainer>
+        </div>
       </section>
 
       {/* 8. New Launches */}
@@ -357,7 +383,7 @@ const PandaRetailCompanyPage = () => {
       </section> */}
       <section className=" ">
         <div className="w-full relative ">
-          <div className=" py-16 w-full flex flex-col lg:flex-row  max-w-5xl mx-auto px-4">
+          <div className=" pb-16 w-full flex flex-col lg:flex-row  max-w-5xl mx-auto px-4">
             <div className="flex-1">
               <div className="">
                 <AnimationSlideTop>
@@ -367,14 +393,17 @@ const PandaRetailCompanyPage = () => {
                   {newLaunchesParagraphs.map((p, i) => (
                     <p
                       key={i}
-                      className="text-savola-cool-grey leading-relaxed mb-4"
+                      className="text-savola-cool-grey leading-relaxed mb-4 max-w-[50%]"
+                      style={{
+                        maxWidth: winWidth > 1024 ? `${60 - i}%` : "100%",
+                      }}
                       dangerouslySetInnerHTML={{ __html: p }}
                     />
                   ))}
                 </AnimationSlideTop>
               </div>
             </div>
-            <div className="flex-1"></div>
+            {/* <div className="flex-1"></div> */}
           </div>
           <img
             src={PandaOutroBg}

@@ -25,7 +25,7 @@ const common = {
       "chairmans-statement": "Chairman's Statement",
       "group-ceos-message": "Group CEO's Message",
       "chief-financial-officers-review": "CFO’s Review",
-      "savola-food": "Savola Food",
+      "savola-food": "Savola Foods",
       "panda-retail-company": "Panda Retail Company",
       "al-kabeer-group": "Al Kabeer Group",
       "herfy-food-service": "Herfy Food Service",

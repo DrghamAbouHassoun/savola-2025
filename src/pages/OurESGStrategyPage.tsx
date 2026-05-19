@@ -128,7 +128,7 @@ const OurESGStrategyPage = () => {
                       />
 
                       <div
-                        className={`flex flex-wrap gap-2 mt-2 pt-2 ${isAr ? "justify-end" : "justify-start"}`}
+                        className={`flex flex-wrap gap-2 mt-2 pt-2 justify-center`}
                       >
                         {iconsIndexes.map((iconIdx) => (
                           <img
@@ -148,7 +148,7 @@ const OurESGStrategyPage = () => {
 
           {/* Drivers + Spikes image */}
           <div
-            className={`flex items-start flex-col md:flex-row gap-10`}
+            className={`flex items-start flex-col md:flex-row gap-10 overflow-hidden`}
           >
             <div className="flex-1">
               <AnimationSlideTop>
@@ -171,7 +171,7 @@ const OurESGStrategyPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-auto h-full shrink-0 flex-1">
+            <div className="w-full md:w-auto h-full shrink-0 flex-1 overflow-hidden">
               <img
                 src={SpikesImage}
                 alt="wheat spikes"

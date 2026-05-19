@@ -188,12 +188,6 @@ const AlKabeerGroupPage = () => {
                       __html: t("alKabeer.header.text"),
                     }}
                   ></p>
-                  <p className="font-bold text-savola-orange text-base">
-                    {t("alKabeer.header.label1")}
-                  </p>
-                  <p className="font-bold text-savola-orange text-base">
-                    {t("alKabeer.header.label2")}
-                  </p>
                 </AnimationPopUp>
               </div>
             </div>
@@ -214,6 +208,15 @@ const AlKabeerGroupPage = () => {
       <section>
         <SmallContainer>
           <AnimationSlideTop>
+            <p className="text-savola-cool-grey font-bold leading-relaxed text-xl mb-2">
+              {t("alKabeer.intro.highlight.desc")}
+            </p>
+            <p className="font-bold text-savola-orange text-base">
+              {t("alKabeer.intro.highlight.label1")}
+            </p>
+            <p className="font-bold text-savola-orange text-base mb-4">
+              {t("alKabeer.intro.highlight.label2")}
+            </p>
             <p className="text-savola-cool-grey leading-relaxed text-xl mb-4">
               {t("alKabeer.intro.desc")}
             </p>

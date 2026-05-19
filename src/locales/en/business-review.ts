@@ -323,11 +323,14 @@ export default {
   alKabeer: {
     pageTitle: "Al Kabeer Group",
     header: {
-      text: "Since 1974, the Al Kabeer Group has built a strong and enduring market presence, emerging as one of the region’s most reputable and established companies in frozen and processed foods. <br /><br />Robust and efficient distribution network:",
-      label1: "28 cold stores",
-      label2: "12 distribution centers",
+      text: "Since 1974, the Al Kabeer Group has built a strong and enduring market presence, emerging as one of the region’s most reputable and established companies in frozen and processed foods.",
     },
     intro: {
+      highlight: {
+        desc: "Robust and efficient distribution network:",
+        label1: "28 cold stores",
+        label2: "12 distribution centers",
+      },
       desc: "With Saudi Arabia and the UAE as its core markets, and a broad presence across the wider GCC, the company is known for consistent quality, trusted products and strong consumer recognition. Al Kabeer’s portfolio of 300+ SKUs is underpinned by a fully integrated value chain – spanning manufacturing, distribution and logistics – that enhances efficiency and strengthens market presence.",
       labels: [
         {

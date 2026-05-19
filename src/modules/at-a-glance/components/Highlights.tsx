@@ -76,7 +76,7 @@ const OperCard = ({
       {num1 && (
         <CountUp
           end={num1.number}
-          suffix={num1.prefix}
+          suffix={` ${num1.prefix}`}
           prefix={num1.suffix || ""}
           className="text-4xl font-bold"
         />
@@ -85,7 +85,7 @@ const OperCard = ({
       {num2 && (
         <CountUp
           end={num2.number}
-          suffix={num2.prefix}
+          suffix={num2.prefix !== "%" ? ` ${num2.prefix}` : ""}
           prefix={num2.suffix || ""}
           className="text-4xl font-bold"
         />
@@ -170,7 +170,7 @@ const SustCard = ({
   num2,
   span3,
   num3,
-  span4
+  span4,
 }: {
   span1?: string;
   num1?: {
@@ -178,7 +178,7 @@ const SustCard = ({
     number: number;
     prefix: string;
     number2?: number;
-    prefix2?: string
+    prefix2?: string;
   };
   span2?: string;
   num2?: {
@@ -199,34 +199,35 @@ const SustCard = ({
       className={`bg-linear-180 text-lg from-savola-orange-20 to-savola-orange-20/0 p-5 text-savola-navy`}
     >
       {span1 && <p className="text-lg">{span1}</p>}
-      {num1 && (
-        <>
-        <div className="flex items-end gap-1">
-          {num1.suffix && (
-            <span
-              className="text-4xl font-bold"
-              dangerouslySetInnerHTML={{ __html: num1.suffix }}
-            />
-          )}
-          <CountUp end={num1.number} className="text-4xl font-bold" />
-          {num1.prefix && (
-            <span
-              className="text-4xl font-bold"
-              dangerouslySetInnerHTML={{ __html: num1.prefix }}
-            />
-          )}
-        </div>
-        {num1.number2 && <div className="flex items-end gap-1">
-          <CountUp end={num1.number2} className="text-4xl font-bold" />
-          {num1.prefix2 && (
-            <span
-              className="text-4xl font-bold"
-              dangerouslySetInnerHTML={{ __html: num1.prefix2 }}
-            />
-          )}
-        </div>}
-        </>
-      )}
+      {num1 ? (
+        num1.number2 ? (
+          <div className="text-2xl font-bold">
+            <span dangerouslySetInnerHTML={{ __html: num1.suffix}} />{" "}
+            <span dangerouslySetInnerHTML={{ __html: num1.number }} />{" "}
+            <span dangerouslySetInnerHTML={{ __html: num1.prefix }} />{" "}
+            <span dangerouslySetInnerHTML={{ __html: num1.number2 }} />{" "}
+            {num1.prefix2 && <span dangerouslySetInnerHTML={{ __html: num1.prefix2 }} />}{" "}
+            {/* {num1.prefix2 && ` ${num1.prefix2}`}  */}
+          </div>
+        ) : (
+          <div className="flex items-end gap-1">
+            {num1.suffix && (
+              <span
+                className="text-4xl font-bold"
+                dangerouslySetInnerHTML={{ __html: num1.suffix }}
+              />
+            )}
+            <CountUp end={num1.number} className="text-4xl font-bold" />
+            {num1.prefix !== "٪" && num1.prefix !== "%" ? <>&nbsp;</> : ""}
+            {num1.prefix && (
+              <span
+                className="text-4xl font-bold"
+                dangerouslySetInnerHTML={{ __html: `${num1.prefix}` }}
+              />
+            )}
+          </div>
+        )
+      ) : null}
       {span2 && <p>{span2}</p>}
       {num2 && (
         <div className="flex items-end gap-1">
@@ -237,6 +238,11 @@ const SustCard = ({
             />
           )}
           <CountUp end={num2.number} className="text-4xl font-bold" />
+          {(num2.prefix && num2.prefix !== "%") || num2.prefix === "٪" ? (
+            <>&nbsp;</>
+          ) : (
+            ""
+          )}
           {num2.prefix && (
             <span
               className="text-4xl font-bold"
@@ -385,9 +391,7 @@ const Highlights = () => {
 
             {/* Row 3 */}
             <AnimationSlideTop style={{ animationDelay: "400ms" }}>
-              <SustCard
-                span1={sustainData.rank.span1}
-              />
+              <SustCard span1={sustainData.rank.span1} />
             </AnimationSlideTop>
 
             <AnimationSlideTop style={{ animationDelay: "500ms" }}>

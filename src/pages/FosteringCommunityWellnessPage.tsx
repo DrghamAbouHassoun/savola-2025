@@ -162,7 +162,7 @@ const FosteringCommunityWellnessPage = () => {
         <div>
           {/* ── Intro + Section 0: Empowering Our People ── */}
           <div className="">
-            <section className="py-20">
+            <section className="pt-20">
               <SmallContainer>
                 <AnimationSlideTop>
                   <h2 className={`text-2xl md:text-3xl font-bold mb-8 `}>
@@ -192,41 +192,48 @@ const FosteringCommunityWellnessPage = () => {
                         )}
                       </h4>
                     </AnimationSlideTop>
-                    <Paragraph
-                      text={t(
-                        "fostering.tabs.0.ourPeople.ourPeople.sections.0.paragraphs.0",
-                      )}
-                    />
-                    <Paragraph
-                      text={t(
-                        "fostering.tabs.0.ourPeople.ourPeople.sections.0.paragraphs.1",
-                      )}
-                    />
 
-                    <AnimationSlideTop>
-                      <div className="inline-block max-w-48">
-                        <img
-                          src={FlowerIcon}
-                          alt=""
-                          className="w-8 h-8 object-contain my-2"
-                        />
-                        <p
-                          className={`mb-1 leading-snug text-savola-cool-grey font-bold`}
-                        >
-                          {t(
-                            "fostering.tabs.0.ourPeople.ourPeople.sections.0.label.title",
+                    <div className="flex flex-col md:flex-row gap-2">
+                      <div className="flex-1">
+                        <Paragraph
+                          text={t(
+                            "fostering.tabs.0.ourPeople.ourPeople.sections.0.paragraphs.0",
                           )}
-                        </p>
-                        <p className="text-4xl font-bold flex text-savola-green">
-                          <span>97</span>
-                          <span>
-                            {t(
-                              "fostering.tabs.0.ourPeople.ourPeople.sections.0.label.number.suffix",
-                            )}
-                          </span>
-                        </p>
+                        />
+                        <Paragraph
+                          text={t(
+                            "fostering.tabs.0.ourPeople.ourPeople.sections.0.paragraphs.1",
+                          )}
+                        />
                       </div>
-                    </AnimationSlideTop>
+
+                      <div className="flex-1 max-w-60 flex justify-center">
+                        <AnimationSlideTop>
+                          <div className="inline-block max-w-48">
+                            <img
+                              src={FlowerIcon}
+                              alt=""
+                              className="w-8 h-8 object-contain my-2"
+                            />
+                            <p
+                              className={`mb-1 leading-snug text-savola-cool-grey font-bold`}
+                            >
+                              {t(
+                                "fostering.tabs.0.ourPeople.ourPeople.sections.0.label.title",
+                              )}
+                            </p>
+                            <p className="text-4xl font-bold flex text-savola-green">
+                              <span>97</span>
+                              <span>
+                                {t(
+                                  "fostering.tabs.0.ourPeople.ourPeople.sections.0.label.number.suffix",
+                                )}
+                              </span>
+                            </p>
+                          </div>
+                        </AnimationSlideTop>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </SmallContainer>
@@ -271,7 +278,7 @@ const FosteringCommunityWellnessPage = () => {
               </div>
 
               <AnimationSlideTop>
-                <div className="overflow-x-auto mb-4">
+                <div className="overflow-x-auto mb-4 text-savola-cool-grey">
                   <table className="w-full text-sm border-collapse">
                     <thead>
                       <tr className="">
@@ -373,10 +380,9 @@ const FosteringCommunityWellnessPage = () => {
                           className="relative w-full h-full transition-transform duration-500"
                           style={{
                             transformStyle: "preserve-3d",
-                            transform:
-                              isFlipped
-                                ? "rotateY(180deg)"
-                                : "rotateY(0deg)",
+                            transform: isFlipped
+                              ? "rotateY(180deg)"
+                              : "rotateY(0deg)",
                           }}
                         >
                           {/* ── FRONT ── */}
@@ -410,7 +416,9 @@ const FosteringCommunityWellnessPage = () => {
                                   key={li}
                                   className="text-white text-xs flex items-start gap-1.5"
                                 >
-                                  <span className="shrink-0 mt-0.5 font-bold">•</span>
+                                  <span className="shrink-0 mt-0.5 font-bold">
+                                    •
+                                  </span>
                                   <span>{item}</span>
                                 </li>
                               ))}
@@ -572,7 +580,7 @@ const FosteringCommunityWellnessPage = () => {
                   text={t("fostering.tabs.0.capability.divs.2.desc")}
                 />
                 <AnimationSlideTop>
-                  <div className="overflow-x-auto mt-2">
+                  <div className="overflow-x-auto mt-2  text-savola-cool-grey">
                     <table className="w-full">
                       <thead>
                         <tr className="">
@@ -678,7 +686,7 @@ const FosteringCommunityWellnessPage = () => {
           <section className="py-16 bg-savola-cool-grey-7">
             <SmallContainer>
               <div
-                className={`flex flex-wrap gap-4 mb-8 border-b border-savola-cool-grey-10 `}
+                className={`flex flex-col md:flex-row flex-wrap gap-4 mb-8 border-b border-savola-cool-grey-10 `}
               >
                 {[0, 1, 2].map((subIdx) => {
                   const labelKey =
@@ -838,7 +846,7 @@ const FosteringCommunityWellnessPage = () => {
           <section className="py-4">
             <div className="w-full relative">
               <div className="flex max-w-5xl mx-auto">
-                <div className="flex-1 py-32 px-4">
+                <div className="flex-1 px-4">
                   <AnimationSlideTop>
                     <p className={`font-bold text-savola-cool-grey mb-3`}>
                       {t("fostering.tabs.1.intro.subtitle")}
@@ -861,12 +869,12 @@ const FosteringCommunityWellnessPage = () => {
                     </div>
                   </AnimationSlideTop>
                 </div>
-                <div className="flex-1 flex justify-end "></div>
+                <div className="flex-1 hidden xl:flex justify-end  "></div>
               </div>
               <img
                 src={SavolaWorldImage}
                 alt=""
-                className={`w-full lg:w-auto h-full object-contain ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-right right-0"} xl:absolute top-0`}
+                className={`w-full xl:w-auto h-full object-cover origin-center ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-left right-0"} xl:absolute top-0`}
               />
             </div>
           </section>
@@ -965,7 +973,7 @@ const FosteringCommunityWellnessPage = () => {
 
               {/* Foundation report + smartphone mockup */}
               <div
-                className={`flex flex-col md:flex-row gap-8 items-center mt-10 bg-savola-orange-20`}
+                className={`flex flex-col md:flex-row gap-8 items-center mt-10 bg-savola-orange-20 p-4`}
               >
                 <AnimationSlideTop className="flex-1 flex justify-center">
                   <p
@@ -981,7 +989,7 @@ const FosteringCommunityWellnessPage = () => {
                   <img
                     src={smartPhoneImg}
                     alt=""
-                    className="w-full object-contain h-auto max-w-120"
+                    className="w-full object-contain h-auto max-w-120 animate-pulse-up-down"
                   />
                 </AnimationSlideTop>
               </div>

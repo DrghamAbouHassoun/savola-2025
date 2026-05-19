@@ -472,7 +472,7 @@ export default {
                 subtitle: "Savola Foods Company was recognized at the",
                 title: "SHRM MENA STAR Awards,",
                 description:
-                  "receiving the Performance and Total Rewards Award from the Society for Human Resource Management, a testament to our strategic approach",
+                  "receiving the Performance and Total Rewards Award from the Society for Human Resource Management, a testament to our strategic approach to talent management.",
               },
             },
             ],
@@ -551,7 +551,7 @@ export default {
             {
               tabName: "Nationalization",
               title: "Building National Talent and a Resilient Workforce",
-              desc: "<i>Attracting, developing and retaining talent remains central to how we build long-term value. In 2025,</i> we continued to strengthen our workforce through targeted recruitment, meaningful localization and competitive rewards, ensuring we have the right capabilities, leadership pipeline and organizational stability to support our strategy.",
+              desc: "Attracting, developing and retaining talent remains central to how we build long-term value. In 2025, we continued to strengthen our workforce through targeted recruitment, meaningful localization and competitive rewards, ensuring we have the right capabilities, leadership pipeline and organizational stability to support our strategy.",
               divs: [
                 {
                   title: "Strengthening the Talent Pipeline",

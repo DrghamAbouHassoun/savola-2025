@@ -160,53 +160,55 @@ const Hero = () => {
       <div
         key={`${heroAnimationKey}-logo-splash`}
         className="fixed w-full h-screen overflow-hidden top-0 left-0 z-30 flex justify-center items-center bg-white animate-fade-out animate-delay-2s"
+        // className="fixed w-full h-screen overflow-hidden top-0 left-0 z-30 flex justify-center items-center bg-white"
       >
         {/* <img
           src={Logo}
           alt="Savola Logo"
           className="w-70 h-auto object-top-left"
         /> */}
-        <Logo />
+        <div className="animate-zoom-in max-w-90 h-auto animate-delay-1s">
+          <Logo />
+        </div>
       </div>
       <div className="w-full h-screen relative overflow-hidden">
         <div
           key={`${heroAnimationKey}-trapezium`}
-          className={`fixed hidden sm:flex items-end ${lang === "ar" ? "left-0 rotate-y-180 flex-row-reverse" : "right-0"} bottom-0 w-full h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s -z-10`}
+          className={`fixed flex items-end ${lang === "ar" ? "left-0 rotate-y-180 flex-row-reverse" : "right-0"} bottom-0 w-full h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s -z-10`}
         >
           <div className="hidden lg:block flex-1 h-[50vh]">
             <img
               src={TrapeziumGray}
               alt=""
-              className="w-full h-full object-cover object-top-right scale-x-120 -translate-x-[12%]"
+              className="w-full h-full object-cover object-top-right scale-x-120 -translate-x-[12.1%]"
             />
           </div>
           <div className="hidden lg:block flex-1 h-[70vh]">
             <img
               src={TrapeziumOrange}
               alt=""
-              className="w-full h-full object-cover object-top scale-x-120 -translate-x-[10%]"
+              className="w-full h-full object-cover object-top scale-x-120 -translate-x-[11.2%]"
             />
           </div>
-          <div className="flex-1 h-[83vh]">
+          <div className="flex-1 h-[65vh] sm:h-[83vh]">
             <img
               src={Trapezium}
               alt="Trapezium"
               className="w-full h-full object-cover object-top lg:scale-x-120 lg:-translate-x-[10%]"
             />
           </div>
-          
         </div>
         <div className="flex flex-col w-full h-full">
           <div
-            className={`flex-[0.9] flex flex-col justify-end py-32 text-savola-cool-grey ${
+            className={`flex-[0.9] flex flex-col sm:justify-end py-32 text-savola-cool-grey ${
               isRTL ? "animate-fade-right-100" : "animate-fade-left-100"
             } active animate-delay-5_6s relative z-20`}
           >
             <Container>
-              <h1 className="text-5xl font-bold mb-4 whitespace-pre-line">
+              <h1 className="text-3xl sm:text-5xl font-bold mb-4 whitespace-pre-line">
                 {t("hero.heading")}
               </h1>
-              <h2 className="text-3xl font-bold">
+              <h2 className="text-xl sm:text-3xl font-bold">
                 {t("hero.annualReport")}{" "}
                 <span className="text-savola-green">2025</span>
               </h2>

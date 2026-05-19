@@ -4,6 +4,7 @@ import SmallContainer from "../modules/common/components/container/SmallContaine
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
 import AnimationFadeIn from "../modules/common/components/Animations/AnimationFadeIn";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
+import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 
 const SaudiVision2030Page = () => {
   const { t, tArray } = useTranslation("strategic-review");
@@ -65,12 +66,12 @@ const SaudiVision2030Page = () => {
             </div>
 
             {/* Circular green badge */}
-            <div className="hidden md:flex absolute top-8 inset-e-0 w-44 h-44 rounded-full bg-savola-green items-center justify-center text-center p-5">
-              <p
-                className="text-white text-xs font-semibold leading-snug"
-                dangerouslySetInnerHTML={{ __html: label }}
-              />
-            </div>
+              <AnimationPopUp className="hidden md:flex absolute top-8 inset-e-0 w-64 h-64 rounded-full bg-savola-green items-center justify-center text-center p-5">
+                <p
+                  className="text-white text-lg font-semibold leading-snug"
+                  dangerouslySetInnerHTML={{ __html: label }}
+                />
+              </AnimationPopUp>
           </div>
         </SmallContainer>
       </div>

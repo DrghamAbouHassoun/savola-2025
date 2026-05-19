@@ -223,7 +223,7 @@ export const sustainabilityListEn = {
   },
   rank: {
     span1:
-      "Savola Group ranked second for Best Sustainability and ESG Reports in the MENA region for its 2024 report by MEIRA",
+      "Savola Group ranked second for Best Sustainability and ESG Reports in the MENA region for its 2024 report by MEIRA.",
   },
   world: {
     span1:
@@ -295,7 +295,7 @@ export const sustainabilityListAr = {
   },
   rank: {
     span1:
-      "حصدت مجموعة صافولا المركز الثاني لجائزة أفضل تقرير للاستدامة والممارسات البيئية والاجتماعية والحوكمة في منطقة الشرق الأوسط وشمال أفريقيا عن تقريرها لعام 2024م ضمن جوائز جمعية علاقات المستثمرين في الشرق الأوسط (MEIRA)",
+      "حصدت مجموعة صافولا المركز الثاني لجائزة أفضل تقرير للاستدامة والممارسات البيئية والاجتماعية والحوكمة في منطقة الشرق الأوسط وشمال أفريقيا عن تقريرها لعام 2024م ضمن جوائز جمعية علاقات المستثمرين في الشرق الأوسط (MEIRA).",
   },
   world: {
     span1:
@@ -322,6 +322,6 @@ export const sustainabilityListAr = {
       prefix: "منشأة صغيرة ومتوسطة",
     },
     span2:
-      "من خالل برنامجها ”محفظة عالم صافولا التمويلية“ المخصص لتمويل رواد الأعمال بالتعاون مع بنك التنمية الاجتماعية.",
+      "من خلال برنامجها ”محفظة عالم صافولا التمويلية“ المخصص لتمويل رواد الأعمال بالتعاون مع بنك التنمية الاجتماعية.",
   },
 };

@@ -2,6 +2,7 @@ import { useEffect, useRef, useContext } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { LangContext } from "../../common/contexts/LangProvider";
 import { useTranslation } from "../../common/hooks/useTranslation";
+import { useWindowDimensions } from "../../common/hooks/useWindowDimensions";
 import Ellipse1 from "../../../assets/images/year-in-review/ellipse-1.png";
 import Ellipse2 from "../../../assets/images/year-in-review/ellipse-2.png";
 
@@ -27,6 +28,8 @@ const YearInReviewSlider = () => {
   const { lang } = useContext(LangContext);
   const isRtl = lang === "ar";
   const { t } = useTranslation("overview");
+  const { width } = useWindowDimensions();
+  const isDesktop = width >= 1024;
 
   const MONTHS: MonthData[] = [
     {
@@ -173,9 +176,20 @@ const YearInReviewSlider = () => {
     containScroll: "trimSnaps",
   });
 
+  // Reset animated elements to visible state when switching to mobile/tablet
+  useEffect(() => {
+    if (!isDesktop && emblaApi) {
+      const container = emblaApi.containerNode();
+      container.style.transform = "translate3d(0, 0, 0)";
+      lineRefs.current.forEach((el) => { if (el) el.style.width = "100%"; });
+      dotRefs.current.forEach((el) => { if (el) { el.style.transform = "scale(1)"; el.style.opacity = "1"; } });
+      contentRefs.current.forEach((el) => { if (el) { el.style.opacity = "1"; el.style.transform = "translateY(0)"; } });
+    }
+  }, [isDesktop, emblaApi]);
+
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section || !emblaApi) return;
+    if (!section || !emblaApi || !isDesktop) return;
 
     const container = emblaApi.containerNode();
     const viewport = container.parentElement as HTMLElement;
@@ -236,16 +250,16 @@ const YearInReviewSlider = () => {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [emblaApi, isRtl]);
+  }, [emblaApi, isRtl, isDesktop]);
 
   return (
     <section
       ref={sectionRef}
-      style={{ height: `${SECTION_HEIGHT_VH}vh` }}
+      style={{ height: isDesktop ? `${SECTION_HEIGHT_VH}vh` : "auto" }}
       dir={isRtl ? "rtl" : "ltr"}
       className="relative"
     >
-      <div className="sticky top-0 h-screen overflow-hidden bg-white">
+      <div className={isDesktop ? "sticky top-0 h-screen overflow-hidden bg-white" : "overflow-hidden bg-white py-16"}>
         <div className="h-full flex flex-col justify-center">
           {/* Embla carousel — overflow visible so columns bleed off-edge */}
           <div key={lang} ref={emblaRef} className="overflow-visible">
@@ -269,16 +283,16 @@ const YearInReviewSlider = () => {
                     <div
                       ref={(el) => { lineRefs.current[idx] = el; }}
                       className="h-2 bg-savola-green absolute -top-1.5"
-                      style={{ width: "0%", transition: "width 0.15s ease-out" }}
+                      style={isDesktop ? { width: "0%", transition: "width 0.15s ease-out" } : { width: "100%" }}
                     />
                     <span
                       ref={(el) => { dotRefs.current[idx] = el; }}
                       className="w-8 h-8 bg-savola-green absolute -top-4.5 inset-s-0 rounded-full"
-                      style={{ transform: "scale(0)", opacity: 0, transition: "transform 0.2s ease-out, opacity 0.2s ease-out" }}
+                      style={isDesktop ? { transform: "scale(0)", opacity: 0, transition: "transform 0.2s ease-out, opacity 0.2s ease-out" } : { transform: "scale(1)", opacity: 1 }}
                     />
                     <div
                       ref={(el) => { contentRefs.current[idx] = el; }}
-                      style={{ opacity: 0, transform: "translateY(22px)", transition: "opacity 0.3s ease-out, transform 0.3s ease-out" }}
+                      style={isDesktop ? { opacity: 0, transform: "translateY(22px)", transition: "opacity 0.3s ease-out, transform 0.3s ease-out" } : { opacity: 1 }}
                     >
                       <span className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-savola-cool-grey tracking-wide">
                         {monthData.month}
@@ -287,7 +301,7 @@ const YearInReviewSlider = () => {
                       {/* Events */}
                       <div className="flex gap-3 overflow-y-auto max-h-[calc(100vh-220px)] mt-4">
                         {monthData.events.map((event, i) => (
-                          <div key={i} className="flex flex-1">
+                          <div key={i} className="flex flex-col gap-4 flex-1">
                             <div className="pe-4">
                               <h3 className="font-bold text-savola-orange text-xl sm:text-2xl lg:text-3xl leading-snug mb-2">
                                 {event.title}
@@ -307,7 +321,7 @@ const YearInReviewSlider = () => {
                             </div>
                             {event.image && (
                               <div
-                                className={`h-auto w-90 bg-white flex items-end justify-center ${lang === "ar" ? "pl-6" : "pr-6"}`}
+                                className={`h-auto w-50 bg-white flex items-end justify-center ${lang === "ar" ? "pl-6" : "pr-6"}`}
                               >
                                 <img
                                   src={event.image}

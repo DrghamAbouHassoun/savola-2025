@@ -31,7 +31,7 @@ const DrivingEnvironmentalStewardshipPage = () => {
 
   const SectionTitle = ({ translationKey }: { translationKey: string }) => (
     <div className="flex items-start gap-4 mb-4">
-      <h2 className={`text-xl md:text-2xl font-bold text-savola-orange ${isAr ? "text-end" : ""}`}>
+      <h2 className={`text-xl md:text-2xl font-bold text-savola-orange `}>
         {t(translationKey)}
       </h2>
     </div>
@@ -45,7 +45,7 @@ const DrivingEnvironmentalStewardshipPage = () => {
   );
 
   const ProgressSubtitle = ({ text }: { text: string }) => (
-    <p className="text-savola-cool-grey font-bold text-sm mb-4">{text}</p>
+    <p className="text-savola-cool-grey font-bold text-sm ">{text}</p>
   );
 
   const SectionParagraph = ({ text }: { text: string }) => (
@@ -88,16 +88,16 @@ const DrivingEnvironmentalStewardshipPage = () => {
         {/* Tabbed sections with left sidebar menu */}
         <section className="pb-20">
           <SmallContainer>
-            <div className={`flex flex-col md:flex-row gap-8 items-start ${isAr ? "md:flex-row-reverse" : ""}`}>
+            <div className={`flex flex-col md:flex-row gap-8 items-start `}>
 
               {/* Left sidebar menu */}
               <div className="w-full md:w-64 shrink-0 md:sticky md:top-4">
-                <nav className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible gap-1 pb-2 md:pb-0">
+                <nav className="flex flex-col overflow-x-auto md:overflow-visible gap-1 pb-2 md:pb-0">
                   {MENU_ITEMS.map((item, idx) => (
                     <button
                       key={item.key}
                       onClick={() => setActiveSection(idx)}
-                      className={`text-left px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200 whitespace-nowrap md:whitespace-normal w-auto md:w-full shrink-0 md:shrink ${
+                      className={`text-start px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200 w-auto md:w-full shrink-0 md:shrink ${
                         activeSection === idx
                           ? "bg-savola-orange text-white"
                           : "text-savola-cool-grey hover:bg-savola-orange-20 hover:text-savola-orange"

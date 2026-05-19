@@ -7,6 +7,7 @@ const ChartAr = () => {
       viewBox="0 0 710 655"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-full"
     >
       <style>{`
         @keyframes chartPulse {

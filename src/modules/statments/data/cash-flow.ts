@@ -23,7 +23,16 @@ export const cashFlowStatementsEn = {
     },
     {
       data: [
-        "Share of results in equity-accounted investees, net of zakat and tax",
+        "Share of results in equity-accounted",
+        "",
+        "",
+        "",
+      ],
+      isBold: true,
+    },
+    {
+      data: [
+        "investees, net of zakat and tax",
         "10.1",
         "(51,775)",
         "(808,635)",
@@ -32,7 +41,7 @@ export const cashFlowStatementsEn = {
     },
     {
       data: ["Share based payment expense", "18", "8,804", "36,356"],
-      isBold: false,
+      isBold: true,
     },
     {
       data: ["Impairment charge, net", "40", "24,640", "390,409"],

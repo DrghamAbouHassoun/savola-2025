@@ -3,7 +3,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { LangContext } from "../../common/contexts/LangProvider";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import Container from "../../common/components/container/Container";
-import SavolaAngleGreen from "../../../assets/vectors/savola-angel-green.svg";
+// import SavolaAngleGreen from "../../../assets/vectors/savola-angel-green.svg";
+import SliderArrow from "../../../assets/icons/slider-arrow.svg";
 import forbes from "../../../assets/images/awards/Frame 1977.png";
 import meira from "../../../assets/images/awards/meira.png";
 import human from "../../../assets/images/awards/human.png";
@@ -166,18 +167,18 @@ const AwardsSlider = () => {
             <button
               onClick={scrollPrev}
               disabled={!canPrev}
-              className="w-12 h-12 rounded-full border border-savola-orange bg-white hover:scale-110 transition-all duration-500 flex justify-center items-center disabled:opacity-30 disabled:pointer-events-none"
+              className="w-12 h-12 flex justify-center items-center disabled:opacity-30 disabled:pointer-events-none"
               aria-label="Previous"
             >
-              <img src={SavolaAngleGreen} className={isRtl ? "rotate-90" : "rotate-270"} />
+              <img src={SliderArrow} className={`${isRtl ? "rotate-180" : ""} w-8 h-8`} />
             </button>
             <button
               onClick={scrollNext}
               disabled={!canNext}
-              className="w-12 h-12 rounded-full border border-savola-orange bg-white hover:scale-110 transition-all duration-500 flex justify-center items-center disabled:opacity-30 disabled:pointer-events-none"
+              className="w-12 h-12 flex justify-center items-center disabled:opacity-30 disabled:pointer-events-none"
               aria-label="Next"
             >
-              <img src={SavolaAngleGreen} className={isRtl ? "rotate-270" : "rotate-90"} />
+              <img src={SliderArrow} className={`${isRtl ? "" : "rotate-180"} w-8 h-8`} />
             </button>
           </div>
         </div>

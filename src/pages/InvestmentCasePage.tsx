@@ -193,7 +193,7 @@ const InvestmentCasePage = () => {
         {pillar.bullets.map((bullet, bIdx) => (
           <li
             key={bIdx}
-            className="flex gap-2 text-sm text-savola-cool-grey"
+            className={`flex gap-2 text-sm text-savola-cool-grey ${bIdx === 2 && pillar.number === 1 ? "lg:-mt-10" : ""}`}
           >
             <span className="text-savola-green shrink-0 mt-0.5">•</span>
             <span>

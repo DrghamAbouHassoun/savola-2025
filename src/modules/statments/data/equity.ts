@@ -96,7 +96,7 @@ export const equityStatements2025En: EquityYearData = {
       "1,032,769",
     ],
     [
-      "Charge for equity-settled employees' share based payment<br /> plan (Note 18)",
+      "Charge for equity-settled employees' share based payment plan <span class='text-nowrap'>(Note 18)</span>",
       "-",
       "-",
       "-",
@@ -110,7 +110,7 @@ export const equityStatements2025En: EquityYearData = {
       "8,804",
     ],
     [
-      "Acquisition of non-controlling interest (Note 1)",
+      "Acquisition of non-controlling interest <span class='text-nowrap'>(Note 1)</span>",
       "-",
       "-",
       "-",
@@ -124,7 +124,7 @@ export const equityStatements2025En: EquityYearData = {
       "(3,383)",
     ],
     [
-      "Purchase of shares held under employees' share based<br /> payment plan (Note 19)",
+      "Purchase of shares held under employees' share based payment plan <span class='text-nowrap'>(Note 19)</span>",
       "-",
       "-",
       "(70,000)",
@@ -138,7 +138,7 @@ export const equityStatements2025En: EquityYearData = {
       "(70,000)",
     ],
     [
-      "Settlement of Treasury shares (Note 18)",
+      "Settlement of Treasury shares <span class='text-nowrap'>(Note 18)</span>",
       "",
       "",
       "20,793",
@@ -277,7 +277,7 @@ export const equityStatements2024En: EquityYearData = {
       "11,202,900",
     ],
     [
-      "Charge for equity-settled employees' share<br /> based payment plan (Note 18)",
+      "Charge for equity-settled employees' share based payment plan <span class='text-nowrap'>(Note 18)</span>",
       "-",
       "-",
       "-",
@@ -307,7 +307,7 @@ export const equityStatements2024En: EquityYearData = {
       "5,966,652",
     ],
     [
-      "Transaction cost related to right issue, capital<br /> reduction and distribution (Note 16)",
+      "Transaction cost related to right issue, capital reduction and distribution (Note 16)",
       "-",
       "-",
       "-",
@@ -337,7 +337,7 @@ export const equityStatements2024En: EquityYearData = {
       "(8,235,669)",
     ],
     [
-      "Impact of Capital reduction on share-based<br /> payment reserves (Note 19)",
+      "Impact of Capital reduction on share-based payment reserves (Note 19)",
       "-",
       "-",
       "-",
@@ -352,7 +352,7 @@ export const equityStatements2024En: EquityYearData = {
       "(11,387)",
     ],
     [
-      "Transfer on derecognition of equity<br /> accounted investees (Note 18)",
+      "Transfer on derecognition of equity accounted investees (Note 18)",
       "-",
       "-",
       "-",
@@ -397,7 +397,7 @@ export const equityStatements2024En: EquityYearData = {
       "(12,806,043)",
     ],
     [
-      "Derecognition of non-controlling<br /> interest (Note 22)",
+      "Derecognition of non-controlling interest (Note 22)",
       "-",
       "-",
       "-",
@@ -412,7 +412,7 @@ export const equityStatements2024En: EquityYearData = {
       "(89,933)",
     ],
     [
-      "Settlement of Treasury shares <br />(Note 18)",
+      "Settlement of Treasury shares (Note 18)",
       "-",
       "-",
       "12,525",
@@ -442,7 +442,7 @@ export const equityStatements2024En: EquityYearData = {
       "29,358",
     ],
     [
-      "Transfer from statutory reserve to retained <br />earnings (Note 17)",
+      "Transfer from statutory reserve to retained earnings (Note 17)",
       "-",
       "-",
       "-",

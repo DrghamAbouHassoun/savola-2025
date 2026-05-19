@@ -152,12 +152,12 @@ const StrategyAndBusinessModelPage = () => {
                       {/* Our Corporate Values */}
                       {idx === 3 && (
                         <div>
+                          {data.ourCorporateValue.items[0]?.desc && (
+                            <p className="text-savola-cool-grey text-sm leading-relaxed mb-4">
+                              {data.ourCorporateValue.items[0].desc}
+                            </p>
+                          )}
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                            {data.ourCorporateValue.items[0]?.desc && (
-                              <p className="text-savola-cool-grey text-sm leading-relaxed">
-                                {data.ourCorporateValue.items[0].desc}
-                              </p>
-                            )}
                             {data.ourCorporateValue.items
                               .slice(1)
                               .map((item, i) => (
@@ -187,8 +187,9 @@ const StrategyAndBusinessModelPage = () => {
               );
             })}
           </div>
-          <h3 className='text-2xl text-savola-cool-grey font-bold p-4 py-8 bg-linear-to-b from-savola-green-20 to-savola-green/0 flex justify-center mt-32 gap-4'>
-            <img src={FlowerTwoIcon} alt="" className="w-16 h-16" />{data.outro}
+          <h3 className="text-2xl text-savola-cool-grey font-bold p-4 py-8 bg-linear-to-b from-savola-green-20 to-savola-green/0 flex justify-center mt-32 gap-4">
+            <img src={FlowerTwoIcon} alt="" className="w-16 h-16" />
+            {data.outro}
           </h3>
         </SmallContainer>
       </section>
