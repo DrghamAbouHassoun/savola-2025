@@ -15,8 +15,19 @@ button {
   100% { transform: translateX(10%); }
 }
 
+@keyframes pan-lr-5 {
+  0%   { transform: translateX(-5px); }
+  100% { transform: translateX(5px); }
+}
+
 .animate-pan-lr {
   animation: pan-lr 6s ease-in-out infinite alternate;
+}
+
+@media (max-width: 720px) {
+  .animate-pan-lr {
+    animation: pan-lr-5 6s ease-in-out infinite alternate;
+  }
 }
 
 .hidden-scrollbar {
