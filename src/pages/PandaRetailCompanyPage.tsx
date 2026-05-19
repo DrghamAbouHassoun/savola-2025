@@ -302,7 +302,7 @@ const PandaRetailCompanyPage = () => {
                 />
               ))}
             </SmallContainer>
-            <div className="w-full bg-savola-green-20 py-3">
+            <div className="w-full bg-[#FFF8ED] py-3">
               <SmallContainer>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 divide-x-2 divide-savola-green w-full">
                   {KPI_ICONS.map((icon, i) => (

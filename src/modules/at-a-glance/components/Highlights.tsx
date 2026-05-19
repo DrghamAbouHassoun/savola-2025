@@ -76,7 +76,7 @@ const OperCard = ({
       {num1 && (
         <CountUp
           end={num1.number}
-          suffix={` ${num1.prefix}`}
+          suffix={num1.prefix !== "%" ? ` ${num1.prefix}` : num1.prefix}
           prefix={num1.suffix || ""}
           className="text-4xl font-bold"
         />
@@ -85,8 +85,8 @@ const OperCard = ({
       {num2 && (
         <CountUp
           end={num2.number}
-          suffix={num2.prefix !== "%" ? ` ${num2.prefix}` : ""}
-          prefix={num2.suffix || ""}
+          suffix={num2.prefix !== "%" ? ` ${num2.prefix}` : num2.prefix}
+          prefix={num2.suffix !== "٪" ? `${num2.suffix} ` : num2.suffix}
           className="text-4xl font-bold"
         />
       )}

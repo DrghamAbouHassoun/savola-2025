@@ -613,7 +613,7 @@ export default {
                     list: [
                       "A strategic partnership between Savola World and Ita’am (the Saudi Food Bank) during the Hajj season resulted in the rescue of 1,259,992 food units and 2,014 sacrificial offerings, with a total value exceeding <i class='riyal-icon'></i> 17.3 million.",
                       "The Negaderha program expanded its national footprint through multiple awareness campaigns and targeted on-ground and digital activations, achieving a total campaign reach of more than 14 million.",
-                      "The launch of the “Negaderha Sawa” podcast further strengthened public engagement on responsible consumption and sustainable lifestyles",
+                      "The launch of the “Negaderha Sawa” podcast further strengthened public engagement on responsible consumption and sustainable lifestyles.",
                     ],
                   },
                 },

@@ -693,3 +693,35 @@
 .pillar-pulse-ring {
   animation: PillarPulseRing 2s ease-in-out infinite;
 }
+
+@keyframes DividerGrowV {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+.animate-divider-grow-v {
+  transform: scaleY(0);
+  transform-origin: center;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.animate-divider-grow-v.active {
+  animation-name: DividerGrowV;
+}
+
+@keyframes DividerGrowH {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.animate-divider-grow-h {
+  transform: scaleX(0);
+  transform-origin: center;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.animate-divider-grow-h.active {
+  animation-name: DividerGrowH;
+}

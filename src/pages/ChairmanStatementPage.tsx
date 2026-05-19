@@ -2,7 +2,7 @@ import NewHeader from "../modules/common/components/headers/NewHeader";
 import ChairmanHeader from "../assets/images/new-headers/Chairman.jpg";
 import LeadershipHeader from "../modules/leadership/components/LeadershipHeader";
 import ChairmanPersonImage from "../assets/images/leadership/chairman.png";
-import ChairmanSignImage from "../assets/images/leadership/chairman-sign.png";
+import ChairmanSignImage from "../assets/images/leadership/chairman-sign.svg";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import StarIcon from "../assets/icons/star.png";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";

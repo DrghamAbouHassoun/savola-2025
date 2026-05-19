@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import useInView from "../modules/common/hooks/useInView";
 import JourneyBg from "../assets/images/new-headers/journey.jpg";
 import NewHeader from "../modules/common/components/headers/NewHeader";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
@@ -13,6 +14,24 @@ import { useLocale } from "../modules/common/hooks/useLocale";
 // import Timeline4 from "../assets/vectors/journey/timeline/4.svg"
 import Timeline from "../modules/journey/components/Timeline";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
+
+const AnimatedVerticalDivider = ({ delayClass = "" }: { delayClass?: string }) => {
+  const { inView, ref } = useInView();
+  return (
+    <div ref={ref} className="hidden sm:flex items-stretch self-stretch py-2">
+      <div className={`w-0.5 bg-savola-cool-grey/30 h-full animate-divider-grow-v ${delayClass} ${inView ? "active" : ""}`} />
+    </div>
+  );
+};
+
+const AnimatedHorizontalDivider = ({ delayClass = "" }: { delayClass?: string }) => {
+  const { inView, ref } = useInView();
+  return (
+    <div ref={ref} className="sm:hidden flex px-2">
+      <div className={`h-0.5 w-full bg-savola-cool-grey/30 animate-divider-grow-h ${delayClass} ${inView ? "active" : ""}`} />
+    </div>
+  );
+};
 
 const SavolaGroupsTransformationJourneyPage = () => {
   const { t, tArray } = useTranslation("strategic-review");
@@ -211,13 +230,21 @@ const SavolaGroupsTransformationJourneyPage = () => {
               {/* <div className="relative max-w-180 mx-auto">
                 <Timeline list={section1.whatChanged.list} />
               </div> */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="flex flex-col sm:flex-row mb-6">
                 {section1.whatChanged.list.map((item, i) => (
-                  <AnimationPopUp key={i} className={`animate-delay-0_${i * 2}s`}>
-                    <div className="bg-linear-to-b from-savola-green-20 to-savola-green-20/0 p-4 text-savola-cool-grey text-sm leading-relaxed">
-                      {item}
-                    </div>
-                  </AnimationPopUp>
+                  <Fragment key={i}>
+                    <AnimationPopUp className={`animate-delay-0_${i * 2}s flex-1`}>
+                      <div className="p-4 text-savola-cool-grey text-sm leading-relaxed">
+                        {item}
+                      </div>
+                    </AnimationPopUp>
+                    {i < section1.whatChanged.list.length - 1 && (
+                      <>
+                        <AnimatedVerticalDivider delayClass={`animate-delay-0_${(i + 1) * 2}s`} />
+                        <AnimatedHorizontalDivider delayClass={`animate-delay-0_${(i + 1) * 2}s`} />
+                      </>
+                    )}
+                  </Fragment>
                 ))}
               </div>
 

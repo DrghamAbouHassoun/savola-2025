@@ -66,7 +66,7 @@ const SaudiVision2030Page = () => {
             </div>
 
             {/* Circular green badge */}
-              <AnimationPopUp className="hidden md:flex absolute top-8 inset-e-0 w-64 h-64 rounded-full bg-savola-green items-center justify-center text-center p-5">
+              <AnimationPopUp className="flex md:absolute top-1/2 md:-translate-y-1/2 inset-e-0 w-64 h-64 rounded-full bg-savola-green items-center justify-center text-center p-5 mt-8 mx-auto md:mt-0 md:mx-0">
                 <p
                   className="text-white text-lg font-semibold leading-snug"
                   dangerouslySetInnerHTML={{ __html: label }}

@@ -176,12 +176,12 @@ const AlKabeerGroupPage = () => {
         </div>
         <SmallContainer className="">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-100">
-            <div className="flex md:justify-end items-end h-full w-full">
+            <div className="flex md:justify-end items-end h-full w-full lg:px-16">
               <AnimationPopUp>
                 <img
                   src={AlKabeerLogo}
                   alt="Al Kabeer"
-                  className="h-32 w-auto"
+                  className="h-44 w-auto"
                 />
               </AnimationPopUp>
             </div>

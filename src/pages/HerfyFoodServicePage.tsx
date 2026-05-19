@@ -286,7 +286,7 @@ const HerfyFoodServicePage = () => {
         </div>
         <SmallContainer>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-8 items-center mb-8 md:mb-10 min-h-100">
-            <div className="flex md:justify-end items-end h-full w-full p-4 lg:px-8">
+            <div className="flex md:justify-end items-end h-full w-full p-4 lg:px-16">
               <AnimationPopUp>
                 <img src={HerfyLogo} alt="Herfy" className="w-40  lg:h-44 lg:w-auto" />
               </AnimationPopUp>

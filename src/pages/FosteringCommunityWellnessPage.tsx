@@ -20,6 +20,7 @@ import FlowerIcon from "../assets/icons/flower.svg";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 import SavolaWorldImage from "../assets/images/esg/fostering/savola-world.png";
 import NutritionImage from "../assets/images/esg/fostering/nutrition.png";
+import ParallaxImage from "../modules/common/components/Animations/ParallaxImage";
 
 const PILLAR_ICONS = [icon1, icon2, icon3, icon4, icon5, icon6];
 
@@ -844,39 +845,43 @@ const FosteringCommunityWellnessPage = () => {
 
           {/* ── Section 0: Savola World Foundation ── */}
           <section className="py-4">
-            <div className="w-full relative">
-              <div className="flex max-w-5xl mx-auto">
-                <div className="flex-1 px-4">
-                  <AnimationSlideTop>
-                    <p className={`font-bold text-savola-cool-grey mb-3`}>
-                      {t("fostering.tabs.1.intro.subtitle")}
-                    </p>
-                  </AnimationSlideTop>
-                  <BulletList
-                    items={tArray("fostering.tabs.1.intro.list")}
-                    color="grey"
-                  />
-                  <Paragraph text={t("fostering.tabs.1.intro.p")} />
-                  <SectionTitle text={t("fostering.tabs.1.sections.0.title")} />
-                  <AnimationSlideTop>
-                    <div className="">
-                      <SubSectionTitle
-                        text={t("fostering.tabs.1.sections.0.div.title")}
-                      />
-                      <Paragraph
-                        text={t("fostering.tabs.1.sections.0.div.desc")}
-                      />
-                    </div>
-                  </AnimationSlideTop>
-                </div>
-                <div className="flex-1 hidden xl:flex justify-end  "></div>
-              </div>
-              <img
+            <SmallContainer>
+              <ParallaxImage
                 src={SavolaWorldImage}
                 alt=""
-                className={`w-full xl:w-auto h-full object-cover origin-center ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-left right-0"} xl:absolute top-0`}
+                containerClassName={`w-full xl:w-auto h-full object-cover origin-center max-w-120 ${lang === "ar" ? "object-left left-0" : "object-left right-0 rotate-y-180"} top-0`}
               />
-            </div>
+              <div className="w-full relative mt-4">
+                <div className="flex">
+                  <div className="flex-1">
+                    <AnimationSlideTop>
+                      <p className={`font-bold text-savola-cool-grey mb-3`}>
+                        {t("fostering.tabs.1.intro.subtitle")}
+                      </p>
+                    </AnimationSlideTop>
+                    <BulletList
+                      items={tArray("fostering.tabs.1.intro.list")}
+                      color="grey"
+                    />
+                    <Paragraph text={t("fostering.tabs.1.intro.p")} />
+                    <SectionTitle
+                      text={t("fostering.tabs.1.sections.0.title")}
+                    />
+                    <AnimationSlideTop>
+                      <div className="">
+                        <SubSectionTitle
+                          text={t("fostering.tabs.1.sections.0.div.title")}
+                        />
+                        <Paragraph
+                          text={t("fostering.tabs.1.sections.0.div.desc")}
+                        />
+                      </div>
+                    </AnimationSlideTop>
+                  </div>
+                  <div className="flex-1 hidden xl:flex justify-end  "></div>
+                </div>
+              </div>
+            </SmallContainer>
           </section>
 
           {/* ── Section 1: Savola World 2025 ── */}
@@ -1060,11 +1065,16 @@ const FosteringCommunityWellnessPage = () => {
           </section>
 
           {/* ── Section 4: Nutrition and Health ── */}
-          <section className=" ">
-            <div className="w-full relative ">
-              <div className=" py-16 w-full flex flex-col lg:flex-row  max-w-5xl mx-auto px-4">
+          <section className=" pb-8">
+            <SmallContainer className="">
+              <div className=" w-full flex flex-col lg:flex-row ">
                 <div className="flex-1">
                   <SectionTitle text={t("fostering.tabs.1.sections.4.title")} />
+                  <ParallaxImage
+                    src={NutritionImage}
+                    alt=""
+                    containerClassName={`h-auto w-full max-w-180 object-contain bottom-0 my-4 ${lang === "ar" ? "left-0 object-bottom-left" : "right-0 object-bottom-right rotate-y-180"}`}
+                  />
                   <Paragraph text={t("fostering.tabs.1.sections.4.p")} />
                   <BulletList
                     items={tArray("fostering.tabs.1.sections.4.list")}
@@ -1119,14 +1129,8 @@ const FosteringCommunityWellnessPage = () => {
                     </AnimationSlideTop>
                   </div>
                 </div>
-                <div className="flex-1"></div>
               </div>
-              <img
-                src={NutritionImage}
-                alt=""
-                className={`h-full w-full lg:w-auto lg:max-w-[50%] object-contain lg:absolute bottom-0 ${lang === "ar" ? "left-0 object-bottom-left rotate-y-180" : "right-0 object-bottom-right"}`}
-              />
-            </div>
+            </SmallContainer>
           </section>
         </div>
       )}
