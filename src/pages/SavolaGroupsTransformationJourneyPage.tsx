@@ -12,6 +12,7 @@ import { useLocale } from "../modules/common/hooks/useLocale";
 // import Timeline3 from "../assets/vectors/journey/timeline/3.svg"
 // import Timeline4 from "../assets/vectors/journey/timeline/4.svg"
 import Timeline from "../modules/journey/components/Timeline";
+import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 
 const SavolaGroupsTransformationJourneyPage = () => {
   const { t, tArray } = useTranslation("strategic-review");
@@ -62,10 +63,24 @@ const SavolaGroupsTransformationJourneyPage = () => {
       position: t("journey.section2.qoute.position"),
     },
     portfolio: {
-      pre2024: t("journey.section2.portfolio.pre2024"),
-      y2024: t("journey.section2.portfolio.y2024"),
-      y2025: t("journey.section2.portfolio.y2025"),
-      lookingAhed: t("journey.section2.portfolio.lookingAhed"),
+      items: [
+        {
+          title: t("journey.section2.portfolio.pre2024.title"),
+          desc: t("journey.section2.portfolio.pre2024.desc"),
+        },
+        {
+          title: t("journey.section2.portfolio.y2024.title"),
+          desc: t("journey.section2.portfolio.y2024.desc"),
+        },
+        {
+          title: t("journey.section2.portfolio.y2025.title"),
+          desc: t("journey.section2.portfolio.y2025.desc"),
+        },
+        {
+          title: t("journey.section2.portfolio.lookingAhed.title"),
+          desc: t("journey.section2.portfolio.lookingAhed.desc"),
+        },
+      ],
       lookingAhedPart: {
         title: t("journey.section2.portfolio.lookingAhedPart.title"),
         desc: t("journey.section2.portfolio.lookingAhedPart.desc"),
@@ -193,8 +208,17 @@ const SavolaGroupsTransformationJourneyPage = () => {
                   </div>
                 ))}
               </div> */}
-              <div className="relative max-w-180 mx-auto">
+              {/* <div className="relative max-w-180 mx-auto">
                 <Timeline list={section1.whatChanged.list} />
+              </div> */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                {section1.whatChanged.list.map((item, i) => (
+                  <AnimationPopUp key={i} className={`animate-delay-0_${i * 2}s`}>
+                    <div className="bg-linear-to-b from-savola-green-20 to-savola-green-20/0 p-4 text-savola-cool-grey text-sm leading-relaxed">
+                      {item}
+                    </div>
+                  </AnimationPopUp>
+                ))}
               </div>
 
               <div className="flex justify-center flex-col sm:flex-row gap-4">
@@ -223,12 +247,12 @@ const SavolaGroupsTransformationJourneyPage = () => {
 
                 {/* Card 2 */}
                 <div className="rounded-xl p-6">
-                   <div className="bg-linear-to-l from-savola-green/80 to-savola-orange/0 rounded-xl w-fit pr-16 py-0.5 mb-3">
+                  <div className="bg-linear-to-l from-savola-green/80 to-savola-orange/0 rounded-xl w-fit pr-16 py-0.5 mb-3">
                     <p className="font-extrabold text-sm mb-3">
-                    {section1.whatChanged.card2.title}
-                  </p>
+                      {section1.whatChanged.card2.title}
+                    </p>
                   </div>
-                  
+
                   <ul className="space-y-1">
                     {section1.whatChanged.card2.list.map((item, i) => (
                       <li
@@ -264,23 +288,14 @@ const SavolaGroupsTransformationJourneyPage = () => {
               />
             </AnimationFadeIn>
 
-            {/* Portfolio timeline pills */}
+            {/* Portfolio timeline */}
             <AnimationSlideTop
               style={{ animationDelay: "0.1s" }}
-              className="my-8 space-y-3"
+              className="my-8"
             >
-              {[
-                section2.portfolio.pre2024,
-                section2.portfolio.y2024,
-                section2.portfolio.y2025,
-                section2.portfolio.lookingAhed,
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-white rounded-lg px-4 py-3 text-savola-cool-grey text-sm leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: item }}
-                />
-              ))}
+              <div className="relative max-w-180 mx-auto">
+                <Timeline list={section2.portfolio.items} />
+              </div>
             </AnimationSlideTop>
 
             {/* Looking Ahead */}
@@ -319,7 +334,8 @@ const SavolaGroupsTransformationJourneyPage = () => {
                         : "bg-savola-cool-grey-7 hover:bg-savola-green-50"
                     }`}
                   >
-                    {tab.title}{lang === 'ar' ? "م" : ""}
+                    {tab.title}
+                    {lang === "ar" ? "م" : ""}
                   </button>
                 ))}
               </div>

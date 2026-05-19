@@ -151,14 +151,22 @@ const strategicReview = {
         position: "Group CEO",
       },
       portfolio: {
-        pre2024:
-          "<b>Pre-2024:</b> Portfolio optimization and groundwork for transformation",
-        y2024:
-          "<b>2024:</b> Capital strengthening and completion of major value-enhancing actions",
-        y2025:
-          "<b>2025:</b> Leadership alignment and confirmation of food-led strategy",
-        lookingAhed:
-          "<b>Looking ahead:</b> Scaled, integrated food platform with regional growth ambitions",
+        pre2024: {
+          title: "Pre-2024",
+          desc: "Portfolio optimization and groundwork for transformation",
+        },
+        y2024: {
+          title: "2024",
+          desc: "Capital strengthening and completion of major value-enhancing actions",
+        },
+        y2025: {
+          title: "2025",
+          desc: "Leadership alignment and confirmation of food-led strategy",
+        },
+        lookingAhed: {
+          title: "Looking ahead",
+          desc: "Scaled, integrated food platform with regional growth ambitions",
+        },
         lookingAhedPart: {
           title: "Looking Ahead with Focus and Confidence",
           desc: "With its transformation foundations in place, Savola Group is positioned to build a scaled, branded and consumer-centric food platform. The Group’s focus now shifts to execution, growth and value creation, supported by aligned leadership, a clear operating model and a renewed strategic mandate.",
