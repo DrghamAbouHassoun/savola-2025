@@ -264,7 +264,7 @@ const HerfyFoodServicePage = () => {
   const { lang, translations } = useContext(LangContext);
   const { t, tArray } = useTranslation("business-review");
 
-  const isRtl = lang === "ar";
+  // const isRtl = lang === "ar";
   const herfyData = translations[lang as "en" | "ar"]["business-review"].herfy;
   const strategicParagraphs = tArray("herfy.strategicHighlights.paragraphs");
   const labels = herfyData.labels;
@@ -278,17 +278,19 @@ const HerfyFoodServicePage = () => {
 
       {/* 2. Intro trapezium + logo */}
       <section className=" relative w-full mt-16">
-        <div
-          className={`absolute top-0 left-0 w-full h-full ${isRtl ? "rotate-y-180" : ""}`}
-        >
+        <div className={`absolute top-0 w-full h-full `}>
           <img
             src={TrapeziumShape}
-            className="w-full md:w-2/3 h-full object-cover object-top-left"
-            alt=""
+            className={`absolute w-full md:w-2/3 h-full object-cover origin-center ${lang === "ar" ? "object-top-right right-0 rotate-y-180" : "object-top-left left-0"}`}
           />
         </div>
         <SmallContainer>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-8 items-center mb-8 md:mb-10 min-h-100">
+            <div className="flex md:justify-end items-end h-full w-full p-4 lg:px-8">
+              <AnimationPopUp>
+                <img src={HerfyLogo} alt="Herfy" className="w-40  lg:h-44 lg:w-auto" />
+              </AnimationPopUp>
+            </div>
             <div className="relative w-full h-full flex items-end">
               <div className="p-4">
                 <AnimationPopUp>
@@ -297,11 +299,6 @@ const HerfyFoodServicePage = () => {
                   </p>
                 </AnimationPopUp>
               </div>
-            </div>
-            <div className="flex md:justify-start items-end h-full w-full">
-              <AnimationPopUp>
-                <img src={HerfyLogo} alt="Herfy" className="h-24 w-auto" />
-              </AnimationPopUp>
             </div>
           </div>
         </SmallContainer>

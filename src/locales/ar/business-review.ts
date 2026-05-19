@@ -324,6 +324,7 @@ export default {
     },
     intro: {
       highlight: {
+        desc: "شبكة توزيع قوية وفعالة:",
         label1: "28 مستودع تبريد",
         label2: "و12 مركز توزيع",
       },

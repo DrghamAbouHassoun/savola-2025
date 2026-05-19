@@ -168,17 +168,23 @@ const AlKabeerGroupPage = () => {
 
       {/* 2. Intro header with trapezium + logo */}
       <section className=" relative w-full mt-16">
-        <div
-          className={`absolute top-0 left-0 w-full h-full ${isRtl ? "rotate-y-180" : ""}`}
-        >
+        <div className={`absolute top-0 w-full h-full `}>
           <img
             src={TrapeziumShape}
-            className="w-full md:w-2/3 h-full object-cover object-top-left"
-            alt=""
+            className={`absolute w-full md:w-2/3 h-full object-cover origin-center ${lang === "ar" ? "object-top-right right-0 rotate-y-180" : "object-top-left left-0"}`}
           />
         </div>
         <SmallContainer className="">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-100">
+            <div className="flex md:justify-end items-end h-full w-full">
+              <AnimationPopUp>
+                <img
+                  src={AlKabeerLogo}
+                  alt="Al Kabeer"
+                  className="h-32 w-auto"
+                />
+              </AnimationPopUp>
+            </div>
             <div className="relative w-full h-full flex items-end">
               <div className="p-4">
                 <AnimationPopUp>
@@ -191,15 +197,7 @@ const AlKabeerGroupPage = () => {
                 </AnimationPopUp>
               </div>
             </div>
-            <div className="flex md:justify-start items-end h-full w-full">
-              <AnimationPopUp>
-                <img
-                  src={AlKabeerLogo}
-                  alt="Al Kabeer"
-                  className="h-24 w-auto"
-                />
-              </AnimationPopUp>
-            </div>
+            
           </div>
         </SmallContainer>
       </section>

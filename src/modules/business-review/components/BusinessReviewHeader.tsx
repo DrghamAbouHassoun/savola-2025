@@ -22,10 +22,17 @@ const BusinessReviewHeader = ({
       >
         <img
           src={TrapeziumeShape}
-          className={`absolute w-full md:w-2/3 h-full object-cover origin-center ${lang === "ar" ? "object-top-left left-0" : "object-top-right right-0 rotate-y-180"}`}
+          className={`absolute w-full md:w-2/3 h-full object-cover origin-center ${lang === "ar" ? "object-top-right right-0 rotate-y-180" : "object-top-left left-0"}`}
         />
       </div>
       <SmallContainer className=" grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8 md:mb-10 min-h-100">
+        <div className="flex md:justify-end items-end h-full w-full p-4">
+          <AnimationPopUp>
+            <div className="">
+              <img src={logoUrl} alt={title} className="h-44 w-auto object-contain" />
+            </div>
+          </AnimationPopUp>
+        </div>
         <div className=" w-full h-full flex items-end">
           <div className="p-4">
             <AnimationPopUp>
@@ -38,13 +45,7 @@ const BusinessReviewHeader = ({
             </AnimationPopUp>
           </div>
         </div>
-        <div className="flex md:justify-start items-end h-full w-full">
-          <AnimationPopUp>
-            <div className="">
-              <img src={logoUrl} alt="Panda" className="h-44 w-auto object-contain" />
-            </div>
-          </AnimationPopUp>
-        </div>
+        
       </SmallContainer>
     </div>
   );

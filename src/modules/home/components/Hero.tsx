@@ -4,9 +4,12 @@ import SliderImage1 from "../../../assets/images/home/slider/1.png";
 import SliderImage2 from "../../../assets/images/home/slider/2.png";
 import SliderImage3 from "../../../assets/images/home/slider/3.png";
 import SliderImage3Ar from "../../../assets/images/home/slider/3-arabic.png";
-import Trapezium from "../../../assets/vectors/trapezium.png";
-import TrapeziumGray from "../../../assets/vectors/trapezium-grey.svg";
-import TrapeziumOrange from "../../../assets/vectors/trapezium-orang.svg";
+// import Trapezium from "../../../assets/vectors/trapezium.png";
+// import TrapeziumGray from "../../../assets/vectors/trapezium-grey.svg";
+// import TrapeziumOrange from "../../../assets/vectors/trapezium-orang.svg";
+import TGreen from "../../../assets/vectors/hero/green-t.svg"
+import TOrange from "../../../assets/vectors/hero/orange-t.svg"
+import TGray from "../../../assets/vectors/hero/gray-t.svg"
 // import Logo from "../../../assets/logo/logo.svg";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { useLocale } from "../../common/hooks/useLocale";
@@ -176,29 +179,29 @@ const Hero = () => {
           key={`${heroAnimationKey}-trapezium`}
           className={`fixed flex items-end ${lang === "ar" ? "left-0 rotate-y-180 flex-row-reverse" : "right-0"} bottom-0 w-full h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s -z-10`}
         >
-          <div className="hidden lg:block flex-1 h-[50vh]">
+          <div className={`hidden lg:block absolute ${lang === "ar" ? "left-0" : "right-0"} bottom-0 flex-1 h-[50vh] w-full -z-10`}>
             <img
-              src={TrapeziumGray}
+              src={TGray}
               alt=""
-              className="w-full h-full object-cover object-top-right scale-x-120 -translate-x-[12.1%]"
+              className={`w-screen h-full object-cover ${lang === "ar" ? "object-top-left" : "object-top-right"}`}
             />
           </div>
-          <div className="hidden lg:block flex-1 h-[70vh]">
+          <div className={`hidden absolute lg:flex ${lang === "ar" ? "left-0" : "right-0 justify-end"} bottom-0 flex-1 h-[70vh] w-full z-0 bg-transparent`}>
             <img
-              src={TrapeziumOrange}
+              src={TOrange}
               alt=""
-              className="w-full h-full object-cover object-top scale-x-120 -translate-x-[11.2%]"
+              className={`w-[75vw] h-full object-cover ${lang === "ar" ? "object-top-left" : "object-top-right"}`}
             />
           </div>
-          <div className="flex-1 h-[65vh] sm:h-[83vh]">
+          <div className={`flex-1 h-[65vh] sm:h-[83vh] bg-transparant z-10 flex ${lang === "ar" ? "justify-start" : "justify-end"}`}>
             <img
-              src={Trapezium}
+              src={TGreen}
               alt="Trapezium"
-              className="w-full h-full object-cover object-top lg:scale-x-120 lg:-translate-x-[10%]"
+              className={`lg:w-[50vw] h-full object-cover ${lang === "ar" ? "object-top-left" : "object-top-right"}`}
             />
           </div>
         </div>
-        <div className="flex flex-col w-full h-full">
+        <div className="flex flex-col w-full h-full ">
           <div
             className={`flex-[0.9] flex flex-col sm:justify-end py-32 text-savola-cool-grey ${
               isRTL ? "animate-fade-right-100" : "animate-fade-left-100"

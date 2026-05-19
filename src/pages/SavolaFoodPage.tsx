@@ -7,6 +7,7 @@ import SavolaFoodLogo from "../assets/logo/savola-food-logo.png";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
+import ParallaxImage from "../modules/common/components/Animations/ParallaxImage";
 import CountUp from "../modules/common/components/Animations/CountUp";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import BusinessReviewHeader from "../modules/business-review/components/BusinessReviewHeader";
@@ -15,7 +16,7 @@ import useInView from "../modules/common/hooks/useInView";
 import FlowerIcon from "../assets/icons/flower.svg";
 import TrapeziumShape from "../assets/vectors/business-review/trapezium-card.svg";
 import DrivingSectionBg from "../assets/images/business-review/driving.jpg";
-import DrivingSectionShape from "../assets/vectors/business-review/trapezium-driving.png";
+// import DrivingSectionShape from "../assets/vectors/business-review/trapezium-driving.png";
 import DoupleArrow from "../assets/icons/double-arrow.svg";
 
 // Country Flags
@@ -151,7 +152,11 @@ const RevenueChart = ({
       ref={ref}
       className="relative flex flex-col gap-2.5 bg-linear-to-b from-savola-orange-20 to-savola-orange/0 px-2 py-4"
     >
-      <img src={DoupleArrow} alt="" className={`absolute ${lang === "ar" ? "left-4" : "right-4"} top-2 w-5 h-10`} />
+      <img
+        src={DoupleArrow}
+        alt=""
+        className={`absolute ${lang === "ar" ? "left-4" : "right-4"} top-2 w-5 h-10`}
+      />
       {/* Revenue title */}
       <AnimationSlideTop>
         <p className="font-bold text-savola-navy text-lg mb-1 inline">
@@ -399,24 +404,22 @@ const SavolaFoodPage = () => {
       </section>
 
       {/* 7. Driving Sustainable Growth */}
-      <section className="py-12 md:py-16 relative">
+      <section className="py-6 relative">
+        <SmallContainer className="mb-6">
+          <ParallaxImage
+            src={DrivingSectionBg}
+            alt=""
+            containerClassName="w-full max-w-120 aspect-video"
+            yPercent={20}
+          />
+        </SmallContainer>
         <SmallContainer>
           <h2 className="text-xl md:text-2xl font-bold text-savola-navy mb-6">
             {t("savolaFoods.drivingSustainable.title")}
           </h2>
         </SmallContainer>
         <SmallContainer className="relative">
-          <img
-            src={DrivingSectionBg}
-            alt=""
-            className="w-full h-full object-cover absolute top-0 left-0 -z-10"
-          />
-          <img
-            src={DrivingSectionShape}
-            alt=""
-            className="w-full h-full object-cover object-top-right absolute top-0 left-0 hidden lg:block"
-          />
-          <div className="p-4 py-16 w-[95%] mx-auto lg:mx-0 lg:max-w-[70%] bg-savola-green/90 lg:bg-transparent ">
+          <div className="">
             <AnimationSlideTop className="max-w-[90%]">
               <p
                 className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
@@ -455,7 +458,7 @@ const SavolaFoodPage = () => {
                       key={i}
                       className={`font-black text-4xl md:text-4xl leading-tight ${
                         i === 0
-                          ? "text-savola-cool-grey"
+                          ? "text-savola-green"
                           : i === 1
                             ? "text-savola-orange"
                             : "text-savola-cool-grey"
