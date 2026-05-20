@@ -15,6 +15,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import { useLocale } from "../../common/hooks/useLocale";
 import Logo from "../../common/components/vectors/Logo";
 import SliderTest from "./SliderTest";
+import StackSlider from "./StackSlider";
 
 const slidesEn = [SliderImage1, SliderImage2, SliderImage3];
 // const slidesAr = [SliderImage1, SliderImage2, SliderImage3Ar];
@@ -33,6 +34,13 @@ const Hero = () => {
   const { t } = useTranslation("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerSize, setContainerSize] = useState({ w: 0, h: 0 });
+  const [windowW, setWindowW] = useState(window.innerWidth);
+  useEffect(() => {
+    const onResize = () => setWindowW(window.innerWidth);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  const isMobileHero = windowW < 768;
   // const slides = lang === "ar" ? slidesAr : slidesEn;
 
   // Spring physics state — all in refs to avoid re-render overhead
@@ -207,7 +215,7 @@ const Hero = () => {
         </div> */}
         <div className="flex flex-col w-full h-full ">
           <div
-            className={`flex-[0.9] flex flex-col sm:justify-start py-32 pt-24 lg:pt-42 text-savola-cool-grey ${
+            className={`flex-[0.9] flex flex-col sm:justify-start py-32 pt-44 lg:pt-42 text-savola-cool-grey ${
               isRTL ? "animate-fade-right-100" : "animate-fade-left-100"
             } active animate-delay-5_6s relative z-20`}
           >
@@ -265,7 +273,7 @@ const Hero = () => {
                 </div>
               ))}
           </div> */}
-          <SliderTest />
+          {isMobileHero ? <StackSlider /> : <SliderTest />}
         </div>
       </div>
     </>
