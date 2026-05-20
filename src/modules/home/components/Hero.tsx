@@ -1,22 +1,23 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Container from "../../common/components/container/Container";
-import SliderImage1 from "../../../assets/images/home/slider/1.png";
-import SliderImage2 from "../../../assets/images/home/slider/2.png";
-import SliderImage3 from "../../../assets/images/home/slider/3.png";
-import SliderImage3Ar from "../../../assets/images/home/slider/3-arabic.png";
+import SliderImage1 from "../../../assets/images/home/slider/1-green.png";
+import SliderImage2 from "../../../assets/images/home/slider/2-orange.png";
+import SliderImage3 from "../../../assets/images/home/slider/3-gray.png";
+// import SliderImage3Ar from "../../../assets/images/home/slider/3-arabic.png";
 // import Trapezium from "../../../assets/vectors/trapezium.png";
 // import TrapeziumGray from "../../../assets/vectors/trapezium-grey.svg";
 // import TrapeziumOrange from "../../../assets/vectors/trapezium-orang.svg";
-import TGreen from "../../../assets/vectors/hero/green-t.svg"
-import TOrange from "../../../assets/vectors/hero/orange-t.svg"
-import TGray from "../../../assets/vectors/hero/gray-t.svg"
+// import TGreen from "../../../assets/vectors/hero/green-t.svg"
+// import TOrange from "../../../assets/vectors/hero/orange-t.svg"
+// import TGray from "../../../assets/vectors/hero/gray-t.svg"
 // import Logo from "../../../assets/logo/logo.svg";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { useLocale } from "../../common/hooks/useLocale";
 import Logo from "../../common/components/vectors/Logo";
+import SliderTest from "./SliderTest";
 
 const slidesEn = [SliderImage1, SliderImage2, SliderImage3];
-const slidesAr = [SliderImage1, SliderImage2, SliderImage3Ar];
+// const slidesAr = [SliderImage1, SliderImage2, SliderImage3Ar];
 const N = slidesEn.length;
 const GAP = 16;
 
@@ -32,7 +33,7 @@ const Hero = () => {
   const { t } = useTranslation("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerSize, setContainerSize] = useState({ w: 0, h: 0 });
-  const slides = lang === "ar" ? slidesAr : slidesEn;
+  // const slides = lang === "ar" ? slidesAr : slidesEn;
 
   // Spring physics state — all in refs to avoid re-render overhead
   const targetRef = useRef(0);
@@ -147,14 +148,17 @@ const Hero = () => {
     // flip scale for RTL so the left slide is the largest
     const sc = scaleForOffset(off * dir);
     const h = BASE_H * sc;
-    const x = off * (slideW + GAP) + offsetX;
-    // mobile: only center visible; tablet: hide the non-leading side; desktop: full range
+    // desktop: 30% overlap between slides; tablet/mobile: keep gap-based spacing
+    const spacing = !isMobile && !isTablet ? slideW * 0.7 : slideW + GAP;
+    const x = off * spacing + offsetX;
+    // mobile: only center visible; tablet: hide the non-leading side; desktop: 3 items only
     const op = isMobile
       ? clamp(1.5 - Math.abs(off), 0, 1)
       : isTablet
         ? clamp(1 - Math.max(0, -off * dir - 0.5), 0, 1)
-        : clamp(1 - Math.max(0, Math.abs(off) - 2.2), 0, 1);
-    const z = 10 - Math.round(Math.abs(off));
+        : clamp(2 - Math.abs(off), 0, 1);
+    // LTR: right item covers center (higher z), center covers left; RTL: reversed
+    const z = 10 + Math.round(off * dir);
     items.push({ key: i, ri, h, x, op, z });
   }
 
@@ -175,7 +179,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="w-full h-screen relative overflow-hidden">
-        <div
+        {/* <div
           key={`${heroAnimationKey}-trapezium`}
           className={`fixed flex items-end ${lang === "ar" ? "left-0 rotate-y-180 flex-row-reverse" : "right-0"} bottom-0 w-full h-auto max-h-[85vh] animate-open-down active animate-delay-5_6s -z-10`}
         >
@@ -200,10 +204,10 @@ const Hero = () => {
               className={`lg:w-[50vw] h-full object-cover ${lang === "ar" ? "object-top-left" : "object-top-right"}`}
             />
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col w-full h-full ">
           <div
-            className={`flex-[0.9] flex flex-col sm:justify-end py-32 text-savola-cool-grey ${
+            className={`flex-[0.9] flex flex-col sm:justify-start py-32 text-savola-cool-grey ${
               isRTL ? "animate-fade-right-100" : "animate-fade-left-100"
             } active animate-delay-5_6s relative z-20`}
           >
@@ -219,7 +223,7 @@ const Hero = () => {
           </div>
 
           {/* Carousel — no overflow-hidden so slides remain fully visible */}
-          <div
+          {/* <div
             ref={containerRef}
             className={`flex-[1.1] relative ${
               isRTL ? "animate-fade-left-100" : "animate-fade-right-100"
@@ -234,8 +238,10 @@ const Hero = () => {
                     bottom: 0,
                     left: "50%",
                     width: slideW,
+                    // width: "70vw",
                     height: h,
                     transform: `translateX(calc(-50% + ${x}px))`,
+                    // transformOrigin: "bottom right",
                     zIndex: z,
                     opacity: op,
                     willChange: "transform, height",
@@ -258,7 +264,8 @@ const Hero = () => {
                   />
                 </div>
               ))}
-          </div>
+          </div> */}
+          <SliderTest />
         </div>
       </div>
     </>

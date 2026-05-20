@@ -19,7 +19,10 @@ import accordionArrow from "../assets/icons/geo/accordion-arrow.png";
 import FlowerIcon from "../assets/icons/flower.svg";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 import SavolaWorldImage from "../assets/images/esg/fostering/savola-world.png";
-import NutritionImage from "../assets/images/esg/fostering/nutrition.png";
+// import NutritionImage from "../assets/images/esg/fostering/nutrition.png";
+import NutritionImageEn from "../assets/images/esg/fostering/nutrition-en.png";
+import NutritionImageAr from "../assets/images/esg/fostering/nutrition-ar.png";
+
 import ParallaxImage from "../modules/common/components/Animations/ParallaxImage";
 
 const PILLAR_ICONS = [icon1, icon2, icon3, icon4, icon5, icon6];
@@ -1071,9 +1074,9 @@ const FosteringCommunityWellnessPage = () => {
                 <div className="flex-1">
                   <SectionTitle text={t("fostering.tabs.1.sections.4.title")} />
                   <ParallaxImage
-                    src={NutritionImage}
+                    src={lang === "ar" ? NutritionImageAr : NutritionImageEn}
                     alt=""
-                    containerClassName={`h-auto w-full max-w-180 object-contain bottom-0 my-4 ${lang === "ar" ? "left-0 object-bottom-left" : "right-0 object-bottom-right rotate-y-180"}`}
+                    containerClassName={`h-auto w-full max-w-180 object-contain bottom-0 my-4 ${lang === "ar" ? "left-0 object-bottom-left" : "right-0 object-bottom-right"}`}
                   />
                   <Paragraph text={t("fostering.tabs.1.sections.4.p")} />
                   <BulletList
