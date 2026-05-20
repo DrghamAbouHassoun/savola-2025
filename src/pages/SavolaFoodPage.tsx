@@ -404,15 +404,17 @@ const SavolaFoodPage = () => {
       </section>
 
       {/* 7. Driving Sustainable Growth */}
-      <section className="relative">
-        <div className="sticky top-0 z-0">
-          <img
-            src={DrivingSectionBg}
-            alt=""
-            className="w-full aspect-video object-cover"
-          />
-        </div>
-        <div className="relative z-10 pt-4 bg-white">
+      <section
+        className="relative"
+        style={{
+          backgroundImage: `url(${DrivingSectionBg})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="h-[50vh]" />
+        <div className="relative z-10 bg-white">
           <SmallContainer className="py-6">
             <h2 className="text-xl md:text-2xl font-bold text-savola-navy mb-6">
               {t("savolaFoods.drivingSustainable.title")}
