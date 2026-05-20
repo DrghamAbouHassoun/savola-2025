@@ -7,7 +7,7 @@ import SavolaFoodLogo from "../assets/logo/savola-food-logo.png";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";
 import AnimationSlideTop from "../modules/common/components/Animations/AnimationSlideTop";
-import ParallaxImage from "../modules/common/components/Animations/ParallaxImage";
+// import ParallaxImage from "../modules/common/components/Animations/ParallaxImage";
 import CountUp from "../modules/common/components/Animations/CountUp";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import BusinessReviewHeader from "../modules/business-review/components/BusinessReviewHeader";
@@ -15,7 +15,7 @@ import { LangContext } from "../modules/common/contexts/LangProvider";
 import useInView from "../modules/common/hooks/useInView";
 import FlowerIcon from "../assets/icons/flower.svg";
 import TrapeziumShape from "../assets/vectors/business-review/trapezium-card.svg";
-import DrivingSectionBg from "../assets/images/business-review/driving.jpg";
+import DrivingSectionBg from "../assets/images/business-review/driving.jpeg";
 // import DrivingSectionShape from "../assets/vectors/business-review/trapezium-driving.png";
 import DoupleArrow from "../assets/icons/double-arrow.svg";
 
@@ -367,7 +367,7 @@ const SavolaFoodPage = () => {
       </section>
 
       {/* 6. Winning Locally */}
-      <section className="">
+      <section className="pb-4">
         <SmallContainer>
           <AnimationSlideTop>
             <h2 className="text-xl md:text-2xl font-bold text-savola-navy mb-10">
@@ -404,74 +404,75 @@ const SavolaFoodPage = () => {
       </section>
 
       {/* 7. Driving Sustainable Growth */}
-      <section className="py-6 relative">
-        <SmallContainer className="mb-6">
-          <ParallaxImage
+      <section className="relative">
+        <div className="sticky top-0 z-0">
+          <img
             src={DrivingSectionBg}
             alt=""
-            containerClassName="w-full aspect-video"
-            yPercent={20}
+            className="w-full aspect-video object-cover"
           />
-        </SmallContainer>
-        <SmallContainer>
-          <h2 className="text-xl md:text-2xl font-bold text-savola-navy mb-6">
-            {t("savolaFoods.drivingSustainable.title")}
-          </h2>
-        </SmallContainer>
-        <SmallContainer className="relative">
-          <div className="">
-            <AnimationSlideTop className="max-w-[90%]">
-              <p
-                className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
-                dangerouslySetInnerHTML={{
-                  __html: t("savolaFoods.drivingSustainable.p1"),
-                }}
-              ></p>
-              <p
-                className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
-                dangerouslySetInnerHTML={{
-                  __html: t("savolaFoods.drivingSustainable.p2"),
-                }}
-              ></p>
-              <p
-                className="text-savola-cool-grey leading-relaxed mb-10 text-sm"
-                dangerouslySetInnerHTML={{
-                  __html: t("savolaFoods.drivingSustainable.p3"),
-                }}
-              ></p>
-            </AnimationSlideTop>
-
-            {/* Outro: text + 3 pillars */}
-            <div className="flex flex-col lg:flex-row gap-4">
-              <AnimationPopUp className="flex-1">
+        </div>
+        <div className="relative z-10 pt-4 bg-white">
+          <SmallContainer className="py-6">
+            <h2 className="text-xl md:text-2xl font-bold text-savola-navy mb-6">
+              {t("savolaFoods.drivingSustainable.title")}
+            </h2>
+          </SmallContainer>
+          <SmallContainer className="relative">
+            <div className="">
+              <AnimationSlideTop className="max-w-[90%]">
                 <p
-                  className="text-savola-cool-grey text-lg leading-relaxed"
+                  className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
                   dangerouslySetInnerHTML={{
-                    __html: t("savolaFoods.drivingSustainable.outro.text"),
+                    __html: t("savolaFoods.drivingSustainable.p1"),
                   }}
-                />
-              </AnimationPopUp>
-              <AnimationPopUp className="flex-1">
-                <div className="">
-                  {outroLabels.map((label, i) => (
-                    <p
-                      key={i}
-                      className={`font-black text-4xl md:text-4xl leading-tight ${
-                        i === 0
-                          ? "text-savola-green"
-                          : i === 1
-                            ? "text-savola-orange"
-                            : "text-savola-cool-grey"
-                      }`}
-                    >
-                      {label}
-                    </p>
-                  ))}
-                </div>
-              </AnimationPopUp>
+                ></p>
+                <p
+                  className="text-savola-cool-grey leading-relaxed mb-4 text-sm"
+                  dangerouslySetInnerHTML={{
+                    __html: t("savolaFoods.drivingSustainable.p2"),
+                  }}
+                ></p>
+                <p
+                  className="text-savola-cool-grey leading-relaxed mb-10 text-sm"
+                  dangerouslySetInnerHTML={{
+                    __html: t("savolaFoods.drivingSustainable.p3"),
+                  }}
+                ></p>
+              </AnimationSlideTop>
+
+              {/* Outro: text + 3 pillars */}
+              <div className="flex flex-col lg:flex-row gap-4">
+                <AnimationPopUp className="flex-1">
+                  <p
+                    className="text-savola-cool-grey text-lg leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: t("savolaFoods.drivingSustainable.outro.text"),
+                    }}
+                  />
+                </AnimationPopUp>
+                <AnimationPopUp className="flex-1">
+                  <div className="">
+                    {outroLabels.map((label, i) => (
+                      <p
+                        key={i}
+                        className={`font-black text-4xl md:text-4xl leading-tight ${
+                          i === 0
+                            ? "text-savola-green"
+                            : i === 1
+                              ? "text-savola-orange"
+                              : "text-savola-cool-grey"
+                        }`}
+                      >
+                        {label}
+                      </p>
+                    ))}
+                  </div>
+                </AnimationPopUp>
+              </div>
             </div>
-          </div>
-        </SmallContainer>
+          </SmallContainer>
+        </div>
       </section>
     </div>
   );

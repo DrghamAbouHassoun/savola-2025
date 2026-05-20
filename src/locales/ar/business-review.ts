@@ -430,7 +430,7 @@ export default {
     p: "وبالتوازي مع شبكة المطاعم، تدير الشركة منظومة متكاملة لأعمال المخابز والمعجنات تتولى إمداد الفروع وعملاء التجزئة بتشكيلة متنوعة، تشمل المخبوزات والكعك والشابورة واللحوم المصنعة.",
     financialHighlights: {
       title: "أبرز الملامح المالية",
-      desc: "حققت هرفي خلال العام المالي 2025م إيرادات بلغت 1,083 مليون <i class='riyal-icon'></i> مقابل<br /> 1,125 مليون <i class='riyal-icon'></i> في عام 2024م. وبلغ مجمل الربح 259 مليون <i class='riyal-icon'></i> مقارنةً بـ <span class='text-nowrap'>217 مليون <i class='riyal-icon'></i></span> في عام 2024م. كما سجلت الشركة صافي خسارة قدره (77) مليون <i class='riyal-icon'></i> مقابل صافي خسارة بقيمة (117) مليون <i class='riyal-icon'></i> في عام 2024م، وذلك نتيجة الضغوط التضخمية على التكاليف وارتفاع المصاريف التشغيلية والتسويات الزكوية.",
+      desc: "حققت هرفي خلال العام المالي 2025م إيرادات بلغت <span class='text-nowrap'>1,083 مليون <i class='riyal-icon'></i></span> مقابل <span class='text-nowrap'>1,125 مليون <i class='riyal-icon'></i></span> في عام 2024م. وبلغ مجمل الربح <span class='text-nowrap'>259 مليون <i class='riyal-icon'></i></span> مقارنةً بـ <span class='text-nowrap'>217 مليون <i class='riyal-icon'></i></span> في عام 2024م. كما سجلت الشركة صافي خسارة قدره <span class='text-nowrap'>(77) مليون <i class='riyal-icon'></i></span> مقابل صافي خسارة بقيمة <span class='text-nowrap'>(117) مليون <i class='riyal-icon'></i></span> في عام 2024م، وذلك نتيجة الضغوط التضخمية على التكاليف وارتفاع المصاريف التشغيلية والتسويات الزكوية.",
     },
     strategicHighlights: {
       title: "أبرز الملامح الاستراتيجية والتشغيلية",
@@ -444,7 +444,7 @@ export default {
         title: "نسبة ملكية صافولا:",
         number: {
           num: 49,
-          suffix: "٪",
+          prefix: "٪",
         },
       },
       {

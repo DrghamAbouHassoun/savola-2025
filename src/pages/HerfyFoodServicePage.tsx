@@ -369,12 +369,12 @@ const HerfyFoodServicePage = () => {
                           }}
                         />
                         <CountUp end={label.number.num} />
-                        <span
+                        {label.number.suffix && <span
                           className="ms-1"
                           dangerouslySetInnerHTML={{
                             __html: label.number.suffix,
                           }}
-                        />
+                        />}
                       </p>
                     </div>
                   ))}
