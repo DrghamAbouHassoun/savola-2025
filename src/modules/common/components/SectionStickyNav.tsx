@@ -64,7 +64,7 @@ const SectionStickyNav = ({ sectionId }: SectionStickyNavProps) => {
                       navigate(page.path);
                       setOpen(false);
                     }}
-                    className="w-full px-6 py-4 font-semibold text-savola-green rounded-lg text-left hover:bg-savola-green hover:text-white transition-all duration-200"
+                    className="w-full px-6 py-4 font-semibold text-savola-green rounded-lg text-start hover:bg-savola-green hover:text-white transition-all duration-200"
                   >
                     {t(`nav.pages.${page.id}`)}
                   </button>

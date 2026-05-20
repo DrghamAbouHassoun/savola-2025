@@ -201,7 +201,7 @@ const SustCard = ({
       {span1 && <p className="text-lg">{span1}</p>}
       {num1 ? (
         num1.number2 ? (
-          <div className="text-2xl font-bold">
+          <div className="text-4xl font-bold">
             <span dangerouslySetInnerHTML={{ __html: num1.suffix}} />{" "}
             <span dangerouslySetInnerHTML={{ __html: num1.number }} />{" "}
             <span dangerouslySetInnerHTML={{ __html: num1.prefix }} />{" "}

@@ -117,16 +117,16 @@ export const cashFlowStatementsEn = {
       isBold: true,
     },
     {
-      data: ["Inventories", "", "(546,134)", "(330,979)"],
+      data: ["&nbsp;&nbsp;Inventories", "", "(546,134)", "(330,979)"],
       isBold: false,
     },
     {
-      data: ["Trade receivables", "", "(59,465)", "(672,982)"],
+      data: ["&nbsp;&nbsp;Trade receivables", "", "(59,465)", "(672,982)"],
       isBold: false,
     },
     {
       data: [
-        "Prepayments and other receivables",
+        "&nbsp;&nbsp;Prepayments and other receivables",
         "",
         "77,157",
         "(201,103)",
@@ -134,11 +134,11 @@ export const cashFlowStatementsEn = {
       isBold: false,
     },
     {
-      data: ["Trade payables", "", "268,378", "532,126"],
+      data: ["&nbsp;&nbsp;Trade payables", "", "268,378", "532,126"],
       isBold: false,
     },
     {
-      data: ["Accrued and other liabilities", "", "(422,649)", "582,577"],
+      data: ["&nbsp;&nbsp;Accrued and other liabilities", "", "(422,649)", "582,577"],
       isBold: false,
     },
     {
@@ -152,7 +152,7 @@ export const cashFlowStatementsEn = {
     },
     {
       data: [
-        "Finance cost paid on loans and borrowings",
+        "&nbsp;&nbsp;Finance cost paid on loans and borrowings",
         "21.2",
         "(369,320)",
         "(768,056)",
@@ -161,7 +161,7 @@ export const cashFlowStatementsEn = {
     },
     {
       data: [
-        "Finance cost paid on lease liabilities",
+        "&nbsp;&nbsp;Finance cost paid on lease liabilities",
         "23",
         "(196,555)",
         "(178,404)",
@@ -169,11 +169,11 @@ export const cashFlowStatementsEn = {
       isBold: false,
     },
     {
-      data: ["Zakat and income tax paid", "29", "(192,623)", "(202,347)"],
+      data: ["&nbsp;&nbsp;Zakat and income tax paid", "29", "(192,623)", "(202,347)"],
       isBold: false,
     },
     {
-      data: ["Employee benefits liabilities paid", "24", "(97,410)", "(81,987)"],
+      data: ["&nbsp;&nbsp;Employee benefits liabilities paid", "24", "(97,410)", "(81,987)"],
       isBold: false,
     },
     {

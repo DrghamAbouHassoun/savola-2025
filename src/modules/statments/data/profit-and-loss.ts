@@ -194,7 +194,7 @@ export const profitAndLossEn = {
     },
     {
       data: [
-        "Investment in equity-accounted investees - share of other comprehensive income reclassified to profit or loss",
+        "Investment in equity-accounted investees - share of other comprehensive income",
         "10",
         "-",
         "(89,086)",

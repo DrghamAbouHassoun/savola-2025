@@ -1,6 +1,7 @@
 export default {
   savolaGroup: "SAVOLA GROUP COMPANY (A SAUDI JOINT STOCK COMPANY)",
   date: "For the year Ended December 31, 2025",
+  date2: "As of December 31, 2025",
   currancy:
     "(Expressed in thousands of <i class='riyal-icon'></i> unless otherwise stated)",
   note: "The notes from 1 to 46 form an integral part of these consolidated financial statements.",

@@ -1,15 +1,19 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image1 from "../../../assets/images/home/slider/1-green.png";
-import Image2 from "../../../assets/images/home/slider/2-orange.png";
-import Image3 from "../../../assets/images/home/slider/3-gray.png";
+import Image1 from "../../../assets/images/home/slider/1-green-1.png";
+import Image1Ar from "../../../assets/images/home/slider/1-green-1-ar.png";
+import Image2 from "../../../assets/images/home/slider/2-orange-1.png";
+import Image3 from "../../../assets/images/home/slider/3-gray-1.png";
+import { useLocale } from "../../common/hooks/useLocale";
 
-const slides = [Image1, Image2, Image3];
-const N = slides.length;
+const slidesEn = [Image1, Image2, Image3];
+const slidesAr = [Image1Ar, Image2, Image3];
+const N = slidesEn.length;
 
 const mod = (x: number, n: number) => ((x % n) + n) % n;
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
 
 const SliderTest = () => {
+  const { lang } = useLocale();
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerSize, setContainerSize] = useState({ w: 0, h: 0 });
 
@@ -18,6 +22,8 @@ const SliderTest = () => {
   const velRef = useRef(0);
   const rafRef = useRef<number | null>(null);
   const lastTRef = useRef<number | null>(null);
+  const langRef = useRef(lang);
+  useEffect(() => { langRef.current = lang; }, [lang]);
 
   const [, setTick] = useState(0);
 
@@ -66,50 +72,78 @@ const SliderTest = () => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      targetRef.current += 1;
+      targetRef.current += langRef.current === "ar" ? -1 : 1;
       velRef.current = 0;
     }, 5000);
     return () => clearInterval(id);
   }, []);
 
   const { w: containerW, h: viewH } = containerSize;
+  const isRTL = lang === "ar";
+  const slides = isRTL ? slidesAr : slidesEn;
+  const dir = isRTL ? -1 : 1;
 
-  // Matches static layout: 50vw wide, 30vw spacing between right edges, right-aligned
-  // off=+1 (right): right-0, 85vh tall
-  // off= 0 (center): right-[30vw], ~64vh tall
-  // off=-1 (left): right-[60vw], ~43vh tall
-  const slideW = containerW * 0.5;
-  const spacing = containerW * 0.3;
-  // offsetX shifts the carousel so off=+1 right edge aligns to the container's right edge
-  const offsetX = -containerW * 0.05;
+  const isMobile = containerW > 0 && containerW < 768;
+  const isTablet = containerW >= 768 && containerW < 1024;
+
+  // slideW as a % of containerW per breakpoint
+  const slideW = isMobile
+    ? containerW
+    : isTablet
+      ? containerW * 0.80
+      : containerW * 0.55;
+
+  // spacing is always 54.5% of slideW → overlap is always 45.5% of slideW, every breakpoint
+  const spacing = slideW * 0.545;
+
+  const offsetX = isMobile
+    ? -dir * spacing          // centers the lead item on screen
+    : isTablet
+      ? -containerW * 0.26 * dir
+      : containerW * 0.025 * dir;
+
   const BASE_H = viewH * 0.85;
 
   const curPos = posRef.current;
   const center = Math.round(curPos);
-  const items: { key: number; ri: number; h: number; x: number; op: number; z: number }[] = [];
+  const items: { key: number; ri: number; h: number; w: number; x: number; op: number; z: number; entranceDelay: number }[] = [];
 
   for (let i = center - 2; i <= center + 2; i++) {
     const ri = mod(i, N);
     const off = i - curPos;
-    const sc = clamp(0.75 + 0.25 * off, 0.1, 1.0);
+
+    const sc = clamp(0.82 + 0.18 * off * dir, 0.1, 1.0);
     const h = BASE_H * sc;
-    const x = off * spacing + offsetX;
-    const op = clamp(2 - Math.abs(off), 0, 1);
-    // right item always on top, matching the static z-2/z-1/z-0 stacking
-    const z = 10 + Math.round(off);
-    items.push({ key: i, ri, h, x, op, z });
+
+    const widthScale = isMobile ? 1.0 : clamp(0.8 + 0.2 * off * dir, 0.1, 1.0);
+    const w = slideW * widthScale;
+
+    const edgeAnchor = isMobile ? 0 : slideW * (1 - widthScale) / 2 * dir;
+    const trailNudge = Math.max(0, -off * dir) * containerW * 0.05 * dir;
+    const x = off * spacing + offsetX + edgeAnchor + trailNudge;
+
+    const op = isMobile
+      ? clamp(1 - Math.abs(off * dir - 1), 0, 1)
+      : isTablet
+        ? clamp(1.5 - Math.abs(off * dir - 0.5), 0, 1)
+        : clamp(2 - Math.abs(off), 0, 1);
+
+    const z = 10 + Math.round(off * dir);
+    // lead=3.0s, center=3.3s, trailing=3.6s — after splash screen fades out at ~3s
+    const entranceDelay = 3.0 + clamp(1 - Math.round(off * dir), 0, 2) * 0.3;
+    items.push({ key: i, ri, h, w, x, op, z, entranceDelay });
   }
 
   return (
-    <div ref={containerRef} className="w-full h-[85vh] fixed bottom-0">
-      {containerW > 0 && items.map(({ key, ri, h, x, op, z }) => (
+    <div ref={containerRef} className="w-full h-[85vh] fixed bottom-0 overflow-hidden">
+      {containerW > 0 && items.map(({ key, ri, h, w, x, op, z, entranceDelay }) => (
         <div
           key={key}
           style={{
             position: "absolute",
             bottom: 0,
             left: "50%",
-            width: slideW,
+            width: w,
             height: h,
             transform: `translateX(calc(-50% + ${x}px))`,
             zIndex: z,
@@ -118,18 +152,24 @@ const SliderTest = () => {
             pointerEvents: "none",
           }}
         >
-          <img
-            src={slides[ri]}
-            alt={`Slide ${ri + 1}`}
-            draggable={false}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "top left",
-              display: "block",
-            }}
-          />
+          <div
+            className="animate-fade-up-entrance w-full h-full"
+            style={{ animationDelay: `${entranceDelay}s` }}
+          >
+            <img
+              src={slides[ri]}
+              alt={`Slide ${ri + 1}`}
+              draggable={false}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: isMobile ? "contain" : "cover",
+                objectPosition: isMobile ? "bottom" : isRTL ? "top right" : "top left",
+                display: "block",
+                transform: isRTL && ri !== 0 ? "scaleX(-1)" : undefined,
+              }}
+            />
+          </div>
         </div>
       ))}
     </div>

@@ -81,7 +81,7 @@ const OurESGApproachPage = () => {
           </AnimationSlideTop>
           {Array.from({ length: 2 }, (_, i) => (
             <AnimationSlideTop key={i}>
-              <p className="text-black text-base leading-relaxed mb-6 last:mb-0">
+              <p className="text-black text-base leading-relaxed mb-6 ">
                 {t(`approach.paragraphs.${i}`)}
               </p>
             </AnimationSlideTop>

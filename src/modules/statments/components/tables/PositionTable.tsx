@@ -14,7 +14,7 @@ const PositionTable = () => {
 
   return (
     <div>
-      <StatementHeader title={t("headers.position")} />
+      <StatementHeader title={t("headers.position")} dateType="date2" />
       <div className="overflow-auto w-full">
         <table className="min-w-175 w-full text-sm" dir={isRtl ? "rtl" : "ltr"}>
           <thead>

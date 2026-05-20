@@ -23,15 +23,26 @@ const LeadershipHeader = ({
   return (
     <div className="w-full">
       <div className="relative w-full h-full flex flex-col md:flex-row px-4 gap-6 md:gap-0 md:py-0">
-        <SmallContainer className="flex flex-col md:flex-row items-center justify-center md:justify-center min-h-140 ">
+        <SmallContainer style={{ padding: 0}} className="flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center min-h-140">
           {/* Person image */}
-          <AnimationFadeIn className="flex justify-center md:flex-1 md:w-full md:flex md:items-end h-full">
-            <img
-              src={imageUrl}
-              alt={title}
-              className={`w-40 h-auto md:w-auto md:h-[95%] object-contain object-bottom ${lang === "ar" ? "rotate-y-180" : ""}`}
-            />
-          </AnimationFadeIn>
+          <div className="relative w-full md:w-auto">
+            <div
+              className={`absolute  md:hidden flex bottom-0 ${lang === "ar" ? "left-0 rotate-y-180 justify-end" : "left-0"} w-full h-full -z-10`}
+            >
+              <img
+                src={LeadershipTrapezium}
+                alt="Leadership Trapezium"
+                className="w-full h-auto object-contain object-left"
+              />
+            </div>
+            <AnimationFadeIn className="relative flex md:justify-center md:flex-1 md:w-full md:flex md:items-end h-full">
+              <img
+                src={imageUrl}
+                alt={title}
+                className={`w-full max-w-64 md:max-w-fit h-auto md:w-auto md:h-[95%] object-contain object-bottom ${lang === "ar" ? "rotate-y-180" : ""}`}
+              />
+            </AnimationFadeIn>
+          </div>
 
           {/* Name & title — hidden on mobile (shown in combined block below) */}
           <AnimationSlideTop className="hidden md:flex md:flex-1 flex-col justify-center items-center animate-delay-0_2s">
@@ -49,7 +60,7 @@ const LeadershipHeader = ({
           </AnimationSlideTop>
 
           {/* Quote, signature, and name/title on mobile */}
-          <AnimationSlideTop className="flex flex-col items-center text-center md:items-start md:text-start md:flex-1 md:justify-center md:pt-16 gap-2 animate-delay-0_4s">
+          <AnimationSlideTop className="flex flex-col items-start md:items-start text-start md:flex-1 md:justify-center md:pt-16 gap-2 animate-delay-0_4s">
             {/* Name/title visible only on mobile */}
             <div className="md:hidden">
               <img
@@ -70,7 +81,7 @@ const LeadershipHeader = ({
 
         {/* Background trapezium */}
         <div
-          className={`absolute flex bottom-0 md:bottom-auto md:top-0 ${lang === "ar" ? "left-0 rotate-y-180 justify-end" : "left-0"} w-full h-full -z-10`}
+          className={`absolute hidden md:flex bottom-0 md:bottom-auto md:top-0 ${lang === "ar" ? "left-0 rotate-y-180 justify-end" : "left-0"} w-full h-full -z-10`}
         >
           <img
             src={LeadershipTrapezium}

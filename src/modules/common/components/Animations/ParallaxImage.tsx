@@ -21,15 +21,15 @@ const ParallaxImage = ({
     const image = imageRef.current;
     if (!container || !image) return;
 
+    const scaleFactor = 1 + yPercent / 100;
+
     const update = () => {
       const rect = container.getBoundingClientRect();
       const viewH = window.innerHeight;
-      // progress: 1 when top of container is at bottom of viewport, 0 when bottom is at top
       const progress = 1 - (rect.bottom / (viewH + rect.height));
       const clamped = Math.min(1, Math.max(0, progress));
-      // map 0→1 to -yPercent→+yPercent
       const offset = (clamped * 2 - 1) * yPercent;
-      image.style.transform = `translateY(${offset}%)`;
+      image.style.transform = `scale(${scaleFactor}) translateY(${offset}%)`;
     };
 
     const onScroll = () => {
@@ -54,7 +54,7 @@ const ParallaxImage = ({
         ref={imageRef}
         {...imgProps}
         className={`w-full h-full object-cover will-change-transform ${className ?? ""}`}
-        style={{ ...style, scale: `${1 + yPercent / 100}` }}
+        style={style}
       />
     </div>
   );

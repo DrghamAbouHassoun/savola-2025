@@ -207,7 +207,7 @@ const Hero = () => {
         </div> */}
         <div className="flex flex-col w-full h-full ">
           <div
-            className={`flex-[0.9] flex flex-col sm:justify-start py-32 text-savola-cool-grey ${
+            className={`flex-[0.9] flex flex-col sm:justify-start py-32 pt-24 lg:pt-42 text-savola-cool-grey ${
               isRTL ? "animate-fade-right-100" : "animate-fade-left-100"
             } active animate-delay-5_6s relative z-20`}
           >

@@ -35,9 +35,9 @@ const common = {
         "ترسيخ ريادتنا في الالتزام البيئي والابتكار",
       "driving-environmental-stewardship-appear":
         "ترسيخ ريادتنا في الالتزام <br /> البيئي والابتكار",
-      "fostering-community-wellness": "تعزيز صحة المجتمع ورفاهية الموظفين",
+      "fostering-community-wellness": "تعزيز صحة المجتمع ورفاه الموظفين",
       "fostering-community-wellness-appear":
-        "تعزيز صحة المجتمع <br /> ورفاهية الموظفين",
+        "تعزيز صحة المجتمع <br /> ورفاه الموظفين",
       "financial-statements": "القوائم المالية",
       "download-center" : "مركز التحميل",
     },

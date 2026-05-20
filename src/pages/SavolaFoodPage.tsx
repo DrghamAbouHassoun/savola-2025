@@ -409,7 +409,7 @@ const SavolaFoodPage = () => {
           <ParallaxImage
             src={DrivingSectionBg}
             alt=""
-            containerClassName="w-full max-w-120 aspect-video"
+            containerClassName="w-full aspect-video"
             yPercent={20}
           />
         </SmallContainer>

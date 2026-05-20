@@ -7,7 +7,7 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
   base: "./",
   server: {
-    allowedHosts: ["treelined-sedulously-jaxen.ngrok-free.dev"]
+    allowedHosts: ["treelined-sedulously-jaxen.ngrok-free.dev", "litter-goatskin-flagstone.ngrok-free.dev"]
   },
   plugins: [
     react(),
