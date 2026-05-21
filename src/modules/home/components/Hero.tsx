@@ -213,7 +213,7 @@ const Hero = () => {
             />
           </div>
         </div> */}
-        <div className="flex flex-col w-full h-full ">
+        <div className={`flex flex-col w-full h-full ${lang === "ar" ? "xl:pr-10 2xl:pr-0" : "xl:pl-10 2xl:pl-0"}`}>
           <div
             className={`flex-[0.9] flex flex-col sm:justify-start py-32 pt-44 lg:pt-42 text-savola-cool-grey ${
               isRTL ? "animate-fade-right-100" : "animate-fade-left-100"
