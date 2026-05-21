@@ -868,7 +868,7 @@ const FosteringCommunityWellnessPage = () => {
                       <SubSectionTitle
                         text={t("fostering.tabs.1.sections.0.div.title")}
                       />
-                      <div className="max-w-80">
+                      <div className="max-w-90">
                       <Paragraph
                         text={t("fostering.tabs.1.sections.0.div.desc")}
                       />
@@ -881,7 +881,7 @@ const FosteringCommunityWellnessPage = () => {
               <ParallaxImage
                 src={SavolaWorldImage}
                 alt=""
-                containerClassName={`w-full lg:w-auto h-full object-contain ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-right right-0"} xl:absolute top-0`}
+                containerClassName={`w-full lg:w-auto h-auto object-contain max-w-220 bottom-0 ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-right right-0"} xl:absolute`}
               />
             </div>
           </section>
