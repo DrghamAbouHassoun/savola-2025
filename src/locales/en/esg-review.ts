@@ -403,11 +403,11 @@ export default {
           accordion: [
             {
               title: "Our corporate values",
-              content: "<b>– Amanah</b> (trustworthiness), <b>Taqwa</b> (conscious integrity), <b>Birr</b> (righteous conduct) and <b>Mujahadah</b> (perseverance) – define our ethical foundation and shape how we manage investments, build stakeholder confidence and uphold our responsibilities.",
+              content: "<b>Amanah</b> (trustworthiness), <b>Taqwa</b> (conscious integrity), <b>Birr</b> (righteous conduct) and <b>Mujahadah</b> (perseverance) – define our ethical foundation and shape how we manage investments, build stakeholder confidence and uphold our responsibilities.",
             },
             {
               title: "Our individual values",
-              content: "<b>– Tawado</b> (humility), <b>Iq’tida</b> (leading by example), <b>Azm</b> (determination) and <b>It’qan</b> (excellence and mastery) – guide personal conduct and reinforce accountability, continuous improvement and high performance.",
+              content: "<b>Tawado</b> (humility), <b>Iq’tida</b> (leading by example), <b>Azm</b> (determination) and <b>It’qan</b> (excellence and mastery) – guide personal conduct and reinforce accountability, continuous improvement and high performance.",
             },
             {
               title: "Our team values",
