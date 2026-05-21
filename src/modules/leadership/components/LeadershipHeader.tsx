@@ -32,7 +32,7 @@ const LeadershipHeader = ({
               <img
                 src={LeadershipTrapezium}
                 alt="Leadership Trapezium"
-                className="w-full h-auto object-contain object-left"
+                className="w-full h-auto object-contain object-bottom-left"
               />
             </div>
             <AnimationFadeIn className="relative flex md:justify-center md:flex-1 md:w-full md:flex md:items-end h-full">

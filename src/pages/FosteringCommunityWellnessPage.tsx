@@ -868,9 +868,11 @@ const FosteringCommunityWellnessPage = () => {
                       <SubSectionTitle
                         text={t("fostering.tabs.1.sections.0.div.title")}
                       />
+                      <div className="max-w-80">
                       <Paragraph
                         text={t("fostering.tabs.1.sections.0.div.desc")}
                       />
+                      </div>
                     </div>
                   </AnimationSlideTop>
                 </div>

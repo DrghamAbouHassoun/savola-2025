@@ -402,7 +402,7 @@ export default {
           ],
           accordion: [
             {
-              title: "Our institutional values",
+              title: "Our corporate values",
               content: "<b>– Amanah</b> (trustworthiness), <b>Taqwa</b> (conscious integrity), <b>Birr</b> (righteous conduct) and <b>Mujahadah</b> (perseverance) – define our ethical foundation and shape how we manage investments, build stakeholder confidence and uphold our responsibilities.",
             },
             {
@@ -410,7 +410,7 @@ export default {
               content: "<b>– Tawado</b> (humility), <b>Iq’tida</b> (leading by example), <b>Azm</b> (determination) and <b>It’qan</b> (excellence and mastery) – guide personal conduct and reinforce accountability, continuous improvement and high performance.",
             },
             {
-              title: "Our collective values",
+              title: "Our team values",
               content: "Ihsan Al-Dhan</b> (positive intent), <b>Qabool</b> (acceptance), <b>Iq’bal</b> (engagement) and <b>Mu’azarah</b> (mutual support) – strengthen collaboration, foster belonging and cultivate a unified culture built on trust and teamwork.",
             },
           ],
