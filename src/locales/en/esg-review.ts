@@ -411,7 +411,7 @@ export default {
             },
             {
               title: "Our team values",
-              content: "Ihsan Al-Dhan</b> (positive intent), <b>Qabool</b> (acceptance), <b>Iq’bal</b> (engagement) and <b>Mu’azarah</b> (mutual support) – strengthen collaboration, foster belonging and cultivate a unified culture built on trust and teamwork.",
+              content: "<b>Ihsan Al-Dhan</b> (positive intent), <b>Qabool</b> (acceptance), <b>Iq’bal</b> (engagement) and <b>Mu’azarah</b> (mutual support) – strengthen collaboration, foster belonging and cultivate a unified culture built on trust and teamwork.",
             },
           ],
           label:
