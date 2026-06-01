@@ -38,7 +38,7 @@ const HeaderTrapeziumGroup = () => {
           alt=""
           aria-hidden="true"
           draggable={false}
-          className={`${lang === "ar" ? "rotate-y-180" : ""}`}
+          className={`h-screen ${lang === "ar" ? "rotate-y-180" : ""}`}
         />
         </div>
       ))}

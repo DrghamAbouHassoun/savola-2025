@@ -21,7 +21,7 @@ const NewHeader = ({ imageUrl, title }: NewHeaderProps) => {
       {/* Title */}
       <div className={`w-full max-w-7xl mx-auto pt-32 lg:pt-0 ${lang === "ar" ? "px-4 lg:pr-20 xl:pr-20" : "px-4 lg:pl-20 xl:pl-20"} lg:relative`}>
         <AnimationPopUp>
-          <h1 className="text-4xl font-bold max-w-110">{title}</h1>
+          <h1 className="text-4xl font-bold max-w-90">{title}</h1>
         </AnimationPopUp>
       </div>
 

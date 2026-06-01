@@ -27,7 +27,7 @@ const LeadershipHeader = ({
           {/* Person image */}
           <div className="relative w-full md:w-auto">
             <div
-              className={`absolute  md:hidden flex bottom-0 ${lang === "ar" ? "left-0 rotate-y-180 justify-end" : "left-0"} w-full h-full -z-10`}
+              className={`absolute md:hidden flex bottom-0 ${lang === "ar" ? "left-0 rotate-y-180 justify-end" : "left-0"} w-full h-full -z-10`}
             >
               <img
                 src={LeadershipTrapezium}
@@ -86,7 +86,7 @@ const LeadershipHeader = ({
           <img
             src={LeadershipTrapezium}
             alt="Leadership Trapezium"
-            className="w-auto h-full object-contain"
+            className="w-auto min-w-2/3 h-full object-cover object-top-right"
           />
         </div>
       </div>

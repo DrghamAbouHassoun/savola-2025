@@ -55,7 +55,7 @@ export default {
         iconsIndexes: [12, 13],
       },
       {
-        title: "Fostering community wellness and employee welfare",
+        title: "Fostering Community Wellness and Employee Welfare",
         subtitle:
           "Actively promoting and supporting initiatives that enhance the health, wellness and overall quality of life for communities, customers and employees.",
         iconsIndexes: [2, 3, 4, 5, 10],
@@ -253,7 +253,7 @@ export default {
     },
   },
   fostering: {
-    pageTitle: "Fostering community wellness and employee welfare",
+    pageTitle: "Fostering Community Wellness and Employee Welfare",
     tabs: [
       {
         tabename: "Our People",

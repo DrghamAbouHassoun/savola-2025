@@ -4,10 +4,10 @@ const common = {
     sections: {
       "table-of-content": "جدول المحتويات",
       overview: "نظرة عامة",
-      "strategic-review": "المراجعة الاستراتيجية",
+      "strategic-review": "النظرة الاستراتيجية​",
       leadership: "القيادة",
       "business-review": "مراجعة الأعمال",
-      "esg-review": "مراجعة الحوكمة البيئية",
+      "esg-review": "مراجعة الممارسات البيئية والاجتماعية والحوكمة​",
       "financial-statements": "القوائم المالية",
     },
     pages: {
@@ -28,7 +28,7 @@ const common = {
       "panda-retail-company": "شركة بنده للتجزئة",
       "al-kabeer-group": "مجموعة الكبير",
       "herfy-food-service": "شركة هرفي للخدمات الغذائية",
-      "our-esg-approach": "نهجنا في الحوكمة البيئية",
+      "our-esg-approach": "نهج الاستدامة​",
       "our-esg-strategy": "استراتيجية الممارسات البيئية والاجتماعية والحوكمة",
       "materiality-assessment": "تقييم الأهمية النسبية",
       "driving-environmental-stewardship":
