@@ -49,7 +49,7 @@ const NavDropdown = ({ section }: { section: Section }) => {
         className="font-medium text-gray-700 flex justify-center items-center gap-2"
         onClick={() => setOpen((prev) => !prev)}
       >
-        <span className="text-start max-w-40">{t(`nav.sections.${section.id}`)}</span>
+        <span className="text-start max-w-32">{t(`nav.sections.${section.id}`)}</span>
         <span
           className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         >
