@@ -1,5 +1,5 @@
 import NewHeader from "../modules/common/components/headers/NewHeader";
-import CeoHeader from "../assets/images/new-headers/ceo.jpg";
+import CeoHeader from "../assets/images/new-headers/ceo.jpeg";
 import LeadershipHeader from "../modules/leadership/components/LeadershipHeader";
 import CeoPersonImage from "../assets/images/leadership/ceo.png";
 import CeoSignImage from "../assets/images/leadership/ceo-sign.png";

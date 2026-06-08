@@ -1,5 +1,5 @@
 import NewHeader from "../modules/common/components/headers/NewHeader";
-import GeoHeader from "../assets/images/new-headers/geo.jpg";
+import GeoHeader from "../assets/images/new-headers/geo.jpeg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 // import GeoMapEn from "../assets/vectors/geo/map-en.svg";

@@ -1,4 +1,4 @@
-import HeaderBg from "../assets/images/new-headers/materiality.jpg";
+import HeaderBg from "../assets/images/new-headers/materiality.jpeg";
 import NewHeader from "../modules/common/components/headers/NewHeader";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import { useLocale } from "../modules/common/hooks/useLocale";
