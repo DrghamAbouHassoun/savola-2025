@@ -24,21 +24,21 @@ const VerticalChartsAr = (props: SVGProps<SVGSVGElement>) => {
     () => {
   
 
-      const tl = gsap.timeline()
+      const tl = gsap.timeline({defaults:{duration:0.25}})
 
       const set1 = [set1_1Ref.current, set1_2Ref.current, set1_3Ref.current]
       const set2Bottom = [set2_2.current, set2_3.current]
       const set3 = [set3_1.current, set3_2.current, set3_3.current]
 
       tl
-      .from(g1Ref.current,{opacity:0, y:20})
-      .from(set1, {scaleY:0, stagger:0.2, opacity:0, transformOrigin:"50% 100%"})
-      .from(g2_1_Ref.current,{opacity:0, y:20})
-      .from(set2_1.current, {scaleY:0, stagger:0.2, opacity:0, transformOrigin:"50% 100%"})
-      .from(g2_2_Ref.current,{opacity:0, y:20})
-      .from(set2Bottom, {scaleY:0, stagger:0.2, opacity:0, transformOrigin:"50% 0%"})
-      .from(g3Ref.current,{opacity:0, y:20})
-      .from(set3, {scaleY:0, stagger:0.2, opacity:0, transformOrigin:"50% 100%"})
+      .from(g1Ref.current,{opacity:0, y:20, duration:0.15})
+      .from(set1, {scaleY:0, stagger:0.1, opacity:0, transformOrigin:"50% 100%"})
+      .from(g2_1_Ref.current,{opacity:0, y:20, duration:0.15})
+      .from(set2_1.current, {scaleY:0, stagger:0.1, opacity:0, transformOrigin:"50% 100%"})
+      .from(g2_2_Ref.current,{opacity:0, y:20, duration:0.15})
+      .from(set2Bottom, {scaleY:0, stagger:0.1, opacity:0, transformOrigin:"50% 0%"})
+      .from(g3Ref.current,{opacity:0, y:20, duration:0.15})
+      .from(set3, {scaleY:0, stagger:0.1, opacity:0, transformOrigin:"50% 100%"})
       
     },
     { scope: containerRef },
