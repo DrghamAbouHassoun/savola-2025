@@ -881,7 +881,7 @@ const FosteringCommunityWellnessPage = () => {
               <ParallaxImage
                 src={SavolaWorldImage}
                 alt=""
-                containerClassName={`w-full lg:w-auto h-auto object-contain max-w-220 bottom-0 ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-right right-0"} xl:absolute`}
+                containerClassName={`w-full lg:w-auto h-auto object-contain max-w-[65%] bottom-0 ${lang === "ar" ? "object-left left-0 rotate-y-180" : "object-right right-0"} lg:absolute`}
               />
             </div>
           </section>

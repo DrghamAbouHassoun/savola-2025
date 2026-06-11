@@ -1,5 +1,5 @@
 import NewHeader from "../modules/common/components/headers/NewHeader";
-import ChairmanHeader from "../assets/images/new-headers/Chairman.jpg";
+import ChairmanHeader from "../assets/images/new-headers/Chairman.jpeg";
 import LeadershipHeader from "../modules/leadership/components/LeadershipHeader";
 import ChairmanPersonImage from "../assets/images/leadership/chairman.png";
 import ChairmanSignImage from "../assets/images/leadership/chairman-sign.svg";

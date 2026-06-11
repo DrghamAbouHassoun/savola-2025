@@ -8,6 +8,13 @@ import LangProvider from "./modules/common/contexts/LangProvider";
 import Router from "./router/Router";
 import MenuProvider from "./modules/common/contexts/MenuProvider";
 import InfoModalProvider from "./modules/common/contexts/InfoModalProvider";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+// gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(SplitText);
+// gsap.registerPlugin(DrawSVGPlugin);
 
 function App() {
   return (

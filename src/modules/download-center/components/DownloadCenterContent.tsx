@@ -20,7 +20,7 @@ type DownloadCenterTranslations = {
 
 const URL_ENDPOINT = "./download-center";
 
-const COMPANY = "first-mills";
+const COMPANY = "savola";
 
 function getLanguageFolder(isAr: boolean) {
   return isAr ? "arabic" : "english";

@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from "react";
 import { useCountUp } from "react-countup";
 import NewHeader from "../modules/common/components/headers/NewHeader";
 import SectionStickyNav from "../modules/common/components/SectionStickyNav";
-import SavolaFoodBg from "../assets/images/new-headers/savola-foods.jpg";
+import SavolaFoodBg from "../assets/images/new-headers/savola-foods.jpeg";
 import SavolaFoodLogo from "../assets/logo/savola-food-logo.png";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import AnimationPopUp from "../modules/common/components/Animations/AnimationPopUp";

@@ -396,7 +396,7 @@ export default {
           },
           {
             year: "2025",
-            value: 247,
+            value: 267,
           },
         ],
       },

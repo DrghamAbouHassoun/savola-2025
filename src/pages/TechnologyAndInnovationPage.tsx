@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import NewHeader from "../modules/common/components/headers/NewHeader";
-import TAIBg from "../assets/images/new-headers/technology-and-innovation.jpg";
+import TAIBg from "../assets/images/new-headers/technology-and-innovation.jpeg";
 import SmallContainer from "../modules/common/components/container/SmallContainer";
 import { LangContext } from "../modules/common/contexts/LangProvider";
 

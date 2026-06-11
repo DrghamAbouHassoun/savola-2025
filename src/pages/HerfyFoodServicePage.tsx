@@ -12,8 +12,10 @@ import CountUp from "../modules/common/components/Animations/CountUp";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import { LangContext } from "../modules/common/contexts/LangProvider";
 import useInView from "../modules/common/hooks/useInView";
-import HerfyChartsEn from "../assets/images/business-review/herfy-charts-en.svg";
-import HerfyChartsAr from "../assets/images/business-review/hrefy-charts-ar.svg";
+// import HerfyChartsEn from "../assets/images/business-review/herfy-charts-en.svg";
+// import HerfyChartsAr from "../assets/images/business-review/hrefy-charts-ar.svg";
+import VerticalCharts from "../components/VerticalCharts/VerticalCharts";
+import VerticalChartsAr  from "../components/VerticalCharts/VerticalChartsAr";
 
 function parseValue(v: number | string): number {
   if (typeof v === "number") return v;
@@ -268,6 +270,8 @@ const HerfyFoodServicePage = () => {
   const herfyData = translations[lang as "en" | "ar"]["business-review"].herfy;
   const strategicParagraphs = tArray("herfy.strategicHighlights.paragraphs");
   const labels = herfyData.labels;
+
+  const { ref, inView } = useInView();
   // const charts = herfyData.charts;
 
   return (
@@ -288,7 +292,11 @@ const HerfyFoodServicePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-8 items-center mb-8 md:mb-10 min-h-100">
             <div className="flex md:justify-end items-end h-full w-full p-4 lg:px-16">
               <AnimationPopUp>
-                <img src={HerfyLogo} alt="Herfy" className="w-40  lg:h-44 lg:w-auto" />
+                <img
+                  src={HerfyLogo}
+                  alt="Herfy"
+                  className="w-40  lg:h-44 lg:w-auto"
+                />
               </AnimationPopUp>
             </div>
             <div className="relative w-full h-full flex items-end">
@@ -369,12 +377,14 @@ const HerfyFoodServicePage = () => {
                           }}
                         />
                         <CountUp end={label.number.num} />
-                        {label.number.suffix && <span
-                          className="ms-1"
-                          dangerouslySetInnerHTML={{
-                            __html: label.number.suffix,
-                          }}
-                        />}
+                        {label.number.suffix && (
+                          <span
+                            className="ms-1"
+                            dangerouslySetInnerHTML={{
+                              __html: label.number.suffix,
+                            }}
+                          />
+                        )}
                       </p>
                     </div>
                   ))}
@@ -404,12 +414,17 @@ const HerfyFoodServicePage = () => {
                 />
               )}
             </div> */}
-            <div className="flex-1">
-              <img
+            <div className="flex-1" ref={ref}>
+              {/* <img
                 src={lang === "ar" ? HerfyChartsAr : HerfyChartsEn}
                 className="w-full h-auto object-contain"
                 alt=""
-              />
+              /> */}
+              {lang === "ar" ? (
+                <VerticalChartsAr key={inView ? "0" : "1"} />
+              ) : (
+                <VerticalCharts key={inView ? "2" : "3"} />
+              )}
             </div>
           </div>
         </SmallContainer>
